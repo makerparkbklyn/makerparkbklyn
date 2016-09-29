@@ -2,22 +2,197 @@
 layout: default
 ---
 
-<div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+<section class="hero-section current">
+	<div class = "hero-logo">
+		<img src="images/Logo.svg">
+	</div>
+	<!-- <div class="container">
+		<div class="row">
+			<div class="col-4">
+				<div style="background: pink; height: 299px;">Hero</div>
+			</div>
+		</div>
+	</div> -->
+</section>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+<!-- Vision -->
+<section class="vision-section">
+	<a name="Vision">
+	<!-- <div class="title">
+		<h2 class="underline">Vision</h2>
+	</div> -->
+	<div class="container">
+		<div class="row">
+			<div class="col-4">
+				<div>
+					<p>We envision an adaptive reuse park that captures the
+						eclectic vibrancy of Williamsburg, Brooklyn and honors
+						its history by breathing new life into the site's rich
+						industrial fabric.  The idea for Maker Park springs from
+						an awareness that our waterfront heritage is being wiped
+						away at alarming speed and the fact that parks have the
+						potential to be more than one-dimensional green spaces.
+						Maker Park is posed to achieve the acute community need
+						for green open space while also serving as a dynamic,
+						interactive and educational public space that unites a
+						neighborhood.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4">
+				<div class="image">
+					<img src="images/rendering.jpg">
+				</div>
+			</div>
+		</div>
+	</div>
+	</a>
+</section>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+<!-- About -->
+<section class="about-section">
+	<a name="About">
+	<div class="title">
+		<h2 class="underline">About the site</h2>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-4">
+				<div>
+					<p>A triangular slice of land between Kent Avenue, North
+						12th Street, and Bushwick Inlet - the Bayside Oil Depot
+						- sits at the heart of Williamsburg’s thriving cultural
+						scene. It's surrounded by a diverse community of artists
+						and entrepreneurs who have made the area such a dynamic
+						and vibrant place.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4">
+				<div style="background: pink;">historical pix</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-4">
+				<div>
+					<p>The site itself is overflowing with industrial character,
+						featuring 13 significant structures: an abandoned garage
+						on Kent Avenue with six double-sided truck bays that cut
+						through the building, a beautiful three-story brick
+						building on 12th Street with soaring 17-23 foot ceilings
+						and factory windows, and a long-abandoned fueling
+						station that connects the two. The most iconic elements
+						of the site are ten 50-foot tall cylindrical iron fuel
+						containers with retaining walls encircling them. They
+						rise from the ground to create a beautiful and other
+						worldly industrial topography.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6 offset-2">
+				<!-- <div style="background: pink;">Map</div> -->
+				<div id="map">
+			      <script>
+			        function initMap() {
+			          var makerParkLatLng = {lat: 40.724829, lng: -73.960555}
+			          var mapDiv = document.getElementById('map');
+			          var options = {
+			            mapTypeControlOptions: {
+			              mapTypeIds: ['Maker Park']
+			              },
+			            center: new google.maps.LatLng(40.724829, -73.960555),
+			            zoom: 13,
+			            mapTypeId: 'Maker Park'
+			          };
+			          var styles = [
+			            {
+			              featureType: 'all',
+			              stylers: [
+			                { saturation: -80 }
+			              ]
+			            },{
+			              featureType: 'road.arterial',
+			              elementType: 'geometry',
+			              stylers: [
+			                { hue: '#00ffee' },
+			                { saturation: 50 }
+			              ]
+			            },{
+			              featureType: 'poi.business',
+			              elementType: 'labels',
+			              stylers: [
+			                { visibility: 'off' }
+			              ]
+			            }
+			          ];
+			          var map = new google.maps.Map(mapDiv, options);
+			          var styledMapType = new google.maps.StyledMapType(styles, { name: 'Maker Park' });
+			          map.mapTypes.set('Maker Park', styledMapType);
+			          var marker = new google.maps.Marker({
+			            position: makerParkLatLng,
+			            map:map,
+			            title: 'Maker Park'
+			          });
+			        }
+			      </script>
+			  	</div>
+			      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrTExTsOs8z1r-fymz8nbAn4XlT902WD8&callback=initMap">
+			      </script>
+			</div>
+		</div>
+	</div>
+	</a>
+</section>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<!-- Join -->
+<section class="join-section">
+	<a name="Join">
+	<!-- <div class="title">
+		<h2 class="underline">Join</h2>
+	</div> -->
+	<div class="container">
+		<div class="row">
+			<div class="col-4">
+				<div style="height: 299px;">Join</div>
+			</div>
+		</div>
+	</div>
+	</a>
+</section>
 
-</div>
+<!-- News -->
+<section class="news-section">
+	<a name="News">
+	<!-- <div class="title">
+		<h2 class="underline">News</h2>
+	</div> -->
+	<div class="container">
+		<div class="row">
+			<div class="col-4">
+				<div style="background: pink; height: 299px;">News</div>
+			</div>
+		</div>
+	</div>
+	</a>
+</section>
+
+<!-- Team -->
+<section class="team-section">
+	<a name="Team">
+	<!-- <div class="title">
+		<h2 class="underline">Team</h2>
+	</div> -->
+	<div class="container">
+		<div class="row">
+			<div class="col-4">
+				<div style="background: pink; height: 299px;">Team</div>
+			</div>
+		</div>
+	</div>
+	</a>
+</section>
