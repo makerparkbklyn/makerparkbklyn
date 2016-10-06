@@ -55,19 +55,20 @@ $(document).on('ready', function() {
 		if ($currentSection.next('section').length > 0) {
 			var $nextTop = $currentSection.next('section').offset().top;
 		}
+		else {
+			// you are at bottom of page?
+		}
 
 		// show and hide logo (bottom right)
 		var $visionTop = $('.vision-section').offset().top;
 		if ($scroll > ($visionTop - .5*$(window).height())) {
 			$('.logo').removeClass('hidden');
-			// console.log("add hidden");
 		}
 		else if ($scroll < ($visionTop - .5*$(window).height())) {
 			$('.logo').addClass('hidden');
-			// console.log("remove hidden");
 		}
 
-
+		// set currentSection
 		if ($scroll > ($nextTop - ($(window).height()/2))) {
 			$currentSection = $currentSection.next('section');
 			$currentTop = $currentSection.offset().top;
@@ -86,6 +87,7 @@ $(document).on('ready', function() {
 			$currentSection.addClass('current');
 		}
 
+		// make titles stick
 		if ($scroll >= ($currentTop - 160)) {
 			// console.log("remove top, add stuck");
 			$currentTitle.removeClass('top');
