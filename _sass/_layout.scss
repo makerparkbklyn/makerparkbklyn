@@ -323,6 +323,7 @@ section p {
 	width: 100%;
 	border: solid 12px $darkblue;
 	margin-top: 4rem;
+	box-sizing: border-box;
 }
 
 // ------------------------------------------------
@@ -333,11 +334,12 @@ section p {
 	background-color: $lightgreen;
 
 	.map {
-		width: 98.5%;
+		width: 99.4%;
 		height: 1200px;
 		margin-top: 4rem;
 		margin-bottom: 4rem;
 		border: solid 12px $darkblue;
+		border-right: none;
 	}
 
 	.timeline {}
@@ -442,6 +444,16 @@ section p {
 
 // principles
 .principle__sub p {
+	font-size: 1.5rem;
+}
+.principle__item h2 {
+	color: white;
+	font-size: 5rem;
+	float: left;
+	line-height: 5rem;
+	margin-bottom: 1rem;
+}
+.principle__item p {
 	font-size: 1.5rem;
 }
 
