@@ -322,7 +322,7 @@ section p {
 .vision__image img {
 	width: 100%;
 	border: solid 12px $darkblue;
-	margin-top: 8rem;
+	margin-top: 4rem;
 }
 
 // ------------------------------------------------
@@ -335,7 +335,8 @@ section p {
 	.map {
 		width: 98.5%;
 		height: 1200px;
-		margin-bottom: 8rem;
+		margin-top: 4rem;
+		margin-bottom: 4rem;
 		border: solid 12px $darkblue;
 	}
 
@@ -356,7 +357,7 @@ section p {
 	height: 600px;
 	overflow: hidden;
 	border: solid 12px $darkblue;
-	margin-top: 8rem;
+	margin-top: 4rem;
 	// margin-bottom: 8rem;
 
 
@@ -389,7 +390,7 @@ section p {
 	// display: block;
 	overflow: hidden;
 	border: solid 12px $darkblue;
-	margin-top: 8rem;
+	margin-top: 4rem;
 	margin-bottom: 4rem;
 }
 
@@ -437,6 +438,11 @@ section p {
 .slick-next {
 	right: 25px;
 	transform: rotate(-90deg);
+}
+
+// principles
+.principle__sub p {
+	font-size: 1.5rem;
 }
 
 // ------------------------------------------------
