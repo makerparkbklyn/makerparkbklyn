@@ -2,26 +2,18 @@
 layout: default
 ---
 
-
-<section class="hero-section current">
+<!-- Hero -->
+<section class="hero-section current" id="hero">
 	<div class = "hero-logo">
 		<img src="images/Logo.svg">
 	</div>
-	<!-- <div class="container">
-		<div class="row">
-			<div class="col-4">
-				<div style="background: pink; height: 299px;">Hero</div>
-			</div>
-		</div>
-	</div> -->
 </section>
 
 <!-- Vision -->
-<section class="vision-section">
-	<a name="Vision">
-	<!-- <div class="title">
+<section class="vision-section" id="vision">
+	<div class="title top">
 		<h2 class="underline">Vision</h2>
-	</div> -->
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-4">
@@ -41,23 +33,23 @@ layout: default
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-4">
-				<div class="image">
-					<img src="images/rendering.jpg">
-				</div>
+			<div class="vision__image col-6">
+				<img src="images/renderings/rendering-01.jpg">
 			</div>
+			<div class="caption">Rendering by Studio V</div>
 		</div>
 	</div>
-	</a>
 </section>
 
 <!-- About -->
-<section class="about-section">
-	<a name="About">
-	<div class="title">
-		<h2 class="underline">About the site</h2>
+<section class="about-section" id="about">
+	<div class="title top">
+		<h2 class="underline">About</h2>
 	</div>
 	<div class="container">
+		<div class="row">
+			<div class="map offset-1" id="map"></div>
+		</div>
 		<div class="row">
 			<div class="col-4">
 				<div>
@@ -70,12 +62,26 @@ layout: default
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-4">
-				<div style="background: pink;">historical pix</div>
+		<div class="row historic">
+			<div class="col-2">
+				<div class="historic__image">
+					<img src="images/historic/noborder/oilworks.jpg">
+				</div>
+				<div class="caption">Oilworks</div>
+			</div>
+			<div class="col-2">
+				<div class="historic__image">
+					<img src="images/historic/noborder/charles-pratt.jpg">
+				</div>
+				<div class="caption">Charles Pratt</div>
+			</div>
+			<div class="col-2">
+				<div class="historic__image">
+					<img src="images/historic/noborder/astral-oil.jpg">
+				</div>
+				<div class="caption">Pratt's Astral Oil</div>
 			</div>
 		</div>
-		<br>
 		<div class="row">
 			<div class="col-4">
 				<div>
@@ -93,106 +99,213 @@ layout: default
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-6 offset-2">
-				<!-- <div style="background: pink;">Map</div> -->
-				<div id="map">
-			      <script>
-			        function initMap() {
-			          var makerParkLatLng = {lat: 40.724829, lng: -73.960555}
-			          var mapDiv = document.getElementById('map');
-			          var options = {
-			            mapTypeControlOptions: {
-			              mapTypeIds: ['Maker Park']
-			              },
-			            center: new google.maps.LatLng(40.724829, -73.960555),
-			            zoom: 13,
-			            mapTypeId: 'Maker Park'
-			          };
-			          var styles = [
-			            {
-			              featureType: 'all',
-			              stylers: [
-			                { saturation: -80 }
-			              ]
-			            },{
-			              featureType: 'road.arterial',
-			              elementType: 'geometry',
-			              stylers: [
-			                { hue: '#00ffee' },
-			                { saturation: 50 }
-			              ]
-			            },{
-			              featureType: 'poi.business',
-			              elementType: 'labels',
-			              stylers: [
-			                { visibility: 'off' }
-			              ]
-			            }
-			          ];
-			          var map = new google.maps.Map(mapDiv, options);
-			          var styledMapType = new google.maps.StyledMapType(styles, { name: 'Maker Park' });
-			          map.mapTypes.set('Maker Park', styledMapType);
-			          var marker = new google.maps.Marker({
-			            position: makerParkLatLng,
-			            map:map,
-			            title: 'Maker Park'
-			          });
-			        }
-			      </script>
-			  	</div>
-			      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrTExTsOs8z1r-fymz8nbAn4XlT902WD8&callback=initMap">
-			      </script>
+		<div class="row" class="carousel" id="carousel">
+			<div class="col-4">
+				<div class="image-carousel">
+					<div class="image">
+						<img src="images/gallery/01.jpg">
+					</div>
+					<div class="image">
+						<img src="images/gallery/02.jpg">
+					</div>
+					<div class="image">
+						<img src="images/gallery/03.jpg">
+					</div>
+					<div class="image">
+						<img src="images/gallery/04.jpg">
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	</a>
 </section>
 
 <!-- Join -->
-<section class="join-section">
-	<a name="Join">
-	<!-- <div class="title">
+<section class="join-section" id="join">
+	<div class="title top">
 		<h2 class="underline">Join</h2>
-	</div> -->
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-4">
-				<div style="height: 299px;">Join</div>
+				<p>Be a maker! Join now to get updates on events and other important news.<br><br></p>
 			</div>
 		</div>
+		<form action="/login" method="post">
+			<!-- <h4>Get Involved</h4> -->
+			<div class="row">
+				<div class="col-2 form__first-name">
+					<input type="text" name="firstname" placeholder="First Name" required>
+				</div>
+				<div class="col-2 form__last-name">
+					<input type="text" name="lastname" placeholder="Last Name" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-4">
+					<input type="email" name="email" placeholder="Email address" required>
+				</div>
+			</div>
+			<!-- <div class="row">
+				<div class="col-4">
+					<textarea name="comment" placeholder="Send us a message..."></textarea>
+				</div>
+			</div> -->
+			<div class="row">
+				<div class="col-2 u-cf">
+					<div class="checkbox">
+						<input type="checkbox" name="volunteer" id="volunteer">
+						<div class="checkbox__x"></div>
+					</div>
+					<label class="checkbox__label" for="volunteer">I would like to volunteer with Maker Park</label>
+				</div>
+				<div class="col-2">
+					<input type="submit" name="submit" value="Send">
+				</div>
+			</div>
+		</form>
 	</div>
-	</a>
 </section>
 
 <!-- News -->
-<section class="news-section">
-	<a name="News">
-	<!-- <div class="title">
+<section class="news-section" id="news">
+	<div class="title top">
 		<h2 class="underline">News</h2>
-	</div> -->
+	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-4">
-				<div style="background: pink; height: 299px;">News</div>
+			<div class="news__block col-2">
+				<div class="news__button">
+					<div class="news__text">
+						<h3>Maker Park Brainstorming Session</h3>
+						<p>July 14, 2016</p>
+					</div>
+				</div>
+			</div>
+			<div class="news__block col-2">
+				<div class="news__button">
+					<div class="news__text">
+						<h3>Maker Park Brainstorming Session</h3>
+						<p>July 14, 2016</p>
+					</div>
+				</div>
+			</div>
+			<div class="news__block col-2">
+				<div class="news__button">
+					<div class="news__text">
+						<h3>Maker Park Brainstorming Session</h3>
+						<p>July 14, 2016</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="news__block col-2">
+				<div class="news__button">
+					<div class="news__text">
+						<h3>Maker Park Brainstorming Session</h3>
+						<p>July 14, 2016</p>
+					</div>
+				</div>
+			</div>
+			<div class="news__block col-2">
+				<div class="news__button">
+					<div class="news__text">
+						<h3>Maker Park Brainstorming Session</h3>
+						<p>July 14, 2016</p>
+					</div>
+				</div>
+			</div>
+			<div class="news__block col-2">
+				<div class="news__button">
+					<div class="news__text">
+						<h3>See All</h3>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	</a>
 </section>
 
 <!-- Team -->
-<section class="team-section">
-	<a name="Team">
-	<!-- <div class="title">
+<section class="team-section" id="team">
+	<div class="title top">
 		<h2 class="underline">Team</h2>
-	</div> -->
+	</div>
 	<div class="container">
+		<!-- Founding Team -->
 		<div class="row">
-			<div class="col-4">
-				<div style="background: pink; height: 299px;">Team</div>
+			<div class="team-block col-2">
+				<div class="team-block__image one">
+					<img src="images/team/stacey.png">
+				</div>
+				<div class="team-block__info">
+					<h3 class="team-block__name">Stacey Anderson</h3>
+					<p class="team-block__bio">Lorem ipsum dolor sit amet,
+					consectetur adipiscing elit. Morbi sodales, ligula vitae
+					egestas laoreet, purus turpis rutrum eros, at blandit
+					libero orci sit amet magna.</p>
+				</div>
+			</div>
+			<div class="team-block col-2">
+				<div class="team-block__image two">
+					<img src="images/team/zac.png">
+				</div>
+				<div class="team-block__info">
+					<h3 class="team-block__name">Zachary Waldman</h3>
+					<p class="team-block__bio">Lorem ipsum dolor sit amet,
+					consectetur adipiscing elit. Morbi sodales, ligula vitae
+					egestas laoreet, purus turpis rutrum eros, at blandit
+					libero orci sit amet magna.</p>
+				</div>
+			</div>
+			<div class="team-block col-2">
+				<div class="team-block__image three">
+					<img src="images/team/karen.png">
+				</div>
+				<div class="team-block__info">
+					<h3 class="team-block__name">Karen Zabarsky</h3>
+					<p class="team-block__bio">Lorem ipsum dolor sit amet,
+					consectetur adipiscing elit. Morbi sodales, ligula vitae
+					egestas laoreet, purus turpis rutrum eros, at blandit
+					libero orci sit amet magna.</p>
+				</div>
+			</div>
+		</div>
+		<!-- Expert Team -->
+		<div class="row expert-team">
+			<div class="expert-team-block col-2">
+				<div class="expert-team-block__image one">
+					<img src="images/expert-team-logos/studio-v.png">
+				</div>
+			</div>
+			<div class="expert-team-block col-2">
+				<div class="expert-team-block__image two">
+					<img src="images/expert-team-logos/ken-smith.png">
+				</div>
+			</div>
+			<div class="expert-team-block col-2">
+				<div class="expert-team-block__image three">
+					<img src="images/expert-team-logos/capital-environmental.png">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="expert-team-block col-2">
+				<div class="expert-team-block__image four">
+					<img src="images/expert-team-logos/tillotson.png">
+				</div>
+			</div>
+			<div class="expert-team-block col-2">
+				<div class="expert-team-block__image five">
+					<img src="images/expert-team-logos/spr.png">
+				</div>
+			</div>
+			<div class="expert-team-block col-2">
+				<div class="expert-team-block__image six">
+					<img src="images/expert-team-logos/pentagram.png">
+				</div>
 			</div>
 		</div>
 	</div>
-	</a>
 </section>
