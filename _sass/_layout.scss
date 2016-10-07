@@ -341,16 +341,14 @@ section p {
 		border: solid 12px $darkblue;
 		border-right: none;
 	}
-
-	.timeline {}
 }
 
-.historic {
-	.col-2:nth-child(2) .historic__image {
-		border-left: none;
-		border-right: none;
-	}
-}
+// .historic {
+// 	.col-2:nth-child(2) .historic__image {
+// 		border-left: none;
+// 		border-right: none;
+// 	}
+// }
 
 .historic__image {
 	box-sizing: border-box;
@@ -366,7 +364,8 @@ section p {
 	img {
 		position: absolute;
 		// min-height: 100%;
-		width: 100%;
+		min-width: 100%;
+		min-height: 100%;
 		top: 50%;
 		transform: translateY(-50%);
 	}
@@ -401,10 +400,8 @@ section p {
 	img {
 		height: 100%;
 	}
-
 }
 
-// ------------------------------------------------
 // Slick arrows
 
 .slick-prev,
@@ -456,6 +453,10 @@ section p {
 .principle__item p {
 	font-size: 1.5rem;
 }
+
+// timeline
+.timeline {}
+
 
 // ------------------------------------------------
 // join
