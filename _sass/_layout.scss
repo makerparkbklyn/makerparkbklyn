@@ -1,6 +1,5 @@
-// ------------------------------------------------
-// grid
-
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .grid {
 	display: none;
 }
@@ -8,76 +7,8 @@
 	display: block;
 }
 
-// ------------------------------------------------
-// title
-
-.title {
-	position: absolute;
-	width: 600px;
-	height: 100px;
-	background: transparent;
-	transform: rotate(-90deg);
-	transform-origin:  50% 300%;
-	left: calc(6.25% - 50px);
-	text-align: center;
-	z-index: 99999;
-	// background: red;
-
-	&.stuck {
-		position: fixed;
-		top: 50%;
-		margin-top: -300px;
-	}
-
-	&.top {
-		top: 200px;
-		bottom: auto;
-	}
-	&.bottom {
-		top: auto;
-		bottom: (200px + 500px);
-	}
-}
-
-.title h2 {
-	margin: 0;
-	margin-top: -12px;
-	line-height: 112px;
-	display: inline-block;
-	// line-height: 2.25rem;
-	font-size: 2.25rem;
-	// background: pink;
-	position: relative;
-	color: $darkblue;
-}
-
-.title h2:after {
-	content: '';
-	display: block;
-	background: $darkblue;
-	height: 6px;
-	width: 100%;
-	position: absolute;
-	top: 82px;
-}
-
-.outline {
-	text-shadow:	4px 0 0 $text-color,
-					4px 4px 0 $text-color,
-					4px -4px 0 $text-color,
-					-4px 0 0 $text-color,
-					-4px 4px 0 $text-color,
-					-4px -4px 0 $text-color,
-					0 4px 0 $text-color,
-					0 -4px 0 $text-color,
-					4px 0 0 $text-color,
-					-4px 0 0 $text-color;
-}
-
-// ------------------------------------------------
-// ------------------------------------------------
-// rail
-
+/* Rail
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .rail {
 	width: 12.5%;
 	height: 100%;
@@ -87,13 +18,11 @@
 	z-index: 9999;
 }
 
-// ------------------------------------------------
-// left rail
-
+/* Left Rail
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .rail--left {
 	left: 0;
 }
-
 .join-sticker {
 	position: absolute;
 	width: 100px;
@@ -106,12 +35,10 @@
 	font-size: 1.5rem;
 	line-height: 1.1111;
 }
-
 .join-sticker a {
 	color: $darkblue;
 	text-decoration: none;
 }
-
 .arrow {
 	position: absolute;
 	width: 100px;
@@ -122,18 +49,15 @@
 	text-align: center;
 	color: $darkblue;
 }
-
 .hidden {
 	display: none;
 }
 
-// ------------------------------------------------
-// right rail
-
+/* Right Rail
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .rail--right {
 	right: 0;
 }
-
 .logo {
 	position: absolute;
 	right: 20%;
@@ -141,9 +65,8 @@
 	// transform: scale(2,2);
 }
 
-// ------------------------------------------------
-// nav
-
+/* Nav
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .nav {
 	position: absolute;
 	top: 6%;
@@ -268,10 +191,8 @@
 	}
 }
 
-// ------------------------------------------------
-// ------------------------------------------------
-// sections
-
+/* Front Page Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 section {
 	min-height: 100vh;
 	padding: 8rem 0;
@@ -283,589 +204,19 @@ section p {
 	color: $darkblue;
 }
 
-.current {}
-
-// ------------------------------------------------
-// hero
-
-.hero-section {
-	height: 100vh;
-	padding: 0;
-	position: relative;
-	background-image: url(../images/pattern-1.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-
-	.hero-logo {
-		position: absolute;
-		width: 800px;
-		height: 672px;
-		margin: auto;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		img {
-			width: 100%;
-		}
-	}
-}
-
-// ------------------------------------------------
-// vision TODO mission
-
-.vision-section {
-	position: relative;
-	background-color: $lightorange;
-}
-
-.vision__image {
-}
-
-.vision__image img {
-	width: 100%;
-	border: solid 12px $darkblue;
-	margin-top: 4rem;
-	box-sizing: border-box;
-}
-
-// ------------------------------------------------
-// about
-
-.about-section {
-	position: relative;
-	background-color: $lightgreen;
-
-	.map {
-		width: 99.4%;
-		height: 1200px;
-		margin-top: 4rem;
-		margin-bottom: 4rem;
-		border: solid 12px $darkblue;
-		border-right: none;
-	}
-}
-
-.historic__image {
-	box-sizing: border-box;
-	position: relative;
-	width: 100%;
-	height: 600px;
-	overflow: hidden;
-	border: solid 12px $darkblue;
-	margin-top: 4rem;
-
-	img {
-		position: absolute;
-		// min-height: 100%;
-		min-width: 100%;
-		min-height: 100%;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-}
-
-.caption {
-	font-size: 1.5rem;
-	font-weight: bold;
-	margin-bottom: 4rem;
-}
-
-// slick carousel for site images
-.carousel {
-	max-height: 90vh;
-	overflow: hidden;
-}
-
-.image-carousel {
-	position: relative;
-	width: 100%;
-	height: 1123px;
-	overflow: hidden;
-	border: solid 12px $darkblue;
-	margin-top: 4rem;
-	margin-bottom: 4rem;
-}
-
-.image {
-
-	img {
-		height: 100%;
-	}
-}
-
-// slick carousel for timeline
-.timeline__container {
-	// width: 100%;
-	height: 1123px;
-	// border: solid 12px $darkblue;
-}
-.timeline__item {}
-
-
-// Slick arrows
-.slick-prev ,
-.slick-next
-{
-    font-size: 0;
-    line-height: 0;
-
-    position: absolute;
-    top: 92%;
-
-    display: block;
-
-    width: 53px !important;
-    height: 65px !important;
-    padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-
-    cursor: pointer;
-
-    color: transparent;
-    border: none;
-    outline: none;
-    background: transparent;
-	z-index: 9999;
-}
-.slick-prev {
-	left: 25px;
-	transform: rotate(90deg);
-}
-.slick-next {
-	right: 25px;
-	transform: rotate(-90deg);
-}
-
-// slick dots
-.slick-dots
-{
-    position: absolute;
-    bottom: 25px;
-
-    display: block;
-
-    width: 100%;
-    padding: 0;
-    margin: 0;
-
-    list-style: none;
-
-    text-align: center;
-}
-.slick-dots li
-{
-    position: relative;
-
-    display: inline-block;
-
-    width: 20px;
-    height: 20px;
-    margin: 0 5px;
-    padding: 0;
-
-    cursor: pointer;
-}
-.slick-dots li button
-{
-    font-size: 0;
-    line-height: 0;
-
-    display: block;
-
-    width: 20px;
-    height: 20px;
-    padding: 5px;
-
-    cursor: pointer;
-
-    color: transparent;
-    border: 0;
-    outline: none;
-    background: transparent;
-}
-.slick-dots li button:hover,
-.slick-dots li button:focus
-{
-    outline: none;
-}
-.slick-dots li button:hover:before,
-.slick-dots li button:focus:before
-{
-    opacity: 1;
-}
-.slick-dots li button:before
-{
-    font-family: 'slick';
-    font-size: 6px;
-    line-height: 20px;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 20px;
-    height: 20px;
-
-    content: '•';
-    text-align: center;
-
-    opacity: .25;
-    color: black;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-.slick-dots li.slick-active button:before
-{
-    opacity: .75;
-    color: black;
-}
-
-// principles
-.principle__sub p {
-	font-size: 1.5rem;
-}
-.principle__item h2 {
-	color: white;
-	font-size: 5rem;
-	float: left;
-	line-height: 5rem;
-	margin-bottom: 1rem;
-}
-.principle__item p {
-	font-size: 1.5rem;
-}
-
-// timeline
-.timeline {}
-
-
-// ------------------------------------------------
-// join
-
-.join-section {
-	height: 100vh;
-	position: relative;
-	background-color: $lightyellow;
-	padding-top: 10rem;
-}
-
-form {
-	border: none;
-}
-
-input[type="text"],
-input[type="email"],
-input:focus {
-	height: 4rem;
-	width: 100%;
-	background: none;
-	border-radius: 0;
-	border: none !important;
-	border-bottom: solid 6px $darkblue !important;
-	margin-right: 10px !important;
-	border-spacing: 5px !important;
-	font-size: 3rem;
-	font-weight: bold;
-	line-height: 4rem;
-	margin-bottom: 2rem;
-	outline: none;
-	box-shadow: none;
-	padding: 0;
-}
-
-::-webkit-input-placeholder {
-   color: $darkblue;
-}
-:focus::-webkit-input-placeholder {
-	opacity: .5;
-}
-
-input[type="submit"] {
-	height: 5rem;
-	width: 100%;
-	margin: 0;
-	border-radius: 0;
-	// border-radius: 50%;
-	// width: 90px;
-	font-family: "Helvetica Neue" !important;
-	font-size: 3rem;
-	text-transform: none !important;
-	color: $darkblue !important;
-	border: solid 6px $darkblue !important;
-	background: none !important;
-	letter-spacing: 0;
-	line-height: 1em;
-	padding-bottom: 4px;
-}
-
-input[type="submit"]:hover {
-	background-color: $darkblue !important;
-	color: white !important;
-}
-
-textarea,
-textarea:focus {
-	width: 100%;
-	height: 18rem;
-	margin-top: 4rem;
-	border: 6px solid $darkblue;
-	background: none;
-	border-radius: 0;
-	outline: none;
-	box-shadow: none;
-	font-size: 3rem;
-	font-weight: bold;
-	line-height: 4rem;
-}
-
-select {
-	width: 100%;
-	background: none;
-	padding: 0;
-	border: none;
-	border-radius: 0;
-	border-bottom: solid 6px $darkblue;
-}
-.form__first-name {
-	padding-right: 0.5rem;
-}
-.form__last-name {
-	padding-left: 0.5rem;
-}
-
-
-.checkbox {
-	width: 4.8rem;
-	height: 4.8rem;
-	border-radius: 50%;
-	border: 6px solid $darkblue;
-	position: relative;
-	float: left;
-	margin-right: 1rem;
-	margin-top: -3px;
-
-	input[type="checkbox"] {
-		display: block;
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		margin: 0;
-		z-index: 99999;
-		opacity: 0;
-		cursor: pointer;
-
-		&:checked + .checkbox__x {
-			opacity: 1;
-		}
-	}
-}
-.checkbox__x {
-	opacity: 0;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	margin: auto;
-	height: 6px;
-	width: 48px;
-	// background: red;
-	&:before {
-		position: relative;
-		top: 0;
-		content: '';
-		display: block;
-		transform: rotate(45deg);
-		width: 48px;
-		height: 6px;
-		background: $darkblue;
-	}
-	&:after {
-		position: relative;
-		top: 0;
-		content: '';
-		display: block;
-		position: absolute;
-		transform: rotate(-45deg);
-		width: 48px;
-		height: 6px;
-		background: $darkblue;
-	}
-}
-.checkbox__label {
-	font-size: 1.5rem;
-	margin-right: 2rem;
-}
-
-// .checkbox__button {
-// 	position: relative;
-// 	top: -113%;
-// 	// width: 90px;
-// 	// height:90px;
-// 	width: 4.8rem;
-// 	height: 4.8rem;
-// 	// margin-top: 2rem;
-// 	// margin-left: 2rem;
-// 	border-radius: 50%;
-// 	border: solid;
-// 	border-width: 6px;
-// 	border-color: $darkblue;
-// 	color: $darkblue;
-// 	// cursor: pointer;
-// }
-
-
-
-
-
-
-// ------------------------------------------------
-// news
-
-.news-section {
-	position: relative;
-	background-color: $lightpink;
-}
-
-.news__block {
-	padding: 2rem;
-}
-
-.news__button {
-	width: 100%;
-	height: 0;
-	padding-bottom: 100%;
-	border-radius: 50%;
-	background: $darkblue;
-
-}
-
-.news__text {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	margin: 0 auto;
-	width: 75%;
-	text-align: center;
-	// background: red;
-	color: white;
-
-	h3 {
-		margin: 0;
-		font-size: 2rem;
-	}
-
-	p {
-		color: white;
-		font-size: 1rem;
-		line-height: 1.2rem;
-		margin: 0;
-	}
-
-	p:before {
-		display: block;
-		content: "\2014";
-	}
-}
-
-// ------------------------------------------------
-// team
-
-.team-section {
-	position: relative;
-	background-color: $lightblue;
-}
-.team-block {
-	padding: 2rem;
-}
-.team-block__image {
-	width: 100%;
-	border-radius: 50%;
-	overflow: hidden;
-	height: 0;
-	padding-bottom: 100%;
-	position: relative;
-
-	img {
-		width: 100%;
-		position: absolute;
-	}
-	&.one img {
-		top: 0;
-	}
-	&.two img {
-		top: 0;
-	}
-	&.three img {
-		top: 0;
-	}
-}
-.team-block__info {
-	text-align: center;
-}
-.team-block__name {
-	margin-bottom: 0.5rem;
-}
-
-.team-block__bio {
-	font-size: 1.25rem;
-	font-weight: normal;
-}
-
-// expert team
-
-.expert-team {
-	padding-top: 10rem;
-}
-.expert-team-block {
-	padding: 2rem;
-	height: 10rem;
-	// background: pink;
-}
-.expert-team-block__image {
-	width: 100%;
-	display: block;
-	margin: auto;
-	// background: red;
-
-	img {
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 100%;
-		mix-blend-mode: multiply;
-		display: block;
-		margin: auto;
-	}
-
-	&.one img {
-		top: 0;
-		width: 50%;
-	}
-	&.two img {
-		top: 0;
-	}
-	&.three img {
-		top: 0;
-	}
-	&.four img {
-		top: 0;
-	}
-	&.five img {
-		top: 0;
-	}
-	&.six img {
-		top: 0;
-		width: 75%;
-	}
-}
-
-// ------------------------------------------------
-// footer
+/* Front Page Sections
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import	"front-page/title";
+@import "front-page/hero";
+@import	"front-page/mission";
+@import "front-page/about";
+@import "front-page/join";
+@import "front-page/news";
+@import "front-page/team";
+
+
+/* Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .footer {
 	position: relative;

@@ -1,0 +1,17 @@
+// ------------------------------------------------
+// vision TODO mission
+
+.vision-section {
+	position: relative;
+	background-color: $lightorange;
+}
+
+.vision__image {
+}
+
+.vision__image img {
+	width: 100%;
+	border: solid 12px $darkblue;
+	margin-top: 4rem;
+	box-sizing: border-box;
+}
