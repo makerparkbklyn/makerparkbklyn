@@ -192,8 +192,14 @@
 	}
 }
 
-/* Front Page Section
+/* Front Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+body {
+	background: url(../images/pattern-1.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
 section {
 	position: relative;
 	min-height: 100vh;
