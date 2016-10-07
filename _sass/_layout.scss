@@ -206,12 +206,11 @@
 
     display: block;
 
-    width: 53px !important;
-    height: 65px !important;
+    // width: 53px;
+    // height: 65px;
+	width: 68px;
+    height: 54px;
     padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
 
     cursor: pointer;
 
@@ -223,11 +222,13 @@
 }
 .slick-prev {
 	left: 25px;
-	transform: rotate(90deg);
+	background: url(../images/arrow-left.svg);
+	background-repeat: no-repeat;
 }
 .slick-next {
 	right: 25px;
-	transform: rotate(-90deg);
+	background: url(../images/arrow-right.svg);
+	background-repeat: no-repeat;
 }
 
 // Dots
@@ -325,7 +326,7 @@ body {
 }
 section {
 	position: relative;
-	min-height: 100vh;
+	min-height: 80vh;
 	padding: 8rem 0;
 	// background: rgba(0, 0, 0, .1);
 }

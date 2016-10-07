@@ -4,6 +4,15 @@
 
 // Slick slider for timeline
 .timeline__slider {
-	height: 1123px;
+	height: 1000px;
 }
-.timeline__item {}
+.timeline__item {
+	height: 100%;
+	width: 100%;
+}
+
+.next-date {
+	bottom: -25px;
+	right: -100px;
+	font-size: 1rem;
+}
