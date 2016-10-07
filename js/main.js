@@ -63,11 +63,11 @@ $(document).on('ready', function() {
 		}
 
 		// show and hide logo (bottom right)
-		var $visionTop = $('.vision-section').offset().top;
-		if ($scroll > ($visionTop - .5*$(window).height())) {
+		var $missionTop = $('.mission-section').offset().top;
+		if ($scroll > ($missionTop - .5*$(window).height())) {
 			$('.logo').removeClass('hidden');
 		}
-		else if ($scroll < ($visionTop - .5*$(window).height())) {
+		else if ($scroll < ($missionTop - .5*$(window).height())) {
 			$('.logo').addClass('hidden');
 		}
 

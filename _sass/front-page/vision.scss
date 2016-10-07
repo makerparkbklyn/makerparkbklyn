@@ -1,0 +1,15 @@
+.about-vision-section {
+	background: $lightblue;
+}
+
+.vision__image {
+	height: 1264px;
+	border: solid 12px $darkblue;
+	overflow: hidden;
+	box-sizing: border-box;
+
+	img {
+		width: 100%;
+
+	}
+}

@@ -2,17 +2,17 @@
 // about
 
 .about-section {
-	position: relative;
 	background-color: $lightgreen;
 
-	.map {
-		width: 99.4%;
-		height: 1200px;
-		margin-top: 4rem;
-		margin-bottom: 4rem;
-		border: solid 12px $darkblue;
-		border-right: none;
-	}
+}
+
+.map {
+	width: 99.4%;
+	height: 1200px;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+	border: solid 12px $darkblue;
+	border-right: none;
 }
 
 .historic__image {
