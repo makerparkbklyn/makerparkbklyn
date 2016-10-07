@@ -4,6 +4,9 @@
 .grid {
 	display: none;
 }
+.grid.show {
+	display: block;
+}
 
 // ------------------------------------------------
 // title
