@@ -39,4 +39,4 @@ function initMap() {
 	  map:map,
 	  title: 'Maker Park'
 	});
-}
+};
