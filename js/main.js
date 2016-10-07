@@ -14,7 +14,7 @@ $(document).on('ready', function() {
 	});
 	// --------------------------------------------------------------------
 	// slick site image gallery
-	$('.image-carousel').slick({
+	$('.site-images__slider').slick({
 		infinite: true,
 		speed: 1000,
 		arrows: true,
@@ -24,7 +24,7 @@ $(document).on('ready', function() {
 	});
 	// --------------------------------------------------------------------
 	// slick timeline gallery
-	$('.timeline__container').slick({
+	$('.timeline__slider').slick({
 		infinite: true,
 		speed: 1000,
 		arrows: true,
@@ -68,7 +68,6 @@ $(document).on('ready', function() {
 			$('section.current').removeClass('current');
 			$currentSection.addClass('current');
 		}
-
 		if ($scroll < ($currentTop - ($(window).height()/2))) {
 			$currentSection = $currentSection.prev('section');
 			$currentTop = $currentSection.offset().top;
@@ -91,7 +90,6 @@ $(document).on('ready', function() {
 			$currentTitle.removeClass('stuck');
 			$currentTitle.addClass('top');
 		}
-
 		if ($scroll >= ($currentBottom - $(window).height() + 160)) {
 			$('section').find('.title').removeClass('stuck');
 			// console.log("bottom reached");
@@ -111,11 +109,9 @@ $(document).on('ready', function() {
 		var $footerTop = $('.footer').offset().top;
 		if ($scroll > ($footerTop - $(window).height())) {
 			$('.arrow').addClass('hidden');
-			// console.log("add hidden");
 		}
 		else if ($scroll < ($footerTop - $(window).height())) {
 			$('.arrow').removeClass('hidden');
-			// console.log("remove hidden");
 		}
 		// --------------------------------------------------------------------
 		// show and hide logo (bottom right)
