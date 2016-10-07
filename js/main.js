@@ -16,7 +16,7 @@ $(document).on('ready', function() {
 	$('.image-carousel').slick({
 	    infinite: true,
 	    // autoplay: true,
-	    autoplaySpeed: 1000,
+	    // autoplaySpeed: 1000,
 	    speed: 1000,
 	    // fade: true,
 	    arrows: true,
@@ -24,6 +24,17 @@ $(document).on('ready', function() {
 		prevArrow:"<img class='slick-prev' src='../images/arrow.svg'>",
       	nextArrow:"<img class='slick-next' src='../images/arrow.svg'>"
   	});
+
+	// slick timeline gallery
+	$('.timeline__container').slick({
+		infinite: true,
+		speed: 1000,
+		arrows: true,
+		dots: true,
+		pauseOnHover: false,
+		prevArrow:"<img class='slick-prev' src='../images/arrow.svg'>",
+      	nextArrow:"<img class='slick-next' src='../images/arrow.svg'>"
+	});
 
 	// sliding titles
 	var $currentSection = $('section.current');
