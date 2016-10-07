@@ -1,8 +1,23 @@
 // ------------------------------------------------
 // about
 
+.about-site-section {
+	background: $lightgreen;
+}
+
+.about-vision-section {
+	background: $lightblue;
+}
+
+.about-timeline-section {
+	background: $lightgray;
+}
+
+.about-principles-section {
+	background: $lightpink;
+}
+
 .about-section {
-	position: relative;
 	background-color: $lightgreen;
 
 	.map {
