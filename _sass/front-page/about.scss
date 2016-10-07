@@ -1,33 +1,18 @@
 // ------------------------------------------------
 // about
 
-.about-site-section {
-	background: $lightgreen;
-}
-
-.about-vision-section {
-	background: $lightblue;
-}
-
-.about-timeline-section {
-	background: $lightgray;
-}
-
-.about-principles-section {
-	background: $lightpink;
-}
-
 .about-section {
 	background-color: $lightgreen;
 
-	.map {
-		width: 99.4%;
-		height: 1200px;
-		margin-top: 4rem;
-		margin-bottom: 4rem;
-		border: solid 12px $darkblue;
-		border-right: none;
-	}
+}
+
+.map {
+	width: 99.4%;
+	height: 1200px;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+	border: solid 12px $darkblue;
+	border-right: none;
 }
 
 .historic__image {
