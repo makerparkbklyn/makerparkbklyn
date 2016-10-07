@@ -38,13 +38,13 @@
 	font-size: 2.25rem;
 	// background: pink;
 	position: relative;
-	color: $darkblue;
+	color: $indigo;
 }
 
 .title h2:after {
 	content: '';
 	display: block;
-	background: $darkblue;
+	background: $indigo;
 	height: 6px;
 	width: 100%;
 	position: absolute;

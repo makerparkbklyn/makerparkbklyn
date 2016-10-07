@@ -10,7 +10,7 @@
 	width: 100%;
 	height: 600px;
 	overflow: hidden;
-	border: solid 12px $darkblue;
+	border: solid 12px $indigo;
 	margin-top: 4rem;
 
 	img {
@@ -29,12 +29,11 @@
 }
 
 .map {
-	width: 99.4%;
+	// width: 99.4%;
 	height: 1200px;
 	margin-top: 4rem;
 	margin-bottom: 4rem;
-	border: solid 12px $darkblue;
-	border-right: none;
+	border: solid 12px $indigo;
 }
 
 // Slick slider for site images
@@ -48,7 +47,7 @@
 	width: 100%;
 	height: 1123px;
 	overflow: hidden;
-	border: solid 12px $darkblue;
+	border: solid 12px $indigo;
 	margin-top: 4rem;
 	margin-bottom: 4rem;
 

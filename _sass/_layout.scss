@@ -36,7 +36,7 @@
 	line-height: 1.1111;
 }
 .join-sticker a {
-	color: $darkblue;
+	color: $indigo;
 	text-decoration: none;
 }
 .arrow {
@@ -47,7 +47,7 @@
 	right: 0;
 	margin: 0 auto;
 	text-align: center;
-	color: $darkblue;
+	color: $indigo;
 }
 .hidden {
 	display: none;
@@ -87,8 +87,8 @@
 	width: 120px;
 	height:120px;
 	border-radius: 50%;
-	border: 6px solid $darkblue;
-	color: $darkblue;
+	border: 6px solid $indigo;
+	color: $indigo;
 	font-weight: bold;
 	transition: top .25s ease-in-out, opacity .25s ease-in-out, background-color .25s;
 	margin: 0;
@@ -109,7 +109,7 @@
 	}
 
 	&.active {
-		background: $darkblue;
+		background: $indigo;
 		a {
 			color: #fff;
 		}
@@ -117,7 +117,7 @@
 
 	&:hover {
 		// color: $lightblue;
-		background: $darkblue;
+		background: $indigo;
 		a {
 			text-decoration: none;
 			color: #fff;
@@ -129,7 +129,7 @@
 	&:hover {
 		background-color: transparent;
 		a {
-			color: $darkblue;
+			color: $indigo;
 		}
 	}
 }
@@ -146,7 +146,7 @@
 		top: 0;
 		width: 48px;
 		height: 6px;
-		background: $darkblue;
+		background: $indigo;
 		transition: all 0.225s ease-in-out;
 	}
 	&:after {
@@ -156,7 +156,7 @@
 		bottom: 0;
 		width: 48px;
 		height: 6px;
-		background: $darkblue;
+		background: $indigo;
 		transition: all 0.225s ease-in-out;
 	}
 }
@@ -208,8 +208,8 @@
 
     // width: 53px;
     // height: 65px;
-	width: 68px;
-    height: 54px;
+	width: 65px;
+    height: 53px;
     padding: 0;
 
     cursor: pointer;
@@ -221,12 +221,14 @@
 	z-index: 9999;
 }
 .slick-prev {
-	left: 25px;
+	// left: 25px;
+	left: 0;
 	background: url(../images/arrow-left.svg);
 	background-repeat: no-repeat;
 }
 .slick-next {
-	right: 25px;
+	// right: 25px;
+	right: 0;
 	background: url(../images/arrow-right.svg);
 	background-repeat: no-repeat;
 }
@@ -333,7 +335,7 @@ section {
 section p {
 	font-size: 3rem;
 	font-weight: bold;
-	color: $darkblue;
+	color: $indigo;
 }
 
 /* Front Page Sections
@@ -375,7 +377,7 @@ section p {
 	width: 12.5%;
 	left: 0;
 	text-align: center;
-	color: $darkblue;
+	color: $indigo;
 	z-index: 9999;
 
 	a {

@@ -5,7 +5,7 @@
 .join-section {
 	height: 100vh;
 	position: relative;
-	background-color: $lightyellow;
+	background-color: $lightpink;
 	padding-top: 10rem;
 }
 
@@ -21,7 +21,7 @@ input:focus {
 	background: none;
 	border-radius: 0;
 	border: none !important;
-	border-bottom: solid 6px $darkblue !important;
+	border-bottom: solid 6px $indigo !important;
 	margin-right: 10px !important;
 	border-spacing: 5px !important;
 	font-size: 3rem;
@@ -34,7 +34,7 @@ input:focus {
 }
 
 ::-webkit-input-placeholder {
-   color: $darkblue;
+   color: $indigo;
 }
 :focus::-webkit-input-placeholder {
 	opacity: .5;
@@ -50,8 +50,8 @@ input[type="submit"] {
 	font-family: "Helvetica Neue" !important;
 	font-size: 3rem;
 	text-transform: none !important;
-	color: $darkblue !important;
-	border: solid 6px $darkblue !important;
+	color: $indigo !important;
+	border: solid 6px $indigo !important;
 	background: none !important;
 	letter-spacing: 0;
 	line-height: 1em;
@@ -59,7 +59,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-	background-color: $darkblue !important;
+	background-color: $indigo !important;
 	color: white !important;
 }
 
@@ -68,7 +68,7 @@ textarea:focus {
 	width: 100%;
 	height: 18rem;
 	margin-top: 4rem;
-	border: 6px solid $darkblue;
+	border: 6px solid $indigo;
 	background: none;
 	border-radius: 0;
 	outline: none;
@@ -84,7 +84,7 @@ select {
 	padding: 0;
 	border: none;
 	border-radius: 0;
-	border-bottom: solid 6px $darkblue;
+	border-bottom: solid 6px $indigo;
 }
 .form__first-name {
 	padding-right: 0.5rem;
@@ -98,7 +98,7 @@ select {
 	width: 4.8rem;
 	height: 4.8rem;
 	border-radius: 50%;
-	border: 6px solid $darkblue;
+	border: 6px solid $indigo;
 	position: relative;
 	float: left;
 	margin-right: 1rem;
@@ -138,7 +138,7 @@ select {
 		transform: rotate(45deg);
 		width: 48px;
 		height: 6px;
-		background: $darkblue;
+		background: $indigo;
 	}
 	&:after {
 		position: relative;
@@ -149,7 +149,7 @@ select {
 		transform: rotate(-45deg);
 		width: 48px;
 		height: 6px;
-		background: $darkblue;
+		background: $indigo;
 	}
 }
 .checkbox__label {
@@ -169,7 +169,7 @@ select {
 // 	border-radius: 50%;
 // 	border: solid;
 // 	border-width: 6px;
-// 	border-color: $darkblue;
-// 	color: $darkblue;
+// 	border-color: $indigo;
+// 	color: $indigo;
 // 	// cursor: pointer;
 // }
