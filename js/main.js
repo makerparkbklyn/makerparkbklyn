@@ -1,5 +1,12 @@
 $(document).on('ready', function() {
 
+	$(window).on("keydown", function (e) {
+		if (e.which === 71) {
+			console.log("G pressed");
+			$('.grid').toggleClass('show');
+		}
+	})
+
 	$('body').on("click", '.nav__toggle', function (e) {
 		e.preventDefault();
 		$('.nav').toggleClass('open');
@@ -46,21 +53,6 @@ $(document).on('ready', function() {
 		var $currentTop = $currentSection.offset().top;
 		var $currentBottom = $currentSection.offset().top + $currentSection.outerHeight();
 		var $currentTitle = $currentSection.find('.title');
-
-		// ------------------------------------------------
-		// sliding images
-		// var $galleryTop = $('#gallery').offset().top;
-		// var $currentImage = $("gallery__image.current");
-		// var $currentImageHeight = $currentImage.height();
-		// console.log("current image height: " + $currentImageHeight);
-
-		// if ($scroll > $galleryTop) {
-		// 	console.log("add fixed");
-		// 	// $(".gallery__image").addClass('fixed');
-		// }
-		// else if ($scroll < $galleryTop) {
-		// 	console.log("remove fixed");
-		// }
 
 		// ------------------------------------------------
 		if ($currentSection.next('section').length > 0) {
