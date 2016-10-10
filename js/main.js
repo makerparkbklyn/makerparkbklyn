@@ -19,8 +19,6 @@ $(document).on('ready', function() {
 		speed: 1000,
 		arrows: true,
 		pauseOnHover: false
-		// prevArrow:"<img class='slick-prev' src='../images/arrow.svg'>",
-		// nextArrow:"<img class='slick-next' src='../images/arrow.svg'>"
 	});
 	// --------------------------------------------------------------------
 	// slick timeline gallery
@@ -30,8 +28,6 @@ $(document).on('ready', function() {
 		arrows: true,
 		dots: true,
 		pauseOnHover: false
-		// prevArrow:"<img class='slick-prev' src='../images/arrow.svg'>",
-		// nextArrow:"<img class='slick-next' src='../images/arrow.svg'>"
 	});
 	// --------------------------------------------------------------------
 	// animate smooth scroll to links w/in page
