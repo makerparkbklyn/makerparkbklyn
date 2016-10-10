@@ -29,8 +29,14 @@
 	color: white;
 
 	a {
-		height: 100%;
-		width: 100%;
+		color: white;
+		text-decoration: none;
+		display: block;
+		transition: color .25s;
+	}
+
+	a:hover {
+		opacity: .7;
 	}
 
 	h3 {

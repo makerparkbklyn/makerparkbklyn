@@ -18,16 +18,29 @@ function initMap() {
 				{ saturation: 0 }
 			]
 		},
+		// {
+        //       featureType: 'poi',
+        //       elementType: 'geometry',
+        //       stylers: [{color: '#CCBFFF'}]
+        // },
 		{
               featureType: 'poi',
               elementType: 'geometry',
-              stylers: [{color: '#CCBFFF'}]
+              stylers: [{color: '#fd007d'}]
         },
+		// {
+		// 	featureType: 'landscape',
+		// 	elementType: 'geometry',
+		// 	stylers: [
+		// 		{color: '#F3F0FF'},
+		// 		// { saturation: 80}
+		// 	]
+		// },
 		{
 			featureType: 'landscape',
 			elementType: 'geometry',
 			stylers: [
-				{color: '#F3F0FF'},
+				{color: '#c50165'},
 				// { saturation: 80}
 			]
 		},
@@ -38,11 +51,19 @@ function initMap() {
 				{color: '#CCBFFF'},
 			]
 		},
+		// {
+		// 	featureType: 'road',
+		// 	elementType: 'all',
+		// 	stylers: [
+		// 		{ color: '#E7E0FF' },
+		// 		{ saturation: 0 }
+		// 	]
+		// },
 		{
 			featureType: 'road',
 			elementType: 'all',
 			stylers: [
-				{ color: '#E7E0FF' },
+				{ color: '#e90178' },
 				{ saturation: 0 }
 			]
 		},
@@ -56,11 +77,24 @@ function initMap() {
 			]
 		},
 		{
-			featureType: 'transit',
-			elementType: 'labels',
+			featureType: 'all',
+			elementType: 'labels.text.fill',
 			stylers: [
-				{ visibility: 'off'},
-				// { color: '#1F005C' },
+				{ color: '#1F005C' },
+			]
+		},
+		{
+			featureType: 'all',
+			elementType: 'labels.text.stroke',
+			stylers: [
+				{ color: '#e90178' },
+			]
+		},
+		{
+			featureType: 'transit.line',
+			elementType: 'geometry',
+			stylers: [
+				{ color: '#e90178' },
 			]
 		},
 		{
@@ -69,11 +103,20 @@ function initMap() {
 			stylers: [
 				{ visibility: 'off' }
 			]
-		},{
+		},
+		// {
+		// 	featureType: 'water',
+		// 	elementType: 'geometry.fill',
+		// 	stylers: [
+		// 		{ color: '#A48CFF'},
+		// 		{ saturation: 0 },
+		// 	]
+		// },
+		{
 			featureType: 'water',
 			elementType: 'geometry.fill',
 			stylers: [
-				{ color: '#A48CFF'},
+				{ color: '#fd005f'},
 				{ saturation: 0 },
 			]
 		}

@@ -2,8 +2,7 @@
 title: Welcome to Jekyll!
 date: 2016-09-27 18:59:30 Z
 categories:
-- jekyll
-- update
+- news
 layout: post
 ---
 
