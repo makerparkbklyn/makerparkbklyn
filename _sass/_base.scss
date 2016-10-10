@@ -94,7 +94,7 @@
 
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-html { font-size: $rem; }
+html { font-size: $rem / 2.5; }
 body {
 	font-family: $base-font-family;
 	font-size: 1rem;
@@ -102,7 +102,9 @@ body {
 	font-weight: normal;
 	color: $text-color;
 }
-
+@include media-query(1024px) {
+	html { font-size: $rem; }
+}
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

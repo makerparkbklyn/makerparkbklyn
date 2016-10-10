@@ -1,6 +1,35 @@
-// ------------------------------------------------
-// title
 
+/* Section Titles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.title {
+	width: $content-width;
+	margin: 0 auto;
+	margin-bottom: 2rem;
+
+	h2 {
+		display: inline-block;
+		position: relative;
+		// background: pink;
+		margin: 0;
+		font-size: 2.25rem;
+		line-height: 1.0;
+		letter-spacing: 0;
+
+		&:after {
+			content: '';
+			display: block;
+			background: $darkblue;
+			height: 6px;
+			width: 100%;
+			position: absolute;
+			top: 101%;
+		}
+	}
+}
+
+
+
+@include media-query(1024px) {
 .title {
 	position: absolute;
 	width: 600px;
@@ -62,4 +91,6 @@
 					0 -4px 0 $text-color,
 					4px 0 0 $text-color,
 					-4px 0 0 $text-color;
+}
+
 }
