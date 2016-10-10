@@ -201,10 +201,14 @@
 	right: 0;
 }
 .logo {
+	width: 220px;
 	position: absolute;
 	right: 20%;
 	bottom: 4%;
 	// transform: scale(2,2);
+	img {
+		width: 100%;
+	}
 }
 
 /* Nav

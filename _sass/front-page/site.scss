@@ -77,8 +77,6 @@
 	margin-bottom: 4rem;
 }
 
-#map {}
-
 .map {
 	height: 1200px;
 	margin-top: 4rem;
@@ -114,5 +112,31 @@
 		right: 25px;
 	}
 }
+
+.carousel.site-photos {
+	height: 1200px;
+	margin: 2rem 0 4rem;
+	overflow: hidden;
+	box-sizing: border-box;
+	border: solid 12px $indigo;
+
+	.carousel__image {
+		position: relative;
+		width: 100%;
+		img {
+			max-height: 1200px;
+			min-width: 100%;
+		}
+	}
+	.slick-prev {
+		top: 50%;
+		left: 25px;
+	}
+	.slick-next {
+		top: 50%;
+		right: 25px;
+	}
+}
+
 
 }
