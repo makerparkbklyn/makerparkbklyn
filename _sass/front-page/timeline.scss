@@ -2,10 +2,23 @@
 	background: $lightblue;
 }
 
-// Slick slider for timeline
+/* Slick slider (Timeline)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .timeline__slider {
 	height: 1090px;
+	// border: solid 6px $indigo;
+
+	.slick-prev {
+		top: 92%;
+		left: 0;
+	}
+
+	.slick-next {
+		top: 92%;
+		right: 0;
+	}
 }
+
 .timeline__item {
 	height: 100%;
 	width: 100%;

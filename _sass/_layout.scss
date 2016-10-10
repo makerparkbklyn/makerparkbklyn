@@ -99,28 +99,20 @@ section p {
 
 
 
-/* Slick
+/* Slick (default)
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 // Arrows
-.slick-prev ,
+.slick-prev,
 .slick-next
 {
     font-size: 0;
     line-height: 0;
-
     position: absolute;
-    top: 92%;
-
     display: block;
-
-    // width: 53px;
-    // height: 65px;
 	width: 65px;
     height: 53px;
     padding: 0;
-
     cursor: pointer;
-
     color: transparent;
     border: none;
     outline: none;
@@ -128,14 +120,10 @@ section p {
 	z-index: 9999;
 }
 .slick-prev {
-	// left: 25px;
-	left: 0;
 	background: url(../images/arrow-left.svg);
 	background-repeat: no-repeat;
 }
 .slick-next {
-	// right: 25px;
-	right: 0;
 	background: url(../images/arrow-right.svg);
 	background-repeat: no-repeat;
 }
