@@ -1,12 +1,13 @@
 .about-vision-section {
-	background: $lightblue;
+	background: $lightturquoise;
 }
 
 .vision__image {
-	height: 1264px;
-	border: solid 12px $darkblue;
+	height: 1130px;
+	border: solid 12px $indigo;
 	overflow: hidden;
 	box-sizing: border-box;
+	margin-top: 4rem;
 
 	img {
 		width: 100%;
