@@ -1,6 +1,6 @@
 ---
 title: Maker Park Brainstorming Session
-date: 2016-07-14 18:59:30
+date: 2016-07-14 18:59:30 Z
 categories:
 - news
 layout: post
