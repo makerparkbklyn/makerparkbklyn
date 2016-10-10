@@ -2,6 +2,10 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .principles {
 	background-color: $lightpurple;
+
+	.title {
+		margin-bottom: 6rem;
+	}
 }
 .principles__list {
 	list-style: none;
@@ -9,9 +13,9 @@
 }
 .principles__item {
 	position: relative;
-	margin-bottom: 6rem;
+	margin-bottom: 2rem;
 	box-sizing: border-box;
-	padding-right: 2rem;
+	// padding-right: 2rem;
 	// padding-left: 8rem;
 }
 .principles__item:before {
@@ -39,4 +43,12 @@
 .principles__item p {
 	font-size: 1.5rem;
 	// color: white;
+}
+
+
+
+@include media-query(1024px) {
+	.principles__item {
+		margin-bottom: 6rem;
+	}
 }

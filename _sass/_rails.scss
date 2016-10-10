@@ -11,9 +11,6 @@
 	display: none;
 	// background: lightblue;
 }
-.rail--left {
-	display: none;
-}
 
 /* Right Rail
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -159,6 +156,7 @@
 	// background: lightblue;
 	top: 0;
 	z-index: 9999;
+	display: block;
 }
 
 /* Left Rail
