@@ -14,7 +14,7 @@ $(document).on('ready', function() {
 	});
 	// --------------------------------------------------------------------
 	// slick site image gallery
-	$('.site-images__slider').slick({
+	$('.carousel.site-photos').slick({
 		infinite: true,
 		speed: 1000,
 		arrows: true,
