@@ -1,5 +1,4 @@
 function initMap() {
-	console.log("init Map");
 	var makerParkLatLng = {lat: 40.724829, lng: -73.960555}
 	var mapDiv = document.getElementById('map');
 	var options = {
@@ -18,11 +17,20 @@ function initMap() {
 				// { saturation: -80 }
 				{ saturation: 0 }
 			]
+		},
+		// {
+        //       featureType: 'poi.park',
+        //       elementType: 'geometry',
+        //       stylers: [{color: '#00FF92'}]
+        // },
+		{
+			featureType: 'landscape',
+			elementType: 'geometry',
+			stylers: [
+				{color: '#00FF92'},
+				// { saturation: 80}
+			]
 		},{
-              featureType: 'poi.park',
-              elementType: 'geometry',
-              stylers: [{color: '#00FF92'}]
-        },{
 			featureType: 'road.arterial',
 			elementType: 'geometry',
 			stylers: [
@@ -40,7 +48,7 @@ function initMap() {
 			elementType: 'geometry.fill',
 			stylers: [
 				{ color: '#4000FF'},
-				{ saturation: -20 },
+				{ saturation: -80 },
 			]
 		}
 	];

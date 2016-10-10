@@ -18,7 +18,8 @@ $(document).on('ready', function() {
 		infinite: true,
 		speed: 1000,
 		arrows: true,
-		pauseOnHover: false
+		pauseOnHover: false,
+		adaptiveHeight: true
 	});
 	// --------------------------------------------------------------------
 	// slick timeline gallery
@@ -29,6 +30,12 @@ $(document).on('ready', function() {
 		dots: true,
 		pauseOnHover: false
 	});
+	$('.timeline__slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+		// console.log("next date : ");
+		console.log($(slick.$slides[nextSlide]).attr('data-date'));
+		// var nextDate = $(slick.$slides[nextSlide]).getAttribute("data-date");
+	});
+
 	// --------------------------------------------------------------------
 	// animate smooth scroll to links w/in page
 	$('a[href*="#"]:not([href="#"])').click(function(e) {
