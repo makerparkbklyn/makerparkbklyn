@@ -1,25 +1,48 @@
-// ------------------------------------------------
-// hero
 
+/* Hero
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .hero-section {
+	position: relative;
 	height: 100vh;
 	padding: 0;
-	position: relative;
-	// background-image: url(../images/pattern-1.jpg);
-	// background-repeat: no-repeat;
-	// background-size: cover;
 
 	.hero-logo {
+		width: 275px;
+		height: 231px;
 		position: absolute;
-		width: 800px;
-		height: 672px;
-		margin: auto;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
+		margin: auto;
+
 		img {
 			width: 100%;
 		}
 	}
+}
+
+
+@include media-query(1024px) {
+	.hero-section {
+		position: relative;
+		height: 100vh;
+		padding: 0;
+
+		.hero-logo {
+			width: 800px;
+			height: 672px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
 }
