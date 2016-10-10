@@ -20,9 +20,25 @@ section {
 	padding: 8rem 0;
 }
 section p {
-	font-size: 3rem;
+	font-size: 2.5rem;
+	line-height: 1.3;
 	font-weight: bold;
 	color: $indigo;
+}
+figure {
+	margin: 2rem 0 3rem;
+	img {
+		width: 100%;
+		&.has-border {
+			box-sizing: border-box;
+			border: solid 12px $indigo;
+		}
+	}
+}
+figcaption {
+	margin-top: 0.25rem;
+	font-size: 1.25rem;
+	font-weight: bold;
 }
 @include media-query(1024px) {
 	section {
