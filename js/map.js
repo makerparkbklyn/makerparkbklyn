@@ -7,17 +7,22 @@ function initMap() {
 			mapTypeIds: ['Maker Park']
 		},
 		center: new google.maps.LatLng(40.724829, -73.960555),
-		zoom: 10,
+		zoom: 15,
 		mapTypeId: 'Maker Park',
-		scrollwheel: true,
+		scrollwheel: false,
 	};
 	var styles = [
 		{
 			featureType: 'all',
 			stylers: [
-				{ saturation: -80 }
+				// { saturation: -80 }
+				{ saturation: 0 }
 			]
 		},{
+              featureType: 'poi.park',
+              elementType: 'geometry',
+              stylers: [{color: '#00FF92'}]
+        },{
 			featureType: 'road.arterial',
 			elementType: 'geometry',
 			stylers: [
@@ -34,7 +39,8 @@ function initMap() {
 			featureType: 'water',
 			elementType: 'geometry.fill',
 			stylers: [
-				{ color: '#4000FF'}
+				{ color: '#4000FF'},
+				{ saturation: -20 },
 			]
 		}
 	];
