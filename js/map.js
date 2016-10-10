@@ -1,5 +1,5 @@
 function initMap() {
-	var makerParkLatLng = {lat: 40.724829, lng: -73.960555}
+	var makerParkLatLng = {lat: 40.725139, lng: -73.961377}
 	var mapDiv = document.getElementById('map');
 	var options = {
 		mapTypeControlOptions: {
@@ -18,26 +18,52 @@ function initMap() {
 				{ saturation: 0 }
 			]
 		},
-		// {
-        //       featureType: 'poi.park',
-        //       elementType: 'geometry',
-        //       stylers: [{color: '#00FF92'}]
-        // },
+		{
+              featureType: 'poi',
+              elementType: 'geometry',
+              stylers: [{color: '#CCBFFF'}]
+        },
 		{
 			featureType: 'landscape',
 			elementType: 'geometry',
 			stylers: [
-				{color: '#00FF92'},
+				{color: '#F3F0FF'},
 				// { saturation: 80}
 			]
-		},{
-			featureType: 'road.arterial',
+		},
+		{
+			featureType: 'administrative',
 			elementType: 'geometry',
 			stylers: [
-				{ hue: '#00ffee' },
-				{ saturation: 50 }
+				{color: '#CCBFFF'},
 			]
-		},{
+		},
+		{
+			featureType: 'road',
+			elementType: 'all',
+			stylers: [
+				{ color: '#E7E0FF' },
+				{ saturation: 0 }
+			]
+		},
+		{
+			featureType: 'road',
+			elementType: 'labels',
+			stylers: [
+				{visibility: 'off'},
+				{ color: '#1F005C' },
+				{ saturation: 0 }
+			]
+		},
+		{
+			featureType: 'transit',
+			elementType: 'labels',
+			stylers: [
+				{ visibility: 'off'},
+				// { color: '#1F005C' },
+			]
+		},
+		{
 			featureType: 'poi.business',
 			elementType: 'labels',
 			stylers: [
@@ -47,17 +73,24 @@ function initMap() {
 			featureType: 'water',
 			elementType: 'geometry.fill',
 			stylers: [
-				{ color: '#4000FF'},
-				{ saturation: -80 },
+				{ color: '#A48CFF'},
+				{ saturation: 0 },
 			]
 		}
 	];
 	var map = new google.maps.Map(mapDiv, options);
 	var styledMapType = new google.maps.StyledMapType(styles, { name: 'Maker Park' });
 	map.mapTypes.set('Maker Park', styledMapType);
+	var icon = {
+	    url: "images/logo.svg", // url
+	    scaledSize: new google.maps.Size(57, 50), // scaled size
+	    origin: new google.maps.Point(0,0), // origin
+	    anchor: new google.maps.Point(0, 0) // anchor
+	};
 	var marker = new google.maps.Marker({
 		position: makerParkLatLng,
 		map:map,
+		icon: icon,
 		title: 'Maker Park'
 	});
 };
