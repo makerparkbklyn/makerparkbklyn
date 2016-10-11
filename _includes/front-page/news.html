@@ -5,14 +5,16 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<ul class="news">
+			<ul class="news-list">
 				{% for post in site.posts %}
-					<li class="news__block col-2">
-						<div class="news__button">
-							<div class="news__text">
-								<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-								<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-							</div>
+					<li class="col-2">
+						<div class="news-block">
+							<a href="{{ post.url | prepend: site.baseurl }}">
+								<div class="news-block__inner">
+									<h3 class="news-block__title">{{ post.title }}</h3>
+									<time class="news-block__timestamp">{{ post.date | date: "%b %-d, %Y" }}</time>
+								</div>
+							</a>
 						</div>
 					</li>
 				{% endfor %}
@@ -47,7 +49,7 @@
 						</div>
 					</div>
 				</li>
-			
+
 				<li class="news__block col-2">
 					<div class="news__button">
 						<div class="news__text">

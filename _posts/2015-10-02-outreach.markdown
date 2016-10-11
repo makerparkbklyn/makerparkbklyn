@@ -6,7 +6,7 @@ categories:
 layout: post
 ---
 
-![image-title-here](images/rendering-02.png)
+![Rendering by Studio V](images/rendering-02.png)
 
 The group begins outreach to experts and neighborhood
 stakeholders. Eventually a dream team of professionals sharing
