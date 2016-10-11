@@ -41,7 +41,6 @@ function initMap() {
 			elementType: 'geometry',
 			stylers: [
 				{color: '#c50165'},
-				// { saturation: 80}
 			]
 		},
 		{
@@ -125,10 +124,10 @@ function initMap() {
 	var styledMapType = new google.maps.StyledMapType(styles, { name: 'Maker Park' });
 	map.mapTypes.set('Maker Park', styledMapType);
 	var icon = {
-	    url: "images/logo.svg", // url
-	    scaledSize: new google.maps.Size(57, 50), // scaled size
-	    origin: new google.maps.Point(0,0), // origin
-	    anchor: new google.maps.Point(0, 0) // anchor
+	    url: "images/logo.svg",
+	    scaledSize: new google.maps.Size(57, 50),
+	    origin: new google.maps.Point(0,0),
+	    anchor: new google.maps.Point(0, 0)
 	};
 	var marker = new google.maps.Marker({
 		position: makerParkLatLng,
