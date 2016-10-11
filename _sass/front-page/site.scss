@@ -41,6 +41,10 @@
 	}
 }
 
+figure {
+	margin-bottom: 4rem;
+}
+
 
 @include media-query(1024px) {
 .site-section {
