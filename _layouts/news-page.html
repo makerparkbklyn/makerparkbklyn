@@ -3,13 +3,19 @@
 
   {% include head.html %}
 
-  <body class="news-post">
+  <body class="news-page">
 
 	{% include grid.html %}
 
 	{{ content }}
 
+	{% include right-rail.html %}
+
 	{% include js.html %}
+
+	<div class="logo">
+		<a href="/#"><img src="images/logo.svg"></a>
+	</div>
 
   </body>
 

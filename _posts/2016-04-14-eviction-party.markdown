@@ -6,8 +6,6 @@ categories:
 layout: post
 ---
 
-date
-
 At an eviction party for the building Zac is introduced to
 Stacey Anderson, a director at MAS, who after touring the site
 truly understands the potential and agrees to help with the

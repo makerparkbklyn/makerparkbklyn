@@ -55,4 +55,16 @@
 		display: block;
 		content: "\2014";
 	}
+
+	time {
+		color: white;
+		font-size: 1rem;
+		line-height: 1.2rem;
+		margin: 0;
+	}
+
+	time:before {
+		display: block;
+		content: "\2014";
+	}
 }

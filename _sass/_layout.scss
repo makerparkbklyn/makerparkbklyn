@@ -121,23 +121,43 @@ figcaption {
 
 .news-post__wrapper {
 
-	background: $lightblue;
-}
+	background: white;
 
-.news-post__list {
+	.news-post__list {
 
-	li {
+		background: pink;
 
-		time {
-			text-decoration: none;
+		li {
+			list-style: none;
+			background: $lightturquoise;
+
+			h3 {
+				font-size: 5rem;
+
+				a {
+					text-decoration: none;
+				}
+
+				a:hover {
+					opacity: .8;
+				}
+			}
+			time {
+			}
 		}
+
 	}
 }
 
-.news-post {
+.post {
+	background: pink;
 
+	post-header {
+		h1 {
+			font-weight: normal;
+		}
+	}
 }
-
 /* Slick (default)
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 // Arrows

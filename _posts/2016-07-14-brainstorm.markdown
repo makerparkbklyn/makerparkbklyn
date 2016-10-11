@@ -6,8 +6,6 @@ categories:
 layout: post
 ---
 
-date
-
 You’ll find this post in your `_posts` directory.
 You’ll find this post in your `_posts` directory.
 You’ll find this post in your `_posts` directory.

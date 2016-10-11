@@ -1,15 +1,16 @@
 ---
-layout: news-post
+layout: news-page
 ---
 
 <div class="news-post__wrapper">
 	<h4>News</h4>
 
-	<ul class="news-post__list">
+	<ul class="news-post__list col-3">
 		{% for post in site.posts %}
 			<li class="news-post">
-				<time>{{ post.date | date: "%b %-d, %Y" }}</time>
 				<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+				<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+				<p class="excerpt">{{ post.excerpt }}</p>
 			</li>
 		{% endfor %}
 	</ul>

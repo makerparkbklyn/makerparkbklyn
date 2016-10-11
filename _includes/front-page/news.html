@@ -6,7 +6,18 @@
 	<div class="container">
 		<div class="row">
 			<ul class="news">
-				<li class="news__block col-2">
+				{% for post in site.posts %}
+					<li class="news__block col-2">
+						<div class="news__button">
+							<div class="news__text">
+								<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+								<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+							</div>
+						</div>
+					</li>
+				{% endfor %}
+
+				<!-- <li class="news__block col-2">
 					<div class="news__button">
 						<div class="news__text">
 							<a href="#">
@@ -36,7 +47,7 @@
 						</div>
 					</div>
 				</li>
-				<!-- new row -->
+			
 				<li class="news__block col-2">
 					<div class="news__button">
 						<div class="news__text">
@@ -56,7 +67,7 @@
 							</a>
 						</div>
 					</div>
-				</li>
+				</li> -->
 				<li class="news__block col-2">
 					<div class="news__button">
 						<div class="news__text">
