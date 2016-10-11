@@ -119,22 +119,24 @@ figcaption {
 /* News Post content
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+.news-post__wrapper {
+
+	background: $lightblue;
+}
+
+.news-post__list {
+
+	li {
+
+		time {
+			text-decoration: none;
+		}
+	}
+}
+
 .news-post {
 
 }
-
-.post {
-	background: $lightyellow;
-}
-
-.post-title {
-
-}
-
-.post-content {
-	background: white;
-}
-
 
 /* Slick (default)
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

@@ -2,9 +2,15 @@
 layout: news-post
 ---
 
-<h4>News</h4>
+<div class="news-post__wrapper">
+	<h4>News</h4>
 
-{% for post in site.posts %}
-		<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-{% endfor %}
+	<ul class="news-post__list">
+		{% for post in site.posts %}
+			<li class="news-post">
+				<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+				<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
