@@ -18,24 +18,11 @@ function initMap() {
 				{ saturation: 0 }
 			]
 		},
-		// {
-        //       featureType: 'poi',
-        //       elementType: 'geometry',
-        //       stylers: [{color: '#CCBFFF'}]
-        // },
 		{
               featureType: 'poi',
               elementType: 'geometry',
               stylers: [{color: '#fd007d'}]
         },
-		// {
-		// 	featureType: 'landscape',
-		// 	elementType: 'geometry',
-		// 	stylers: [
-		// 		{color: '#F3F0FF'},
-		// 		// { saturation: 80}
-		// 	]
-		// },
 		{
 			featureType: 'landscape',
 			elementType: 'geometry',
@@ -50,14 +37,6 @@ function initMap() {
 				{color: '#CCBFFF'},
 			]
 		},
-		// {
-		// 	featureType: 'road',
-		// 	elementType: 'all',
-		// 	stylers: [
-		// 		{ color: '#E7E0FF' },
-		// 		{ saturation: 0 }
-		// 	]
-		// },
 		{
 			featureType: 'road',
 			elementType: 'all',
@@ -97,20 +76,19 @@ function initMap() {
 			]
 		},
 		{
+			featureType: 'transit.station',
+			elementType: 'labels.icon',
+			stylers: [
+				{ hue: '#c50165' },
+			]
+		},
+		{
 			featureType: 'poi.business',
 			elementType: 'labels',
 			stylers: [
 				{ visibility: 'off' }
 			]
 		},
-		// {
-		// 	featureType: 'water',
-		// 	elementType: 'geometry.fill',
-		// 	stylers: [
-		// 		{ color: '#A48CFF'},
-		// 		{ saturation: 0 },
-		// 	]
-		// },
 		{
 			featureType: 'water',
 			elementType: 'geometry.fill',
