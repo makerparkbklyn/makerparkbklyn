@@ -19,7 +19,10 @@
 	border-radius: 50%;
 	background: $indigo;
 	position: relative;
-
+	transition: background .2s;
+	&:hover {
+		background: rgba(0,0,86,0.8);
+	}
 	a {
 		position: absolute;
 		top: 0;
@@ -50,57 +53,12 @@
 		content: "\2014";
 	}
 }
-
-.news__text {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	margin: 0 auto;
-	width: 75%;
-	text-align: center;
-	color: white;
-
+.news-block--see-all {
+	background: rgba(255,255,255,0.1);
+	&:hover {
+		background: #fff;
+	}
 	a {
-		display: block;
-		position: absolute;
-		width: 455px;
-		height: 455px;
-		color: white;
-		text-decoration: none;
-		transition: color .25s;
-	}
-
-	a:hover {
-		opacity: .7;
-	}
-
-	h3 {
-		margin: 0;
-		font-size: 2rem;
-	}
-
-	p {
-		color: white;
-		font-size: 1rem;
-		line-height: 1.2rem;
-		margin: 0;
-	}
-
-	p:before {
-		display: block;
-		content: "\2014";
-	}
-
-	time {
-		color: white;
-		font-size: 1rem;
-		line-height: 1.2rem;
-		font-weight: bold;
-		margin: 0;
-	}
-
-	time:before {
-		display: block;
-		content: "\2014";
+		color: $darkblue;
 	}
 }
