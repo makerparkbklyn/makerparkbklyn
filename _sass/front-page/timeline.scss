@@ -9,19 +9,31 @@
 	// border: solid 6px $indigo;
 
 	.slick-prev {
-		top: 92%;
-		left: 0;
+		top: 0;
+		right: 300px;
+		margin-top: 4rem;
 	}
 
 	.slick-next {
-		top: 92%;
-		right: 0;
+		top: 0;
+		right: 100px;
+		margin-top: 4rem;
 	}
 }
 
 .timeline__item {
 	height: 100%;
 	width: 100%;
+
+	h2 {
+		font-size: 3rem;
+		// line-height: 3rem;
+		margin-top: 3rem;
+	}
+	p {
+		// border-top: solid 6px $indigo;
+		color: white;
+	}
 }
 
 .next-date {
