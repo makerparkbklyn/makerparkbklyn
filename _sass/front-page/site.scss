@@ -11,7 +11,7 @@
 	border: solid 12px $indigo;
 }
 
-/* Slick slider (site images) */
+/* carousel */
 .site-photos {
 	// overflow: hidden;
 }
@@ -27,9 +27,9 @@
 		position: relative;
 		width: 100%;
 		img {
-			// max-height: 400px;
+			max-height: 400px;
 			// min-height: 100%;
-			height: auto;
+			// height: auto;
 			min-width: 100%;
 		}
 	}
