@@ -8,6 +8,7 @@
 	// height: 1090px;
 	// background: pink;
 	// border: solid 6px $indigo;
+	margin: 0 -1rem;
 
 	// Arrows
 	.slick-prev {
@@ -62,10 +63,10 @@
 
 	    cursor: pointer;
 
-	    color: transparent;
+	    // color: transparent;
 	    border: 0;
 	    outline: none;
-	    background: transparent;
+	    // background: transparent;
 	}
 	.slick-dots li button:hover,
 	.slick-dots li button:focus
@@ -75,7 +76,6 @@
 	.slick-dots li button:hover:before,
 	.slick-dots li button:focus:before
 	{
-	    // opacity: 1;
 		opacity: 1;
 		background-color: white;
 	}
@@ -100,8 +100,6 @@
 	    content: '';
 	    text-align: center;
 
-	    // opacity: .25;
-		// opacity: .9;
 	    color: $indigo;
 
 	    -webkit-font-smoothing: antialiased;
@@ -109,21 +107,17 @@
 	}
 	.slick-dots li.slick-active button:before
 	{
-	    // opacity: .75;
 	    background: white;
-		// background-color:
 	}
 }
 
 .timeline__item {
 	height: 100%;
 	width: 100%;
-	// margin: 0 1rem;
+	margin: 0 1rem;
 
 	h2 {
 		font-size: 5rem;
-		// line-height: 3rem;
-		// margin-top: 3rem;
 		margin-bottom: 0;
 		z-index: 999999;
 	}
