@@ -3,22 +3,38 @@ layout: news-page
 ---
 
 <div class="container">
-	<div class="back-to-news">
-		<a href="/news">See All News</a>
+	<div class="title stuck">
+		<h2 class="underline">News</h2>
 	</div>
-
-	<article class="post">
-		<div class="row">
-			<div class="col-2">
-			  	<header class="post__header">
-		    		<h1>{{ page.title }}</h1>
-		  		</header>
+	<article class="row news-post">
+			<div class="news-post__header col-2">
+		    	<h2>{{ page.title }}</h2>
+				<time>{{ page.date | date: "%b %-d, %Y" }}</time>
 			</div>
-			<div class="col-4">
+			<div class="news-post__content col-3">
 				<div class="post__content">
 					{{ content }}
 				</div>
 			</div>
-		</div>
+			<div class="back-to-news col-1">
+				<a href={{ "/news" | prepend: site.baseurl }}>See All News</a>
+			</div>
 	</article>
+	<ul class="news-posts">
+		{% for post in site.posts %}
+			<li class="row news-post">
+				<div class="news-post__header col-2">
+					<h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+					<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+				</div>
+				<div class="news-post__excerpt col-3">
+					<p>{{ post.excerpt }}</p>
+				</div>
+				<div class="col-1">
+					<a href="{{ post.url | prepend: site.baseurl }}"><img class="news-post__arrow" src={{ "/images/arrow-right.svg" | prepend: site.baseurl }}></a>
+				</div>
+			</li>
+		</a>
+		{% endfor %}
+	</ul>
 </div>
