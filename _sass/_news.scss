@@ -25,17 +25,23 @@
 .news-post {
 	border-top: solid 6px $indigo;
 	padding: 1rem 0 8rem;
-
+	.icon--arrow-right {
+		width: 65px;
+		height: 53px;
+		float: right;
+		margin-top: .9rem;
+	}
 	&:hover {
 		h2 > a {
 			color: #fff;
+		}
+		.icon--arrow-right .cls-1 {
+			stroke: #fff;
 		}
 	}
 }
 
 article.news-post {
-	border-top: solid 6px $indigo;
-	padding: 1rem 0 8rem;
 	margin-top: 4rem;
 }
 
@@ -79,17 +85,7 @@ article.news-post {
 	}
 }
 
-.news-post__arrow {
-	width: 65px;
-	height: 53px;
-	float: right;
-	margin-top: .9rem;
 
-	&:hover svg {
-		stroke: #fff;
-	}
-
-}
 
 .post__image {
 	// opacity: .5;

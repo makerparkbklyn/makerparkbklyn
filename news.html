@@ -18,7 +18,7 @@ layout: news-page
 					<p>{{ post.excerpt }}</p>
 				</div>
 				<div class="col-1">
-					<a href="{{ post.url | prepend: site.baseurl }}"><img class="news-post__arrow" src={{ "/images/arrow-right.svg" | prepend: site.baseurl }}></a>
+					<a href="{{ post.url | prepend: site.baseurl }}">{% include icons/arrow-right.svg %}</a>
 				</div>
 			</li>
 		</a>
