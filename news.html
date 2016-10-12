@@ -3,23 +3,25 @@ layout: news-page
 ---
 
 <div class="container">
-	<div class="row">
-		<div class="news-post__wrapper col-4">
-			<div class="title news-page-title">
-				<h1>News</h1>
-			</div>
-
-			<ul class="news-post__list">
-				{% for post in site.posts %}
-				<a href="{{ post.url | prepend: site.baseurl }}">
-					<li class="news-post">
-						<h3>{{ post.title }}</h3>
-						<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-						<p class="excerpt">{{ post.excerpt }}</p>
-					</li>
-				</a>
-				{% endfor %}
-			</ul>
-		</div>
+	<div class="title stuck">
+		<h2 class="underline">News</h2>
 	</div>
+
+	<ul class="news-posts">
+		{% for post in site.posts %}
+			<li class="row news-post">
+				<div class="news-post__header col-2">
+					<h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+					<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+				</div>
+				<div class="news-post__excerpt col-3">
+					<p>{{ post.excerpt }}</p>
+				</div>
+				<div class="col-1">
+					<a href="{{ post.url | prepend: site.baseurl }}"><img class="news-post__arrow" src={{ "/images/arrow-right.svg" | prepend: site.baseurl }}></a>
+				</div>
+			</li>
+		</a>
+		{% endfor %}
+	</ul>
 </div>

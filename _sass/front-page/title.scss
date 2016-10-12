@@ -2,7 +2,7 @@
 /* Section Titles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .title {
-	width: 90%;;
+	width: 90%;
 	margin: 0 auto;
 	margin-bottom: 4rem;
 
@@ -57,10 +57,17 @@
 		bottom: (200px + 500px);
 	}
 
+	// TODO
 	&.news-page-title {
 		position: fixed;
 		left: 55px;
 		top: 25%;
+		letter-spacing: normal;
+
+		h1 {
+			letter-spacing: normal;
+			font-size: 3rem;
+		}
 	}
 }
 
