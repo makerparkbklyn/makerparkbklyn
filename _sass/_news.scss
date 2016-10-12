@@ -12,11 +12,10 @@
 		display: none;
 	}
 
-	a {
+	.title > h2 > a {
 		text-decoration: none;
 	}
 }
-
 
 .news-posts {
 	padding-top: 4rem;
@@ -48,9 +47,6 @@ article.news-post {
 		margin: 0;
 		margin-top: .55rem;
 
-		a {
-			// color: #fff;
-		}
 	}
 	time {
 		display: block;
@@ -89,8 +85,11 @@ article.news-post {
 	float: right;
 	margin-top: .9rem;
 
-}
+	&:hover svg {
+		stroke: #fff;
+	}
 
+}
 
 .post__image {
 	// opacity: .5;
@@ -108,4 +107,5 @@ article.news-post {
 	position: fixed;
 	right: 60px;
 	bottom: 50px;
+	z-index: 99999;
 }
