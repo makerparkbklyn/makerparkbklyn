@@ -103,6 +103,9 @@ body {
 	font-weight: normal;
 	color: $text-color;
 }
+@include media-query(768px) {
+	html { font-size: 16px; }
+}
 @include media-query(1024px) {
 	html { font-size: $rem; }
 }

@@ -50,6 +50,26 @@
 	// transform: translateY(-50%);
 }
 
+@include media-query(768px) {
+	.team-block {
+		padding: 0 4rem;
+	}
+	.team-block__image {
+		padding: 0 12rem;
+	}
+	.expert-team-block {
+		&[class*='col-'] {
+			width: 50%;
+			height: 16rem;
+		}
+	}
+	.expert-team-block__image {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
 @include media-query(1024px) {
 .team-section {
 	position: relative;

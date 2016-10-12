@@ -71,6 +71,15 @@
 	}
 }
 
+@include media-query(768px) {
+	.news-list {
+		[class*='col-'] {
+			width: 50%;
+			padding: 0 2rem;
+			margin-bottom: 4rem;
+		}
+	}
+}
 
 @include media-query(1024px) {
 .news-section {
