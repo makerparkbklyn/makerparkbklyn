@@ -1,13 +1,53 @@
-.about-timeline-section {
+.timeline-section {
 	background: $lightblue;
 }
 
-/* Slick slider (Timeline)
+/* Timeline Carousel
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.timeline__slider {
-	// height: 1090px;
-	// background: pink;
-	// border: solid 6px $indigo;
+.timeline-carousel {
+	margin: 4rem -1rem 0;
+
+	.slick-arrow {
+		top: -3rem;
+		width: 4rem;
+	}
+	.slick-prev {
+		left: 1rem;
+	}
+	.slick-next {
+		left: 7rem;
+	}
+}
+
+.timeline__item {
+	height: 100%;
+	width: 100%;
+	margin: 0 1rem;
+
+	h2 {
+		font-size: 5rem;
+		margin-bottom: 0;
+		z-index: 999999;
+	}
+	p {
+		// border-top: solid 6px $indigo;
+		color: white;
+	}
+}
+
+.next-date {
+	bottom: -25px;
+	right: -100px;
+	font-size: 1rem;
+}
+
+
+
+
+@include media-query(1024px) {
+/* Timeline Carousel
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.timeline-carousel {
 	margin: 0 -1rem;
 
 	// Arrows
@@ -131,4 +171,6 @@
 	bottom: -25px;
 	right: -100px;
 	font-size: 1rem;
+}
+
 }

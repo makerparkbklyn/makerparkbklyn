@@ -3,6 +3,35 @@
 .grid { display: none; }
 .grid.show { display: block; }
 
+/* Slick (default)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+// Arrows
+.slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    display: block;
+	width: 65px;
+    height: 53px;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+	z-index: 9999;
+}
+.slick-prev {
+	background: url(../images/arrow-left.svg);
+	background-repeat: no-repeat;
+}
+.slick-next {
+	background: url(../images/arrow-right.svg);
+	background-repeat: no-repeat;
+}
+
 /* Rails
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @import	"rails";
@@ -157,32 +186,4 @@ figcaption {
 			font-weight: normal;
 		}
 	}
-}
-/* Slick (default)
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-// Arrows
-.slick-prev,
-.slick-next
-{
-    font-size: 0;
-    line-height: 0;
-    position: absolute;
-    display: block;
-	width: 65px;
-    height: 53px;
-    padding: 0;
-    cursor: pointer;
-    color: transparent;
-    border: none;
-    outline: none;
-    background: transparent;
-	z-index: 9999;
-}
-.slick-prev {
-	background: url(../images/arrow-left.svg);
-	background-repeat: no-repeat;
-}
-.slick-next {
-	background: url(../images/arrow-right.svg);
-	background-repeat: no-repeat;
 }
