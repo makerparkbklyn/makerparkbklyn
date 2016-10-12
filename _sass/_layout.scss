@@ -3,6 +3,35 @@
 .grid { display: none; }
 .grid.show { display: block; }
 
+/* Slick (default)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+// Arrows
+.slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    display: block;
+	width: 65px;
+    height: 53px;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+	z-index: 9999;
+}
+.slick-prev {
+	background: url(../images/arrow-left.svg);
+	background-repeat: no-repeat;
+}
+.slick-next {
+	background: url(../images/arrow-right.svg);
+	background-repeat: no-repeat;
+}
+
 /* Rails
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @import	"rails";
@@ -118,31 +147,45 @@ figcaption {
 	margin-top: -75px;
 }
 
-/* Slick (default)
+
+/* News Post content
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-// Arrows
-.slick-prev,
-.slick-next
-{
-    font-size: 0;
-    line-height: 0;
-    position: absolute;
-    display: block;
-	width: 65px;
-    height: 53px;
-    padding: 0;
-    cursor: pointer;
-    color: transparent;
-    border: none;
-    outline: none;
-    background: transparent;
-	z-index: 9999;
+
+.news-post__wrapper {
+
+	background: white;
+
+	.news-post__list {
+
+		background: pink;
+
+		li {
+			list-style: none;
+			background: $lightturquoise;
+
+			h3 {
+				font-size: 5rem;
+
+				a {
+					text-decoration: none;
+				}
+
+				a:hover {
+					opacity: .8;
+				}
+			}
+			time {
+			}
+		}
+
+	}
 }
-.slick-prev {
-	background: url(../images/arrow-left.svg);
-	background-repeat: no-repeat;
-}
-.slick-next {
-	background: url(../images/arrow-right.svg);
-	background-repeat: no-repeat;
-}
+
+.post {
+	background: pink;
+
+	post-header {
+		h1 {
+			font-weight: normal;
+		}
+	}

@@ -16,19 +16,23 @@ $(document).on('ready', function() {
 	// slick site image gallery
 	$('.carousel.site-photos').slick({
 		infinite: true,
-		speed: 1000,
+		speed: 500,
 		arrows: true,
 		pauseOnHover: false,
 		adaptiveHeight: true
 	});
 	// --------------------------------------------------------------------
 	// slick timeline gallery
-	$('.timeline__slider').slick({
+	$('.timeline-carousel').slick({
 		infinite: true,
-		speed: 1000,
+		speed: 500,
 		arrows: true,
 		dots: true,
-		pauseOnHover: false
+		pauseOnHover: false,
+		responsive: [{
+			breakpoint: 1024,
+			settings: { dots: false }
+		}]
 	});
 	$('.timeline__slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
 		// console.log("next date : ");

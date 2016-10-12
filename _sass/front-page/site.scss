@@ -11,35 +11,36 @@
 	border: solid 12px $indigo;
 }
 
-/* carousel */
-.site-photos {
-	// overflow: hidden;
-}
-
+/* Carousel */
 .carousel.site-photos {
-	height: 400px;
 	margin: 2rem 0 4rem;
-	overflow: hidden;
 	box-sizing: border-box;
 	border: solid 12px $indigo;
+	position: relative;
 
 	.carousel__image {
 		position: relative;
+		box-sizing: border-box;
 		width: 100%;
-		img {
-			max-height: 400px;
-			// min-height: 100%;
-			// height: auto;
-			min-width: 100%;
-		}
+		// height: 100%;
+		height: 0 !important;
+		padding-bottom: 5%;
+		overflow: hidden;
+		background-size: cover;
 	}
 	.slick-prev {
+		// top: 110%;
 		top: 50%;
-		left: 25px;
+		// left: -12px;
+		left: 8px;
+		width: 4rem;
 	}
 	.slick-next {
+		// top: 110%;
 		top: 50%;
-		right: 25px;
+		// left: 4rem;
+		right: 8px;
+		width: 4rem;
 	}
 }
 

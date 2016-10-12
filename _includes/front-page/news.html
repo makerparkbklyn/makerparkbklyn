@@ -6,6 +6,7 @@
 	<div class="container">
 		<div class="row">
 			<ul class="news-list">
+
 				{% for post in site.posts %}
 					<li class="col-2">
 						<div class="news-block">
@@ -18,15 +19,17 @@
 						</div>
 					</li>
 				{% endfor %}
+
 				<li class="col-2">
 					<div class="news-block news-block--see-all">
 						<a href="news">
 							<div class="news-block__inner">
-								<h3 class="news-block__title">See All</h3>
+								<h3 class="news-block__title">See more news</h3>
 							</div>
 						</a>
 					</div>
 				</li>
+
 			</ul>
 		</div>
 	</div>
