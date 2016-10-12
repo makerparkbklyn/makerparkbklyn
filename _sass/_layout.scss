@@ -100,6 +100,9 @@ figcaption {
 @import "front-page/news";
 @import "front-page/team";
 
+/* News Page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import "news-page";
 
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -186,4 +189,3 @@ figcaption {
 			font-weight: normal;
 		}
 	}
-}
