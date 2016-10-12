@@ -102,7 +102,7 @@ figcaption {
 
 /* News Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-@import "news-page";
+@import "news";
 
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -145,48 +145,4 @@ figcaption {
 	display: block;
 	margin: auto;
 	margin-top: -75px;
-}
-
-
-/* News Post content
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.news-post__wrapper {
-
-	background: white;
-
-	.news-post__list {
-
-		background: pink;
-
-		li {
-			list-style: none;
-			background: $lightturquoise;
-
-			h3 {
-				font-size: 5rem;
-
-				a {
-					text-decoration: none;
-				}
-
-				a:hover {
-					opacity: .8;
-				}
-			}
-			time {
-			}
-		}
-
-	}
-}
-
-.post {
-	background: pink;
-
-	post-header {
-		h1 {
-			font-weight: normal;
-		}
-	}
 }
