@@ -11,7 +11,7 @@ body.news-page {
 
 .news-post__wrapper {
 
-	background-color: none;
+	background-color: $lightred !important;
 	margin-top: 4rem;
 
 	h1 {
@@ -24,21 +24,21 @@ body.news-page {
 
 	.news-post__list {
 
-		background: none;
+		background: $lightred !important;
 
 		a {
 			// color: white;
 			text-decoration: none;
 
 			&:hover li {
-				background: white;
+				background: white !important;
 			}
 		}
 
 
 		li {
+			background: $lightpink !important;
 			list-style: none;
-			background: $lightpink;
 			border-bottom: solid 12px $indigo;
 			padding: 1rem 2rem 0 1rem;
 			transition: background .2s;
@@ -65,7 +65,7 @@ body.news-page {
 }
 
 .post {
-	background: white;
+	background: white !important;
 	margin-top: 4rem;
 	padding: 2rem;
 
