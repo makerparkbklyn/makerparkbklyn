@@ -15,8 +15,12 @@
 		text-decoration: none;
 	}
 
+	.footer {
+		// border-top: solid 6px $indigo;
+	}
+
 	.footer__arrow {
-		display: none;
+		// display: none;
 	}
 }
 
@@ -92,7 +96,11 @@ article.news-post {
 	}
 }
 
-.post__image {}
+.post__image {
+	width: 100%;
+	border: solid 12px $indigo;
+	box-sizing: border-box;
+}
 // or figure ?
 
 .back-to-news a {
