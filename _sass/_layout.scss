@@ -47,6 +47,10 @@ body {
 section {
 	position: relative;
 	padding: 8rem 0;
+
+}
+section.#footer {
+	padding: 0;
 }
 section p {
 	font-size: 2.5rem;
