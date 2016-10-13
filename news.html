@@ -15,7 +15,8 @@ layout: news-page
 					<time>{{ post.date | date: "%b %-d, %Y" }}</time>
 				</div>
 				<div class="news-post__excerpt col-3">
-					<p>{{ post.excerpt }}</p>
+					<!-- <p>{{ post.excerpt }}</p> -->
+					<p>{{ post.content | strip_html | truncatewords:65}}</p>
 				</div>
 				<div class="col-1">
 					<a href="{{ post.url | prepend: site.baseurl }}">{% include icons/arrow-right.svg %}</a>
