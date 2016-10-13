@@ -29,20 +29,11 @@
 		margin-bottom: 0;
 		z-index: 999999;
 	}
-	
+
 	p {
-		// border-top: solid 6px $indigo;
 		color: white;
 	}
 }
-
-.next-date {
-	bottom: -25px;
-	right: -100px;
-	font-size: 1rem;
-}
-
-
 
 
 @include media-query(1024px) {
@@ -66,16 +57,11 @@
 	.slick-dots
 	{
 	    position: absolute;
-	    // bottom: 25px;
 		top: 3.25rem;
 		right: 185px;
-
 	    display: block;
-
-	    // width: 100%;
 	    padding: 0;
 	    margin: 0;
-
 	    list-style: none;
 	    text-align: center;
 	}
@@ -103,11 +89,8 @@
 	    padding: 5px;
 
 	    cursor: pointer;
-
-	    // color: transparent;
 	    border: 0;
 	    outline: none;
-	    // background: transparent;
 	}
 	.slick-dots li button:hover,
 	.slick-dots li button:focus
@@ -123,7 +106,6 @@
 	.slick-dots li button:before
 	{
 	    font-family: 'slick';
-	    // font-size: 6px;
 		font-size: 6rem;
 	    line-height: 20px;
 
@@ -135,7 +117,6 @@
 	    height: 20px;
 
 		border-radius: 50%;
-		// border: solid 6px $indigo;
 		background: $indigo;
 
 	    content: '';
@@ -163,7 +144,6 @@
 		z-index: 999999;
 	}
 	p {
-		// border-top: solid 6px $indigo;
 		color: white;
 	}
 }

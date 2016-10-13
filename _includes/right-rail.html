@@ -1,7 +1,8 @@
 <div class="rail rail--right">
 	<nav class="nav">
 		<ul class="nav__list">
-			<li class="nav__item"><a href="#mission">Mission</a></li>
+			<!-- <li class="nav__item"><a href="{{ "#mission" | prepend: site.baseurl }}">Mission</a></li> -->
+			<li class="nav__item"><a href="{{ site.baseurl }}#mission">Mission</a></li>
 			<li class="nav__item"><a href="#about">About</a></li>
 			<li class="nav__item"><a href="#join">Join</a></li>
 			<li class="nav__item"><a href="#news">News</a></li>
@@ -12,6 +13,7 @@
 		</ul>
 	</nav>
 	<div class="logo hidden">
-		<a href="#top"><img src="{{ site.baseurl }}/images/logo.svg"></a>
+		<a href="#top">{% include icons/mp-logo.svg %}</a>
 	</div>
 </div>
+"{{ post.url | prepend: site.baseurl }}">{% include icons/mp-logo.svg %}

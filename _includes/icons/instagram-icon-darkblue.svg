@@ -1,7 +1,17 @@
 <svg class="instagram-icon" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 	viewBox="0 0 456.28 456.28">
 	<defs>
-		<style>.cls-1{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#19184f;}</style>
+		<style>
+			.cls-1{
+				fill:none;
+			}
+			.cls-2{
+				clip-path:url(#clip-path);
+			}
+			.cls-3{
+				fill:#19184f;
+			}
+		</style>
 		<clipPath id="clip-path" transform="translate(-27.86 -27.86)">
 			<rect class="cls-1" x="27.86" y="27.86" width="456.28" height="456.28"/>
 		</clipPath>
