@@ -1,5 +1,6 @@
 function initMap() {
 	var makerParkLatLng = {lat: 40.725139, lng: -73.961377}
+	// var makerParkLatLng = {lat: 40.724675, lng: -73.960315}
 	var mapDiv = document.getElementById('map');
 	var options = {
 		mapTypeControlOptions: {
@@ -102,7 +103,8 @@ function initMap() {
 	var styledMapType = new google.maps.StyledMapType(styles, { name: 'Maker Park' });
 	map.mapTypes.set('Maker Park', styledMapType);
 	var icon = {
-	    url: "images/logo.svg",
+	    // url: "images/logo-small.svg",
+		url: "images/logo.svg",
 	    scaledSize: new google.maps.Size(57, 50),
 	    origin: new google.maps.Point(0,0),
 	    anchor: new google.maps.Point(0, 0)
