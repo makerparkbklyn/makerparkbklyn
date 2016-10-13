@@ -4,7 +4,7 @@ date: 2015-10-02 18:59:30 Z
 categories:
 - news
 layout: post
-excerpt_separator: <!--more-->
+excerpt_separator: "<!--more-->"
 ---
 
 The group begins outreach to experts and neighborhood

@@ -4,7 +4,7 @@ date: 2016-04-14 18:59:30 Z
 categories:
 - news
 layout: post
-excerpt_separator: <!--more-->
+excerpt_separator: "<!--more-->"
 ---
 
 At an eviction party for the building Zac is introduced to

@@ -4,7 +4,7 @@ date: 2016-06-06 18:59:30 Z
 categories:
 - news
 layout: post
-excerpt_separator: <!--more-->
+excerpt_separator: "<!--more-->"
 ---
 
 Summer 2016: The Maker Park team holds two community design charrettes,
