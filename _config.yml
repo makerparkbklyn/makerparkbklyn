@@ -19,7 +19,7 @@ description: 'Write an awesome description for your new site here. You can edit 
 
 '
 permalink: pretty
-baseurl:
+baseurl: 
 url: http://localhost:4000
 twitter_username: jekyllrb
 github_username: jekyll

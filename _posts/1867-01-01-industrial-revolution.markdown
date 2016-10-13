@@ -4,8 +4,9 @@ date: 1867-01-01 18:59:30 Z
 categories:
 - news
 layout: post
-excerpt_separator: <!--more-->
+excerpt_separator: "<!--more-->"
 ---
+
 ![oilworks]({{ site.baseurl }}/images/historic/bw/oilworks_bw.jpg){:class="post__image"}
 
 At the height of Brooklyn’s Industrial Revolution, American
