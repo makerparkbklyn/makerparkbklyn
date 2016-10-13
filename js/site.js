@@ -137,6 +137,9 @@ $(document).on('ready', function() {
 	$('body').on('click', '.arrow', function(e) {
 		e.preventDefault();
 		var $next = $currentSection.next('section');
+		if (!$next.length > 0) {
+			$next = $currentSection.next('footer');
+		}
 		$next.ScrollTo();
 	});
 });

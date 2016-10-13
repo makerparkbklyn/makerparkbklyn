@@ -1,21 +1,20 @@
-<section id="footer">
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="footer__text col-6">
-		    		<h2>#MakerPark</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="instagram-logo col-6">
-					<a href="https://www.instagram.com/makerpark/" target="_blank">
-						{% include icons/instagram-icon-white.svg %}
-					</a>
-				</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer__text col-6">
+	    		<h2>#MakerPark</h2>
 			</div>
 		</div>
-		<div class="footer__arrow">
-			<a href="{{ "#top" | prepend: site.baseurl }}"><img src="{{ site.baseurl }}/images/arrow.svg"></a>
+		<div class="row">
+			<div class="instagram-logo col-6">
+				<a href="https://www.instagram.com/makerpark/" target="_blank">
+					{% include icons/instagram-icon-white.svg %}
+				</a>
+			</div>
 		</div>
-	</footer>
-</section>
+	</div>
+	<div class="footer__arrow">
+		<a href="#top" data-scrollto="#top"><img src="{{ site.baseurl }}/images/arrow.svg"></a>
+	</div>
+</footer>
