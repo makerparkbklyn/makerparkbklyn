@@ -28,7 +28,9 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .news-posts {
 	padding-top: 3.1rem;
+	margin-bottom: 0;
 	list-style: none;
+	border-bottom: solid 6px $indigo;
 }
 
 .news-post {

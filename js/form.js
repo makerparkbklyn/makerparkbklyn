@@ -49,6 +49,7 @@ $(document).ready(function() {
 		// Callback handler that will be called regardless
 		// if the request failed or succeeded
 		request.always(function () {
+			$("#submit").val("Sent!");
 			// Reenable the inputs
 			$inputs.prop("disabled", false);
 		});

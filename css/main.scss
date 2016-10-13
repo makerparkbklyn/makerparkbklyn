@@ -28,7 +28,7 @@ $red:				rgb(255, 21, 30);
 $lightred:			rgb(255, 125, 129);
 
 $orange:			rgb(255, 84, 0);
-// $lightorange:		rgb(255, 151, 97);
+// $lightorange:	rgb(255, 151, 97);
 $lightorange:		rgb(255, 128, 83);
 
 $yellow:			rgb(224, 245, 0);
@@ -40,20 +40,6 @@ $darkblue:			$indigo;
 $gray:				rgb(87, 85, 86);
 $lightgray:			lighten($gray, 50%);
 
-// $green:				rgb(51, 205, 39);
-// $lightgreen:		lighten($green, 35%);
-// $orange:			rgb(238, 56, 1);
-// $lightorange:		lighten($orange, 40%);
-// $blue:				rgb(1, 236, 235);
-// $lightblue:			lighten($blue, 40%);
-// $pink:				rgb(238, 1, 163);
-// $lightpink:			lighten($pink, 35%);
-// $gray:				rgb(87, 85, 86);
-// $lightgray:			lighten($gray, 50%);
-// $yellow:			rgb(238, 237, 0);
-// $lightyellow:		lighten($yellow, 40%);
-// $darkblue:			rgb(0,0,86);
-
 $text-color:		$indigo;
 $link-color:		$indigo;
 
@@ -62,7 +48,6 @@ $columns:			6;
 $gutter:			0;
 
 $desktop:           900px;
-
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -83,8 +68,6 @@ $desktop:           900px;
 }
 
 // @function stroke($stroke, $color)
-
-
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
