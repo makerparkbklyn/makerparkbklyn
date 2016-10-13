@@ -14,12 +14,16 @@
 	.title > h2 > a {
 		text-decoration: none;
 	}
+
+	.footer__arrow {
+		display: none;
+	}
 }
 
 /* List of Posts
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .news-posts {
-	padding-top: 4rem;
+	padding-top: 3.1rem;
 	list-style: none;
 }
 
@@ -47,7 +51,7 @@
 
 // clicked news post
 article.news-post {
-	margin-top: 4rem;
+	margin-top: 3.1rem;
 }
 
 .news-post__header {
