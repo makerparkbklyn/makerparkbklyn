@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+	{% include head.html %}
 
-  <body class="news-page-wrapper" id="top">
+	<body class="news-page-wrapper" id="top">
+		<div class="news-page">
 
-	  <div class="news-page">
+			{% include grid.html %}
 
-		{% include grid.html %}
+			{{ content }}
 
-		{{ content }}
-
-		{% include right-rail.html %}
-		{% include left-rail.html %}
+			{% include right-rail.html %}
+			{% include left-rail.html %}
 
 
-		{% include js.html %}
+			{% include js.html %}
 
-		<div class="logo--news-page">
-			<a href="{{ "/" | prepend: site.baseurl }}">{% include icons/mp-logo.svg %}</a>
+			<div class="logo--news-page">
+				<a href="{{ "/" | prepend: site.baseurl }}">{% include icons/mp-logo.svg %}</a>
+			</div>
+
 		</div>
-
-	</div>
 
 	{% include footer.html %}
 

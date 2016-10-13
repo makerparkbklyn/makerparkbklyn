@@ -15,7 +15,6 @@ function initMap() {
 		{
 			featureType: 'all',
 			stylers: [
-				// { saturation: -80 }
 				{ saturation: 0 }
 			]
 		},

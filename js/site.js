@@ -34,17 +34,11 @@ $(document).on('ready', function() {
 			settings: { dots: false }
 		}]
 	});
-	$('.timeline__slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
-		// console.log("next date : ");
-		console.log($(slick.$slides[nextSlide]).attr('data-date'));
-		// var nextDate = $(slick.$slides[nextSlide]).getAttribute("data-date");
-	});
-
 	// --------------------------------------------------------------------
 	// animate smooth scroll to links w/in page
 	// $('a[href*="#"]:not([href="#"])').click(function(e) {
 	$('a[data-scrollto*="#"]').click(function(e) {
-		e.preventDefault();
+		// e.preventDefault();
 		var target = $(this).attr('data-scrollto');
 		$(target).ScrollTo();
 	});
@@ -100,7 +94,6 @@ $(document).on('ready', function() {
 		}
 		if ($scroll >= ($currentBottom - $(window).height() + 160)) {
 			$('section').find('.title').removeClass('stuck');
-			// console.log("bottom reached");
 			// console.log("remove stuck, add bottom");
 			$currentTitle.removeClass('stuck');
 			$currentTitle.addClass('bottom');
