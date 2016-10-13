@@ -1,11 +1,13 @@
 /* News Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.news-page {
-	background: $lightred;
+.news-page-wrapper {
+	background: url(../images/pattern-1.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
+}
+.news-page {
+	background: $lightred;
 
 	.rail .arrow {
 		display: none;
@@ -16,11 +18,7 @@
 	}
 
 	.footer {
-		// border-top: solid 6px $indigo;
-	}
-
-	.footer__arrow {
-		// display: none;
+		background: none;
 	}
 }
 
@@ -30,7 +28,6 @@
 	padding-top: 3.1rem;
 	margin-bottom: 0;
 	list-style: none;
-	border-bottom: solid 6px $indigo;
 }
 
 .news-post {
@@ -53,11 +50,6 @@
 			stroke: #fff;
 		}
 	}
-}
-
-// clicked news post
-article.news-post {
-	margin-top: 3.1rem;
 }
 
 .news-post__header {

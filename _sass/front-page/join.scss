@@ -127,7 +127,12 @@ fieldset {
 			background-color: $indigo;
 			color: #fff;
 		}
+
+	&.sent {
+		background-color: $indigo;
+		color: #fff;
 	}
+}
 }
 
 @include media-query(768px) {

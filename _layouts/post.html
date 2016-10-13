@@ -6,20 +6,22 @@ layout: news-page
 	<div class="title stuck">
 		<h2 class="underline"><a href={{ "/news" | prepend: site.baseurl }}>News</a></h2>
 	</div>
-	<article class="row news-post">
-			<div class="news-post__header col-2">
-		    	<h2>{{ page.title }}</h2>
-				<time>{{ page.date | date: "%b %-d, %Y" }}</time>
-			</div>
-			<div class="news-post__content col-3">
-				<div class="post__content">
-					{{ content }}
+	<div class="news-posts">
+		<article class="row news-post">
+				<div class="news-post__header col-2">
+			    	<h2>{{ page.title }}</h2>
+					<time>{{ page.date | date: "%b %-d, %Y" }}</time>
 				</div>
-			</div>
-			<div class="back-to-news col-1">
-				<a href={{ "/news" | prepend: site.baseurl }}>See All News</a>
-			</div>
-	</article>
+				<div class="news-post__content col-3">
+					<div class="post__content">
+						{{ content }}
+					</div>
+				</div>
+				<div class="back-to-news col-1">
+					<a href={{ "/news" | prepend: site.baseurl }}>See All News</a>
+				</div>
+		</article>
+	</div>
 	<ul class="news-posts">
 		{% for post in site.posts %}
 			<li class="row news-post">
