@@ -38,7 +38,7 @@ $(document).on('ready', function() {
 	// animate smooth scroll to links w/in page
 	// $('a[href*="#"]:not([href="#"])').click(function(e) {
 	$('a[data-scrollto*="#"]').click(function(e) {
-		// e.preventDefault();
+		e.preventDefault();
 		var target = $(this).attr('data-scrollto');
 		$(target).ScrollTo();
 	});
