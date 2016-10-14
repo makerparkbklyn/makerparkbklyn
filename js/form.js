@@ -39,7 +39,6 @@ $(document).ready(function() {
 			console.log(response);
 			console.log(textStatus);
 			console.log(jqXHR);
-			$("#submit").val("Sent!");
 		});
 
 		// Callback handler that will be called on failure
@@ -52,8 +51,14 @@ $(document).ready(function() {
 		// if the request failed or succeeded
 		request.always(function () {
 			// Reenable the inputs
+			// $("#submit").val("Sent!");
+			// $("#loading").show();
+
+			$(".join-form").addClass("hidden");
+			$(".join-form__notification").removeClass("hidden");
 			$inputs.prop("disabled", false);
 		});
+
 
 		// Prevent default posting of form
 		event.preventDefault();
