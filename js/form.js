@@ -53,7 +53,6 @@ $(document).ready(function() {
 			// Reenable the inputs
 			// $("#submit").val("Sent!");
 			// $("#loading").show();
-
 			$(".join-form").addClass("hidden");
 			$(".join-form__notification").removeClass("hidden");
 			$inputs.prop("disabled", false);
