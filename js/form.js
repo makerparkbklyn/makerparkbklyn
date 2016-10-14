@@ -35,6 +35,8 @@ $(document).ready(function() {
 		// TODO - let user know they have submitted successfully
 		request.done(function (response, textStatus, jqXHR){
 			// Log a message to the console
+			$(".join-form").addClass("hidden");
+			$(".join-form__notification").removeClass("hidden");
 			console.log("Hooray, it worked!");
 			console.log(response);
 			console.log(textStatus);
@@ -52,15 +54,10 @@ $(document).ready(function() {
 		request.always(function () {
 			// Reenable the inputs
 			// $("#submit").val("Sent!");
-			// $("#loading").show();
-			$(".join-form").addClass("hidden");
-			$(".join-form__notification").removeClass("hidden");
 			$inputs.prop("disabled", false);
 		});
-
 
 		// Prevent default posting of form
 		event.preventDefault();
 	});
-
 });
