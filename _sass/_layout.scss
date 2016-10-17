@@ -46,20 +46,17 @@ body {
 }
 section {
 	position: relative;
-	padding: 8rem 0;
+	padding: 3rem 0;
 
 }
-section#footer {
-	padding: 0;
-}
 section p {
-	font-size: 2.5rem;
+	font-size: 1rem;
 	line-height: 1.3;
 	font-weight: bold;
 	color: $indigo;
 }
 figure {
-	margin: 2rem 0 3rem;
+	margin: 0 0 1.5rem;
 	img {
 		width: 100%;
 		&.has-border {
@@ -69,11 +66,15 @@ figure {
 	}
 }
 figcaption {
-	margin-top: 0.25rem;
-	font-size: 1.25rem;
+	font-size: 0.75rem;
 	font-weight: bold;
 }
-@include media-query(1024px) {
+@include media-query(1280px) {
+	section p {
+		font-size: 2rem;
+	}
+}
+@include media-query(1600px) {
 	section {
 		position: relative;
 		// min-height: 80vh;

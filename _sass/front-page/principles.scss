@@ -2,9 +2,6 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .principles {
 	background-color: $lightpurple;
-	.title {
-		margin-bottom: 6rem;
-	}
 }
 .principles__list {
 	list-style: none;
@@ -12,13 +9,13 @@
 }
 .principles__item {
 	position: relative;
-	margin-bottom: 2rem;
+	margin-bottom: 0rem;
 	box-sizing: border-box;
 }
 .principles__item:before {
 	content: counter(principles, decimal-leading-zero);
 	counter-increment: principles;
-	font-size: 5rem;
+	font-size: 2rem;
 	line-height: 1.0;
 	font-weight: bold;
 	color: $indigo;
@@ -26,21 +23,21 @@
 .principles__item h3 {
 	color: white;
 	// color: $indigo;
-	font-size: 5rem;
+	font-size: 2rem;
 	line-height: 1.0;
 	margin-top: 0;
-	margin-bottom: 1rem;
+	margin-bottom: 0.25rem;
 }
 .principles__item p {
-	font-size: 2.5rem;
+	font-size: 1rem;
 	// color: white;
 }
 
 
 
-@include media-query(1024px) {
+@include media-query(768px) {
 	.principles__item {
-		margin-bottom: 6rem;
+		margin-bottom: 1rem;
 	}
 }
 

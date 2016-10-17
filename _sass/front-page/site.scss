@@ -1,19 +1,19 @@
 
-/* The Site
+/* The Site Section
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .site-section {
 	background: $lightgreen;
 }
-
 .map {
-	height: 400px;
-	margin: 2rem 0 4rem;
+	height: 0;
+	padding-bottom: 100%;
+	margin: 0 0 1.5rem;
 	border: solid 12px $indigo;
 }
 
 /* Carousel */
 .carousel.site-photos {
-	margin: 2rem 0 4rem;
+	margin: 0 0 1.5rem;
 	box-sizing: border-box;
 	border: solid 12px $indigo;
 	position: relative;
@@ -39,11 +39,6 @@
 		width: 4rem;
 	}
 }
-
-figure {
-	margin-bottom: 4rem;
-}
-
 
 @include media-query(1024px) {
 	.site-section {

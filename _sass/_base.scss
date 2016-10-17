@@ -43,12 +43,13 @@
 	box-sizing: border-box;
 	position: relative;
 }
-
-/* For devices larger than 900px */
 @include media-query(1024px) {
 	.container			{ width: 75%; }
 	.row				{ margin: 0 (-$gutter / 2); }
 	[class*='col-']		{ padding: 0 ($gutter / 2); }
+}
+/* For devices larger than 900px */
+@include media-query(1280px) {
 
 	// Columns
 	.col-1				{ width: 1 / $columns * 100%; }
@@ -95,7 +96,11 @@
 
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-html { font-size: $rem / 2.5; }
+// html { font-size: 12px; }
+html { font-size: $rem; }
+@include media-query(768px) {
+	html { font-size: 1.25*$rem; }
+}
 body {
 	font-family: $base-font-family;
 	font-size: 1rem;
@@ -103,12 +108,15 @@ body {
 	font-weight: normal;
 	color: $text-color;
 }
-@include media-query(768px) {
-	html { font-size: 16px; }
-}
-@include media-query(1024px) {
-	html { font-size: $rem; }
-}
+// @include media-query(768px) {
+// 	html { font-size: 16px; }
+// }
+// @include media-query(1200px) {
+// 	html { font-size: 18px; }
+// }
+// @include media-query(1600px) {
+// 	html { font-size: $rem; }
+// }
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
