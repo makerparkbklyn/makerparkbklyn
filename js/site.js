@@ -39,8 +39,11 @@ $(document).on('ready', function() {
 	// $('a[href*="#"]:not([href="#"])').click(function(e) {
 	$('a[data-scrollto*="#"]').click(function(e) {
 		e.preventDefault();
+		console.log('scroll');
 		var target = $(this).attr('data-scrollto');
+		console.log(target);
 		$(target).ScrollTo();
+		console.log("finished scrolling");
 	});
 
 	// --------------------------------------------------------------------
@@ -48,7 +51,24 @@ $(document).on('ready', function() {
 	var $currentSection = $('section.current');
 	var $prevSection = null;
 
+	// initialize lastScrollTop to detect downward scroll
+	var lastScrollTop = 0;
+
 	$(window).scroll(function() {
+
+		// hide rails on downscroll
+		var st = this.pageYOffset || this.scrollTop;
+		if (st > lastScrollTop){
+			// downscroll code
+			console.log('scolling down...');
+			$('.rail').addClass('hidden');
+		} else {
+			// upscroll code
+			console.log("scolling up...");
+			$('.rail').removeClass('hidden');
+		}
+		lastScrollTop = st;
+
 		var $scroll = $(window).scrollTop();
 		var $currentTop = $currentSection.offset().top;
 		var $currentBottom = $currentSection.offset().top + $currentSection.outerHeight();
