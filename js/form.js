@@ -32,15 +32,15 @@ $(document).ready(function() {
 		});
 
 		// Callback handler that will be called on success
-		// TODO - let user know they have submitted successfully
 		request.done(function (response, textStatus, jqXHR){
 			// Log a message to the console
-			$(".join-form").addClass("hidden");
-			$(".join-form__notification").removeClass("hidden");
 			console.log("Hooray, it worked!");
 			console.log(response);
 			console.log(textStatus);
 			console.log(jqXHR);
+			// TODO - Notify the user
+			$(".join-form").addClass("hidden");
+			$(".join-form__notification").removeClass("hidden");
 		});
 
 		// Callback handler that will be called on failure
@@ -53,7 +53,6 @@ $(document).ready(function() {
 		// if the request failed or succeeded
 		request.always(function () {
 			// Reenable the inputs
-			// $("#submit").val("Sent!");
 			$inputs.prop("disabled", false);
 		});
 

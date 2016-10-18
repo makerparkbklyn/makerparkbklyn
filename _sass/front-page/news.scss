@@ -197,6 +197,24 @@
 // 	}
 // }
 //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // // instagram photos
 // .instagram-photos {
 // 	display: inline-block;
@@ -227,3 +245,37 @@
 // 		transform: translateY(-50%);
 // 	}
 // }
+
+//
+//
+// // instagram photos
+// .instagram-photos {
+// 	position: relative;
+// 	list-style: none;
+// 	margin: 12rem 0;
+//
+// 	// display: none;
+// }
+//
+// .instagram-photo__block {
+// 	display: inline-block;
+// 	overflow: hidden;
+// 	width: 100%;
+// 	background: red;
+// }
+//
+// .instagram-photo {
+// 	position: relative;
+// 	height: 0;
+// 	padding-bottom: 100%;
+// 	margin: 0 1rem;
+// 	border-radius: 50%;
+// 	border: solid 6px $indigo;
+// 	box-sizing: border-box;
+// 	overflow: hidden;
+//
+// 	a {
+// 		// top: 0;
+// 		// right: 0;
+// 		// bottom: 0;
+// 		// left: 0;
