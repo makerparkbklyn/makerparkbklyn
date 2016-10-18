@@ -1,3 +1,8 @@
+
+.instagram-photos {
+	display: none !important;
+}
+
 /* News (Front Section)
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -53,8 +58,11 @@
 	margin: 0;
 }
 .news-block__timestamp {
+	display: block;
 	font-weight: bold;
-	font-size: 1rem;
+	font-size: .75rem;
+	line-height: 1.5;
+	// margin-top: .25rem;
 	&:before {
 		display: block;
 		content: "\2014";
@@ -70,116 +78,152 @@
 		color: $darkblue;
 	}
 }
-
 @include media-query(768px) {
 	.news-list {
 		[class*='col-'] {
-			width: 50%;
-			padding: 1rem;
+			padding: .5rem;
 			margin-bottom: 0;
 		}
 	}
 	.news-block__title {
-		font-size: 2rem;
+		font-size: 1rem;
 	}
 	.news-block__timestamp {
-		font-size: 1.5rem;
+		font-size: .5rem;
 	}
 }
-
-@include media-query(1024px) {
-	.news-section {
-		position: relative;
-		background-color: $lightred;
-		padding-top: 4rem;
-	}
+@include media-query-range(768px, 1439px) {
 	.news-list {
-		list-style: none;
-		li {
-			padding: 2rem;
+		[class*='col-'] {
+			width: 50%;
 		}
 	}
-	.news-block {
-		text-align: center;
-		width: 100%;
-		height: 0;
-		padding-bottom: 100%;
-		border-radius: 50%;
-		background: $indigo;
-		position: relative;
-		transition: background .2s;
-		&:hover {
-			background: rgba(0,0,86,0.8);
-		}
-		a {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			color: #fff;
-			border-radius: 50%;
+}
+@include media-query(1024px) {
+	.news-list {
+		margin: 0;
+		li:nth-child(n+4) {
+			display: block;
 		}
 	}
-	.news-block__inner {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 75%;
-		left: 0;
-		right: 0;
-		margin: auto;
+}
+@include media-query(1280px) {
+	.news-list {
+		[class*='col-'] {
+			padding: .25rem;
+			margin-bottom: 0;
+		}
+	}
+}
+@include media-query(1440px) {
+	.news-list {
+		[class*='col-'] {
+			padding: 0;
+			padding: .25rem;
+			padding-right: .25rem;
+			margin-bottom: 0;
+		}
 	}
 	.news-block__title {
-		font-size: 2rem;
-		margin: 0;
+		font-size: .75rem;
 	}
 	.news-block__timestamp {
-		font-weight: bold;
-		&:before {
-			display: block;
-			content: "\2014";
-		}
-	}
-	.news-block--see-all {
-		// background: rgba(255,255,255,0.1);
-		background: rgba(0,0,86,0.4);
-		&:hover {
-			background: #fff;
-		}
-		a {
-			color: $darkblue;
-		}
+		font-size: .33rem;
 	}
 }
-
-// instagram photos
-.instagram-photos {
-	display: inline-block;
-	position: relative;
-	list-style: none;
-	margin: 12rem 0 24rem;
-
-	display: none;
-}
-
-.instagram-photo {
-	position: absolute;
-	width: 100%;
-	height: 0;
-	padding-bottom: 100%;
-	border-radius: 50%;
-	border: solid 6px $indigo;
-	box-sizing: border-box;
-	overflow: hidden;
-
-	a {
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-	}
-	img {
-		transform: translateY(-50%);
-	}
-}
+// @include media-query(1024px) {
+// 	.news-section {
+// 		position: relative;
+// 		background-color: $lightred;
+// 		padding-top: 4rem;
+// 	}
+// 	.news-list {
+// 		list-style: none;
+// 		li {
+// 			padding: 2rem;
+// 		}
+// 	}
+// 	.news-block {
+// 		text-align: center;
+// 		width: 100%;
+// 		height: 0;
+// 		padding-bottom: 100%;
+// 		border-radius: 50%;
+// 		background: $indigo;
+// 		position: relative;
+// 		transition: background .2s;
+// 		&:hover {
+// 			background: rgba(0,0,86,0.8);
+// 		}
+// 		a {
+// 			position: absolute;
+// 			top: 0;
+// 			right: 0;
+// 			bottom: 0;
+// 			left: 0;
+// 			color: #fff;
+// 			border-radius: 50%;
+// 		}
+// 	}
+// 	.news-block__inner {
+// 		position: absolute;
+// 		top: 50%;
+// 		transform: translateY(-50%);
+// 		width: 75%;
+// 		left: 0;
+// 		right: 0;
+// 		margin: auto;
+// 	}
+// 	.news-block__title {
+// 		font-size: 2rem;
+// 		margin: 0;
+// 	}
+// 	.news-block__timestamp {
+// 		font-weight: bold;
+// 		&:before {
+// 			display: block;
+// 			content: "\2014";
+// 		}
+// 	}
+// 	.news-block--see-all {
+// 		// background: rgba(255,255,255,0.1);
+// 		background: rgba(0,0,86,0.4);
+// 		&:hover {
+// 			background: #fff;
+// 		}
+// 		a {
+// 			color: $darkblue;
+// 		}
+// 	}
+// }
+//
+// // instagram photos
+// .instagram-photos {
+// 	display: inline-block;
+// 	position: relative;
+// 	list-style: none;
+// 	margin: 12rem 0 24rem;
+//
+// 	display: none;
+// }
+//
+// .instagram-photo {
+// 	position: absolute;
+// 	width: 100%;
+// 	height: 0;
+// 	padding-bottom: 100%;
+// 	border-radius: 50%;
+// 	border: solid 6px $indigo;
+// 	box-sizing: border-box;
+// 	overflow: hidden;
+//
+// 	a {
+// 		top: 0;
+// 		right: 0;
+// 		bottom: 0;
+// 		left: 0;
+// 	}
+// 	img {
+// 		transform: translateY(-50%);
+// 	}
+// }

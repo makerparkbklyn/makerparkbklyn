@@ -27,83 +27,134 @@
 	}
 }
 
-
-
 @include media-query(1024px) {
-.title {
-	position: absolute;
-	width: 600px;
-	height: 100px;
-	background: transparent;
-	transform: rotate(-90deg);
-	transform-origin:  50% 300%;
-	left: calc(6.25% - 50px);
-	text-align: center;
-	z-index: 99999;
-	// background: red;
+	.title {
+		position: absolute;
+		width: 300px;
+		height: 50px;
+		background: transparent;
+		transform: rotate(-90deg);
+		transform-origin: 50% 300%;
+		left: calc(6.25% - 30px);
+		text-align: center;
+		z-index: 99999;
+		&.stuck {
+			position: fixed;
+			top: 50%;
+			margin-top: -150px;
+		}
 
-	&.stuck {
-		position: fixed;
-		top: 50%;
-		margin-top: -300px;
+		&.top {
+			top: 100px;
+			bottom: auto;
+		}
+		&.bottom {
+			top: auto;
+			bottom: (100px + 250px);
+		}
+		h2 {
+			font-size: 1rem;
+			&:after {
+				height: 4px;
+			}
+		}
+
 	}
-
-	&.top {
-		top: 200px;
-		bottom: auto;
-	}
-	&.bottom {
-		top: auto;
-		bottom: (200px + 500px);
-	}
-
-	// TODO
-	&.news-page-title {
-		position: fixed;
-		left: 55px;
-		top: 25%;
-		letter-spacing: normal;
-
-		h1 {
-			letter-spacing: normal;
-			font-size: 3rem;
+}
+@include media-query(1280px) {
+	.title {
+		width: 400px;
+		height: 66.666666667px;
+		left: calc(6.25% - 40px);
+		&.stuck {
+			margin-top: -200px;
+		}
+		&.top {
+			top: 133.333333334px;
+		}
+		&.bottom {
+			bottom: (133.333333334px + 333.333333335px);
+		}
+		h2:after {
+			height: 6px;
 		}
 	}
 }
+@include media-query(1600px) {
+	.title {
+		position: absolute;
+		width: 600px;
+		height: 100px;
+		background: transparent;
+		transform: rotate(-90deg);
+		transform-origin:  50% 300%;
+		left: calc(6.25% - 50px);
+		text-align: center;
+		z-index: 99999;
+		// background: red;
 
-.title h2 {
-	margin: 0;
-	margin-top: -12px;
-	line-height: 112px;
-	display: inline-block;
-	// line-height: 2.25rem;
-	font-size: 2.25rem;
-	// background: pink;
-	position: relative;
-	color: $indigo;
-}
+		&.stuck {
+			position: fixed;
+			top: 50%;
+			margin-top: -300px;
+		}
 
-.title h2:after {
-	content: '';
-	display: block;
-	background: $indigo;
-	height: 6px;
-	width: 100%;
-	position: absolute;
-	top: 82px;
-}
+		&.top {
+			top: 200px;
+			bottom: auto;
+		}
+		&.bottom {
+			top: auto;
+			bottom: (200px + 500px);
+		}
 
-.outline {
-	text-shadow:	4px 0 0 $text-color,
-					4px 4px 0 $text-color,
-					4px -4px 0 $text-color,
-					-4px 0 0 $text-color,
-					-4px 4px 0 $text-color,
-					-4px -4px 0 $text-color,
-					0 4px 0 $text-color,
-					0 -4px 0 $text-color,
-					4px 0 0 $text-color,
-					-4px 0 0 $text-color;
-}
+		// TODO
+		&.news-page-title {
+			position: fixed;
+			left: 55px;
+			top: 25%;
+			letter-spacing: normal;
+
+			h1 {
+				letter-spacing: normal;
+				font-size: 3rem;
+			}
+		}
+	}
+
+	.title h2 {
+		margin: 0;
+		margin-top: -12px;
+		line-height: 112px;
+		display: inline-block;
+		// line-height: 2.25rem;
+		font-size: 2.25rem;
+		// background: pink;
+		position: relative;
+		color: $indigo;
+	}
+
+	.title h2:after {
+		content: '';
+		display: block;
+		background: $indigo;
+		height: 6px;
+		width: 100%;
+		position: absolute;
+		top: 82px;
+	}
+
+	.outline {
+		text-shadow:	4px 0 0 $text-color,
+						4px 4px 0 $text-color,
+						4px -4px 0 $text-color,
+						-4px 0 0 $text-color,
+						-4px 4px 0 $text-color,
+						-4px -4px 0 $text-color,
+						0 4px 0 $text-color,
+						0 -4px 0 $text-color,
+						4px 0 0 $text-color,
+						-4px 0 0 $text-color;
+	}
 
 }

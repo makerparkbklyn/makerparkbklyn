@@ -71,7 +71,10 @@ figcaption {
 }
 @include media-query(1280px) {
 	section p {
-		font-size: 2rem;
+		font-size: .875rem;
+	}
+	figcaption {
+		font-size: 0.5rem;
 	}
 }
 @include media-query(1600px) {

@@ -72,6 +72,11 @@ $desktop:           900px;
         @content;
     }
 }
+@mixin media-query-range($min, $max) {
+    @media screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
 
 // @function stroke($stroke, $color)
 

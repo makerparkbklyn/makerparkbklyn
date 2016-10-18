@@ -30,7 +30,7 @@ $(document).on('ready', function() {
 		dots: true,
 		pauseOnHover: false,
 		responsive: [{
-			breakpoint: 1024,
+			breakpoint: 1023,
 			settings: { dots: false }
 		}]
 	});

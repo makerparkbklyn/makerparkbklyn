@@ -1,5 +1,5 @@
 ---
-title: The Height of Brooklyn's Industrial Revolution
+title: Brooklyn's Industrial Revolution
 date: 1867-01-01 18:59:30 Z
 categories:
 - news

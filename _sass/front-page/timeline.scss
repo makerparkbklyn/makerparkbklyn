@@ -5,158 +5,263 @@
 /* Timeline Carousel
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .timeline-carousel {
-	margin: 1rem -1rem 0;
+	margin: 2rem -1rem 0;
 	.slick-arrow {
-		top: -1rem;
-		width: 2rem;
+		top: -1.75rem;
+		width: 1.75rem;
 	}
 	.slick-prev {
 		left: 1rem;
 	}
 	.slick-next {
-		left: 4rem;
+		left: 3.5rem;
 	}
 }
 .timeline__item {
 	height: 100%;
 	width: 100%;
 	margin: 0 1rem;
+	&:focus {
+		border: none;
+		outline: none;
+	}
 	h2 {
 		font-size: 2rem;
-		margin-bottom: 0;
+		margin: 0;
 		z-index: 999999;
 	}
 	p {
 		color: white;
+		margin-bottom: 0;
 	}
 }
 @include media-query(768px) {
 	.timeline-carousel {
+		margin-top: 0;
 		.slick-arrow {
-			top: -3rem;
+			top: .5rem;
+			width: 2rem;
 		}
 		.slick-next {
-			left: 6rem;
+			right: 1rem;
+			left: auto;
+		}
+		.slick-prev {
+			right: 3.5rem;
+			left: auto;
 		}
 	}
 }
-
 @include media-query(1024px) {
-/* Timeline Carousel
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.timeline-carousel {
-	margin: 0 -1rem;
-
-	// Arrows
-	.slick-prev {
-		top: 3.1rem;
-		right: 90px;
-	}
-
-	.slick-next {
-		top: 3.1rem;
-		right: 0;
-	}
-
-	// Dots
-	.slick-dots
-	{
-	    position: absolute;
-		top: 3.25rem;
-		right: 185px;
-	    display: block;
-	    padding: 0;
-	    margin: 0;
-	    list-style: none;
-	    text-align: center;
-	}
-	.slick-dots li
-	{
-	    position: relative;
-	    display: inline-block;
-
-	    width: 20px;
-	    height: 20px;
-	    margin: 0 .5rem;
-	    padding: 0;
-
-	    cursor: pointer;
-	}
-	.slick-dots li button
-	{
-	    font-size: 0;
-	    line-height: 0;
-
-	    display: block;
-
-	    width: 20px;
-	    height: 20px;
-	    padding: 5px;
-
-	    cursor: pointer;
-	    border: 0;
-	    outline: none;
-	}
-	.slick-dots li button:hover,
-	.slick-dots li button:focus
-	{
-	    outline: none;
-	}
-	.slick-dots li button:hover:before,
-	.slick-dots li button:focus:before
-	{
-		opacity: 1;
-		background-color: white;
-	}
-	.slick-dots li button:before
-	{
-	    font-family: 'slick';
-		font-size: 6rem;
-	    line-height: 20px;
-
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-
-	    width: 20px;
-	    height: 20px;
-
-		border-radius: 50%;
-		background: $indigo;
-
-	    content: '';
-	    text-align: center;
-
-	    color: $indigo;
-
-	    -webkit-font-smoothing: antialiased;
-	    -moz-osx-font-smoothing: grayscale;
-	}
-	.slick-dots li.slick-active button:before
-	{
-	    background: white;
+	.timeline-carousel {
+		margin-top: 0;
+		.slick-arrow {
+			top: .65rem;
+			width: 1.5rem;
+		}
+		.slick-next {
+			right: 1rem;
+			left: auto;
+		}
+		.slick-prev {
+			right: 3rem;
+			left: auto;
+		}
+		// Dots
+		.slick-dots {
+		    position: absolute;
+			top: .55rem;
+			right: 5rem;
+			line-height: .15rem;
+			padding: 0;
+			margin: 0;
+		    list-style: none;
+		    text-align: right;
+			width: 3rem;
+		}
+		.slick-dots li {
+		    position: relative;
+		    display: inline-block;
+		    margin: 0 .125rem;
+		    padding: 0;
+		}
+		.slick-dots li button {
+		    font-size: 0;
+		    line-height: 0;
+		    display: block;
+			width: 0.25rem;
+			height: 0.25rem;
+			padding: 0;
+			margin: 0;
+		    cursor: pointer;
+		    border: 0;
+		    outline: none;
+		}
+		.slick-dots li button:hover,
+		.slick-dots li button:focus {
+		    outline: none;
+		}
+		.slick-dots li button:hover:before,
+		.slick-dots li button:focus:before {
+			opacity: 1;
+			background-color: white;
+		}
+		.slick-dots li button:before {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 0.25rem;
+		    height: 0.25rem;
+			border-radius: 50%;
+			background: $indigo;
+		    content: '';
+		}
+		.slick-dots li.slick-active button:before {
+		    background: white;
+		}
 	}
 }
-
-.timeline__item {
-	height: 100%;
-	width: 100%;
-	margin: 0 1rem;
-
-	h2 {
-		font-size: 5rem;
-		margin-bottom: 0;
-		z-index: 999999;
+@include media-query(1280px) {
+	.timeline-carousel {
+		.slick-arrow {
+			top: 18px;
+			width: 1.5rem;
+		}
+		.slick-next {
+			right: 1rem;
+			left: auto;
+		}
+		.slick-prev {
+			right: 2.75rem;
+			left: auto;
+		}
+		.timeline__item {
+			h2 {
+				font-size: 1.5rem;
+			}
+		}
+		.slick-dots {
+			top: 10px;
+		}
 	}
-	p {
-		color: white;
-	}
 }
-
-.next-date {
-	bottom: -25px;
-	right: -100px;
-	font-size: 1rem;
-}
-
-}
+//
+// @include media-query(1280px) {
+// /* Timeline Carousel
+// –––––––––––––––––––––––––––––––––––––––––––––––––– */
+// .timeline-carousel {
+// 	margin: 0 -1rem;
+//
+// 	// Arrows
+// 	.slick-prev {
+// 		top: 3.1rem;
+// 		right: 90px;
+// 	}
+//
+// 	.slick-next {
+// 		top: 3.1rem;
+// 		right: 0;
+// 	}
+//
+// 	// Dots
+// 	.slick-dots
+// 	{
+// 	    position: absolute;
+// 		top: 3.25rem;
+// 		right: 185px;
+// 	    display: block;
+// 	    padding: 0;
+// 	    margin: 0;
+// 	    list-style: none;
+// 	    text-align: center;
+// 	}
+// 	.slick-dots li
+// 	{
+// 	    position: relative;
+// 	    display: inline-block;
+//
+// 	    width: 20px;
+// 	    height: 20px;
+// 	    margin: 0 .5rem;
+// 	    padding: 0;
+//
+// 	    cursor: pointer;
+// 	}
+// 	.slick-dots li button
+// 	{
+// 	    font-size: 0;
+// 	    line-height: 0;
+//
+// 	    display: block;
+//
+// 	    width: 20px;
+// 	    height: 20px;
+// 	    padding: 5px;
+//
+// 	    cursor: pointer;
+// 	    border: 0;
+// 	    outline: none;
+// 	}
+// 	.slick-dots li button:hover,
+// 	.slick-dots li button:focus
+// 	{
+// 	    outline: none;
+// 	}
+// 	.slick-dots li button:hover:before,
+// 	.slick-dots li button:focus:before
+// 	{
+// 		opacity: 1;
+// 		background-color: white;
+// 	}
+// 	.slick-dots li button:before
+// 	{
+// 	    font-family: 'slick';
+// 		font-size: 6rem;
+// 	    line-height: 20px;
+//
+// 	    position: absolute;
+// 	    top: 0;
+// 	    left: 0;
+//
+// 	    width: 20px;
+// 	    height: 20px;
+//
+// 		border-radius: 50%;
+// 		background: $indigo;
+//
+// 	    content: '';
+// 	    text-align: center;
+//
+// 	    color: $indigo;
+//
+// 	    -webkit-font-smoothing: antialiased;
+// 	    -moz-osx-font-smoothing: grayscale;
+// 	}
+// 	.slick-dots li.slick-active button:before
+// 	{
+// 	    background: white;
+// 	}
+// }
+//
+// .timeline__item {
+// 	height: 100%;
+// 	width: 100%;
+// 	margin: 0 1rem;
+//
+// 	h2 {
+// 		font-size: 5rem;
+// 		margin-bottom: 0;
+// 		z-index: 999999;
+// 	}
+// 	p {
+// 		color: white;
+// 	}
+// }
+//
+// .next-date {
+// 	bottom: -25px;
+// 	right: -100px;
+// 	font-size: 1rem;
+// }
+//
+// }
