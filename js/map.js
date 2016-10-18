@@ -13,14 +13,8 @@ function initMap() {
 	};
 	var styles = [
 		{
-			featureType: 'all',
-			stylers: [
-				{ saturation: 0 }
-			]
-		},
-		{
               featureType: 'poi',
-              elementType: 'geometry',
+              elementType: 'all',
               stylers: [{color: '#fd007d'}]
         },
 		{
@@ -28,13 +22,6 @@ function initMap() {
 			elementType: 'geometry',
 			stylers: [
 				{color: '#c50165'},
-			]
-		},
-		{
-			featureType: 'administrative',
-			elementType: 'geometry',
-			stylers: [
-				{color: '#CCBFFF'},
 			]
 		},
 		{
@@ -102,16 +89,23 @@ function initMap() {
 	var styledMapType = new google.maps.StyledMapType(styles, { name: 'Maker Park' });
 	map.mapTypes.set('Maker Park', styledMapType);
 	var icon = {
-	    // url: "images/logo-small.svg",
-		url: "images/logo.svg",
-	    scaledSize: new google.maps.Size(57, 50),
-	    origin: new google.maps.Point(0,0),
-	    anchor: new google.maps.Point(0, 0)
+		url: "images/logo.png",
+		scaledSize: new google.maps.Size(57, 49),
+		origin: new google.maps.Point(0,0),
+		anchor: new google.maps.Point(0, 0)
 	};
 	var marker = new google.maps.Marker({
 		position: makerParkLatLng,
 		map:map,
 		icon: icon,
-		title: 'Maker Park'
+		title: 'Maker Park',
 	});
+	marker.addListener('click', toggleBounce);
+	function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+	};
 };
