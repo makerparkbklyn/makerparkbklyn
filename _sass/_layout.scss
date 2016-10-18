@@ -79,18 +79,12 @@ figcaption {
 }
 @include media-query(1600px) {
 	section {
-		position: relative;
-		// min-height: 80vh;
-		padding: 8rem 0;
-		// background: rgba(0, 0, 0, .1);
+		padding: 4rem 0;
+
 	}
 	section p {
-		font-size: 3rem;
-		font-weight: bold;
-		color: $indigo;
-	}
-	figure {
-		margin: 4rem 0 6rem;
+		font-size: 1rem;
+		line-height: 1.3;
 	}
 }
 

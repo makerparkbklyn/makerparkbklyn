@@ -145,6 +145,44 @@
 		}
 	}
 }
+@include media-query(1440px) {
+	.timeline-carousel {
+		.slick-dots {
+			width: auto;
+			top: .52rem;
+			right: 4.75rem;
+		}
+		.slick-dots li button {
+			// width: .35rem;
+			// height: .35rem;
+		}
+		.slick-dots li button:before {
+			// width: .35rem;
+			// height: .35rem;
+		}
+	}
+}
+@include media-query(1600px) {
+	.timeline-carousel {
+		.slick-arrow {
+			top: 30px;
+		}
+		.slick-prev {
+			right: 2.5rem;
+		}
+		.slick-dots {
+			right: 4.5rem;
+			top: .5rem;
+		}
+	}
+}
+@include media-query(2000px) {
+	.timeline-carousel {
+		.slick-arrow {
+			top: 42px;
+		}
+	}
+}
 //
 // @include media-query(1280px) {
 // /* Timeline Carousel
