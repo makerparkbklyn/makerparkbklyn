@@ -101,6 +101,7 @@ function initMap() {
 		icon: icon,
 		title: 'Maker Park',
 	});
+	// TODO - Do we want this?
 	marker.addListener('click', toggleBounce);
 	function toggleBounce() {
         if (marker.getAnimation() !== null) {

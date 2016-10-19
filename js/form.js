@@ -4,7 +4,7 @@ $(document).ready(function() {
 	var request;
 
 	// Bind to the submit event of our form
-	$("#join-form").submit(function(event){
+	$('#join-form').submit(function(event){
 
 		// Abort any pending request
 		if (request) {
@@ -38,7 +38,7 @@ $(document).ready(function() {
 			console.log(response);
 			console.log(textStatus);
 			console.log(jqXHR);
-			$(".join-form").addClass("hidden");
+			$('.join-form').addClass('hidden');
 			$('.join-intro').html('Thanks for signing up! Keep an eye out for news and updates.');
 		});
 

@@ -1,18 +1,18 @@
 $(document).on('ready', function() {
 
-	$(window).on("keydown", function (e) {
+	$(window).on('keydown', function (e) {
 		if (e.which === 71) {
 			console.log("G pressed");
 			$('.grid').toggleClass('show');
 		}
-	})
-	// --------------------------------------------------------------------
+	});
+	// -------------------------------------------------------------------------
 	// open nav
 	$('body').on("click", '.nav__toggle', function (e) {
 		e.preventDefault();
 		$('.nav').toggleClass('open');
 	});
-	// --------------------------------------------------------------------
+	// -------------------------------------------------------------------------
 	// slick site image gallery
 	$('.carousel.site-photos').slick({
 		infinite: true,
@@ -21,7 +21,7 @@ $(document).on('ready', function() {
 		pauseOnHover: false,
 		adaptiveHeight: true
 	});
-	// --------------------------------------------------------------------
+	// -------------------------------------------------------------------------
 	// slick timeline gallery
 	$('.timeline-carousel').slick({
 		infinite: true,
@@ -34,7 +34,7 @@ $(document).on('ready', function() {
 			settings: { dots: false }
 		}]
 	});
-	// --------------------------------------------------------------------
+	// -------------------------------------------------------------------------
 	// animate smooth scroll to links w/in page
 	// $('a[href*="#"]:not([href="#"])').click(function(e) {
 	if ($('.front-page').length > 0) {
@@ -46,18 +46,29 @@ $(document).on('ready', function() {
 			$(target).ScrollTo();
 			console.log("finished scrolling");
 		});
-	}
-
-	// --------------------------------------------------------------------
-	// sliding titles
+	};
+	// -------------------------------------------------------------------------
+	// animate smooth scroll to next section on arrow click
+	$('body').on('click', '.arrow', function(e) {
+		e.preventDefault();
+		var $next = $currentSection.next('section');
+		if (!$next.length > 0) {
+			$next = $currentSection.next('footer');
+		}
+		$next.ScrollTo();
+	});
+	// -------------------------------------------------------------------------
+	// initialize vars
 	var $currentSection = $('section.current');
 	var $prevSection = null;
-
-	// initialize lastScrollTop to detect downward scroll
 	var lastScrollTop = 0;
 
 	$(window).scroll(function() {
-
+		var $scroll = $(window).scrollTop();
+		var $currentTop = $currentSection.offset().top;
+		var $currentBottom = $currentSection.offset().top + $currentSection.outerHeight();
+		var $currentTitle = $currentSection.find('.title');
+		// ---------------------------------------------------------------------
 		// hide rails on downscroll
 		var st = this.pageYOffset || this.scrollTop;
 		if (st > lastScrollTop){
@@ -72,17 +83,11 @@ $(document).on('ready', function() {
 			$('.rail').removeClass('out');
 		}
 		lastScrollTop = st;
-
-		var $scroll = $(window).scrollTop();
-		var $currentTop = $currentSection.offset().top;
-		var $currentBottom = $currentSection.offset().top + $currentSection.outerHeight();
-		var $currentTitle = $currentSection.find('.title');
-
+		// ---------------------------------------------------------------------
+		// set currentSection
 		if ($currentSection.next('section').length > 0) {
 			var $nextTop = $currentSection.next('section').offset().top;
 		}
-
-		// set currentSection
 		if ($scroll > ($nextTop - ($(window).height()/2))) {
 			$currentSection = $currentSection.next('section');
 			$currentTop = $currentSection.offset().top;
@@ -100,33 +105,30 @@ $(document).on('ready', function() {
 			$currentSection.addClass('current');
 		}
 
+		// ---------------------------------------------------------------------
 		// make titles stick
 		if ($scroll >= ($currentTop - 160)) {
 			$('section').find('.title').removeClass('stuck');
-			// console.log("remove top, add stuck");
 			$currentTitle.removeClass('top');
 			$currentTitle.addClass('stuck');
 
 		} else if ($scroll < ($currentTop - 160)) {
 			$('section').find('.title').removeClass('stuck');
-			// console.log("remove stuck, add top");
 			$currentTitle.removeClass('stuck');
 			$currentTitle.addClass('top');
 		}
 		if ($scroll >= ($currentBottom - $(window).height() + 160)) {
 			$('section').find('.title').removeClass('stuck');
-			// console.log("remove stuck, add bottom");
 			$currentTitle.removeClass('stuck');
 			$currentTitle.addClass('bottom');
 		}
 		else if ($scroll < ($currentBottom - $(window).height() + 160) && $scroll >= ($currentTop - 160)) {
 			$('section').find('.title').removeClass('stuck');
-			// console.log("remove bottom, add stuck");
 			$currentTitle.removeClass('bottom');
 			$currentTitle.addClass('stuck');
 		}
 
-		// --------------------------------------------------------------------
+		// ---------------------------------------------------------------------
 		// show and hide arrows (bottom left)
 		var $footerTop = $('.footer').offset().top;
 		if ($scroll > ($footerTop - $(window).height())) {
@@ -135,7 +137,7 @@ $(document).on('ready', function() {
 		else if ($scroll < ($footerTop - $(window).height())) {
 			$('.arrow').removeClass('hidden');
 		}
-		// --------------------------------------------------------------------
+		// ---------------------------------------------------------------------
 		// show and hide logo (bottom right)
 		var $missionTop = $('.mission-section').offset().top;
 		if ($scroll > ($missionTop - .25*$(window).height())) {
@@ -146,14 +148,4 @@ $(document).on('ready', function() {
 		}
 	});
 
-	// --------------------------------------------------------------------
-	// animate smooth scroll to next section on arrow click
-	$('body').on('click', '.arrow', function(e) {
-		e.preventDefault();
-		var $next = $currentSection.next('section');
-		if (!$next.length > 0) {
-			$next = $currentSection.next('footer');
-		}
-		$next.ScrollTo();
-	});
 });
