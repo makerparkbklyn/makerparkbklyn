@@ -41,3 +41,8 @@
 		padding-bottom: 75%;
 	}
 }
+@include media-query(1600px) {
+	.map {
+		padding-bottom: 60%;
+	}
+}
