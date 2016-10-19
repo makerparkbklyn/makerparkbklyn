@@ -10,7 +10,7 @@ $(document).on('ready', function() {
 	// open nav
 	$('body').on("click", '.nav__toggle', function (e) {
 		e.preventDefault();
-		$('.nav').toggleClass('open');
+		$('.rail--right').toggleClass('nav-open');
 	});
 	// -------------------------------------------------------------------------
 	// slick site image gallery

@@ -34,7 +34,19 @@
 
 /* Rails
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-@import	"rails";
+.rail {
+	width: 12.5%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 9999;
+	.hidden {
+		display: none;
+	}
+	// background: lightblue;
+}
+@import	"rail-left";
+@import	"rail-right";
 
 /* Front Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
