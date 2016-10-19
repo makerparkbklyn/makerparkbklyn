@@ -69,7 +69,6 @@ $(document).on('ready', function() {
 			$('.nav').removeClass('open');
 		} else {
 			// upscroll code
-			console.log("scolling up...");
 			$('.rail').removeClass('out');
 		}
 		lastScrollTop = st;
@@ -81,9 +80,6 @@ $(document).on('ready', function() {
 
 		if ($currentSection.next('section').length > 0) {
 			var $nextTop = $currentSection.next('section').offset().top;
-		}
-		else {
-			// you are at bottom of page?
 		}
 
 		// set currentSection

@@ -38,9 +38,8 @@ $(document).ready(function() {
 			console.log(response);
 			console.log(textStatus);
 			console.log(jqXHR);
-			// TODO - Notify the user
 			$(".join-form").addClass("hidden");
-			$(".join-form__notification").removeClass("hidden");
+			$('.join-intro').html('Thanks for signing up! Keep an eye out for news and updates.');
 		});
 
 		// Callback handler that will be called on failure
