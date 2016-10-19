@@ -2,17 +2,21 @@
 <!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 53 65" style="enable-background:new 0 0 53 65;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:none;stroke:#000056;stroke-width:6;}
-</style>
-<title>Arrow</title>
-<desc>Created with Sketch.</desc>
-<g id="Page-3">
-	<g id="Desktop-HD-Copy-31" transform="translate(-70.000000, -1160.000000)">
-		<g id="Arrow" transform="translate(73.000000, 1160.000000)">
-			<path id="Stroke-1" class="st0" d="M23.4,65l0-60"/>
-			<polyline id="Stroke-4" class="st0" points="0,35 23.7,5 47.4,35 			"/>
+	 <style type="text/css">
+		 .st0 {
+		 	fill:none;
+			stroke:#000056;
+			stroke-width:6;
+		}
+	</style>
+	<title>Arrow</title>
+	<desc>Created with Sketch.</desc>
+	<g id="Page-3">
+		<g id="Desktop-HD-Copy-31" transform="translate(-70.000000, -1160.000000)">
+			<g id="Arrow" transform="translate(73.000000, 1160.000000)">
+				<path id="Stroke-1" class="st0" d="M23.4,65l0-60"/>
+				<polyline id="Stroke-4" class="st0" points="0,35 23.7,5 47.4,35"/>
+			</g>
 		</g>
 	</g>
-</g>
 </svg>

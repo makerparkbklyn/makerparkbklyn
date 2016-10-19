@@ -40,13 +40,11 @@ $(document).on('ready', function() {
 	if ($('.front-page').length > 0) {
 		$('a[data-scrollto*="#"]').click(function(e) {
 			e.preventDefault();
-			console.log('scroll');
 			var target = $(this).attr('data-scrollto');
-			console.log(target);
 			$(target).ScrollTo();
-			console.log("finished scrolling");
 		});
-	};
+		$('.logo').addClass('out');
+	}
 	// -------------------------------------------------------------------------
 	// animate smooth scroll to next section on arrow click
 	$('body').on('click', '.arrow', function(e) {
@@ -80,6 +78,7 @@ $(document).on('ready', function() {
 			$('.nav').removeClass('open');
 		} else {
 			// upscroll code
+			console.log('scolling up...');
 			$('.rail').removeClass('out');
 		}
 		lastScrollTop = st;
@@ -127,7 +126,15 @@ $(document).on('ready', function() {
 			$currentTitle.removeClass('bottom');
 			$currentTitle.addClass('stuck');
 		}
-
+		// ---------------------------------------------------------------------
+		// show and hide logo (right rail), scrolling from hero
+		var $missionTop = $('.mission-section').offset().top;
+		if ($scroll > ($missionTop - .6*$(window).height())) {
+			$('.logo').removeClass('out');
+		}
+		else if ($scroll < ($missionTop - .6*$(window).height())) {
+			$('.logo').addClass('out');
+		}
 		// ---------------------------------------------------------------------
 		// show and hide arrows (bottom left)
 		var $footerTop = $('.footer').offset().top;
@@ -136,15 +143,6 @@ $(document).on('ready', function() {
 		}
 		else if ($scroll < ($footerTop - $(window).height())) {
 			$('.arrow').removeClass('hidden');
-		}
-		// ---------------------------------------------------------------------
-		// show and hide logo (bottom right)
-		var $missionTop = $('.mission-section').offset().top;
-		if ($scroll > ($missionTop - .25*$(window).height())) {
-			$('.logo').removeClass('hidden');
-		}
-		else if ($scroll < ($missionTop - .25*$(window).height())) {
-			$('.logo').addClass('hidden');
 		}
 	});
 
