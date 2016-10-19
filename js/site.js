@@ -62,14 +62,15 @@ $(document).on('ready', function() {
 	var lastScrollTop = 0;
 
 	$(window).scroll(function() {
-		var $scroll = $(window).scrollTop();
 
+		var $scroll = $(window).scrollTop();
+		// ---------------------------------------------------------------------
 		// front page
 		if ($('.front-page').length > 0) {
 			var $currentTop = $currentSection.offset().top;
 			var $currentBottom = $currentSection.offset().top + $currentSection.outerHeight();
 			var $currentTitle = $currentSection.find('.title');
-			// ---------------------------------------------------------------------
+			// -----------------------------------------------------------------
 			// set currentSection
 			if ($currentSection.next('section').length > 0) {
 				var $nextTop = $currentSection.next('section').offset().top;
@@ -90,7 +91,7 @@ $(document).on('ready', function() {
 				$('section.current').removeClass('current');
 				$currentSection.addClass('current');
 			}
-			// ---------------------------------------------------------------------
+			// -----------------------------------------------------------------
 			// make titles stick
 			if ($scroll >= ($currentTop - 160)) {
 				$('section').find('.title').removeClass('stuck');
@@ -112,7 +113,7 @@ $(document).on('ready', function() {
 				$currentTitle.removeClass('bottom');
 				$currentTitle.addClass('stuck');
 			}
-			// ---------------------------------------------------------------------
+			// -----------------------------------------------------------------
 			// show and hide logo (right rail), scrolling from hero
 			var $missionTop = $('.mission-section').offset().top;
 			if ($scroll > ($missionTop - .6*$(window).height())) {
