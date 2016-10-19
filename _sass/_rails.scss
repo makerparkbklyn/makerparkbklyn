@@ -1,3 +1,6 @@
+.rail {
+	display: none;
+}
 //
 // /* Rail
 // –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -196,7 +199,7 @@
 .arrow svg {
 	width: 36px;
 }
-.hidden {
+.arrow.hidden {
 	display: none;
 }
 
@@ -212,9 +215,16 @@
 	position: absolute;
 	right: 18%;
 	bottom: 0%;
+	transition: bottom .25s;
 	// transform: scale(2,2);
 	svg {
 		width: 100%;
+	}
+}
+
+.rail--right.out {
+	.logo {
+		bottom: -25%;
 	}
 }
 
@@ -224,11 +234,17 @@
 	width: 120px;
 	height: 120px;
 	position: absolute;
-	top: 4%;
+	top: 3.5%;
 	right: 18%;
 	// transform: translateX(50%);
 	// background: red;
 	border-radius: 50%;
+	transition: top .25s;
+}
+.rail--right.out {
+	.nav {
+		top: -25%;
+	}
 }
 .nav__list {
 	list-style: none;

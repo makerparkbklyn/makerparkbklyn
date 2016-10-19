@@ -61,11 +61,11 @@ $(document).on('ready', function() {
 		if (st > lastScrollTop){
 			// downscroll code
 			console.log('scolling down...');
-			$('.rail').addClass('hidden');
+			$('.rail').addClass('out');
 		} else {
 			// upscroll code
 			console.log("scolling up...");
-			$('.rail').removeClass('hidden');
+			$('.rail').removeClass('out');
 		}
 		lastScrollTop = st;
 
