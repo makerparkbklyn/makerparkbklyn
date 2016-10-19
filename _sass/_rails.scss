@@ -171,7 +171,7 @@
 		display: block;
 		// display: none;
 		left: 0;
-		.arrow {
+		.arrow-down {
 			position: absolute;
 			width: 100px;
 			bottom: 24px;
@@ -181,7 +181,7 @@
 			text-align: center;
 			color: $darkblue;
 		}
-		.arrow svg {
+		.arrow-down svg {
 			width: 36px;
 		}
 		.join-sticker {
@@ -365,7 +365,7 @@
 }
 @include media-query(1280px) {
 	.rail--left {
-		.arrow svg {
+		.arrow-down svg {
 			width: 42px;
 			// width: auto;
 		}
@@ -399,7 +399,7 @@
 }
 @include media-query(1440px) {
 	.rail--left {
-		.arrow svg {
+		.arrow-down svg {
 			width: auto;
 		}
 	}
