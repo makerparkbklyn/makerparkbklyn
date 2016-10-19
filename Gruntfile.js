@@ -19,6 +19,14 @@ module.exports = function(grunt) {
 					dest: "vendor/js/"
 				}]
 			},
+			jqueryColor: {
+				files: [{
+					expand: true,
+					cwd: "bower_components/jquery-color/",
+					src: "jquery.color.js",
+					dest: "vendor/js/"
+				}]
+			},
 			scrollto: {
 				files: [{
 					expand: true,
