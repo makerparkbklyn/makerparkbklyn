@@ -212,7 +212,6 @@
 			bottom: -2px;
 			transition: bottom .25s;
 			svg {
-				width: 100%;
 				width: 180px;
 			}
 		}
@@ -433,6 +432,21 @@
 			.logo {
 				bottom: -30%;
 			}
+		}
+	}
+	.nav {
+		right: 36px;
+	}
+	.nav__item {
+		a {
+			font-size: .5rem;
+		}
+	}
+}
+@include media-query(2000px) {
+	.nav__item {
+		a {
+			font-size: .416666667rem;
 		}
 	}
 }
