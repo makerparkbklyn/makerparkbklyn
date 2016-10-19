@@ -63,7 +63,10 @@ $(document).on('ready', function() {
 		if (st > lastScrollTop){
 			// downscroll code
 			console.log('scolling down...');
-			$('.rail').addClass('out');
+			if ($(window).width() < 1280) {
+				$('.rail').addClass('out');
+			}
+			$('.nav').removeClass('open');
 		} else {
 			// upscroll code
 			console.log("scolling up...");
