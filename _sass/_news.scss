@@ -9,7 +9,7 @@
 .news-page {
 	background: $lightred;
 
-	.rail .arrow {
+	.rail .arrow-down {
 		display: none;
 	}
 
@@ -45,7 +45,6 @@
 		h2 > a {
 			color: #fff;
 		}
-
 		.icon--arrow-right .cls-1 {
 			stroke: #fff;
 		}
@@ -95,7 +94,6 @@
 	border: solid 12px $indigo;
 	box-sizing: border-box;
 }
-// or figure ?
 
 .back-to-news a {
 	color: white;

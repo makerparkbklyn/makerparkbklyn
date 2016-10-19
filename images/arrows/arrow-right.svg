@@ -1,6 +1,12 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.84 52.07">
 	<defs>
-		<style>.cls-1{fill:none;stroke:#000056;stroke-width:6px;}</style>
+		<style>
+			.cls-1 {
+				fill:none;
+				stroke:#000056;
+				stroke-width:6px;
+			}
+		</style>
 	</defs>
 	<title>arrow-right</title>
 	<g id="Page-3">
