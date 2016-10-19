@@ -209,10 +209,11 @@
 		.logo {
 			position: absolute;
 			right: 24px;
-			bottom: -2px;
+			bottom: 15px;
 			transition: bottom .25s;
 			svg {
 				width: 180px;
+				height: 151px;
 			}
 		}
 	}
