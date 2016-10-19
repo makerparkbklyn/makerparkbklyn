@@ -1,12 +1,13 @@
 function initMap() {
-	var makerParkLatLng = {lat: 40.725139, lng: -73.961377}
+	var makerParkLatLng = new google.maps.LatLng(40.725139, -73.961377);
+	// old
 	// var makerParkLatLng = {lat: 40.724675, lng: -73.960315}
 	var mapDiv = document.getElementById('map');
 	var options = {
 		mapTypeControlOptions: {
 			mapTypeIds: ['Maker Park']
 		},
-		center: new google.maps.LatLng(40.724829, -73.960555),
+		center: makerParkLatLng,
 		zoom: 15,
 		mapTypeId: 'Maker Park',
 		scrollwheel: false,
