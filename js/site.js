@@ -37,14 +37,16 @@ $(document).on('ready', function() {
 	// --------------------------------------------------------------------
 	// animate smooth scroll to links w/in page
 	// $('a[href*="#"]:not([href="#"])').click(function(e) {
-	$('a[data-scrollto*="#"]').click(function(e) {
-		e.preventDefault();
-		console.log('scroll');
-		var target = $(this).attr('data-scrollto');
-		console.log(target);
-		$(target).ScrollTo();
-		console.log("finished scrolling");
-	});
+	if ($('.front-page').length > 0) {
+		$('a[data-scrollto*="#"]').click(function(e) {
+			e.preventDefault();
+			console.log('scroll');
+			var target = $(this).attr('data-scrollto');
+			console.log(target);
+			$(target).ScrollTo();
+			console.log("finished scrolling");
+		});
+	}
 
 	// --------------------------------------------------------------------
 	// sliding titles
