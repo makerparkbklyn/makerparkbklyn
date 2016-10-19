@@ -73,7 +73,11 @@ $(document).on('ready', function() {
 		var st = this.pageYOffset || this.scrollTop;
 		if (st > lastScrollTop){
 			// downscroll code
-			$('.rail').addClass('out');
+			console.log('scolling down...');
+			if ($(window).width() < 1280) {
+				$('.rail').addClass('out');
+			}
+			$('.nav').removeClass('open');
 		} else {
 			// upscroll code
 			$('.rail').removeClass('out');

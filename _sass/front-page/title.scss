@@ -35,7 +35,7 @@
 		background: transparent;
 		transform: rotate(-90deg);
 		transform-origin: 50% 300%;
-		left: calc(6.25% - 30px);
+		left: calc(6.25% - 28px);
 		text-align: center;
 		z-index: 99999;
 		&.stuck {
@@ -75,6 +75,9 @@
 		&.bottom {
 			bottom: (133.333333334px + 333.333333335px);
 		}
+		h2 {
+			font-size: .833rem;
+		}
 		h2:after {
 			height: 6px;
 		}
@@ -84,7 +87,7 @@
 	.title {
 		width: 600px;
 		height: 100px;
-		left: calc(6.25% - 50px);
+		left: calc(6.25% - 58px);
 		&.stuck {
 			margin-top: -300px;
 		}
@@ -93,6 +96,9 @@
 		}
 		&.bottom {
 			bottom: (200px + 500px);
+		}
+		h2 {
+			font-size: .8rem;
 		}
 		h2:after {
 			height: 6px;
