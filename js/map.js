@@ -89,7 +89,7 @@ function initMap() {
 	var styledMapType = new google.maps.StyledMapType(styles, { name: 'Maker Park' });
 	map.mapTypes.set('Maker Park', styledMapType);
 	var icon = {
-		url: "images/logo.png",
+		url: "images/mp-logo.png",
 		scaledSize: new google.maps.Size(57, 49),
 		origin: new google.maps.Point(0,0),
 		anchor: new google.maps.Point(0, 0)
