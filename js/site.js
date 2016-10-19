@@ -62,11 +62,9 @@ $(document).on('ready', function() {
 		var st = this.pageYOffset || this.scrollTop;
 		if (st > lastScrollTop){
 			// downscroll code
-			console.log('scolling down...');
 			$('.rail').addClass('out');
 		} else {
 			// upscroll code
-			console.log("scolling up...");
 			$('.rail').removeClass('out');
 		}
 		lastScrollTop = st;
@@ -78,9 +76,6 @@ $(document).on('ready', function() {
 
 		if ($currentSection.next('section').length > 0) {
 			var $nextTop = $currentSection.next('section').offset().top;
-		}
-		else {
-			// you are at bottom of page?
 		}
 
 		// set currentSection

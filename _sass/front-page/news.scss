@@ -61,7 +61,6 @@
 	font-weight: bold;
 	font-size: .75rem;
 	line-height: 1.5;
-	// margin-top: .25rem;
 	&:before {
 		display: block;
 		content: "\2014";
@@ -69,7 +68,6 @@
 }
 .news-block--see-all {
 	background: rgba(255,255,255,0.1);
-	// background: rgba(0,0,86,0.5);
 	&:hover {
 		background: #fff;
 	}
