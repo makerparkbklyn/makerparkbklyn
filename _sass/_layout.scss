@@ -21,7 +21,7 @@
     border: none;
     outline: none;
     background: transparent;
-	z-index: 9999;
+	z-index: 99;
 }
 .slick-prev {
 	background: url(../images/arrows/arrow-left.svg);
@@ -39,7 +39,7 @@
 	height: 100%;
 	position: fixed;
 	top: 0;
-	z-index: 9999;
+	z-index: 999;
 	.hidden {
 		display: none;
 	}
@@ -236,7 +236,6 @@ figcaption {
 		padding: 0;
 	}
 	.footer__arrow {
-		// background: yellow;
 		transform: translateY(-40%);
 	}
 	.footer__hashtag {
@@ -261,42 +260,3 @@ figcaption {
 		}
 	}
 }
-
-// .footer {
-// 	position: relative;
-// 	height: 8rem;
-// }
-// .footer__arrow {
-// 	position: absolute;
-// 	top: 50%;
-// 	width: 12.5%;
-// 	left: 0;
-// 	text-align: center;
-// 	color: $indigo;
-// 	z-index: 9999;
-// 	a {
-// 		display: block;
-// 		width: 100%;
-// 		height: 100%;
-// 		z-index: 99999;
-// 	}
-// 	svg {
-// 		width:36px;
-// 	}
-// }
-//
-// .footer__hashtag h2 {
-// 	line-height: 1;
-// 	text-align: center;
-// 	margin: 0;
-// 	font-size: 1.5rem;
-// }
-//
-//
-// .instagram-icon {
-// 	width: 29px;
-// 	height: 29px;
-// 	display: block;
-// 	margin: auto;
-// 	margin-top: -75px;
-// }
