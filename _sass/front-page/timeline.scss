@@ -6,7 +6,7 @@
 /* Timeline Carousel
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .timeline-carousel {
-	margin: 2rem -1rem 0;
+	margin: 2rem -.5rem 0;
 	.slick-arrow {
 		top: -1.75rem;
 		width: 1.75rem;
@@ -21,7 +21,7 @@
 .timeline__item {
 	height: 100%;
 	width: 100%;
-	margin: 0 1rem;
+	margin: 0 .5rem;
 	&:focus {
 		border: none;
 		outline: none;

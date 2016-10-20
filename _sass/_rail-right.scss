@@ -1,216 +1,204 @@
-.rail {
-	display: none;
-}
-//
-// /* Rail
-// –––––––––––––––––––––––––––––––––––––––––––––––––– */
-// .rail {
-// 	width: 12.5%;
-// 	height: 100%;
-// 	position: fixed;
-// 	top: 0;
-// 	z-index: 9999;
-//
-// 	// display: none;
-// 	// background: lightblue;
-// }
-//
-// /* Right Rail
-// –––––––––––––––––––––––––––––––––––––––––––––––––– */
-// .rail--right {
-// 	right: 0;
-// }
-// .logo {
-// 	width: 120px;
-// 	position: absolute;
-// 	right: 12px;
-// 	bottom: 12px;
-//
-// 	img {
-// 		width: 100%;
-// 	}
-// }
-//
-// /* Nav
-// –––––––––––––––––––––––––––––––––––––––––––––––––– */
-// .nav {
-// 	width: 96px;
-// 	position: absolute;
-// 	top: 12px;
-// 	right: 12px;
-// }
-// .nav__list {
-// 	list-style: none;
-// }
-// .nav__item {
-// 	box-sizing: border-box;
-// 	width: 96px;
-// 	height: 96px;
-// 	border-radius: 50%;
-// 	border: 6px solid $darkblue;
-// 	color: $darkblue;
-// 	font-weight: bold;
-// 	opacity: 0;
-// 	position: absolute;
-// 	top: 0;
-// 	margin: 0;
-// 	transition: top .25s ease-in-out, opacity .25s ease-in-out, background-color .25s;
-//
-// 	a {
-// 		display: block;
-// 		position: absolute;
-// 		top: 0;
-// 		bottom: 0;
-// 		left: 0;
-// 		right: 0;
-// 		text-align: center;
-// 		line-height: 108px;
-// 		transition: color .25s;
-// 	}
-// 	&.active {
-// 		background: $darkblue;
-// 		a {
-// 			color: #fff;
-// 		}
-// 	}
-// 	&:hover {
-// 		background: $darkblue;
-// 		a {
-// 			text-decoration: none;
-// 			color: #fff;
-// 		}
-// 	}
-// }
-// .nav__toggle  {
-// 	opacity: 1;
-//
-// 	&:hover {
-// 		background-color: transparent;
-// 	}
-// }
-// .nav__hamburger {
-// 	position: relative;
-// 	width: 48px;
-// 	height: 24px;
-// 	margin: 32px auto;
-//
-// 	&:before {
-// 		content: '';
-// 		display: block;
-// 		position: absolute;
-// 		top: 0;
-// 		width: 48px;
-// 		height: 6px;
-// 		background: $darkblue;
-// 		transition: all 0.225s ease-in-out;
-// 	}
-// 	&:after {
-// 		content: '';
-// 		display: block;
-// 		position: absolute;
-// 		bottom: 0;
-// 		width: 48px;
-// 		height: 6px;
-// 		background: $darkblue;
-// 		transition: all 0.225s ease-in-out;
-// 	}
-// }
-//
-// .nav.open {
-// 	.nav__item {
-// 		opacity: 1;
-// 		&:nth-child(1){
-// 			top: (120px + 12px);
-// 		}
-// 		&:nth-child(2){
-// 			top: (2*120px + 2*12px);
-// 		}
-// 		&:nth-child(3){
-// 			top: (3*120px + 3*12px);
-// 		}
-// 		&:nth-child(4){
-// 			top: (4*120px + 4*12px);
-// 		}
-// 		&:nth-child(5){
-// 			top: (5*120px + 5*12px);
-// 		}
-// 	}
-// 	.nav__toggle {
-// 		.nav__hamburger:before {
-// 			transform: rotate(45deg);
-// 			top: 9px;
-// 		}
-// 		.nav__hamburger:after {
-// 			transform: rotate(-45deg);
-// 			bottom: 9px;
-// 		}
-// 	}
-// }
 
+/* Right Rail
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.rail--right {
+	right: 0;
+	background: transparent;
+	transition: background-color .2s;
+	.logo {
+		position: absolute;
+		right: 18px;
+		bottom: 12px;
+		// transform: translateX(0%);
+		transition: bottom .2s;
+		svg {
+			width: 120px;
+			height: 101px;
+		}
+	}
+}
+.rail--right.out {
+	.logo {
+		bottom: -25%;
+	}
+}
+
+/* Nav
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.nav {
+	width: 96px;
+	height: 96px;
+	position: absolute;
+	top: 18px;
+	right: 18px;
+	border-radius: 50%;
+	transition: all .2s ease-in-out;
+	overflow: hidden;
+}
+.rail--right.out {
+	.nav {
+		top: -25%;
+	}
+}
+.nav__list {
+	list-style: none;
+	position: relative;
+}
+.nav__item {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 96px;
+	height: 96px;
+	box-sizing: border-box;
+	border: 6px solid $darkblue;
+	border-radius: 50%;
+	opacity: 0;
+	transform: rotate(90deg);
+	transition: all .2s ease-in-out;
+	a {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		text-align: center;
+		display: block;
+		line-height: 132px;
+		transition: color .25s;
+		font-weight: bold;
+		font-size: 1.25rem;
+	}
+		&.active {
+			background: $darkblue;
+			a {
+				color: #fff;
+			}
+		}
+
+		&:hover {
+			// color: $lightblue;
+			background: $darkblue;
+			a {
+				text-decoration: none;
+				color: #fff;
+			}
+		}
+		&:first-child {
+			a {
+				line-height: 1;
+				margin-top: 36px;
+			}
+		}
+}
+.nav__toggle  {
+	opacity: 1;
+	z-index: 100;
+	transform: rotate(0deg);
+	&:hover {
+		background-color: transparent;
+		a {
+			color: $darkblue;
+		}
+	}
+}
+.nav__hamburger {
+	position: relative;
+	width: 48px;
+	height: 24px;
+	margin: 32px auto;
+	transition: margin .2s;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		width: 48px;
+		height: 6px;
+		background: $darkblue;
+		transition: all 0.2s ease-in-out;
+	}
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		width: 48px;
+		height: 6px;
+		background: $darkblue;
+		transition: all 0.2s ease-in-out;
+	}
+}
+
+.rail--right.nav-open {
+	width: 100%;
+	background-color: $lightpink;
+	nav {
+		width: 312px;
+		height: 480px;
+		right: 31.5px;
+		top: 36px;
+		border-radius: 0;
+		.nav__list {
+			width: auto;
+		}
+		.nav__item {
+			width: 144px;
+			height: 144px;
+			position: absolute;
+			opacity: 1;
+			transform: rotate(0deg);
+			&:nth-child(1){
+				right: 168px;
+			}
+			&:nth-child(2){
+				right: 168px;
+				top: 168px;
+			}
+			&:nth-child(3){
+				top: 168px;
+			}
+			&:nth-child(4){
+				top: 336px;
+				right: 168px;
+			}
+			&:nth-child(5){
+				top: 336px;
+			}
+		}
+		.nav__toggle {
+			position: absolute;
+			.nav__hamburger {
+				margin: 54px auto;
+			}
+			.nav__hamburger:before {
+				transform: rotate(45deg);
+				top: 9px;
+			}
+			.nav__hamburger:after {
+				transform: rotate(-45deg);
+				bottom: 9px;
+			}
+		}
+	}
+	// .logo {
+	// 	right: 50%;
+	// 	// transform: translateX(50%);
+	// }
+}
 
 
 @include media-query(1024px) {
-	/* Rail
-	–––––––––––––––––––––––––––––––––––––––––––––––––– */
-	.rail {
-		width: 12.5%;
-		height: 100%;
-		position: fixed;
-		// background: lightblue;
-		top: 0;
-		z-index: 9999;
-		display: block;
-		.hidden {
-			display: none;
-		}
-	}
-
-	/* Left Rail
-	–––––––––––––––––––––––––––––––––––––––––––––––––– */
-	.rail--left {
-		display: block;
-		// display: none;
-		left: 0;
-		.arrow-down {
-			position: absolute;
-			width: 100px;
-			bottom: 24px;
-			left: 0;
-			right: 0;
-			margin: 0 auto;
-			text-align: center;
-			color: $darkblue;
-		}
-		.arrow-down svg {
-			width: 36px;
-		}
-		.join-sticker {
-			position: absolute;
-			width: 100px;
-			top: 36px;
-			left: 0;
-			right: 0;
-			margin: 0 auto;
-			text-align: center;
-			font-weight: bold;
-			font-size: .833rem;
-			line-height: 1;
-		}
-		.join-sticker a {
-			color: $darkblue;
-			text-decoration: none;
-		}
-	}
 
 	/* Right Rail
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */
 	.rail--right {
 		right: 0;
 		.logo {
-			position: absolute;
 			right: 24px;
 			bottom: 15px;
-			transition: bottom .25s;
 			svg {
 				width: 180px;
 				height: 151px;
@@ -365,15 +353,6 @@
 	}
 }
 @include media-query(1280px) {
-	.rail--left {
-		.arrow-down svg {
-			width: 42px;
-			// width: auto;
-		}
-		.join-sticker {
-			font-size: .75rem;
-		}
-	}
 	.nav {
 		top: 2.25%;
 	}
@@ -399,11 +378,6 @@
 	}
 }
 @include media-query(1440px) {
-	.rail--left {
-		.arrow-down svg {
-			width: auto;
-		}
-	}
 	.rail--right {
 		.logo {
 			bottom: 12px;
@@ -415,11 +389,6 @@
 	}
 }
 @include media-query(1600px) {
-	.rail--left {
-		.join-sticker {
-			font-size: .675rem;
-		}
-	}
 	.rail--right {
 		.logo {
 			bottom: 21px;
