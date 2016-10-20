@@ -1,8 +1,6 @@
 /* Team Section
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
 .team-section {
-	// background-color: $lightorange;
 	background-color: transparent;
 }
 .team-block {
@@ -29,7 +27,6 @@
 
 	margin-bottom: 0;
 }
-
 /* Expert Team */
 .expert-team {
 	padding-top: 2rem;
@@ -48,10 +45,6 @@
 	display: block;
 	width: 100%;
 	margin: auto;
-	// mix-blend-mode: darken;
-	// position: relative;
-	// top: 50%;
-	// transform: translateY(-50%);
 }
 
 @include media-query(768px) {

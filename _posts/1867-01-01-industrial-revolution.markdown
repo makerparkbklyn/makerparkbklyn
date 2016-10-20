@@ -7,7 +7,7 @@ layout: post
 excerpt_separator: "<!--more-->"
 ---
 
-![oilworks]({{ site.baseurl }}/images/historic/bw/oilworks_bw.jpg){:class="post__image"}
+![oilworks]({{ site.baseurl }}/images/historic/charles-pratt.jpg){:class="post__image"}
 
 At the height of Brooklyn’s Industrial Revolution, American
 businessman and petroleum pioneer, Charles Pratt, founds Astral
