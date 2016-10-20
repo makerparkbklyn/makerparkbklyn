@@ -182,17 +182,13 @@ $(document).on('ready', function() {
 	// animate smooth scroll to next section on arrow click
 	$('body').on('click', '.arrow-down', function(e) {
 		e.preventDefault();
-		var $next = $currentSection.next('section');
-		if (!$next.length > 0) {
-			$next = $currentSection.next('footer');
+		var nextIndex = s.current.index + 1;
+		var $nextSection = $(s.sections[nextIndex]);
+		if (!$nextSection.length > 0) {
+			$nextSection = $('footer');
 		}
-		$next.ScrollTo();
+		$nextSection.ScrollTo();
 	});
-	// -------------------------------------------------------------------------
-	// initialize vars
-	// var $currentSection = $('section.current');
-	// var $prevSection = null;
-	// var currentBgColor = null;
 
 	// -------------------------------------------------------------------------
 	// animate colors
