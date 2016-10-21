@@ -28,7 +28,7 @@
 }
 .news-post {
 	border-top: solid 6px $indigo;
-	padding: .5rem 0 5rem;
+	padding: .5rem 0 4rem;
 	.icon--arrow-right {
 		width: 65px;
 		height: 53px;
@@ -82,6 +82,7 @@
 }
 @include media-query(1280px) {
 	.news-post {
+		padding-bottom: 2rem;
 		.icon--arrow-right {
 			float: right;
 			margin-top: .1rem;
