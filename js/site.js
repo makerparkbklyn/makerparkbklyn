@@ -16,7 +16,9 @@ $(document).on('ready', function() {
 	// Scroll To Page Position
 	// -------------------------------------------------------------------------
 	$('a[data-scrollto*="#"]').click(function(e) {
-		e.preventDefault();
+		if($('.front-page').length > 0) {
+			e.preventDefault();
+		}
 		var target = $(this).attr('data-scrollto');
 		$(target).ScrollTo({ duration: 2000 });
 	});
