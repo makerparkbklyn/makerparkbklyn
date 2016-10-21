@@ -11,6 +11,20 @@ $(document).on('ready', function() {
 	$('body').on("click", '.nav__toggle', function (e) {
 		e.preventDefault();
 		$('.rail--right').toggleClass('nav-open');
+		// if ( $('.nav-open').length > 0 && $(window).width() < 1280 ) {
+		// 	var $nav = $('.rail--right.nav-open .nav');
+		// 	var nw = Number($nav.css('width').slice(0, -2));
+		// 	var r = ($(window).width() - nw) / 2;
+		//
+		// 	console.log('window width: ' + $(window).width());
+		// 	console.log('nav width: ' + nw);
+		//
+		// 	$nav.css('right', r);
+		// }
+		// else if ($('.nav-open').length === 0) {
+		// 	var $nav = $('.rail--right.nav-open .nav');
+		// 	$nav.css('right', null);
+		// }
 	});
 
 	// Scroll To Page Position
