@@ -2036,7 +2036,7 @@ fieldset {
 
 .news-post {
   border-top: solid 6px #000056;
-  padding: .5rem 0 5rem; }
+  padding: .5rem 0 4rem; }
   .news-post .icon--arrow-right {
     width: 65px;
     height: 53px;
@@ -2078,9 +2078,11 @@ fieldset {
   margin-top: 1rem; }
 
 @media screen and (min-width: 1280px) {
-  .news-post .icon--arrow-right {
-    float: right;
-    margin-top: .1rem; }
+  .news-post {
+    padding-bottom: 2rem; }
+    .news-post .icon--arrow-right {
+      float: right;
+      margin-top: .1rem; }
 
   .news-post__header h2 {
     font-size: 1rem; }
