@@ -149,12 +149,11 @@ figcaption {
 .footer__arrow {
 	text-align: center;
 	color: $indigo;
-	z-index: 9999;
+	z-index: 999;
 	a {
 		display: block;
 		width: 100%;
 		height: 100%;
-		z-index: 99999;
 		svg {
 			width: 1rem;
 		}

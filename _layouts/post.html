@@ -2,41 +2,23 @@
 layout: news-page
 ---
 
+<div class="title stuck">
+	<h2 class="underline"><a href={{ "/news" | prepend: site.baseurl }}>News</a></h2>
+</div>
 <div class="container">
-	<div class="title stuck">
-		<h2 class="underline"><a href={{ "/news" | prepend: site.baseurl }}>News</a></h2>
-	</div>
-	<div class="news-posts">
-		<article class="row news-post">
+	<div class="row">
+		<article class="news-post u-cf">
 				<div class="news-post__header col-2">
 			    	<h2>{{ page.title }}</h2>
 					<time>{{ page.date | date: "%b %-d, %Y" }}</time>
 				</div>
-				<div class="news-post__content col-3">
-					<div class="post__content">
-						{{ content }}
-					</div>
+				<div class="news-post__body col-3">
+					{{ content }}
 				</div>
 				<div class="see-all-news col-1">
 					<a href={{ "/news" | prepend: site.baseurl }}>See All News</a>
 				</div>
 		</article>
 	</div>
-	<ul class="news-posts">
-		{% for post in site.posts %}
-			<li class="row news-post">
-				<div class="news-post__header col-2">
-					<h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-					<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-				</div>
-				<div class="news-post__excerpt col-3">
-					<p>{{ post.excerpt }}</p>
-				</div>
-				<div class="col-1">
-					<a href="{{ post.url | prepend: site.baseurl }}">{% include icons/arrow-right.svg %}</a>
-				</div>
-			</li>
-		</a>
-		{% endfor %}
-	</ul>
+	{% include news-list.html %}
 </div>

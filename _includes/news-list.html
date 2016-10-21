@@ -1,0 +1,20 @@
+<div class="row">
+	<ul class="news-posts">
+		{% for post in site.posts %}
+			<li>
+				<article class="news-post u-cf">
+					<div class="news-post__header col-2">
+						<h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+						<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+					</div>
+					<div class="news-post__body col-3">
+						{{ post.excerpt }}
+					</div>
+					<div class="col-1">
+						<a href="{{ post.url | prepend: site.baseurl }}">{% include icons/arrow-right.svg %}</a>
+					</div>
+				</article>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
