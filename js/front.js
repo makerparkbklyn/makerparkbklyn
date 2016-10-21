@@ -133,11 +133,13 @@ $(document).on('ready', function() {
 			}
 			if (self.current.id === 'team') {
 				if (self.current.transitionComplete) {
+					console.log("transition complete");
 					self.current.el.css('background-color', 'rgb(255, 128, 83)');
 					$('.bg').css('background-color', 'transparent');
 				}
 				else if (progress < 1) {
-					$('.bg').css('background-color', 'rgb(255, 128, 83)');
+					console.log("progress < 1");
+					// $('.bg').css('background-color', 'rgb(255, 128, 83)');
 					self.current.el.css('background-color', 'transparent');
 				}
 			}
