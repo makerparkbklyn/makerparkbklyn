@@ -16,12 +16,7 @@
 	.title > h2 > a {
 		text-decoration: none;
 	}
-
-	.footer {
-		background: none;
-	}
 }
-
 /* List of Posts
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .news-posts {
@@ -29,7 +24,6 @@
 	margin-bottom: 0;
 	list-style: none;
 }
-
 .news-post {
 	border-top: solid 6px $indigo;
 	padding: .6rem 0 4rem;
@@ -40,7 +34,6 @@
 		float: right;
 		margin-top: .1rem;
 	}
-
 	&:hover {
 		h2 > a {
 			color: #fff;
@@ -50,11 +43,8 @@
 		}
 	}
 }
-
 .news-post__header {
-
 	padding-right: 1rem;
-
 	h2 {
 		font-size: 1rem;
 		line-height: 1;
