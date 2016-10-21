@@ -167,12 +167,12 @@ umd: true
 			}
 
 			// Check to see if the scroll is necessary
-			if ( $container.prop('scrollHeight') === $container.height() ) {
-				delete scrollOptions.scrollTop
-			}
-			if ( $container.prop('scrollWidth') === $container.width() ) {
-				delete scrollOptions.scrollLeft
-			}
+			// if ( $container.prop('scrollHeight') === $container.height() ) {
+			// 	delete scrollOptions.scrollTop
+			// }
+			// if ( $container.prop('scrollWidth') === $container.width() ) {
+			// 	delete scrollOptions.scrollLeft
+			// }
 
 			// Perform the scroll
 			if ( scrollOptions.scrollTop != null || scrollOptions.scrollLeft != null ) {
