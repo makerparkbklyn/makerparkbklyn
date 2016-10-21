@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 	{% include head.html %}
-	<body class="news-page-wrapper" id="top">
-		<div class="news-page">
-			{% include grid.html %}
+	<body class="news-page" id="top">
+		{% include grid.html %}
+		<main class="main-content">
 			{{ content }}
-			{% include right-rail.html %}
-			{% include left-rail.html %}
-			{% include js.html %}
-		</div>
-	{% include footer.html %}
-  </body>
+		</main>
+		{% include right-rail.html %}
+		{% include left-rail.html %}
+		{% include js.html %}
+		{% include footer.html %}
+	</body>
 </html>

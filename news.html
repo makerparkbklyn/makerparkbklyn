@@ -2,25 +2,9 @@
 layout: news-page
 ---
 
+<div class="title stuck">
+	<h2 class="underline">News</h2>
+</div>
 <div class="container">
-	<div class="title stuck">
-		<h2 class="underline">News</h2>
-	</div>
-	<ul class="news-posts">
-		{% for post in site.posts %}
-			<li class="row news-post">
-				<div class="news-post__header col-2">
-					<h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-					<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-				</div>
-				<div class="news-post__excerpt col-3">
-					<p>{{ post.excerpt }}</p>
-					<!-- <p>{{ post.content | strip_html | truncatewords:65}}</p> -->
-				</div>
-				<div class="col-1">
-					<a href="{{ post.url | prepend: site.baseurl }}">{% include icons/arrow-right.svg %}</a>
-				</div>
-			</li>
-		{% endfor %}
-	</ul>
+	{% include news-list.html %}
 </div>
