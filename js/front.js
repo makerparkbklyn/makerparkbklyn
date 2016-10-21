@@ -109,7 +109,6 @@ $(document).on('ready', function() {
 		// -------------------------------------------------------------------------
 		var updateColor  = function(progress) {
 			if (self.current.id != 'mission' && self.current.id != 'hero') {
-				console.log("not mission, not hero, updating color");
 				var c = $.Color(self.current.previousColor).transition(self.current.color, progress);
 				$('.bg').css('background-color', c);
 				self.current.transitionComplete = false;
@@ -118,21 +117,17 @@ $(document).on('ready', function() {
 				}
 			}
 			else if (self.current.id === 'mission') {
-				console.log("Progress: " + progress);
 				if (progress >= 1) {
-					console.log("downscroll: mission transparent, bg yellow");
 					self.current.transitionComplete = true;
 					$('.bg').css('background-color', 'rgb(216, 242, 130)');
 					self.current.el.css('background-color', 'transparent');
 				}
 				else if (progress < 1) {
-					console.log("upscroll: mission yellow, bg transparent");
 					$('.bg').css('background-color', 'transparent');
 					self.current.el.css('background-color', 'rgb(216, 242, 130)');
 				}
 			}
 			else if (self.current.id === 'hero') {
-				console.log("hero: mission yellow, bg transparent");
 				$('.bg').css('background-color', 'transparent');
 				$('.mission-section').css('background-color', 'rgb(216, 242, 130)');
 			}

@@ -3,10 +3,7 @@ $(document).on('ready', function() {
 	// Hide/Show Grid Overlay
 	// -------------------------------------------------------------------------
 	$(window).on('keydown', function (e) {
-		if (e.which === 71) {
-			console.log("G pressed");
-			$('.grid').toggleClass('show');
-		}
+		if (e.which === 71) { $('.grid').toggleClass('show'); }
 	});
 
 	// Toggle Nav
@@ -27,25 +24,24 @@ $(document).on('ready', function() {
 
 	// On Scroll Events
 	// -------------------------------------------------------------------------
+	var $prevScroll = 0;
 	$(window).scroll(function() {
 
 		var $scroll = $(window).scrollTop();
 
 		// Hide/Show Rails
 		// ---------------------------------------------------------------------
-		var lastScrollTop = 0;
-		var st = this.pageYOffset || this.scrollTop;
-		if (st > lastScrollTop){
+		if ($scroll > $prevScroll){
 			// downscroll code
 			if ($(window).width() < 1280) {
 				$('.rail').addClass('out');
 			}
-			$('.nav').removeClass('open');
+			$('.rail--right').removeClass('nav-open');
 		} else {
 			// upscroll code
 			$('.rail').removeClass('out');
 		}
-		lastScrollTop = st;
+		$prevScroll = $scroll;
 	});
 
 });
