@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maker Park</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 21 Oct 2016 19:44:00 +0000</pubDate>
+    <lastBuildDate>Fri, 21 Oct 2016 19:44:00 +0000</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Maker Park Brainstorming Session</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/invite-poster.jpg&quot; alt=&quot;poster&quot; class=&quot;post__image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula, quam sit amet luctus tempor, tortor eros consequat ligula, in tincidunt nisi lorem nec nisl. Morbi venenatis sem at tortor egestas, eget posuere mauris laoreet. Proin tempor, nisl nec dignissim ultricies, diam urna interdum lectus, eget viverra mauris mauris non nibh. Maecenas vel libero eros.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Nulla egestas, tellus sit amet lobortis consequat, mauris metus porta lorem, non ullamcorper lorem ex ut ante. Integer aliquam metus eget luctus molestie. Donec hendrerit nibh ut ultricies malesuada. Phasellus cursus urna id sapien faucibus, sed luctus erat sagittis. Ut sed lacinia magna. Nam semper ligula eu vulputate interdum. Integer dignissim in lectus efficitur rutrum. In est erat, faucibus vel vestibulum et, finibus id mi.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 14 Jul 2016 18:59:30 +0000</pubDate>
+        <link>http://localhost:4000/news/2016/07/14/brainstorm/</link>
+        <guid isPermaLink="true">http://localhost:4000/news/2016/07/14/brainstorm/</guid>
+        
+        
+        <category>news</category>
+        
+      </item>
+    
+      <item>
+        <title>Charrette</title>
+        <description>&lt;p&gt;Summer 2016: The Maker Park team holds two community design charrettes,
+bringing together an array of neighborhood stakeholders,
+community members and design professionals to advance the
+vision.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula, quam sit amet luctus tempor, tortor eros consequat ligula, in tincidunt nisi lorem nec nisl. Morbi venenatis sem at tortor egestas, eget posuere mauris laoreet. Proin tempor, nisl nec dignissim ultricies, diam urna interdum lectus, eget viverra mauris mauris non nibh. Maecenas vel libero eros. Nulla egestas, tellus sit amet lobortis consequat, mauris metus porta lorem, non ullamcorper lorem ex ut ante. Integer aliquam metus eget luctus molestie. Donec hendrerit nibh ut ultricies malesuada. Phasellus cursus urna id sapien faucibus, sed luctus erat sagittis. Ut sed lacinia magna. Nam semper ligula eu vulputate interdum. Integer dignissim in lectus efficitur rutrum. In est erat, faucibus vel vestibulum et, finibus id mi.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 06 Jun 2016 18:59:30 +0000</pubDate>
+        <link>http://localhost:4000/news/2016/06/06/charrette/</link>
+        <guid isPermaLink="true">http://localhost:4000/news/2016/06/06/charrette/</guid>
+        
+        
+        <category>news</category>
+        
+      </item>
+    
+      <item>
+        <title>Eviction Party</title>
+        <description>&lt;p&gt;At an eviction party for the building Zac is introduced to
+Stacey Anderson, a director at MAS, who after touring the site
+truly understands the potential and agrees to help with the
+nascent project. Two weeks later while co-leading a tour of
+the neighborhood in commemoration of Jane Jacobs, Stacey
+introduces Zac to fellow urbanist Karen Zabarsky and the Maker
+Park founding team is complete.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula, quam sit amet luctus tempor, tortor eros consequat ligula, in tincidunt nisi lorem nec nisl. Morbi venenatis sem at tortor egestas, eget posuere mauris laoreet. Proin tempor, nisl nec dignissim ultricies, diam urna interdum lectus, eget viverra mauris mauris non nibh. Maecenas vel libero eros. Nulla egestas, tellus sit amet lobortis consequat, mauris metus porta lorem, non ullamcorper lorem ex ut ante. Integer aliquam metus eget luctus molestie. Donec hendrerit nibh ut ultricies malesuada. Phasellus cursus urna id sapien faucibus, sed luctus erat sagittis. Ut sed lacinia magna. Nam semper ligula eu vulputate interdum. Integer dignissim in lectus efficitur rutrum. In est erat, faucibus vel vestibulum et, finibus id mi.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 14 Apr 2016 18:59:30 +0000</pubDate>
+        <link>http://localhost:4000/news/2016/04/14/eviction-party/</link>
+        <guid isPermaLink="true">http://localhost:4000/news/2016/04/14/eviction-party/</guid>
+        
+        
+        <category>news</category>
+        
+      </item>
+    
+      <item>
+        <title>Outreach</title>
+        <description>&lt;p&gt;The group begins outreach to experts and neighborhood
+stakeholders. Eventually a dream team of professionals sharing
+in the vision comes together spearheaded by Studio V
+Architecture. Pentagram Design, Ken Smith Landscape
+Architecture, and Sage Paget and Risel are among those who have
+joined the Maker Park team.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula, quam sit amet luctus tempor, tortor eros consequat ligula, in tincidunt nisi lorem nec nisl. Morbi venenatis sem at tortor egestas, eget posuere mauris laoreet. Proin tempor, nisl nec dignissim ultricies, diam urna interdum lectus, eget viverra mauris mauris non nibh. Maecenas vel libero eros. Nulla egestas, tellus sit amet lobortis consequat, mauris metus porta lorem, non ullamcorper lorem ex ut ante. Integer aliquam metus eget luctus molestie. Donec hendrerit nibh ut ultricies malesuada. Phasellus cursus urna id sapien faucibus, sed luctus erat sagittis. Ut sed lacinia magna. Nam semper ligula eu vulputate interdum. Integer dignissim in lectus efficitur rutrum. In est erat, faucibus vel vestibulum et, finibus id mi.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Oct 2015 18:59:30 +0000</pubDate>
+        <link>http://localhost:4000/news/2015/10/02/outreach/</link>
+        <guid isPermaLink="true">http://localhost:4000/news/2015/10/02/outreach/</guid>
+        
+        
+        <category>news</category>
+        
+      </item>
+    
+      <item>
+        <title>Brooklyn&#39;s Industrial Revolution</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/historic/charles-pratt.jpg&quot; alt=&quot;oilworks&quot; class=&quot;post__image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At the height of Brooklyn’s Industrial Revolution, American
+businessman and petroleum pioneer, Charles Pratt, founds Astral
+Oil Works on the site of the proposed Maker Park, now known as
+the Bayside Fuel Terminal.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula, quam sit amet luctus tempor, tortor eros consequat ligula, in tincidunt nisi lorem nec nisl. Morbi venenatis sem at tortor egestas, eget posuere mauris laoreet. Proin tempor, nisl nec dignissim ultricies, diam urna interdum lectus, eget viverra mauris mauris non nibh. Maecenas vel libero eros. Nulla egestas, tellus sit amet lobortis consequat, mauris metus porta lorem, non ullamcorper lorem ex ut ante. Integer aliquam metus eget luctus molestie. Donec hendrerit nibh ut ultricies malesuada. Phasellus cursus urna id sapien faucibus, sed luctus erat sagittis. Ut sed lacinia magna. Nam semper ligula eu vulputate interdum. Integer dignissim in lectus efficitur rutrum. In est erat, faucibus vel vestibulum et, finibus id mi.&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula, quam sit amet luctus tempor, tortor eros consequat ligula, in tincidunt nisi lorem nec nisl. Morbi venenatis sem at tortor egestas, eget posuere mauris laoreet. Proin tempor, nisl nec dignissim ultricies, diam urna interdum lectus, eget viverra mauris mauris non nibh. Maecenas vel libero eros. Nulla egestas, tellus sit amet lobortis consequat, mauris metus porta lorem, non ullamcorper lorem ex ut ante. Integer aliquam metus eget luctus molestie. Donec hendrerit nibh ut ultricies malesuada. Phasellus cursus urna id sapien faucibus, sed luctus erat sagittis. Ut sed lacinia magna. Nam semper ligula eu vulputate interdum. Integer dignissim in lectus efficitur rutrum. In est erat, faucibus vel vestibulum et, finibus id mi.&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula, quam sit amet luctus tempor, tortor eros consequat ligula, in tincidunt nisi lorem nec nisl. Morbi venenatis sem at tortor egestas, eget posuere mauris laoreet. Proin tempor, nisl nec dignissim ultricies, diam urna interdum lectus, eget viverra mauris mauris non nibh. Maecenas vel libero eros. Nulla egestas, tellus sit amet lobortis consequat, mauris metus porta lorem, non ullamcorper lorem ex ut ante. Integer aliquam metus eget luctus molestie. Donec hendrerit nibh ut ultricies malesuada. Phasellus cursus urna id sapien faucibus, sed luctus erat sagittis. Ut sed lacinia magna. Nam semper ligula eu vulputate interdum. Integer dignissim in lectus efficitur rutrum. In est erat, faucibus vel vestibulum et, finibus id mi.&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula, quam sit amet luctus tempor, tortor eros consequat ligula, in tincidunt nisi lorem nec nisl. Morbi venenatis sem at tortor egestas, eget posuere mauris laoreet. Proin tempor, nisl nec dignissim ultricies, diam urna interdum lectus, eget viverra mauris mauris non nibh. Maecenas vel libero eros. Nulla egestas, tellus sit amet lobortis consequat, mauris metus porta lorem, non ullamcorper lorem ex ut ante. Integer aliquam metus eget luctus molestie. Donec hendrerit nibh ut ultricies malesuada. Phasellus cursus urna id sapien faucibus, sed luctus erat sagittis. Ut sed lacinia magna. Nam semper ligula eu vulputate interdum. Integer dignissim in lectus efficitur rutrum. In est erat, faucibus vel vestibulum et, finibus id mi.&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula, quam sit amet luctus tempor, tortor eros consequat ligula, in tincidunt nisi lorem nec nisl. Morbi venenatis sem at tortor egestas, eget posuere mauris laoreet. Proin tempor, nisl nec dignissim ultricies, diam urna interdum lectus, eget viverra mauris mauris non nibh. Maecenas vel libero eros. Nulla egestas, tellus sit amet lobortis consequat, mauris metus porta lorem, non ullamcorper lorem ex ut ante. Integer aliquam metus eget luctus molestie. Donec hendrerit nibh ut ultricies malesuada. Phasellus cursus urna id sapien faucibus, sed luctus erat sagittis. Ut sed lacinia magna. Nam semper ligula eu vulputate interdum. Integer dignissim in lectus efficitur rutrum. In est erat, faucibus vel vestibulum et, finibus id mi.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 01 Jan 1867 18:59:30 +0000</pubDate>
+        <link>http://localhost:4000/news/1867/01/01/industrial-revolution/</link>
+        <guid isPermaLink="true">http://localhost:4000/news/1867/01/01/industrial-revolution/</guid>
+        
+        
+        <category>news</category>
+        
+      </item>
+    
+  </channel>
+</rss>
