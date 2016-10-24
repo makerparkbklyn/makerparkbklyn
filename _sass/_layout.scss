@@ -6,14 +6,12 @@
 /* Slick (default)
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 // Arrows
-.slick-prev,
-.slick-next
-{
+.slick-arrow {
     font-size: 0;
     line-height: 0;
     position: absolute;
     display: block;
-	width: 65px;
+	width: 50px;
     height: 53px;
     padding: 0;
     cursor: pointer;
@@ -30,6 +28,21 @@
 .slick-next {
 	background: url(../images/arrows/arrow-right.svg);
 	background-repeat: no-repeat;
+}
+@include media-query(768px) {
+	.slick-arrow {
+		width: 65px;
+	}
+}
+@include media-query(1024px) {
+	.slick-arrow {
+		width: 44px;
+	}
+}
+@include media-query(1280px) {
+	.slick-arrow {
+		width: 65px;
+	}
 }
 
 /* Rails

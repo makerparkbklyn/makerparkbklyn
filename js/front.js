@@ -156,7 +156,16 @@ $(document).on('ready', function() {
 
 	// Init Slick Photo Carousel
 	// -------------------------------------------------------------------------
-	$('.carousel.site-photos').slick({
+	var $status = $('.carousel__count p');
+	var $photoCarousel = $('.carousel.site-photos');
+
+	$photoCarousel.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+	    //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+	    var i = (currentSlide ? currentSlide : 0) + 1;
+	    $status.text(i + '/' + slick.slideCount);
+	});
+	$photoCarousel.slick({
+		slide: '.carousel__image',
 		infinite: true,
 		speed: 500,
 		arrows: true,

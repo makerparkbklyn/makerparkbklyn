@@ -23,26 +23,152 @@
 		box-sizing: border-box;
 		width: 100%;
 		height: 0 !important;
-		padding-bottom: 5%;
+		padding-bottom: 4.5%;
 		overflow: hidden;
 		background-size: cover;
 	}
 	.slick-prev {
-		top: 50%;
-		left: 8px;
+		top: 110%;
+		left: -12px;
 	}
 	.slick-next {
-		top: 50%;
-		right: 8px;
+		top: calc(110% + .5px);
+		left: 50px;
+	}
+	.carousel__count {
+		position: absolute;
+		top: 108%;
+		right: -12px;
+	}
+}
+@include media-query(768px) {
+	.carousel.site-photos {
+		.slick-prev {
+			top: 106%;
+		}
+		.slick-next {
+			top: calc(106% + .5px);
+			left: 70px;
+		}
+		.carousel__count {
+			top: 105.5%;
+		}
+	}
+}
+@include media-query(1024px) {
+	.carousel.site-photos {
+		.slick-prev {
+			top: 105%;
+		}
+		.slick-next {
+			top: calc(105% + .5px);
+			left: 48px;
+		}
+		.carousel__count {
+			top: 103.25%;
+			p {
+				font-size: .75rem;
+			}
+		}
 	}
 }
 @include media-query(1280px) {
 	.map {
 		padding-bottom: 75%;
 	}
+	.carousel.site-photos {
+		.slick-prev {
+			top: 0;
+			left: auto;
+			right: -12%;
+		}
+		.slick-next {
+			top: .5px;
+			left: auto;
+			right: -22%;
+		}
+		.carousel__count {
+			top: 12%;
+			right: -16.25%;
+			right: -22%;
+			p {
+				font-size: .5rem;
+			}
+		}
+	}
 }
 @include media-query(1600px) {
 	.map {
 		padding-bottom: 60%;
+	}
+	.carousel.site-photos {
+		.slick-prev {
+			top: 0;
+			left: auto;
+			right: -13.5%;
+		}
+		.slick-next {
+			top: .5px;
+			left: auto;
+			right: -21.5%;
+		}
+		.carousel__count {
+			top: 8%;
+			right: -21.5%;
+		}
+	}
+}
+@include media-query(2000px) {
+	.carousel.site-photos {
+		.slick-prev {
+			top: 0;
+			left: auto;
+			right: -14.5%;
+		}
+		.slick-next {
+			top: .5px;
+			left: auto;
+			right: -21.25%;
+		}
+		.carousel__count {
+			right: -21.25%;
+		}
+	}
+}
+@include media-query(2200px) {
+	.carousel.site-photos {
+		.slick-prev {
+			top: 0;
+			left: auto;
+			right: -14%;
+		}
+		.slick-next {
+			top: .5px;
+			left: auto;
+			right: -21%;
+		}
+	}
+}
+@include media-query(2400px) {
+	.carousel.site-photos {
+		.slick-prev {
+			top: 84px;
+			left: auto;
+			right: -8%;
+		}
+		.slick-next {
+			top: 84.5px;
+			left: auto;
+			right: -13.5%;
+		}
+		.carousel__count {
+			top: -2%;
+			right: auto;
+			left: 103.6%;
+			p {
+				margin: 0;
+				font-size: 1rem;
+			}
+		}
 	}
 }
