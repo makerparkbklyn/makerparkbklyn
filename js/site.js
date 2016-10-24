@@ -10,28 +10,32 @@ $(document).on('ready', function() {
 	// -------------------------------------------------------------------------
 	$('body').on("click", '.nav__toggle', function (e) {
 		e.preventDefault();
-		$('.rail--right').toggleClass('nav-open');
-		// if ( $('.nav-open').length > 0 && $(window).width() < 1280 ) {
-		// 	var $nav = $('.rail--right.nav-open .nav');
-		// 	var nw = Number($nav.css('width').slice(0, -2));
-		// 	var r = ($(window).width() - nw) / 2;
-		//
-		// 	console.log('window width: ' + $(window).width());
-		// 	console.log('nav width: ' + nw);
-		//
-		// 	$nav.css('right', r);
-		// }
-		// else if ($('.nav-open').length === 0) {
-		// 	var $nav = $('.rail--right.nav-open .nav');
-		// 	$nav.css('right', null);
-		// }
+		if ( $('.nav-open').length === 0 && $(window).width() < 1280 ) {
+			var nw = 312;
+			var r = ($(window).width() - nw) / 2;
+			console.log('window width: ' + $(window).width());
+			console.log('nav width: ' + nw);
+			$('.rail--right').addClass('nav-open');
+			$('.nav').find('.nav__list').css('right', r);
+		}
+		else if ( $('.nav-open').length === 0 && $(window).width() > 1280 ) {
+			$('.rail--right').addClass('nav-open');
+		}
+		else if ($('.nav-open').length > 0) {
+			$('.rail--right').removeClass('nav-open');
+			$('.nav').find('.nav__list').attr('style', '');
+		}
 	});
 
 	// Scroll To Page Position
 	// -------------------------------------------------------------------------
 	$('a[data-scrollto*="#"]').click(function(e) {
-		if($('.front-page').length > 0) {
+		if ($('.front-page').length > 0) {
 			e.preventDefault();
+		}
+		if ($('.nav-open').length > 0) {
+			$('.rail--right').removeClass('nav-open');
+			$('.nav').find('.nav__list').attr('style', '');
 		}
 		var target = $(this).attr('data-scrollto');
 		$(target).ScrollTo({ duration: 2000 });
@@ -53,6 +57,7 @@ $(document).on('ready', function() {
 				$('.rail').addClass('out');
 			}
 			$('.rail--right').removeClass('nav-open');
+			$('.nav').find('.nav__list').attr('style', '');
 		} else {
 			// upscroll code
 			$('.rail').removeClass('out');

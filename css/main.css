@@ -837,13 +837,12 @@ Note: The best way to structure the use of media queries is to create the querie
 
 /* Slick (default)
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.slick-prev,
-.slick-next {
+.slick-arrow {
   font-size: 0;
   line-height: 0;
   position: absolute;
   display: block;
-  width: 65px;
+  width: 50px;
   height: 53px;
   padding: 0;
   cursor: pointer;
@@ -861,6 +860,15 @@ Note: The best way to structure the use of media queries is to create the querie
   background: url(../images/arrows/arrow-right.svg);
   background-repeat: no-repeat; }
 
+@media screen and (min-width: 768px) {
+  .slick-arrow {
+    width: 65px; } }
+@media screen and (min-width: 1024px) {
+  .slick-arrow {
+    width: 44px; } }
+@media screen and (min-width: 1280px) {
+  .slick-arrow {
+    width: 65px; } }
 /* Rails
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .rail {
@@ -908,7 +916,7 @@ Note: The best way to structure the use of media queries is to create the querie
       text-decoration: none; } }
 @media screen and (min-width: 1280px) {
   .rail--left .arrow-down svg {
-    width: 42px; }
+    width: 53px; }
   .rail--left .join-sticker {
     font-size: .75rem; } }
 @media screen and (min-width: 1440px) {
@@ -922,21 +930,19 @@ Note: The best way to structure the use of media queries is to create the querie
 .rail--right {
   right: 0;
   background: transparent;
-  transition: background-color .2s; }
+  transition: background-color 0.2s cubic-bezier(0.39, 0.14, 0.59, 0.86); }
   .rail--right .logo {
     position: absolute;
     right: 18px;
     bottom: 12px;
     transform: translateX(0%);
-    transition: bottom .2s, transform .2s; }
+    transition: bottom 0.2s, transform 0.2s cubic-bezier(0.39, 0.14, 0.59, 0.86); }
     .rail--right .logo svg {
       width: 120px;
       height: 101px; }
 
-.rail--right.out {
-  z-index: -1; }
-  .rail--right.out .logo {
-    bottom: -25%; }
+.rail--right.out .logo {
+  bottom: -25%; }
 
 /* Nav
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -945,12 +951,19 @@ Note: The best way to structure the use of media queries is to create the querie
   width: 100%;
   right: 0;
   background-color: transparent;
-  transition: background-color .2s ease-in-out; }
+  top: 0;
+  transition: background-color 0.2s cubic-bezier(0.39, 0.14, 0.59, 0.86), top 0.2s cubic-bezier(0.39, 0.14, 0.59, 0.86); }
+
+.rail--right.out .nav {
+  top: -25%; }
 
 .nav__list {
   list-style: none;
   position: relative;
-  margin: 0; }
+  margin: 0;
+  top: 18px;
+  right: 18px;
+  transition: right 0.2s cubic-bezier(0.39, 0.14, 0.59, 0.86), top 0.2s cubic-bezier(0.39, 0.14, 0.59, 0.86); }
 
 .nav__item {
   position: absolute;
@@ -964,7 +977,7 @@ Note: The best way to structure the use of media queries is to create the querie
   border-radius: 50%;
   opacity: 0;
   transform: rotate(90deg);
-  transition: all .2s ease-in-out; }
+  transition: all 0.2s cubic-bezier(0.39, 0.14, 0.59, 0.86); }
   .nav__item a {
     position: absolute;
     top: 0;
@@ -1004,7 +1017,7 @@ Note: The best way to structure the use of media queries is to create the querie
   width: 48px;
   height: 24px;
   margin: 32px auto;
-  transition: margin .2s; }
+  transition: margin 0.2s cubic-bezier(0.39, 0.14, 0.59, 0.86); }
   .nav__hamburger:before {
     content: '';
     display: block;
@@ -1024,175 +1037,88 @@ Note: The best way to structure the use of media queries is to create the querie
     background: #000056;
     transition: all 0.2s ease-in-out; }
 
-.rail--right.nav-open nav {
+.rail--right.nav-open .nav {
   width: 800%;
   right: 0;
   top: 0;
   bottom: 0;
   background-color: #ff94bd; }
-  .rail--right.nav-open nav .nav__list {
+  .rail--right.nav-open .nav .nav__list {
     width: auto;
-    right: 0; }
-  .rail--right.nav-open nav .nav__item {
+    right: 0;
+    top: 1rem; }
+  .rail--right.nav-open .nav .nav__item {
     width: 144px;
     height: 144px;
     position: absolute;
     opacity: 1;
     transform: rotate(0deg); }
-    .rail--right.nav-open nav .nav__item:nth-child(1) {
+    .rail--right.nav-open .nav .nav__item:nth-child(1) {
       right: 168px; }
-    .rail--right.nav-open nav .nav__item:nth-child(2) {
+    .rail--right.nav-open .nav .nav__item:nth-child(2) {
       right: 168px;
       top: 168px; }
-    .rail--right.nav-open nav .nav__item:nth-child(3) {
+    .rail--right.nav-open .nav .nav__item:nth-child(3) {
       top: 168px; }
-    .rail--right.nav-open nav .nav__item:nth-child(4) {
+    .rail--right.nav-open .nav .nav__item:nth-child(4) {
       top: 336px;
       right: 168px; }
-    .rail--right.nav-open nav .nav__item:nth-child(5) {
+    .rail--right.nav-open .nav .nav__item:nth-child(5) {
       top: 336px; }
-  .rail--right.nav-open nav .nav__toggle {
+  .rail--right.nav-open .nav .nav__toggle {
     position: absolute; }
-    .rail--right.nav-open nav .nav__toggle .nav__hamburger {
+    .rail--right.nav-open .nav .nav__toggle .nav__hamburger {
       margin: 54px auto; }
-    .rail--right.nav-open nav .nav__toggle .nav__hamburger:before {
+    .rail--right.nav-open .nav .nav__toggle .nav__hamburger:before {
       transform: rotate(45deg);
       top: 9px; }
-    .rail--right.nav-open nav .nav__toggle .nav__hamburger:after {
+    .rail--right.nav-open .nav .nav__toggle .nav__hamburger:after {
       transform: rotate(-45deg);
       bottom: 9px; }
 .rail--right.nav-open .logo {
   transform: translateX(120%); }
 
+@media screen and (min-width: 414px) {
+  .rail--right.nav-open .nav .nav__list {
+    top: 1.5rem; } }
+@media screen and (min-width: 768px) {
+  .nav__item a {
+    font-size: 1rem; }
+
+  .rail--right.nav-open .nav .nav__list {
+    top: 4rem; } }
 @media screen and (min-width: 1024px) {
-  /* Right Rail
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  .rail--right {
-    right: 0; }
-    .rail--right .logo {
-      right: 24px;
-      bottom: 15px; }
-      .rail--right .logo svg {
-        width: 180px;
-        height: 151px; }
+  .nav__item:first-child a {
+    margin-top: 32px; }
 
-  .rail--right.out .logo {
-    bottom: -25%; }
+  .rail--right.nav-open .nav .nav__list {
+    top: 3rem; }
 
-  /* Nav
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  .nav {
-    width: 120px;
-    height: 120px;
-    position: absolute;
-    top: 24px;
+  .rail--right .logo {
     right: 24px;
-    border-radius: 50%;
-    transition: top .25s; }
-
-  .rail--right.out .nav {
-    top: -25%; }
-
+    bottom: 15px; }
+    .rail--right .logo svg {
+      width: 180px;
+      height: 151px; } }
+@media screen and (min-width: 1280px) {
   .nav__list {
-    list-style: none;
-    position: relative; }
+    top: 24px;
+    right: 24px; }
 
   .nav__item {
-    box-sizing: border-box;
     width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 6px solid #000056;
-    color: #000056;
-    font-weight: bold;
-    transition: top .25s ease-in-out, opacity .25s ease-in-out, background-color .25s;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    opacity: 0; }
+    height: 120px; }
     .nav__item a {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-      text-align: center;
-      display: block;
-      line-height: 108px;
-      transition: color .25s;
-      font-size: .8333rem; }
-    .nav__item.active {
-      background: #000056; }
-      .nav__item.active a {
-        color: #fff; }
-    .nav__item:hover {
-      background: #000056; }
-      .nav__item:hover a {
-        text-decoration: none;
-        color: #fff; }
+      font-size: .75rem; }
     .nav__item:first-child a {
-      line-height: 1;
-      margin-top: 24px; }
-
-  .nav__toggle {
-    opacity: 1; }
-    .nav__toggle:hover {
-      background-color: transparent; }
-      .nav__toggle:hover a {
-        color: #000056; }
+      margin-top: 30px; }
 
   .nav__hamburger {
-    position: relative;
-    width: 48px;
-    height: 24px;
     margin: 42px auto; }
-    .nav__hamburger:before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      width: 48px;
-      height: 6px;
-      background: #000056;
-      transition: all 0.225s ease-in-out; }
-    .nav__hamburger:after {
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: 0;
-      width: 48px;
-      height: 6px;
-      background: #000056;
-      transition: all 0.225s ease-in-out; }
 
-  .nav.open .nav__item {
-    opacity: 1; }
-    .nav.open .nav__item:nth-child(1) {
-      top: 132px; }
-    .nav.open .nav__item:nth-child(2) {
-      top: 264px; }
-    .nav.open .nav__item:nth-child(3) {
-      top: 396px; }
-    .nav.open .nav__item:nth-child(4) {
-      top: 528px; }
-    .nav.open .nav__item:nth-child(5) {
-      top: 660px; }
-  .nav.open .nav__toggle .nav__hamburger:before {
-    transform: rotate(45deg);
-    top: 9px; }
-  .nav.open .nav__toggle .nav__hamburger:after {
-    transform: rotate(-45deg);
-    bottom: 9px; } }
-@media screen and (min-width: 1280px) {
-  .nav {
-    top: 2.25%; }
-
-  .nav__item:first-child a {
-    line-height: 1;
-    margin-top: 26px; }
-  .nav__item a {
-    font-size: .625rem; }
+  .rail--right.nav-open .nav .nav__list {
+    top: 24px;
+    right: 24px; }
 
   .rail--right .logo {
     bottom: 12px; }
@@ -1200,12 +1126,22 @@ Note: The best way to structure the use of media queries is to create the querie
       width: 200px;
       height: 168px; } }
 @media screen and (min-width: 1440px) {
+  .nav__item a {
+    font-size: .65rem; }
+  .nav__item:first-child a {
+    margin-top: 36px; }
+
   .rail--right .logo {
     bottom: 12px; }
     .rail--right .logo svg {
       width: 240px;
       height: 202px; } }
 @media screen and (min-width: 1600px) {
+  .nav__item a {
+    font-size: .5rem; }
+  .nav__item:first-child a {
+    margin-top: 36px; }
+
   .rail--right .logo {
     bottom: 21px;
     right: 36px; }
@@ -1213,19 +1149,12 @@ Note: The best way to structure the use of media queries is to create the querie
       width: 288px;
       height: 242px; }
   .rail--right.out .logo {
-    bottom: -30%; }
-
-  .nav {
-    right: 36px; }
-
+    bottom: -30%; } }
+@media screen and (min-width: 1600px) {
   .nav__item a {
-    font-size: .5rem; } }
-@media screen and (min-width: 2000px) {
-  .nav__item a {
-    font-size: .416666667rem; } }
-.logo.out {
-  bottom: -30%; }
-
+    font-size: .4rem; }
+  .nav__item:first-child a {
+    margin-top: 38px; } }
 /* Front Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 body {
@@ -1433,22 +1362,107 @@ figcaption {
     box-sizing: border-box;
     width: 100%;
     height: 0 !important;
-    padding-bottom: 5%;
+    padding-bottom: 4.5%;
     overflow: hidden;
     background-size: cover; }
   .carousel.site-photos .slick-prev {
-    top: 50%;
-    left: 8px; }
+    top: 110%;
+    left: -12px; }
   .carousel.site-photos .slick-next {
-    top: 50%;
-    right: 8px; }
+    top: calc(110% + .5px);
+    left: 50px; }
+  .carousel.site-photos .carousel__count {
+    position: absolute;
+    top: 108%;
+    right: -12px; }
 
+@media screen and (min-width: 768px) {
+  .carousel.site-photos .slick-prev {
+    top: 106%; }
+  .carousel.site-photos .slick-next {
+    top: calc(106% + .5px);
+    left: 70px; }
+  .carousel.site-photos .carousel__count {
+    top: 105.5%; } }
+@media screen and (min-width: 1024px) {
+  .carousel.site-photos .slick-prev {
+    top: 105%; }
+  .carousel.site-photos .slick-next {
+    top: calc(105% + .5px);
+    left: 48px; }
+  .carousel.site-photos .carousel__count {
+    top: 103.25%; }
+    .carousel.site-photos .carousel__count p {
+      font-size: .75rem; } }
 @media screen and (min-width: 1280px) {
   .map {
-    padding-bottom: 75%; } }
+    padding-bottom: 75%; }
+
+  .carousel.site-photos .slick-prev {
+    top: 0;
+    left: auto;
+    right: -12%; }
+  .carousel.site-photos .slick-next {
+    top: .5px;
+    left: auto;
+    right: -22%; }
+  .carousel.site-photos .carousel__count {
+    top: 12%;
+    right: -16.25%;
+    right: -22%; }
+    .carousel.site-photos .carousel__count p {
+      font-size: .5rem; } }
 @media screen and (min-width: 1600px) {
   .map {
-    padding-bottom: 60%; } }
+    padding-bottom: 60%; }
+
+  .carousel.site-photos .slick-prev {
+    top: 0;
+    left: auto;
+    right: -13.5%; }
+  .carousel.site-photos .slick-next {
+    top: .5px;
+    left: auto;
+    right: -21.5%; }
+  .carousel.site-photos .carousel__count {
+    top: 8%;
+    right: -21.5%; } }
+@media screen and (min-width: 2000px) {
+  .carousel.site-photos .slick-prev {
+    top: 0;
+    left: auto;
+    right: -14.5%; }
+  .carousel.site-photos .slick-next {
+    top: .5px;
+    left: auto;
+    right: -21.25%; }
+  .carousel.site-photos .carousel__count {
+    right: -21.25%; } }
+@media screen and (min-width: 2200px) {
+  .carousel.site-photos .slick-prev {
+    top: 0;
+    left: auto;
+    right: -14%; }
+  .carousel.site-photos .slick-next {
+    top: .5px;
+    left: auto;
+    right: -21%; } }
+@media screen and (min-width: 2400px) {
+  .carousel.site-photos .slick-prev {
+    top: 84px;
+    left: auto;
+    right: -8%; }
+  .carousel.site-photos .slick-next {
+    top: 84.5px;
+    left: auto;
+    right: -13.5%; }
+  .carousel.site-photos .carousel__count {
+    top: -2%;
+    right: auto;
+    left: 103.6%; }
+    .carousel.site-photos .carousel__count p {
+      margin: 0;
+      font-size: 1rem; } }
 .vision-section {
   background-color: transparent; }
 
@@ -1467,12 +1481,12 @@ figcaption {
 /* Timeline Carousel
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .timeline-carousel {
-  margin: 2rem -.5rem 0; }
+  margin: 3rem -.5rem 0; }
   .timeline-carousel .slick-arrow {
-    top: -1.75rem;
-    width: 1.75rem; }
+    top: -2.5rem;
+    width: 2.5rem; }
   .timeline-carousel .slick-prev {
-    left: 1rem; }
+    left: .5rem; }
   .timeline-carousel .slick-next {
     left: 3.5rem; }
 
@@ -1498,10 +1512,10 @@ figcaption {
       top: .5rem;
       width: 2rem; }
     .timeline-carousel .slick-next {
-      right: 1rem;
+      right: .5rem;
       left: auto; }
     .timeline-carousel .slick-prev {
-      right: 3.5rem;
+      right: 3rem;
       left: auto; } }
 @media screen and (min-width: 1024px) {
   .timeline-carousel {
@@ -1510,10 +1524,10 @@ figcaption {
       top: .65rem;
       width: 1.5rem; }
     .timeline-carousel .slick-next {
-      right: 1rem;
+      right: .5rem;
       left: auto; }
     .timeline-carousel .slick-prev {
-      right: 3rem;
+      right: 2.5rem;
       left: auto; }
     .timeline-carousel .slick-dots {
       position: absolute;
@@ -1562,29 +1576,32 @@ figcaption {
 @media screen and (min-width: 1280px) {
   .timeline-carousel .slick-arrow {
     top: 18px;
-    width: 1.5rem; }
+    width: 66px; }
   .timeline-carousel .slick-next {
-    right: 1rem;
+    right: .5rem;
     left: auto; }
   .timeline-carousel .slick-prev {
-    right: 2.75rem;
+    right: 2.25rem;
     left: auto; }
   .timeline-carousel .timeline__item h2 {
     font-size: 1.5rem; }
   .timeline-carousel .slick-dots {
-    top: 10px; } }
+    top: 9px;
+    right: 4.25rem; } }
 @media screen and (min-width: 1440px) {
+  .timeline-carousel .slick-arrow {
+    top: 24px; }
   .timeline-carousel .slick-dots {
     width: auto;
-    top: .52rem;
-    right: 4.75rem; } }
+    top: .5rem;
+    right: 4rem; } }
 @media screen and (min-width: 1600px) {
   .timeline-carousel .slick-arrow {
     top: 30px; }
   .timeline-carousel .slick-prev {
-    right: 2.5rem; }
+    right: 2rem; }
   .timeline-carousel .slick-dots {
-    right: 4.5rem;
+    right: 3.75rem;
     top: .5rem; } }
 @media screen and (min-width: 2000px) {
   .timeline-carousel .slick-arrow {
