@@ -7,7 +7,7 @@ layout: news-page
 </div>
 <div class="container">
 	<div class="row">
-		<article class="news-post u-cf">
+		<article class="news-post news-post--open u-cf">
 				<div class="news-post__header col-2">
 			    	<h2>{{ page.title }}</h2>
 					<time>{{ page.date | date: "%b %-d, %Y" }}</time>
@@ -20,5 +20,22 @@ layout: news-page
 				</div>
 		</article>
 	</div>
-	{% include news-list.html %}
+	<div class="row">
+		<ul class="news-posts">
+			{% for post in site.posts %}
+				<li>
+					<article class="news-post u-cf">
+						<div class="news-post__header offset-2 col-3">
+							<h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+							<p>{{ post.source }}</p>
+							<!-- <time>{{ post.date | date: "%b %-d, %Y" }}</time> -->
+						</div>
+						<div class="col-1">
+							<a href="{{ post.url | prepend: site.baseurl }}">{% include icons/arrow-right.svg %}</a>
+						</div>
+					</article>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
 </div>

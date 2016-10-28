@@ -5,7 +5,8 @@
 				<article class="news-post u-cf">
 					<div class="news-post__header col-2">
 						<h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-						<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+						<p>{{ post.source }}</p>
+						<!-- <time>{{ post.date | date: "%b %-d, %Y" }}</time> -->
 					</div>
 					<div class="news-post__body col-3">
 						{{ post.excerpt }}
