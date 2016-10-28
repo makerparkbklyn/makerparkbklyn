@@ -1158,10 +1158,11 @@ Note: The best way to structure the use of media queries is to create the querie
       height: 168px; }
 
   .rail--right.nav-open .nav .nav__list {
-    top: 3rem; }
+    top: 2rem; }
   .rail--right.nav-open .nav .nav__item {
     width: 300px;
-    height: 300px; }
+    height: 300px;
+    border-width: 8px; }
     .rail--right.nav-open .nav .nav__item:nth-child(1) {
       right: 648px; }
     .rail--right.nav-open .nav .nav__item:nth-child(2) {
@@ -1180,7 +1181,8 @@ Note: The best way to structure the use of media queries is to create the querie
     width: 60px; }
   .rail--right.nav-open .nav .nav__toggle .nav__hamburger:before,
   .rail--right.nav-open .nav .nav__toggle .nav__hamburger:after {
-    width: 60px; } }
+    width: 60px;
+    height: 8px; } }
 @media screen and (min-width: 1440px) {
   .nav__item a {
     font-size: 1rem;
@@ -1246,7 +1248,8 @@ Note: The best way to structure the use of media queries is to create the querie
     top: 2rem; }
   .rail--right.nav-open .nav .nav__item {
     width: 400px;
-    height: 400px; }
+    height: 400px;
+    border-width: 10px; }
     .rail--right.nav-open .nav .nav__item:nth-child(1) {
       right: 848px; }
     .rail--right.nav-open .nav .nav__item:nth-child(2) {
@@ -1266,7 +1269,7 @@ Note: The best way to structure the use of media queries is to create the querie
   .rail--right.nav-open .nav .nav__toggle .nav__hamburger:before,
   .rail--right.nav-open .nav .nav__toggle .nav__hamburger:after {
     width: 120px;
-    height: 8px; } }
+    height: 10px; } }
 /* Front Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 section {
@@ -1400,12 +1403,15 @@ figcaption {
 /* Hero
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 body {
-  background: url(../images/pattern-1.jpg);
+  background: url(../images/patterns/pattern_1.gif);
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center; }
+  background-size: 300%; }
 
+@media screen and (min-width: 1024px) {
+  body {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center; } }
 .hero-section {
   position: relative;
   height: 100vh;
@@ -2233,7 +2239,10 @@ fieldset {
   position: relative;
   height: 12rem;
   box-sizing: border-box;
-  padding: 1rem 0; }
+  padding: 1rem 0;
+  background: url(../images/patterns/pattern_1.gif);
+  background-repeat: no-repeat;
+  background-size: 300%; }
 
 .footer__arrow {
   position: absolute;
@@ -2270,7 +2279,8 @@ fieldset {
     bottom: 24px; } }
 @media screen and (min-width: 1024px) {
   .footer {
-    height: 5.6rem; }
+    height: 5.6rem;
+    background: transparent; }
 
   .footer__arrow {
     left: 4%;
