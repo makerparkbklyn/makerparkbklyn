@@ -138,20 +138,20 @@
 		}
 	}
 }
-@include media-query(2200px) {
-	.carousel.site-photos {
-		.slick-prev {
-			top: 0;
-			left: auto;
-			right: -14%;
-		}
-		.slick-next {
-			top: .5px;
-			left: auto;
-			right: -21%;
-		}
-	}
-}
+// @include media-query(2200px) {
+// 	.carousel.site-photos {
+// 		.slick-prev {
+// 			top: 0;
+// 			left: auto;
+// 			right: -14%;
+// 		}
+// 		.slick-next {
+// 			top: .5px;
+// 			left: auto;
+// 			right: -21%;
+// 		}
+// 	}
+// }
 @include media-query(2400px) {
 	.carousel.site-photos {
 		.slick-prev {
