@@ -1,6 +1,13 @@
 
 /* Hero
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+body {
+	background: url(../images/pattern-1.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+}
 .hero-section {
 	position: relative;
 	height: 100vh;

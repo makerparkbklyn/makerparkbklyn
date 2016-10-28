@@ -63,17 +63,22 @@
 
 /* Front Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-body {
-	background: url(../images/pattern-1.jpg);
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-}
 section {
 	position: relative;
 	padding: 3rem 0;
 
 }
+// section:before {
+// 	content: '';
+// 	position: absolute;
+// 	display: block;
+// 	width: 240px;
+// 	height: 96px;
+// 	background: #fff;
+// 	left: 12.5%;
+// 	top: -48px;
+// 	background: $darkblue;
+// }
 section p {
 	font-size: 1rem;
 	line-height: 1.3;

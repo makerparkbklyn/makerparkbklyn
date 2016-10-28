@@ -78,21 +78,21 @@
 	}
 	.carousel.site-photos {
 		.slick-prev {
-			top: 0;
+			top: 48px;
 			left: auto;
-			right: -12%;
+			right: -96px;
 		}
 		.slick-next {
-			top: .5px;
+			top: 48.5px;
 			left: auto;
-			right: -22%;
+			right: -172px;
 		}
 		.carousel__count {
-			top: 12%;
-			right: -16.25%;
-			right: -22%;
+			top: -16px;
+			right: auto;
+			left: 103.6%;
 			p {
-				font-size: .5rem;
+				font-size: 1rem;
 			}
 		}
 	}
@@ -103,35 +103,38 @@
 	}
 	.carousel.site-photos {
 		.slick-prev {
-			top: 0;
-			left: auto;
-			right: -13.5%;
+			top: 60px;
+			left: 104.5%;
+			right: auto;
 		}
 		.slick-next {
-			top: .5px;
-			left: auto;
-			right: -21.5%;
+			top: 60.5px;
+			left: 112%;
+			right: auto;
 		}
 		.carousel__count {
-			top: 8%;
-			right: -21.5%;
+			top: -20px;
+			right: auto;
+			left: 104%;
 		}
 	}
 }
 @include media-query(2000px) {
 	.carousel.site-photos {
 		.slick-prev {
-			top: 0;
-			left: auto;
-			right: -14.5%;
+			top: 72px;
+			left: 104.5%;
+			right: auto;
 		}
 		.slick-next {
-			top: .5px;
-			left: auto;
-			right: -21.25%;
+			top: 72.5px;
+			left: 111%;
+			right: auto;
 		}
 		.carousel__count {
-			right: -21.25%;
+			top: -23px;
+			right: auto;
+			left: 104%;
 		}
 	}
 }
