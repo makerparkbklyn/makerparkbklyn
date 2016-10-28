@@ -1,3 +1,5 @@
+// var MakerPark = {};
+
 $(document).on('ready', function() {
 
 	// Hide/Show Grid Overlay
@@ -10,19 +12,78 @@ $(document).on('ready', function() {
 	// -------------------------------------------------------------------------
 	$('body').on("click", '.nav__toggle', function (e) {
 		e.preventDefault();
-		if ( $('.nav-open').length === 0 && $(window).width() < 1280 ) {
+		if ( $('.nav-open').length === 0 && $(window).width() >= 1920 ) {
+			var nw = 1248;
+			var r = ($(window).width() - nw) / 2;
+			console.log('window width: ' + $(window).width());
+			console.log('nav width: ' + nw);
+			$('.rail--right').addClass('nav-open');
+			if (s) {
+				$('.nav').css('background-color', s.current.computedColor);
+			}
+			$('.nav').find('.nav__list').css('right', r);
+		}
+		else if ( $('.nav-open').length === 0 && $(window).width() >= 1440 ) {
+			var nw = 1128;
+			var r = ($(window).width() - nw) / 2;
+			console.log('window width: ' + $(window).width());
+			console.log('nav width: ' + nw);
+			$('.rail--right').addClass('nav-open');
+			if (s) {
+				$('.nav').css('background-color', s.current.computedColor);
+			}
+			$('.nav').find('.nav__list').css('right', r);
+		}
+		else if ( $('.nav-open').length === 0 && $(window).width() >= 1280 ) {
+			var nw = 948;
+			var r = ($(window).width() - nw) / 2;
+			console.log('window width: ' + $(window).width());
+			console.log('nav width: ' + nw);
+			$('.rail--right').addClass('nav-open');
+			if (s) {
+				$('.nav').css('background-color', s.current.computedColor);
+			}
+			$('.nav').find('.nav__list').css('right', r);
+		}
+		else if ( $('.nav-open').length === 0 && $(window).width() >= 1024 ) {
+			var nw = 768;
+			var r = ($(window).width() - nw) / 2;
+			console.log('window width: ' + $(window).width());
+			console.log('nav width: ' + nw);
+			$('.rail--right').addClass('nav-open');
+			if (s) {
+				$('.nav').css('background-color', s.current.computedColor);
+			}
+			$('.nav').find('.nav__list').css('right', r);
+		}
+		else if ( $('.nav-open').length === 0 && $(window).width() >= 768 ) {
+			var nw = 504;
+			var r = ($(window).width() - nw) / 2;
+			console.log('window width: ' + $(window).width());
+			console.log('nav width: ' + nw);
+			$('.rail--right').addClass('nav-open');
+			if (s) {
+				$('.nav').css('background-color', s.current.computedColor);
+			}
+			$('.nav').find('.nav__list').css('right', r);
+		}
+		else if ( $('.nav-open').length === 0 && $(window).width() < 768 ) {
 			var nw = 312;
 			var r = ($(window).width() - nw) / 2;
 			console.log('window width: ' + $(window).width());
 			console.log('nav width: ' + nw);
 			$('.rail--right').addClass('nav-open');
+			if (s) {
+				$('.nav').css('background-color', s.current.computedColor);
+			}
 			$('.nav').find('.nav__list').css('right', r);
 		}
-		else if ( $('.nav-open').length === 0 && $(window).width() > 1280 ) {
-			$('.rail--right').addClass('nav-open');
-		}
+		// else if ( $('.nav-open').length === 0 && $(window).width() > 1280 ) {
+		// 	$('.rail--right').addClass('nav-open');
+		// }
 		else if ($('.nav-open').length > 0) {
 			$('.rail--right').removeClass('nav-open');
+			$('.nav').css('background-color', '');
 			$('.nav').find('.nav__list').attr('style', '');
 		}
 	});

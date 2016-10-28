@@ -110,6 +110,7 @@ $(document).on('ready', function() {
 		var updateColor  = function(progress) {
 			if (self.current.id != 'mission' && self.current.id != 'hero') {
 				var c = $.Color(self.current.previousColor).transition(self.current.color, progress);
+				self.current.computedColor = c;
 				$('.bg').css('background-color', c);
 				self.current.transitionComplete = false;
 				if (progress >= 1) {
@@ -152,7 +153,7 @@ $(document).on('ready', function() {
 
 	// Instantiate New Section Manager
 	// -------------------------------------------------------------------------
-	var s = new SectionManager();
+	var s = window.s = new SectionManager();
 
 	// Init Slick Photo Carousel
 	// -------------------------------------------------------------------------
@@ -186,10 +187,6 @@ $(document).on('ready', function() {
 			settings: { dots: false }
 		}]
 	});
-
-	// Hide Logo in Hero Section
-	// -------------------------------------------------------------------------
-	$('.logo').addClass('out');
 
 	// Next Section Arrow
 	// -------------------------------------------------------------------------

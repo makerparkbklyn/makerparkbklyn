@@ -940,6 +940,8 @@ Note: The best way to structure the use of media queries is to create the querie
     .rail--right .logo svg {
       width: 120px;
       height: 101px; }
+    .rail--right .logo.out {
+      bottom: -25%; }
 
 .rail--right.out .logo {
   bottom: -25%; }
@@ -1000,9 +1002,6 @@ Note: The best way to structure the use of media queries is to create the querie
     .nav__item:hover a {
       text-decoration: none;
       color: #fff; }
-  .nav__item:first-child a {
-    line-height: 1;
-    margin-top: 36px; }
 
 .nav__toggle {
   opacity: 1;
@@ -1083,16 +1082,53 @@ Note: The best way to structure the use of media queries is to create the querie
     top: 1.5rem; } }
 @media screen and (min-width: 768px) {
   .nav__item a {
-    font-size: 1rem; }
-
-  .rail--right.nav-open .nav .nav__list {
-    top: 4rem; } }
-@media screen and (min-width: 1024px) {
-  .nav__item:first-child a {
-    margin-top: 32px; }
+    font-size: 1.25rem;
+    line-height: 224px; }
 
   .rail--right.nav-open .nav .nav__list {
     top: 3rem; }
+  .rail--right.nav-open .nav .nav__item {
+    width: 240px;
+    height: 240px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(1) {
+      right: 264px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(2) {
+      right: 264px;
+      top: 264px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(3) {
+      top: 264px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(4) {
+      top: 528px;
+      right: 264px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(5) {
+      top: 528px; }
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger {
+    margin: 104px auto; }
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger:before {
+    transform: rotate(45deg);
+    top: 9px; }
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger:after {
+    transform: rotate(-45deg);
+    bottom: 9px; } }
+@media screen and (min-width: 1024px) {
+  .nav__item a {
+    font-size: 1rem; }
+
+  .rail--right.nav-open .nav .nav__list {
+    top: 3rem; }
+  .rail--right.nav-open .nav .nav__item:nth-child(1) {
+    right: 528px; }
+  .rail--right.nav-open .nav .nav__item:nth-child(2) {
+    right: 264px;
+    top: 0px; }
+  .rail--right.nav-open .nav .nav__item:nth-child(3) {
+    top: 264px;
+    right: 528px; }
+  .rail--right.nav-open .nav .nav__item:nth-child(4) {
+    top: 264px;
+    right: 264px; }
+  .rail--right.nav-open .nav .nav__item:nth-child(5) {
+    top: 264px; }
 
   .rail--right .logo {
     right: 24px;
@@ -1109,60 +1145,130 @@ Note: The best way to structure the use of media queries is to create the querie
     width: 120px;
     height: 120px; }
     .nav__item a {
-      font-size: .75rem; }
-    .nav__item:first-child a {
-      margin-top: 30px; }
+      font-size: 1rem;
+      line-height: 292px; }
 
   .nav__hamburger {
     margin: 42px auto; }
-
-  .rail--right.nav-open .nav .nav__list {
-    top: 24px;
-    right: 24px; }
 
   .rail--right .logo {
     bottom: 12px; }
     .rail--right .logo svg {
       width: 200px;
-      height: 168px; } }
+      height: 168px; }
+
+  .rail--right.nav-open .nav .nav__list {
+    top: 3rem; }
+  .rail--right.nav-open .nav .nav__item {
+    width: 300px;
+    height: 300px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(1) {
+      right: 648px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(2) {
+      right: 324px;
+      top: 0px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(3) {
+      top: 324px;
+      right: 648px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(4) {
+      top: 324px;
+      right: 324px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(5) {
+      top: 324px; }
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger {
+    margin: 134px auto;
+    width: 60px; }
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger:before,
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger:after {
+    width: 60px; } }
 @media screen and (min-width: 1440px) {
   .nav__item a {
-    font-size: .65rem; }
-  .nav__item:first-child a {
-    margin-top: 36px; }
+    font-size: 1rem;
+    line-height: 345px; }
+
+  .nav__hamburger {
+    margin: 42px auto; }
 
   .rail--right .logo {
     bottom: 12px; }
     .rail--right .logo svg {
       width: 240px;
-      height: 202px; } }
+      height: 202px; }
+
+  .rail--right.nav-open .nav .nav__list {
+    top: 2rem; }
+  .rail--right.nav-open .nav .nav__item {
+    width: 360px;
+    height: 360px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(1) {
+      right: 768px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(2) {
+      right: 384px;
+      top: 0px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(3) {
+      top: 384px;
+      right: 768px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(4) {
+      top: 384px;
+      right: 384px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(5) {
+      top: 384px; }
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger {
+    margin: 162px auto;
+    width: 80px; }
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger:before,
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger:after {
+    width: 80px;
+    height: 7px; } }
 @media screen and (min-width: 1600px) {
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger {
+    margin: 162px auto;
+    width: 100px; }
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger:before,
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger:after {
+    width: 100px;
+    height: 8px; } }
+@media screen and (min-width: 1920px) {
   .nav__item a {
-    font-size: .5rem; }
-  .nav__item:first-child a {
-    margin-top: 36px; }
+    font-size: 1rem;
+    line-height: 384px; }
+
+  .nav__hamburger {
+    margin: 42px auto; }
 
   .rail--right .logo {
-    bottom: 21px;
-    right: 36px; }
+    bottom: 12px; }
     .rail--right .logo svg {
-      width: 288px;
-      height: 242px; }
-  .rail--right.out .logo {
-    bottom: -30%; } }
-@media screen and (min-width: 1600px) {
-  .nav__item a {
-    font-size: .4rem; }
-  .nav__item:first-child a {
-    margin-top: 38px; } }
+      width: 240px;
+      height: 202px; }
+
+  .rail--right.nav-open .nav .nav__list {
+    top: 2rem; }
+  .rail--right.nav-open .nav .nav__item {
+    width: 400px;
+    height: 400px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(1) {
+      right: 848px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(2) {
+      right: 424px;
+      top: 0px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(3) {
+      top: 424px;
+      right: 848px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(4) {
+      top: 424px;
+      right: 424px; }
+    .rail--right.nav-open .nav .nav__item:nth-child(5) {
+      top: 424px; }
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger {
+    margin: 182px auto;
+    width: 120px; }
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger:before,
+  .rail--right.nav-open .nav .nav__toggle .nav__hamburger:after {
+    width: 120px;
+    height: 8px; } }
 /* Front Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-body {
-  background: url(../images/pattern-1.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover; }
-
 section {
   position: relative;
   padding: 3rem 0; }
@@ -1293,6 +1399,13 @@ figcaption {
       height: 6px; } }
 /* Hero
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+body {
+  background: url(../images/pattern-1.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center; }
+
 .hero-section {
   position: relative;
   height: 100vh;
@@ -1399,45 +1512,48 @@ figcaption {
     padding-bottom: 75%; }
 
   .carousel.site-photos .slick-prev {
-    top: 0;
+    top: 48px;
     left: auto;
-    right: -12%; }
+    right: -96px; }
   .carousel.site-photos .slick-next {
-    top: .5px;
+    top: 48.5px;
     left: auto;
-    right: -22%; }
+    right: -172px; }
   .carousel.site-photos .carousel__count {
-    top: 12%;
-    right: -16.25%;
-    right: -22%; }
+    top: -16px;
+    right: auto;
+    left: 103.6%; }
     .carousel.site-photos .carousel__count p {
-      font-size: .5rem; } }
+      font-size: 1rem; } }
 @media screen and (min-width: 1600px) {
   .map {
     padding-bottom: 60%; }
 
   .carousel.site-photos .slick-prev {
-    top: 0;
-    left: auto;
-    right: -13.5%; }
+    top: 60px;
+    left: 104.5%;
+    right: auto; }
   .carousel.site-photos .slick-next {
-    top: .5px;
-    left: auto;
-    right: -21.5%; }
+    top: 60.5px;
+    left: 112%;
+    right: auto; }
   .carousel.site-photos .carousel__count {
-    top: 8%;
-    right: -21.5%; } }
+    top: -20px;
+    right: auto;
+    left: 104%; } }
 @media screen and (min-width: 2000px) {
   .carousel.site-photos .slick-prev {
-    top: 0;
-    left: auto;
-    right: -14.5%; }
+    top: 72px;
+    left: 104.5%;
+    right: auto; }
   .carousel.site-photos .slick-next {
-    top: .5px;
-    left: auto;
-    right: -21.25%; }
+    top: 72.5px;
+    left: 111%;
+    right: auto; }
   .carousel.site-photos .carousel__count {
-    right: -21.25%; } }
+    top: -23px;
+    right: auto;
+    left: 104%; } }
 @media screen and (min-width: 2200px) {
   .carousel.site-photos .slick-prev {
     top: 0;
