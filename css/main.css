@@ -2231,107 +2231,100 @@ fieldset {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .footer {
   position: relative;
-  height: 10rem;
+  height: 12rem;
   box-sizing: border-box;
   padding: 1rem 0; }
 
 .footer__arrow {
-  text-align: center;
-  color: #000056;
+  position: absolute;
+  left: 7.5%;
+  bottom: 27px;
   z-index: 999; }
   .footer__arrow a {
     display: block;
     width: 100%;
     height: 100%; }
     .footer__arrow a svg {
-      width: 1rem; }
+      width: 53px; }
 
 .footer__hashtag {
-  line-height: 3rem;
+  line-height: 1;
   text-align: center;
-  margin: 1rem 0 0.5rem;
+  margin: 0;
+  margin-top: 12px;
   font-size: 2rem; }
 
 .footer__instagram-button {
-  text-align: center; }
+  text-align: center;
+  margin-top: .5rem; }
   .footer__instagram-button svg {
-    width: 1.5rem;
-    height: 1.5rem; }
+    width: 30px;
+    height: 30px; }
 
 @media screen and (min-width: 768px) {
   .footer {
     height: 8rem; }
 
   .footer__arrow {
-    position: absolute;
-    width: 12.5%;
-    left: 0;
-    top: 50%;
-    transform: translateY(-5%); }
-
-  .footer__hashtag {
-    line-height: 1;
-    margin: 0;
-    margin-top: 1.25rem; }
-
-  .footer__instagram-button {
-    margin-top: .75rem; }
-    .footer__instagram-button svg {
-      width: 1rem;
-      height: 1rem; } }
+    left: 4%;
+    bottom: 24px; } }
 @media screen and (min-width: 1024px) {
   .footer {
-    height: 201px;
-    overflow: hidden;
-    padding: 0; }
+    height: 5.6rem; }
 
   .footer__arrow {
-    transform: translateY(-40%); }
-
-  .footer__hashtag {
-    position: absolute;
-    line-height: 201px;
-    height: 201;
-    margin: 0;
-    text-align: center;
-    width: 100%; }
+    left: 4%;
+    bottom: 52px; }
 
   .footer__instagram-button {
-    position: absolute;
-    width: .75rem;
-    height: .75rem;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    top: 144px; }
-    .footer__instagram-button svg {
-      width: .75rem;
-      height: .75rem; } }
+    margin-top: .25rem; } }
 @media screen and (min-width: 1280px) {
   .footer {
-    height: 240px;
-    overflow: hidden;
-    padding: 0; }
+    height: 218px;
+    overflow: hidden; }
 
   .footer__arrow {
-    transform: translateY(-40%); }
+    left: 4%;
+    bottom: 60px; }
 
   .footer__hashtag {
-    position: absolute;
-    line-height: 201px;
-    height: 201;
-    margin: 0;
-    text-align: center;
-    width: 100%; }
+    font-size: 1.25rem; }
 
   .footer__instagram-button {
-    position: absolute;
-    width: .75rem;
-    height: .75rem;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    top: 144px; }
-    .footer__instagram-button svg {
-      width: .75rem;
-      height: .75rem; } }
+    margin-top: 0rem; } }
+@media screen and (min-width: 1440px) {
+  .footer {
+    height: 250px;
+    overflow: hidden; }
+
+  .footer__arrow {
+    left: 4%;
+    bottom: 72px; }
+
+  .footer__hashtag {
+    margin-top: 30px;
+    font-size: 1.25rem; }
+
+  .footer__instagram-button {
+    margin-top: 0rem; } }
+@media screen and (min-width: 1600px) {
+  .footer {
+    height: 260px; }
+
+  .footer__arrow {
+    bottom: 74px; }
+
+  .footer__hashtag {
+    margin-top: 18px; }
+
+  .footer__instagram-button {
+    margin-top: -12px; } }
+@media screen and (min-width: 2000px) {
+  .footer__arrow {
+    bottom: 80px; }
+
+  .footer__hashtag {
+    margin-top: -6px; }
+
+  .footer__instagram-button {
+    margin-top: -24px; } }
