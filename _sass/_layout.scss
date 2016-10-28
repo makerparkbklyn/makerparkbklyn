@@ -163,6 +163,9 @@ figcaption {
 	height: 12rem;
 	box-sizing: border-box;
 	padding: 1rem 0;
+	background: url(../images/patterns/pattern_1.gif);
+	background-repeat: no-repeat;
+	background-size: 300%;
 }
 .footer__arrow {
 	position: absolute;
@@ -206,6 +209,7 @@ figcaption {
 @include media-query(1024px) {
 	.footer {
 		height: 5.6rem;
+		background: transparent;
 	}
 	.footer__arrow {
 		left: 4%;

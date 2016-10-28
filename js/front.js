@@ -112,6 +112,7 @@ $(document).on('ready', function() {
 				var c = $.Color(self.current.previousColor).transition(self.current.color, progress);
 				self.current.computedColor = c;
 				$('.bg').css('background-color', c);
+				$('body').css('background-color', c);
 				self.current.transitionComplete = false;
 				if (progress >= 1) {
 					self.current.transitionComplete = true;
@@ -121,15 +122,18 @@ $(document).on('ready', function() {
 				if (progress >= 1) {
 					self.current.transitionComplete = true;
 					$('.bg').css('background-color', 'rgb(216, 242, 130)');
+					$('body').css('background-color', 'rgb(216, 242, 130)');
 					self.current.el.css('background-color', 'transparent');
 				}
 				else if (progress < 1) {
 					$('.bg').css('background-color', 'transparent');
+					$('body').css('background-color', 'transparent');
 					self.current.el.css('background-color', 'rgb(216, 242, 130)');
 				}
 			}
 			else if (self.current.id === 'hero') {
 				$('.bg').css('background-color', 'transparent');
+				$('body').css('background-color', 'transparent');
 				$('.mission-section').css('background-color', 'rgb(216, 242, 130)');
 			}
 			if (self.current.id === 'team') {
@@ -137,6 +141,7 @@ $(document).on('ready', function() {
 					console.log("transition complete");
 					self.current.el.css('background-color', 'rgb(255, 128, 83)');
 					$('.bg').css('background-color', 'transparent');
+					$('body').css('background-color', 'transparent');
 				}
 				else if (progress < 1) {
 					console.log("progress < 1");

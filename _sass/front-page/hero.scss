@@ -2,11 +2,16 @@
 /* Hero
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 body {
-	background: url(../images/pattern-1.jpg);
+	background: url(../images/patterns/pattern_1.gif);
 	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	background-position: center;
+	background-size: 300%;
+}
+@include media-query(1024px) {
+	body {
+		background-attachment: fixed;
+		background-size: cover;
+		background-position: center;
+	}
 }
 .hero-section {
 	position: relative;
