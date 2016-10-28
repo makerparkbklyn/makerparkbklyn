@@ -1560,15 +1560,6 @@ body {
     top: -23px;
     right: auto;
     left: 104%; } }
-@media screen and (min-width: 2200px) {
-  .carousel.site-photos .slick-prev {
-    top: 0;
-    left: auto;
-    right: -14%; }
-  .carousel.site-photos .slick-next {
-    top: .5px;
-    left: auto;
-    right: -21%; } }
 @media screen and (min-width: 2400px) {
   .carousel.site-photos .slick-prev {
     top: 84px;
