@@ -13,9 +13,12 @@
 						<div class="news-block">
 							<a href="{{ post.url | prepend: site.baseurl }}">
 								<div class="news-block__inner">
-									<h3 class="news-block__title">{{ post.title }}</h3>
-									<!-- <p>{{ post.source }}</p> -->
+									<h3 class="news-block__title">{{ post.short_title }}</h3>
+									{% if post.source %}
+									<p class="news-block__source">{{ post.source }}</p>
+									{% else %}
 									<time class="news-block__timestamp">{{ post.date | date: "%b %-d, %Y" }}</time>
+									{% endif %}
 								</div>
 							</a>
 						</div>

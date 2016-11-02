@@ -57,11 +57,14 @@
 	font-size: 1.25rem;
 	margin: 0;
 }
-.news-block__timestamp {
+.news-block__timestamp,
+.news-block__source {
 	display: block;
 	font-weight: bold;
 	font-size: .75rem;
 	line-height: 1.5;
+	color: #fff;
+	margin-bottom: 0;
 	&:before {
 		display: block;
 		content: "\2014";
@@ -86,7 +89,8 @@
 	.news-block__title {
 		font-size: 1rem;
 	}
-	.news-block__timestamp {
+	.news-block__timestamp,
+	.news-block__source {
 		font-size: .5rem;
 	}
 }
@@ -125,7 +129,26 @@
 	.news-block__title {
 		font-size: .75rem;
 	}
-	.news-block__timestamp {
+	.news-block__timestamp,
+	.news-block__source {
+		font-size: .33rem;
+	}
+}
+@include media-query(1600px) {
+	.news-block__title {
+		font-size: .5rem;
+	}
+	.news-block__timestamp,
+	.news-block__source {
+		font-size: .25rem;
+	}
+}
+@include media-query(1800px) {
+	.news-block__title {
+		font-size: .75rem;
+	}
+	.news-block__timestamp,
+	.news-block__source {
 		font-size: .33rem;
 	}
 }

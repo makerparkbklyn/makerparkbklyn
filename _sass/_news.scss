@@ -97,8 +97,11 @@
 	margin-top: 1rem;
 }
 @include media-query(1280px) {
+	.more-news .news-post {
+		padding-bottom: 0;
+	}
 	.news-post {
-		padding-bottom: 0rem;
+		padding-bottom: 4rem;
 		.icon--arrow-right {
 			float: right;
 			margin-top: .1rem;
