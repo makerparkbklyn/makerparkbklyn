@@ -18,7 +18,7 @@ $(document).on('ready', function() {
 			console.log('window width: ' + $(window).width());
 			console.log('nav width: ' + nw);
 			$('.rail--right').addClass('nav-open');
-			if (s) {
+			if (typeof s !== 'undefined') {
 				$('.nav').css('background-color', s.current.computedColor);
 			}
 			$('.nav').find('.nav__list').css('right', r);
@@ -29,7 +29,7 @@ $(document).on('ready', function() {
 			console.log('window width: ' + $(window).width());
 			console.log('nav width: ' + nw);
 			$('.rail--right').addClass('nav-open');
-			if (s) {
+			if (typeof s !== 'undefined') {
 				$('.nav').css('background-color', s.current.computedColor);
 			}
 			$('.nav').find('.nav__list').css('right', r);
@@ -40,7 +40,7 @@ $(document).on('ready', function() {
 			console.log('window width: ' + $(window).width());
 			console.log('nav width: ' + nw);
 			$('.rail--right').addClass('nav-open');
-			if (s) {
+			if (typeof s !== 'undefined') {
 				$('.nav').css('background-color', s.current.computedColor);
 			}
 			$('.nav').find('.nav__list').css('right', r);
@@ -51,7 +51,7 @@ $(document).on('ready', function() {
 			console.log('window width: ' + $(window).width());
 			console.log('nav width: ' + nw);
 			$('.rail--right').addClass('nav-open');
-			if (s) {
+			if (typeof s !== 'undefined') {
 				$('.nav').css('background-color', s.current.computedColor);
 			}
 			$('.nav').find('.nav__list').css('right', r);
@@ -62,7 +62,7 @@ $(document).on('ready', function() {
 			console.log('window width: ' + $(window).width());
 			console.log('nav width: ' + nw);
 			$('.rail--right').addClass('nav-open');
-			if (s) {
+			if (typeof s !== 'undefined') {
 				$('.nav').css('background-color', s.current.computedColor);
 			}
 			$('.nav').find('.nav__list').css('right', r);
@@ -73,7 +73,7 @@ $(document).on('ready', function() {
 			console.log('window width: ' + $(window).width());
 			console.log('nav width: ' + nw);
 			$('.rail--right').addClass('nav-open');
-			if (s) {
+			if (typeof s !== 'undefined') {
 				$('.nav').css('background-color', s.current.computedColor);
 			}
 			$('.nav').find('.nav__list').css('right', r);
