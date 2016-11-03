@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: "bower_components/jquery/dist/",
 					src: "jquery.min.js",
-					dest: "vendor/js/"
+					dest: "lib/js/"
 				}]
 			},
 			jqueryColor: {
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: "bower_components/jquery-color/",
 					src: "jquery.color.js",
-					dest: "vendor/js/"
+					dest: "lib/js/"
 				}]
 			},
 			scrollto: {
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: "bower_components/jquery-scrollto/src/static/lib/",
 					src: "jquery-scrollto.js",
-					dest: "vendor/js/"
+					dest: "lib/js/"
 				}]
 			},
 			slick: {
@@ -40,13 +40,13 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: "bower_components/slick-carousel/slick/",
 					src: "slick.min.js",
-					dest: "vendor/js/"
+					dest: "lib/js/"
 				},
 				{
 					expand: true,
 					cwd: "bower_components/slick-carousel/slick/",
 					src: "slick.css",
-					dest: "vendor/css/"
+					dest: "lib/css/"
 				}]
 			}
 		},
