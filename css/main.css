@@ -2172,12 +2172,14 @@ fieldset {
     display: none; }
   .news-page .title > h2 > a {
     text-decoration: none; }
+  .news-page .rail--right .nav {
+    background-color: #ff7d81; }
 
 /* List of Posts
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .news-posts {
   margin-bottom: 0;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   list-style: none; }
   .news-posts li {
     margin-bottom: 0; }
@@ -2195,7 +2197,7 @@ fieldset {
     stroke: #fff; }
 
 .news-post.news-post--open {
-  padding-bottom: 4rem; }
+  padding-bottom: 3rem; }
 
 .news-post__header {
   padding-right: 1rem;
@@ -2222,7 +2224,7 @@ fieldset {
 .news-post__body blockquote {
   margin: 0;
   padding-left: .5rem;
-  border-left: 6px solid #000056;
+  border-left: 4px solid #000056;
   box-sizing: border-box; }
 
 .post__image {
@@ -2233,16 +2235,18 @@ fieldset {
 .see-all-news a {
   display: block;
   font-size: .75rem;
-  color: white;
   font-weight: bold;
   margin-top: 1rem; }
+  .see-all-news a:hover {
+    text-decoration: underline;
+    color: #fff; }
 
 @media screen and (min-width: 1280px) {
   .more-news .news-post {
     padding-bottom: 0; }
 
   .news-post {
-    padding-bottom: 4rem; }
+    padding-bottom: 3rem; }
     .news-post .icon--arrow-right {
       float: right;
       margin-top: .1rem; }

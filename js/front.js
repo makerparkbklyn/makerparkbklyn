@@ -207,6 +207,10 @@ $(document).on('ready', function() {
 		$nextSection.ScrollTo({ duration: 1000 });
 	});
 
+	// Hide Logo in Hero Section
+	// -------------------------------------------------------------------------
+	$('.logo').addClass('out');
+
 	// On Scroll Events
 	// -------------------------------------------------------------------------
 	$(window).scroll(function() {
