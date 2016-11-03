@@ -26,7 +26,8 @@ $(document).ready(function() {
 
 		// Fire off the request to /form.php
 		request = $.ajax({
-			url: "https://script.google.com/macros/s/AKfycbzYtw3ii8QbglDAeM157b6tMEPfX1GbBD5fBxaAdRmOtBDpGaHr/exec",
+			// matt's url: "https://script.google.com/macros/s/AKfycbzYtw3ii8QbglDAeM157b6tMEPfX1GbBD5fBxaAdRmOtBDpGaHr/exec",
+			url: "https://script.google.com/macros/s/AKfycbzsB-_IGXZppw_Krs5XTSSukl4H5nDaK68NdiHfWcRlNFtMyEo/exec",
 			type: "post",
 			data: serializedData
 		});
