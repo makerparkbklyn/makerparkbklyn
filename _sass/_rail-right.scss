@@ -52,6 +52,7 @@
 }
 .nav__item {
 	position: absolute;
+	visibility: hidden;
 	top: 0;
 	right: 0;
 	width: 96px;
@@ -98,6 +99,7 @@
 	// }
 }
 .nav__toggle  {
+	visibility: visible;
 	opacity: 1;
 	transform: rotate(0deg);
 	&:hover {
@@ -156,6 +158,7 @@
 			top: 1rem;
 		}
 		.nav__item {
+			visibility: visible;
 			width: 144px;
 			height: 144px;
 			position: absolute;
