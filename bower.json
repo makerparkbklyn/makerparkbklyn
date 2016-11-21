@@ -16,6 +16,8 @@
     "jquery": "^2.2.4",
     "slick-carousel": "^1.6.0",
     "jquery-scrollto": "^1.4.6",
-    "jquery-color": "^2.1.2"
+    "jquery-color": "^2.1.2",
+    "gsap": "^1.19.0",
+    "scrollmagic": "^2.0.5"
   }
 }

@@ -48,7 +48,35 @@ module.exports = function(grunt) {
 					src: "slick.css",
 					dest: "lib/css/"
 				}]
-			}
+			},
+			scrollMagic: {
+				files: [{
+					expand: true,
+					cwd: "bower_components/scrollmagic/scrollmagic/minified/",
+					src: "ScrollMagic.min.js",
+					dest: "lib/js/"
+				},
+				{
+					expand: true,
+					cwd: "bower_components/scrollmagic/scrollmagic/minified/plugins/",
+					src: "animation.gsap.min.js",
+					dest: "lib/js/"
+				},
+				{
+					expand: true,
+					cwd: "bower_components/scrollmagic/scrollmagic/minified/plugins/",
+					src: "debug.addIndicators.min.js",
+					dest: "lib/js/"
+				}]
+			},
+			gsap: {
+				files: [{
+					expand: true,
+					cwd: "bower_components/gsap/src/minified/",
+					src: "TweenMax.min.js",
+					dest: "lib/js/"
+				}]
+			},
 		},
 	    exec: {
 			jekyll: {

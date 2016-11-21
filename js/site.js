@@ -124,6 +124,7 @@ $(document).on('ready', function() {
 			$('.rail').removeClass('out');
 		}
 		$prevScroll = $scroll;
+
 	});
 
 });
