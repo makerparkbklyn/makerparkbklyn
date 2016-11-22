@@ -54,15 +54,6 @@
 		height: 66.666666667px;
 		// left: calc(6.25% - 40px);
 		left: 48px;
-		&.stuck {
-			margin-top: -200px;
-		}
-		&.top {
-			top: 133.333333334px;
-		}
-		&.bottom {
-			bottom: (133.333333334px + 333.333333335px);
-		}
 		h2 {
 			font-size: .833rem;
 		}
@@ -77,20 +68,13 @@
 		height: 100px;
 		// left: calc(6.25% - 58px);
 		left: 52px;
-		&.stuck {
-			margin-top: -300px;
-		}
-		&.top {
-			top: 200px;
-		}
-		&.bottom {
-			bottom: (200px + 500px);
-		}
 		h2 {
 			font-size: .8rem;
 		}
-		h2:after {
-			height: 6px;
-		}
+	}
+}
+@include media-query(2000px) {
+	.title {
+		left: 92px;
 	}
 }

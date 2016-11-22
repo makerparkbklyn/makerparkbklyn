@@ -18,7 +18,7 @@ $(document).on('ready', function() {
 				duration: $(sections[i]).outerHeight()
 			})
 			.addTo(ctrl)
-			.addIndicators()
+			// .addIndicators()
 			.on("enter leave", function (e) {
 				if (e.type === 'enter') {
 					var $el = $(this.triggerElement());
@@ -36,7 +36,7 @@ $(document).on('ready', function() {
 					duration: '50%'
 				})
 				.addTo(ctrl)
-				.addIndicators()
+				// .addIndicators()
 				.on('progress', function(e) {
 					if (e.progress > 0) {
 						var el = $(this.triggerElement());
@@ -59,8 +59,8 @@ $(document).on('ready', function() {
 				offset: toffset
 			})
 			.setPin(titles[i])
-			.addTo(ctrl)
-			.addIndicators();
+			// .addIndicators()
+			.addTo(ctrl);
 		}
 	}
 
@@ -70,6 +70,22 @@ $(document).on('ready', function() {
 	$(window).scroll(function(){
 		console.log('CURRENT: ' + s.current.id);
 	})
+
+	// Mission Section
+	// -------------------------------------------------------------------------
+	var missionTween = new TimelineMax()
+		.add([
+			// TweenMax.fromTo(".mission-section .headline--xl", 1, {top: 400}, {top: -800, ease: Linear.easeNone}),
+			TweenMax.fromTo(".mission-section .p1", 1, {top: 400}, {top: -800, ease: Power4.easeInOut}),
+			TweenMax.fromTo(".mission-section .p2", 1, {top: 300}, {top: -1600, ease: Power4.easeInOut})
+		]);
+	new ScrollMagic.Scene({
+		triggerElement: '.mission-section',
+		duration: $(window).height()
+	})
+	.setTween(missionTween)
+	.addTo(s.scrollCtrl)
+	.addIndicators()
 
 	// Next Section Arrow
 	// -------------------------------------------------------------------------

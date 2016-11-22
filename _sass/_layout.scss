@@ -112,8 +112,15 @@ figcaption {
 		padding: 4rem 0;
 
 	}
+	section .headline--xl {
+		font-size: 8rem;
+		line-height: .8;
+		color: #fff;
+		text-transform: uppercase;
+		letter-spacing: -20px;
+	}
 	section p {
-		font-size: 1rem;
+		font-size: .675rem;
 		line-height: 1.3;
 	}
 }
