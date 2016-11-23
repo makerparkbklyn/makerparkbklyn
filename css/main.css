@@ -2074,6 +2074,9 @@ fieldset {
   .insta-photo img {
     height: 100%; }
 
+@media screen and (min-width: 2000px) and (max-width: 2300px) {
+  .news-block__title {
+    font-size: .675rem; } }
 /* Team Section
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .team-section {
@@ -2093,8 +2096,7 @@ fieldset {
 
 .team-block__name {
   font-size: 1.25rem;
-  margin: 0;
-  color: #fff; }
+  margin: 0; }
 
 .team-block__bio {
   font-size: .75rem;
@@ -2159,9 +2161,6 @@ fieldset {
 
   .team-block__info {
     margin-top: 0.25rem; }
-
-  .team-block__name {
-    font-size: .75rem; }
 
   .team-block__bio {
     font-size: 0.5rem; }
