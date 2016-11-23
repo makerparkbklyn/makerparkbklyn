@@ -174,3 +174,8 @@
 		height: 100%;
 	}
 }
+@include media-query-range(2000px, 2300px) {
+	.news-block__title {
+		font-size: .675rem;
+	}
+}
