@@ -1,6 +1,6 @@
 ---
-short_title: "Event: Maker Park Design Display"
-title: "Event: Maker Park Design Display"
+short_title: "12/6 Event: Maker Park Design Display"
+title: "12/6 Event: Maker Park Design Display"
 date: 2016-11-28 17:00:30 Z
 categories:
 - news
