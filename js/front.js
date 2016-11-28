@@ -76,8 +76,8 @@ $(document).on('ready', function() {
 	var missionTween = new TimelineMax()
 		.add([
 			// TweenMax.fromTo(".mission-section .headline--xl", 1, {top: 400}, {top: -800, ease: Linear.easeNone}),
-			// TweenMax.fromTo(".mission-section .p1", 1, {top: 400}, {top: -800, ease: Power4.easeInOut}),
-			// TweenMax.fromTo(".mission-section .p2", 1, {top: 300}, {top: -1600, ease: Power4.easeInOut})
+			TweenMax.fromTo(".mission-section .p1", 1, {top: 400}, {top: -800, ease: Power4.easeInOut}),
+			TweenMax.fromTo(".mission-section .p2", 1, {top: 300}, {top: -1600, ease: Power4.easeInOut})
 		]);
 	new ScrollMagic.Scene({
 		triggerElement: '.mission-section',
