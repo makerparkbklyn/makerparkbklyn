@@ -126,4 +126,10 @@ $(document).on('ready', function() {
 		$prevScroll = $scroll;
 	});
 
+	// Responsive Video + Custom Thumb
+	// -------------------------------------------------------------------------
+	$('.embed-container').click(function(e) {
+		$(this).html($(this).attr('data-video-iframe'));
+	})
+
 });
