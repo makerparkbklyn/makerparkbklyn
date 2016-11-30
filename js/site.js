@@ -5,7 +5,7 @@ $(document).on('ready', function() {
 	// Hide/Show Grid Overlay
 	// -------------------------------------------------------------------------
 	$(window).on('keydown', function (e) {
-		if (e.which === 71) { $('.grid').toggleClass('show'); }
+		if (e.ctrlKey && e.which === 71) { $('.grid').toggleClass('show'); }
 	});
 
 	// Toggle Nav
