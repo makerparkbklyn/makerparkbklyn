@@ -12,7 +12,7 @@ $(document).on('ready', function() {
 		for (var i = 0; i < sections.length; i++) {
 
 			// Update current section
-			// -------------------------------------------------------------------------
+			// -----------------------------------------------------------------
 			new ScrollMagic.Scene({
 				triggerElement: sections[i],
 				duration: $(sections[i]).outerHeight()
@@ -29,7 +29,7 @@ $(document).on('ready', function() {
 			})
 
 			// Change background color
-			// -------------------------------------------------------------------------
+			// -----------------------------------------------------------------
 			if ( $(sections[i]).attr('id') != 'hero' ) {
 				new ScrollMagic.Scene({
 					triggerElement: sections[i],
@@ -48,7 +48,7 @@ $(document).on('ready', function() {
 		}
 
 		// Sticky titles
-		// -------------------------------------------------------------------------
+		// ---------------------------------------------------------------------
 		for (var i = 0; i < titles.length; i++) {
 			var t = $(titles[i]);
 			var toffset = t.width() / 2;
@@ -70,22 +70,6 @@ $(document).on('ready', function() {
 	$(window).scroll(function(){
 		console.log('CURRENT: ' + s.current.id);
 	})
-
-	// Mission Section
-	// -------------------------------------------------------------------------
-	var missionTween = new TimelineMax()
-		.add([
-			// TweenMax.fromTo(".mission-section .headline--xl", 1, {top: 400}, {top: -800, ease: Linear.easeNone}),
-			TweenMax.fromTo(".mission-section .p1", 1, {top: 400}, {top: -800, ease: Power4.easeInOut}),
-			TweenMax.fromTo(".mission-section .p2", 1, {top: 300}, {top: -1600, ease: Power4.easeInOut})
-		]);
-	new ScrollMagic.Scene({
-		triggerElement: '.mission-section',
-		duration: $(window).height()
-	})
-	.setTween(missionTween)
-	.addTo(s.scrollCtrl)
-	.addIndicators()
 
 	// Next Section Arrow
 	// -------------------------------------------------------------------------
@@ -113,7 +97,7 @@ $(document).on('ready', function() {
 		var $scroll = $(window).scrollTop();
 
 		// Show/Hide Logo in Hero
-		// -----------------------------------------------------------------
+		// ---------------------------------------------------------------------
 		if ( $scroll > ($(window).height()) * .6 ) {
 			$('.logo').removeClass('out');
 		}
@@ -124,6 +108,16 @@ $(document).on('ready', function() {
 		// Show/Hide Next Section Arrow
 		// ---------------------------------------------------------------------
 		// on footer enter make down arrow become up arrow
+
+		// Mission Section
+		// ---------------------------------------------------------------------
+		if (s.current.id === 'mission') {
+			var t = $scroll - $('#mission').offset().top;
+			$('.mission-section .headline--xl').css('transform', 'translate3d(0, ' + t/1.7 + 'px, 0)');
+			// $('.mission-section.current .p1').css('transform', 'translate3d(0, ' + t/1.7 + 'px, 0)');
+			$('.mission-section.current .p2').css('transform', 'translate3d(0, ' + t/12 + 'px, 0)');
+		}
+
 	});
 
 	// Init Slick Photo Carousel

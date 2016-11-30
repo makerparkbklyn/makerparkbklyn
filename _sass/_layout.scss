@@ -3,6 +3,13 @@
 .grid { display: none; }
 .grid.show { display: block; }
 
+/* Scrolljack
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.content-wrap {
+	width: 100%;
+	background: green;
+}
+
 /* Slick (default)
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 // Arrows
