@@ -24,11 +24,10 @@ $(document).ready(function() {
 		// Disabled form elements will not be serialized.
 		$inputs.prop("disabled", true);
 
-		// Fire off the request to /form.php
+		// Fire off the request to script.google.com
 		request = $.ajax({
-			// matt's url: "https://script.google.com/macros/s/AKfycbzYtw3ii8QbglDAeM157b6tMEPfX1GbBD5fBxaAdRmOtBDpGaHr/exec",
-			url: "https://script.google.com/macros/s/AKfycbzsB-_IGXZppw_Krs5XTSSukl4H5nDaK68NdiHfWcRlNFtMyEo/exec",
 			type: "post",
+			url: "https://script.google.com/macros/s/AKfycbzsB-_IGXZppw_Krs5XTSSukl4H5nDaK68NdiHfWcRlNFtMyEo/exec",
 			data: serializedData
 		});
 
@@ -45,8 +44,16 @@ $(document).ready(function() {
 
 		// Callback handler that will be called on failure
 		request.fail(function (jqXHR, textStatus, errorThrown){
-			// Log the error to the console
-			console.error("The following error occurred: "+ textStatus, errorThrown);
+			// fix for Google's strange inability to handle Safari's OPTIONS request
+			if (jqXHR.status === 0) {
+				$('.join-form').addClass('hidden');
+				$('.join-intro').html('Thanks for signing up! Keep an eye out for news and updates.');
+			}
+			// normal error behavior
+			else {
+				// Log the error to the console
+				console.error("The following error occurred: "+ textStatus, errorThrown);
+			}
 		});
 
 		// Callback handler that will be called regardless
