@@ -2049,8 +2049,22 @@ fieldset {
 @media screen and (min-width: 546px) {
   .checkbox__label {
     line-height: calc(2rem + 12px); } }
+.join-form__comments > textarea {
+  border: 6px solid #000056;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 1.25rem;
+  font-weight: bold;
+  min-height: 4rem;
+  margin-bottom: 0;
+  padding: 6px 10px; }
+
 .join-form__submit {
-  margin-top: 1.5rem; }
+  margin-top: 1.25rem; }
   .join-form__submit input[type="submit"] {
     height: auto;
     width: 100%;
@@ -2092,7 +2106,10 @@ fieldset {
   .checkbox__x {
     width: 1rem; }
     .checkbox__x:after, .checkbox__x:before {
-      width: 1rem; } }
+      width: 1rem; }
+
+  .join-form__comments > textarea {
+    margin-top: 1.4rem; } }
 .insta-list {
   display: none !important; }
 
