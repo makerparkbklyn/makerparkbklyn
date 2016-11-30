@@ -40,6 +40,7 @@ $(document).ready(function() {
 			console.log(jqXHR);
 			$('.join-form').addClass('hidden');
 			$('.join-intro').html('Thanks for signing up! Keep an eye out for news and updates.');
+			$('.join-section').ScrollTo({ duration: 2000 });
 		});
 
 		// Callback handler that will be called on failure
@@ -48,6 +49,7 @@ $(document).ready(function() {
 			if (jqXHR.status === 0) {
 				$('.join-form').addClass('hidden');
 				$('.join-intro').html('Thanks for signing up! Keep an eye out for news and updates.');
+				$('.join-section').ScrollTo({ duration: 2000 });
 			}
 			// normal error behavior
 			else {
