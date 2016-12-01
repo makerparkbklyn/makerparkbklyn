@@ -1687,6 +1687,13 @@ figcaption {
     position: absolute;
     top: 108%;
     right: -12px; }
+  .carousel .carousel__caption {
+    position: absolute;
+    bottom: -1.25rem;
+    left: 0.5rem; }
+    .carousel .carousel__caption p {
+      font-size: .75rem;
+      color: #fff; }
 
 @media screen and (min-width: 768px) {
   .carousel.renderings-gallery {
@@ -1729,7 +1736,14 @@ figcaption {
     right: auto;
     left: 103.6%; }
     .carousel .carousel__count p {
-      font-size: 1rem; } }
+      font-size: 1rem; }
+  .carousel .carousel__caption {
+    position: absolute;
+    bottom: -2.5rem;
+    left: -12px; }
+    .carousel .carousel__caption p {
+      font-size: .5rem;
+      color: #000056; } }
 @media screen and (min-width: 1600px) {
   .map {
     padding-bottom: 60%; }
