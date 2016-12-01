@@ -50,6 +50,15 @@
 		top: 108%;
 		right: -12px;
 	}
+	.carousel__caption {
+		position: absolute;
+		bottom: -1.25rem;
+		left: 0.5rem;
+		p {
+			font-size: .75rem;
+			color: #fff;
+		}
+	}
 }
 @include media-query(768px) {
 	.carousel {
@@ -112,6 +121,15 @@
 			left: 103.6%;
 			p {
 				font-size: 1rem;
+			}
+		}
+		.carousel__caption {
+			position: absolute;
+			bottom: -2.5rem;
+			left: -12px;
+			p {
+				font-size: .5rem;
+				color: $indigo;
 			}
 		}
 	}
