@@ -107,6 +107,12 @@
 		li:nth-child(n+4) {
 			display: block;
 		}
+		li:nth-child(n+6) {
+			display: none;
+		}
+		li:last-child {
+			display: block;
+		}
 	}
 }
 @include media-query(1280px) {
