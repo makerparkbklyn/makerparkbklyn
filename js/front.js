@@ -166,22 +166,47 @@ $(document).on('ready', function() {
 
 	// Init Slick Photo Carousel
 	// -------------------------------------------------------------------------
-	var $status = $('.carousel__count p');
-	var $photoCarousel = $('.carousel.site-photos');
+	var $photoCarousel = function() {
+		var $status = $('.site-gallery .carousel__count p');
+		var $el = $('.carousel.site-gallery');
 
-	$photoCarousel.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
-	    //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-	    var i = (currentSlide ? currentSlide : 0) + 1;
-	    $status.text(i + '/' + slick.slideCount);
-	});
-	$photoCarousel.slick({
-		slide: '.carousel__image',
-		infinite: true,
-		speed: 500,
-		arrows: true,
-		pauseOnHover: false,
-		adaptiveHeight: true
-	});
+		$el.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+			//currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+			var i = (currentSlide ? currentSlide : 0) + 1;
+			$status.text(i + '/' + slick.slideCount);
+		});
+		$el.slick({
+			slide: '.carousel__image',
+			infinite: true,
+			speed: 500,
+			arrows: true,
+			pauseOnHover: false,
+			adaptiveHeight: true
+		});
+	}
+	$photoCarousel();
+
+	// Init Slick Rendering Carousel
+	// -------------------------------------------------------------------------
+	var $renderingCarousel = function() {
+		var $status = $('.renderings-gallery .carousel__count p');
+		var $el = $('.carousel.renderings-gallery');
+
+		$el.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+			//currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+			var i = (currentSlide ? currentSlide : 0) + 1;
+			$status.text(i + '/' + slick.slideCount);
+		});
+		$el.slick({
+			slide: '.carousel__image',
+			infinite: true,
+			speed: 500,
+			arrows: true,
+			pauseOnHover: false,
+			adaptiveHeight: true
+		});
+	}
+	$renderingCarousel();
 
 	// Init Slick Timeline Carousel
 	// -------------------------------------------------------------------------
