@@ -2199,6 +2199,10 @@ fieldset {
   .news-list {
     margin: 0; }
     .news-list li:nth-child(n+4) {
+      display: block; }
+    .news-list li:nth-child(n+6) {
+      display: none; }
+    .news-list li:last-child {
       display: block; } }
 @media screen and (min-width: 1280px) {
   .news-list [class*='col-'] {
