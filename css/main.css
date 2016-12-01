@@ -1657,109 +1657,122 @@ figcaption {
   border: solid 12px #000056; }
 
 /* Carousel */
-.carousel.site-photos {
+.carousel {
   margin: 0 0 1.5rem;
   box-sizing: border-box;
   border: solid 12px #000056;
   position: relative; }
-  .carousel.site-photos .carousel__image {
+  .carousel .carousel__image {
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    height: 0 !important;
-    padding-bottom: 4.5%;
     overflow: hidden;
-    background-size: cover; }
-  .carousel.site-photos .slick-prev {
+    background-size: cover;
+    background-position: center; }
+  .carousel.site-gallery .carousel__image {
+    height: 0 !important;
+    padding-bottom: 4.5%; }
+  .carousel.renderings-gallery .carousel__image {
+    height: 0 !important;
+    padding-bottom: 7%; }
+  .carousel.renderings-gallery {
+    margin-bottom: 3.5rem; }
+  .carousel .slick-prev {
     top: 110%;
     left: -12px; }
-  .carousel.site-photos .slick-next {
+  .carousel .slick-next {
     top: calc(110% + .5px);
     left: 50px; }
-  .carousel.site-photos .carousel__count {
+  .carousel .carousel__count {
     position: absolute;
     top: 108%;
     right: -12px; }
 
 @media screen and (min-width: 768px) {
-  .carousel.site-photos .slick-prev {
+  .carousel.renderings-gallery {
+    margin-bottom: 4rem; }
+  .carousel .slick-prev {
     top: 106%; }
-  .carousel.site-photos .slick-next {
+  .carousel .slick-next {
     top: calc(106% + .5px);
     left: 70px; }
-  .carousel.site-photos .carousel__count {
+  .carousel .carousel__count {
     top: 105.5%; } }
 @media screen and (min-width: 1024px) {
-  .carousel.site-photos .slick-prev {
+  .carousel.renderings-gallery {
+    margin-bottom: 3rem; }
+  .carousel .slick-prev {
     top: 105%; }
-  .carousel.site-photos .slick-next {
+  .carousel .slick-next {
     top: calc(105% + .5px);
     left: 48px; }
-  .carousel.site-photos .carousel__count {
+  .carousel .carousel__count {
     top: 103.25%; }
-    .carousel.site-photos .carousel__count p {
+    .carousel .carousel__count p {
       font-size: .75rem; } }
 @media screen and (min-width: 1280px) {
   .map {
     padding-bottom: 75%; }
 
-  .carousel.site-photos .slick-prev {
+  .carousel.renderings-gallery {
+    margin-bottom: 2rem; }
+  .carousel .slick-prev {
     top: 48px;
     left: auto;
     right: -96px; }
-  .carousel.site-photos .slick-next {
+  .carousel .slick-next {
     top: 48.5px;
     left: auto;
     right: -172px; }
-  .carousel.site-photos .carousel__count {
+  .carousel .carousel__count {
     top: -16px;
     right: auto;
     left: 103.6%; }
-    .carousel.site-photos .carousel__count p {
+    .carousel .carousel__count p {
       font-size: 1rem; } }
 @media screen and (min-width: 1600px) {
   .map {
     padding-bottom: 60%; }
 
-  .carousel.site-photos .slick-prev {
+  .carousel .slick-prev {
     top: 60px;
     left: 104.5%;
     right: auto; }
-  .carousel.site-photos .slick-next {
+  .carousel .slick-next {
     top: 60.5px;
     left: 112%;
     right: auto; }
-  .carousel.site-photos .carousel__count {
+  .carousel .carousel__count {
     top: -20px;
     right: auto;
     left: 104%; } }
 @media screen and (min-width: 2000px) {
-  .carousel.site-photos .slick-prev {
+  .carousel .slick-prev {
     top: 72px;
     left: 104.5%;
     right: auto; }
-  .carousel.site-photos .slick-next {
+  .carousel .slick-next {
     top: 72.5px;
     left: 111%;
     right: auto; }
-  .carousel.site-photos .carousel__count {
+  .carousel .carousel__count {
     top: -23px;
     right: auto;
     left: 104%; } }
 @media screen and (min-width: 2400px) {
-  .carousel.site-photos .slick-prev {
+  .carousel .slick-prev {
     top: 84px;
     left: auto;
     right: -8%; }
-  .carousel.site-photos .slick-next {
+  .carousel .slick-next {
     top: 84.5px;
     left: auto;
     right: -13.5%; }
-  .carousel.site-photos .carousel__count {
+  .carousel .carousel__count {
     top: -2%;
     right: auto;
     left: 103.6%; }
-    .carousel.site-photos .carousel__count p {
+    .carousel .carousel__count p {
       margin: 0;
       font-size: 1rem; } }
 .vision-section {
