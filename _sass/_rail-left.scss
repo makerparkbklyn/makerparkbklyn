@@ -2,16 +2,19 @@
 /* Left Rail
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .rail--left { display: none; }
-
+.join-sticker {
+	@extend .type--medium;
+	line-height: .9;
+}
 @include media-query(1024px) {
 	.rail--left {
 		display: block;
-		// display: none;
 		left: 0;
+		// background: rgba(0,0,0,0.1);
 		.arrow-down {
 			position: absolute;
 			width: 100px;
-			bottom: 24px;
+			bottom: 48px;
 			left: 0;
 			right: 0;
 			margin: 0 auto;
@@ -22,16 +25,17 @@
 			width: 36px;
 		}
 		.join-sticker {
+			// @extend .type--medium;
 			position: absolute;
 			width: 100px;
-			top: 36px;
+			top: 48px;
 			left: 0;
 			right: 0;
 			margin: 0 auto;
 			text-align: center;
-			font-weight: bold;
-			font-size: .833rem;
-			line-height: 1;
+			// font-weight: bold;
+			// font-size: .833rem;
+			// line-height: 1;
 		}
 		.join-sticker a {
 			color: $darkblue;
@@ -42,10 +46,10 @@
 @include media-query(1280px) {
 	.rail--left {
 		.arrow-down svg {
-			width: 53px;
+			width: 40px;
 		}
 		.join-sticker {
-			font-size: .75rem;
+			// font-size: .75rem;
 		}
 	}
 }
@@ -59,7 +63,7 @@
 @include media-query(1600px) {
 	.rail--left {
 		.join-sticker {
-			font-size: .675rem;
+			// @extend .type--medium;
 		}
 	}
 }

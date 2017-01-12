@@ -303,19 +303,19 @@
 }
 @include media-query(1280px) {
 	.nav__list {
-		top: 24px;
-		right: 24px;
+		top: 36px;
+		right: 70px;
 	}
 	.nav__item {
-		width: 120px;
-		height: 120px;
+		width: 96px;
+		height: 96px;
 		a {
 			font-size: 1rem;
 			line-height: 292px;
 		}
 	}
 	.nav__hamburger {
-		margin: 42px auto;
+		margin: 32px auto;
 	}
 	.rail--right {
 		.logo {
@@ -376,7 +376,7 @@
 		}
 	}
 	.nav__hamburger {
-		margin: 42px auto;
+		// margin: 42px auto;
 	}
 	.rail--right {
 		.logo {
@@ -453,7 +453,7 @@
 		}
 	}
 	.nav__hamburger {
-		margin: 42px auto;
+		// margin: 42px auto;
 	}
 	.rail--right {
 		.logo {

@@ -5,15 +5,17 @@
 	width: 90%;
 	margin: 0 auto;
 	margin-bottom: 2rem;
+	z-index: 99;
 
 	h2 {
+		@extend .type--medium;
+		line-height: 1;
+		// font-size: 4rem;
 		display: inline-block;
 		position: relative;
 		// background: pink;
 		margin: 0;
-		font-size: 1.5rem;
-		line-height: 1.0;
-		letter-spacing: 0;
+		font-weight: 600;
 
 		&:after {
 			content: '';
@@ -22,7 +24,7 @@
 			height: 6px;
 			width: 100%;
 			position: absolute;
-			top: 101%;
+			top: 80%;
 		}
 	}
 }
@@ -40,7 +42,7 @@
 		// background: pink;
 		top: 96px;
 		h2 {
-			font-size: 1rem;
+			// font-size: 1rem;
 			&:after {
 				height: 4px;
 			}
@@ -55,7 +57,7 @@
 		// left: calc(6.25% - 40px);
 		left: 48px;
 		h2 {
-			font-size: .833rem;
+			// font-size: .833rem;
 		}
 		h2:after {
 			height: 6px;
@@ -67,9 +69,9 @@
 		width: 600px;
 		height: 100px;
 		// left: calc(6.25% - 58px);
-		left: 52px;
+		left: 96px;
 		h2 {
-			font-size: .8rem;
+			// font-size: .8rem;
 		}
 	}
 }

@@ -1,6 +1,9 @@
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.grid { display: none; }
+.grid { position: fixed; width: 100%; z-index: 9999; display: none;}
+.grid__column-fill { background: rgba(255,0,0,0); width: 100%; height: 2000px; box-sizing: border-box; border-right: 1px solid red; }
+.grid .row > div:first-child > .grid__column-fill {border-left: 1px solid red;}
+
 .grid.show { display: block; }
 
 /* Scrolljack
@@ -75,6 +78,11 @@ section {
 	padding: 3rem 0;
 
 }
+.section__title {
+	@extend .type--xlarge;
+	color: #fff;
+	font-weight: inherit;
+}
 // section:before {
 // 	content: '';
 // 	position: absolute;
@@ -87,9 +95,8 @@ section {
 // 	background: $darkblue;
 // }
 section p {
-	font-size: 1rem;
-	line-height: 1.3;
-	font-weight: bold;
+	// font-size: 1rem;
+	// line-height: 1.3;
 	color: $indigo;
 }
 figure {
@@ -103,16 +110,15 @@ figure {
 	}
 }
 figcaption {
-	font-size: 0.75rem;
-	font-weight: bold;
+	@extend .type--small;
 }
 @include media-query(1280px) {
-	section p {
-		font-size: .875rem;
-	}
-	figcaption {
-		font-size: 0.5rem;
-	}
+	// section p {
+	// 	font-size: .875rem;
+	// }
+	// figcaption {
+	// 	font-size: 0.5rem;
+	// }
 }
 @include media-query(1600px) {
 	section {
@@ -126,10 +132,10 @@ figcaption {
 		text-transform: uppercase;
 		letter-spacing: -20px;
 	}
-	section p {
-		font-size: .675rem;
-		line-height: 1.3;
-	}
+	// section p {
+	// 	font-size: .675rem;
+	// 	line-height: 1.3;
+	// }
 }
 
 .hidden {

@@ -1,4 +1,4 @@
-$(document).on('ready', function() {
+$(function() {
 
 	// Section Manager
 	// -------------------------------------------------------------------------
@@ -111,14 +111,139 @@ $(document).on('ready', function() {
 
 		// Mission Section
 		// ---------------------------------------------------------------------
-		if (s.current.id === 'mission') {
-			var t = $scroll - $('#mission').offset().top;
-			$('.mission-section .headline--xl').css('transform', 'translate3d(0, ' + t/1.7 + 'px, 0)');
-			// $('.mission-section.current .p1').css('transform', 'translate3d(0, ' + t/1.7 + 'px, 0)');
-			$('.mission-section.current .p2').css('transform', 'translate3d(0, ' + t/12 + 'px, 0)');
-		}
+		// if (s.current.id === 'mission') {
+		// 	var t = $scroll - $('#mission').offset().top;
+		// 	$('.mission-section .headline--xl').css('transform', 'translate3d(0, ' + t/1.7 + 'px, 0)');
+		// 	// $('.mission-section.current .p1').css('transform', 'translate3d(0, ' + t/1.7 + 'px, 0)');
+		// 	$('.mission-section.current .p2').css('transform', 'translate3d(0, ' + t/12 + 'px, 0)');
+		// }
 
 	});
+
+	// Scroll Effects
+	// -------------------------------------------------------------------------
+	var mpCtrl = new ScrollMagic.Controller();
+	var h = $(window).height();
+	var debug = false;
+	var keyframes = [
+		{
+			section			:	'#hero',
+			hook			:	'onLeave',
+			scenes: [
+				// {
+				// 	name	:	'heroBGOut',
+				// 	duration:	h,
+				// 	offset	:	0,
+					// tween	:	TweenMax.to('#hero .hero-bg', 1, {y: 200, ease: Linear.easeNone}) //prev: y:-1000
+				// },
+				{
+					name	:	'logoTransform',
+					duration:	h,
+					offset	:	0,
+					tween	:	TweenMax.to('#hero .hero-logo', 1, {y: 540, x: 816, scale: .3, rotation: 360, ease:Power2.easeInOut})
+				}
+			]
+		},
+		{
+			section			:	'#mission',
+			hook			:	'onEnter',
+			scenes: [
+				{
+					name	:	'titleIn',
+					duration:	1800,
+					offset	:	h/2,
+					tween	:	TweenMax.from('#mission .section__title', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'titleOut',
+					duration:	1800,
+					offset	:	4500,
+					tween	: 	TweenMax.to('#mission .section__title', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'p1In',
+					duration:	1800,
+					offset	:	h/2 + h/4,
+					tween	: 	TweenMax.from('#mission .p1', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'p1Out',
+					duration:	1800,
+					offset	:	4500 + h/4,
+					tween	: 	TweenMax.to('#mission .p1', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'p2In',
+					duration:	1800,
+					offset	:	h/4 + h/2 + h/4,
+					tween	: 	TweenMax.from('#mission .p2', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'p2Out',
+					duration:	1800,
+					offset	:	4500 + h/3,
+					tween	: 	TweenMax.to('#mission .p2', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'pattern1Thru',
+					duration:	8000,
+					offset	:	h/2,
+					tween	: 	TweenMax.fromTo('#mission .bg-pattern-1', 1, {y: 1.5*h}, {y: -1.75*h, ease: Linear.easeNone})
+				},
+				{
+					name	:	'pattern2Thru',
+					duration:	10000,
+					offset	:	2*h,
+					tween	: 	TweenMax.fromTo('#mission .bg-pattern-2', 1, {y: 1.5*h}, {y: -2*h, ease: Linear.easeNone})
+				},
+				{
+					name	:	'renderingIn',
+					duration:	1800,
+					offset	:	4500 + h*1.25,
+					tween	: 	TweenMax.from('#mission .rendering', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'renderingOut',
+					duration:	1800,
+					offset	:	8000 + h*1.25 ,
+					tween	: 	TweenMax.to('#mission .rendering', 1, {y: -h, ease: Power2.easeIn})
+				}
+				// {
+				// 	name	:	'pattern1In',
+				// 	duration:	2400,
+				// 	offset	:	h/2,
+				// 	tween	: 	TweenMax.from('#mission .bg-pattern-1', 1, {y: 2*h, ease: Power2.easeOut})
+				// },
+				// {
+				// 	name	:	'pattern2In',
+				// 	duration:	2400,
+				// 	offset	:	h/2,
+				// 	tween	: 	TweenMax.from('#mission .bg-pattern-2', 1, {y: 2*h, ease: Power2.easeOut})
+				// }
+			]
+		}
+	];
+	function setupScrollScenes() {
+		for (var i = 0; i < keyframes.length; i++) {
+			var p = keyframes[i];
+			var trigger = p.section;
+			var hook = p.hook;
+			for (var j = 0; j < p.scenes.length; j++) {
+				var scene = p.scenes[j];
+				var s = new ScrollMagic.Scene({
+					triggerElement: trigger,
+					triggerHook: hook,
+					duration: scene.duration,
+					offset: scene.offset
+				});
+				s.setTween(scene.tween);
+				if (debug) { s.addIndicators({name: scene.name}) }
+				s.addTo(mpCtrl);
+			}
+		}
+	}
+	setupScrollScenes();
+
 
 	// Init Slick Photo Carousel
 	// -------------------------------------------------------------------------
