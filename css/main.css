@@ -1476,9 +1476,10 @@ figcaption {
   position: absolute;
   top: -180px;
   left: -40px;
-  cursor: pointer;
   padding: 24px;
   transform: rotate(-10deg); }
+  .notice-sticker a {
+    cursor: pointer; }
   .notice-sticker p {
     font-size: .75rem;
     display: block;
@@ -1615,7 +1616,6 @@ figcaption {
     top: -70px;
     right: -160px;
     left: auto;
-    cursor: pointer;
     padding: 24px;
     transform: rotate(10deg); }
     .notice-sticker p {
