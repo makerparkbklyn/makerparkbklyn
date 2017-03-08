@@ -1468,7 +1468,7 @@ figcaption {
   bottom: 1rem; }
 
 .notice-sticker {
-  background: #d8f282;
+  background: #98f0c8;
   border-radius: 50%;
   width: 160px;
   height: 160px;
@@ -1493,6 +1493,12 @@ figcaption {
     text-align: center;
     line-height: 1;
     margin: 0; }
+
+.notice-sticker--aiany img {
+  margin-top: .8rem;
+  margin-left: 15%;
+  width: 70%;
+  margin-bottom: 0.4rem; }
 
 @media screen and (min-width: 375px) {
   .hero__tagline {
@@ -1525,7 +1531,10 @@ figcaption {
       margin-top: .5rem;
       margin-bottom: 0; }
     .notice-sticker h3 {
-      font-size: .875rem; } }
+      font-size: .875rem; }
+
+  .notice-sticker--aiany img {
+    margin-top: 1rem; } }
 @media screen and (min-width: 1024px) {
   .hero__logo {
     width: 512px;
@@ -1551,7 +1560,11 @@ figcaption {
       margin-top: .5rem;
       margin-bottom: 0; }
     .notice-sticker h3 {
-      font-size: .75rem; } }
+      font-size: .75rem; }
+
+  .notice-sticker--aiany img {
+    margin-top: .7rem;
+    margin-bottom: 0.35rem; } }
 @media screen and (min-width: 1280px) {
   .hero__logo {
     width: 600px;
@@ -1594,7 +1607,6 @@ figcaption {
     bottom: .75rem; }
 
   .notice-sticker {
-    background: #d8f282;
     border-radius: 50%;
     width: 240px;
     height: 240px;
@@ -1619,7 +1631,16 @@ figcaption {
       font-size: .5rem;
       text-align: center;
       line-height: 1;
-      margin: 0; } }
+      margin: 0; }
+
+  .notice-sticker--aiany img {
+    margin-top: .75rem;
+    margin-left: 15%;
+    width: 70%;
+    margin-bottom: 0.2rem; }
+  .notice-sticker--aiany h3 {
+    width: 90%;
+    margin-left: 5%; } }
 @media screen and (min-width: 2000px) {
   .notice-sticker {
     width: 240px;
