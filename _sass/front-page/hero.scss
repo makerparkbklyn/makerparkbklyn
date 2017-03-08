@@ -53,9 +53,11 @@
 	position: absolute;
 	top: -180px;
 	left: -40px;
-	cursor: pointer;
 	padding: 24px;
 	transform: rotate(-10deg);
+	a {
+		cursor: pointer;
+	}
 	p {
 		font-size: .75rem;
 		display: block;
@@ -225,7 +227,6 @@
 		top: -70px;
 		right: -160px;
 		left: auto;
-		cursor: pointer;
 		padding: 24px;
 		transform: rotate(10deg);
 		p {
