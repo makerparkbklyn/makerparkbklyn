@@ -2,176 +2,239 @@
 /* The Site Section
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .site-section {
-	background-color: transparent;
-}
-.map {
-	height: 0;
-	padding-bottom: 100%;
-	margin: 0 0 1.5rem;
-	border: solid 12px $indigo;
+	background-color: $lightgreen;
+	min-height: 800vh;
+
+	.section__title {
+		position: fixed;
+		left: 12.5%;
+		top: 0%;
+		line-height: 0.75;
+
+		span {
+			display: block;
+		}
+	}
+	.p1 {
+		position: fixed;
+		top: 28%;
+		left: 37.5%;
+		width: 37.5%;
+	}
+	.p2 {
+		position: fixed;
+		top: 54%;
+		width: 37.5%;
+	}
+	.p3 {
+		position: fixed;
+		top: 80%;
+		left: 50%;
+		width: 37.5%;
+	}
+	.bg-pattern-1 {
+		// position: fixed;
+		// left: 40%;
+		// top: 0%;
+		display: none;
+	}
+	[class*='image-'] {
+		position: fixed;
+		top: -100%;
+		display: none;
+	}
+	.image-00 {
+		left: 12.5%;
+		width: 25%;
+		display: block;
+	}
+	.image-01 {
+		left: 37.5%;
+		width: 50%;
+		display: block;
+	}
+	.image-02 {
+		left: 12.5%;
+		width: 37.5%;
+		display: block;
+	}
+	.image-03 {
+		left: 62.5%;
+		width: 37.5%;
+		display: block;
+	}
 }
 
-/* Carousel */
-.carousel.site-photos {
-	margin: 0 0 1.5rem;
-	box-sizing: border-box;
-	border: solid 12px $indigo;
-	position: relative;
 
-	.carousel__image {
-		position: relative;
-		box-sizing: border-box;
-		width: 100%;
-		height: 0 !important;
-		padding-bottom: 4.5%;
-		overflow: hidden;
-		background-size: cover;
-	}
-	.slick-prev {
-		top: 110%;
-		left: -12px;
-	}
-	.slick-next {
-		top: calc(110% + .5px);
-		left: 50px;
-	}
-	.carousel__count {
-		position: absolute;
-		top: 108%;
-		right: -12px;
-	}
-}
-@include media-query(768px) {
-	.carousel.site-photos {
-		.slick-prev {
-			top: 106%;
-		}
-		.slick-next {
-			top: calc(106% + .5px);
-			left: 70px;
-		}
-		.carousel__count {
-			top: 105.5%;
-		}
-	}
-}
-@include media-query(1024px) {
-	.carousel.site-photos {
-		.slick-prev {
-			top: 105%;
-		}
-		.slick-next {
-			top: calc(105% + .5px);
-			left: 48px;
-		}
-		.carousel__count {
-			top: 103.25%;
-			p {
-				font-size: .75rem;
-			}
-		}
-	}
-}
-@include media-query(1280px) {
-	.map {
-		padding-bottom: 75%;
-	}
-	.carousel.site-photos {
-		.slick-prev {
-			top: 48px;
-			left: auto;
-			right: -96px;
-		}
-		.slick-next {
-			top: 48.5px;
-			left: auto;
-			right: -172px;
-		}
-		.carousel__count {
-			top: -16px;
-			right: auto;
-			left: 103.6%;
-			p {
-				font-size: 1rem;
-			}
-		}
-	}
-}
-@include media-query(1600px) {
-	.map {
-		padding-bottom: 60%;
-	}
-	.carousel.site-photos {
-		.slick-prev {
-			top: 60px;
-			left: 104.5%;
-			right: auto;
-		}
-		.slick-next {
-			top: 60.5px;
-			left: 112%;
-			right: auto;
-		}
-		.carousel__count {
-			top: -20px;
-			right: auto;
-			left: 104%;
-		}
-	}
-}
-@include media-query(2000px) {
-	.carousel.site-photos {
-		.slick-prev {
-			top: 72px;
-			left: 104.5%;
-			right: auto;
-		}
-		.slick-next {
-			top: 72.5px;
-			left: 111%;
-			right: auto;
-		}
-		.carousel__count {
-			top: -23px;
-			right: auto;
-			left: 104%;
-		}
-	}
-}
-// @include media-query(2200px) {
+
+// .map {
+// 	height: 0;
+// 	padding-bottom: 100%;
+// 	margin: 0 0 1.5rem;
+// 	border: solid 12px $indigo;
+// }
+//
+// /* Carousel */
+// .carousel.site-photos {
+// 	margin: 0 0 1.5rem;
+// 	box-sizing: border-box;
+// 	border: solid 12px $indigo;
+// 	position: relative;
+//
+// 	.carousel__image {
+// 		position: relative;
+// 		box-sizing: border-box;
+// 		width: 100%;
+// 		height: 0 !important;
+// 		padding-bottom: 4.5%;
+// 		overflow: hidden;
+// 		background-size: cover;
+// 	}
+// 	.slick-prev {
+// 		top: 110%;
+// 		left: -12px;
+// 	}
+// 	.slick-next {
+// 		top: calc(110% + .5px);
+// 		left: 50px;
+// 	}
+// 	.carousel__count {
+// 		position: absolute;
+// 		top: 108%;
+// 		right: -12px;
+// 	}
+// }
+// @include media-query(768px) {
 // 	.carousel.site-photos {
 // 		.slick-prev {
-// 			top: 0;
-// 			left: auto;
-// 			right: -14%;
+// 			top: 106%;
 // 		}
 // 		.slick-next {
-// 			top: .5px;
-// 			left: auto;
-// 			right: -21%;
+// 			top: calc(106% + .5px);
+// 			left: 70px;
+// 		}
+// 		.carousel__count {
+// 			top: 105.5%;
 // 		}
 // 	}
 // }
-@include media-query(2400px) {
-	.carousel.site-photos {
-		.slick-prev {
-			top: 84px;
-			left: auto;
-			right: -8%;
-		}
-		.slick-next {
-			top: 84.5px;
-			left: auto;
-			right: -13.5%;
-		}
-		.carousel__count {
-			top: -2%;
-			right: auto;
-			left: 103.6%;
-			p {
-				margin: 0;
-				font-size: 1rem;
-			}
-		}
-	}
-}
+// @include media-query(1024px) {
+// 	.carousel.site-photos {
+// 		.slick-prev {
+// 			top: 105%;
+// 		}
+// 		.slick-next {
+// 			top: calc(105% + .5px);
+// 			left: 48px;
+// 		}
+// 		.carousel__count {
+// 			top: 103.25%;
+// 			p {
+// 				font-size: .75rem;
+// 			}
+// 		}
+// 	}
+// }
+// @include media-query(1280px) {
+// 	.map {
+// 		padding-bottom: 75%;
+// 	}
+// 	.carousel.site-photos {
+// 		.slick-prev {
+// 			top: 48px;
+// 			left: auto;
+// 			right: -96px;
+// 		}
+// 		.slick-next {
+// 			top: 48.5px;
+// 			left: auto;
+// 			right: -172px;
+// 		}
+// 		.carousel__count {
+// 			top: -16px;
+// 			right: auto;
+// 			left: 103.6%;
+// 			p {
+// 				font-size: 1rem;
+// 			}
+// 		}
+// 	}
+// }
+// @include media-query(1600px) {
+// 	.map {
+// 		padding-bottom: 60%;
+// 	}
+// 	.carousel.site-photos {
+// 		.slick-prev {
+// 			top: 60px;
+// 			left: 104.5%;
+// 			right: auto;
+// 		}
+// 		.slick-next {
+// 			top: 60.5px;
+// 			left: 112%;
+// 			right: auto;
+// 		}
+// 		.carousel__count {
+// 			top: -20px;
+// 			right: auto;
+// 			left: 104%;
+// 		}
+// 	}
+// }
+// @include media-query(2000px) {
+// 	.carousel.site-photos {
+// 		.slick-prev {
+// 			top: 72px;
+// 			left: 104.5%;
+// 			right: auto;
+// 		}
+// 		.slick-next {
+// 			top: 72.5px;
+// 			left: 111%;
+// 			right: auto;
+// 		}
+// 		.carousel__count {
+// 			top: -23px;
+// 			right: auto;
+// 			left: 104%;
+// 		}
+// 	}
+// }
+// // @include media-query(2200px) {
+// // 	.carousel.site-photos {
+// // 		.slick-prev {
+// // 			top: 0;
+// // 			left: auto;
+// // 			right: -14%;
+// // 		}
+// // 		.slick-next {
+// // 			top: .5px;
+// // 			left: auto;
+// // 			right: -21%;
+// // 		}
+// // 	}
+// // }
+// @include media-query(2400px) {
+// 	.carousel.site-photos {
+// 		.slick-prev {
+// 			top: 84px;
+// 			left: auto;
+// 			right: -8%;
+// 		}
+// 		.slick-next {
+// 			top: 84.5px;
+// 			left: auto;
+// 			right: -13.5%;
+// 		}
+// 		.carousel__count {
+// 			top: -2%;
+// 			right: auto;
+// 			left: 103.6%;
+// 			p {
+// 				margin: 0;
+// 				font-size: 1rem;
+// 			}
+// 		}
+// 	}
+// }
