@@ -130,12 +130,12 @@ $(function() {
 			section			:	'#hero',
 			hook			:	'onLeave',
 			scenes: [
-				// {
-				// 	name	:	'heroBGOut',
-				// 	duration:	h,
-				// 	offset	:	0,
-					// tween	:	TweenMax.to('#hero .hero-bg', 1, {y: 200, ease: Linear.easeNone}) //prev: y:-1000
-				// },
+				{
+					name	:	'heroBGOut',
+					duration:	h,
+					offset	:	0,
+					tween	:	TweenMax.to('#hero .hero-bg', 1, {y: -500, ease: Linear.easeNone}) //prev: y:-735
+				},
 				{
 					name	:	'logoTransform',
 					duration:	h,
@@ -220,6 +220,60 @@ $(function() {
 				// 	offset	:	h/2,
 				// 	tween	: 	TweenMax.from('#mission .bg-pattern-2', 1, {y: 2*h, ease: Power2.easeOut})
 				// }
+			]
+		},
+		{
+			section			:	'#site',
+			hook			:	'onEnter',
+			scenes: [
+				{
+					name	:	'titleIn',
+					duration:	1800,
+					offset	:	h/2,
+					tween	:	TweenMax.from('#site .section__title', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'titleOut',
+					duration:	1800,
+					offset	:	4500,
+					tween	: 	TweenMax.to('#site .section__title', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'p1In',
+					duration:	1800,
+					offset	:	h/2 + h/4,
+					tween	: 	TweenMax.from('#site .p1', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'p1Out',
+					duration:	1800,
+					offset	:	4500 + h/4,
+					tween	: 	TweenMax.to('#site .p1', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'p2In',
+					duration:	1800,
+					offset	:	h/4 + h/2 + h/4,
+					tween	: 	TweenMax.from('#site .p2', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'p2Out',
+					duration:	1800,
+					offset	:	4500 + h/3,
+					tween	: 	TweenMax.to('#site .p2', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'p3In',
+					duration:	1800,
+					offset	:	h/4 + h/2 + h/4,
+					tween	: 	TweenMax.from('#site .p3', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'p3Out',
+					duration:	1800,
+					offset	:	4500 + h/3,
+					tween	: 	TweenMax.to('#site .p3', 1, {y: -h, ease: Power2.easeIn})
+				},
 			]
 		}
 	];
