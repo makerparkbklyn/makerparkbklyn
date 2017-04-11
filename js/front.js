@@ -287,12 +287,6 @@ $(function() {
 					offset	:	10*h + h/2,
 					tween	: 	TweenMax.to('#site .bg-pattern-1', 1, {y: -h*2, x: 500, ease: Power2.easeIn})
 				},
-				// {
-				// 	name	:	'pattern1Thru',
-				// 	duration:	8000,
-				// 	offset	:	h/2,
-				// 	tween	: 	TweenMax.fromTo('#site .bg-pattern-1', 1, {y: 1.5*h}, {y: -1.75*h, ease: Linear.easeNone})
-				// },
 				{
 					name	:	'image00Thru',
 					duration:	2700,
@@ -338,11 +332,77 @@ $(function() {
 				{
 					name	:	'mapOut',
 					duration:	1800,
-					offset	:	14*h,
+					offset	:	13.5*h,
 					tween	: 	TweenMax.to('#site .map', 1, {y: -h*2, x: 800, ease: Power2.easeIn})
 				},
 			]
-		}
+		},
+		{
+			section			:	'#vision',
+			hook			:	'onEnter',
+			scenes: [
+				{
+					name	:	'titleIn',
+					duration:	1800,
+					offset	:	h/2,
+					tween	:	TweenMax.from('#vision .section__title', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'titleOut',
+					duration:	1800,
+					offset	:	3.5*h,
+					tween	: 	TweenMax.to('#vision .section__title', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'p1In',
+					duration:	1800,
+					offset	:	0.75*h,
+					tween	: 	TweenMax.from('#vision .p1', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'p1Out',
+					duration:	1800,
+					offset	:	3.75*h,
+					tween	: 	TweenMax.to('#vision .p1', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'p2In',
+					duration:	1800,
+					offset	:	h,
+					tween	: 	TweenMax.from('#vision .p2', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'p2Out',
+					duration:	1800,
+					offset	:	3.85*h,
+					tween	: 	TweenMax.to('#vision .p2', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'pattern1In',
+					duration:	2400,
+					offset	:	h,
+					tween	: 	TweenMax.from('#vision .bg-pattern-1', 1, {y: h*1.5, x: -500, ease: Power2.easeOut})
+				},
+				{
+					name	:	'pattern1Out',
+					duration:	1800,
+					offset	:	4.25*h,
+					tween	: 	TweenMax.to('#vision .bg-pattern-1', 1, {y: -h*2, x: 500, ease: Power2.easeIn})
+				},
+				{
+					name	:	'pattern2In',
+					duration:	2400,
+					offset	:	5*h,
+					tween	: 	TweenMax.from('#vision .bg-pattern-2', 1, {y: h*1.5, x: -500, ease: Power2.easeOut})
+				},
+				{
+					name	:	'pattern2Out',
+					duration:	1800,
+					offset	:	10*h,
+					tween	: 	TweenMax.to('#vision .bg-pattern-2', 1, {y: -h*2, x: 500, ease: Power2.easeIn})
+				},
+			]
+		},
 	];
 	function setupScrollScenes() {
 		for (var i = 0; i < keyframes.length; i++) {

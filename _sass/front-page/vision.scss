@@ -1,15 +1,45 @@
+
+/* Vision
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
 .vision-section {
-	background-color: transparent;
-}
+	background-color: $lightturquoise;
+	min-height: 800vh;
 
-.vision__image {
-	height: 1130px;
-	border: solid 12px $indigo;
-	overflow: hidden;
-	box-sizing: border-box;
-	margin-top: 4rem;
-
-	img {
-		width: 100%;
+	.section__title {
+		position: fixed;
+		left: 12.5%;
+		top: 15%;
 	}
+	.p1 {
+		position: fixed;
+		width: 37.5%;
+		top: 30%;
+	}
+	.p2 {
+		position: fixed;
+		width: 37.5%;
+		left: 50%;
+		top: 44.8%;
+	}
+	.bg-pattern-1 {
+		position: fixed;
+		left: 40%;
+		top: 0%;
+		width: 75%;
+		height: 117%;
+	}
+	.bg-pattern-2 {
+		position: fixed;
+		left: 12.5%;
+		top: 12.5%;
+		width: 75%;
+		height: 117%;
+	}
+	// .rendering {
+	// 	position: fixed;
+	// 	top: 10%;
+	// 	left: 12.5%;
+	// 	width: 75%;
+	// }
 }
