@@ -124,7 +124,8 @@ $(function() {
 	// -------------------------------------------------------------------------
 	var mpCtrl = new ScrollMagic.Controller();
 	var h = $(window).height();
-	var debug = true;
+	console.log('h: ' + h);
+	var debug = false;
 	var keyframes = [
 		{
 			section			:	'#hero',
@@ -200,13 +201,13 @@ $(function() {
 					name	:	'renderingIn',
 					duration:	1800,
 					offset	:	4500 + h*1.25,
-					tween	: 	TweenMax.from('#mission .rendering', 1, {y: h, ease: Power2.easeOut})
+					tween	: 	TweenMax.from('#mission .rendering', 1, {y: h, x: -800, ease: Power2.easeOut})
 				},
 				{
 					name	:	'renderingOut',
 					duration:	1800,
 					offset	:	8000 + h*1.25 ,
-					tween	: 	TweenMax.to('#mission .rendering', 1, {y: -h, ease: Power2.easeIn})
+					tween	: 	TweenMax.to('#mission .rendering', 1, {y: -h, x: 800, ease: Power2.easeIn})
 				}
 				// {
 				// 	name	:	'pattern1In',
@@ -275,34 +276,70 @@ $(function() {
 					tween	: 	TweenMax.to('#site .p3', 1, {y: -h*2, ease: Power2.easeIn})
 				},
 				{
-					name	:	'pattern1Thru',
-					duration:	8000,
-					offset	:	h/2,
-					tween	: 	TweenMax.fromTo('#site .bg-pattern-1', 1, {y: 1.5*h}, {y: -1.75*h, ease: Linear.easeNone})
+					name	:	'pattern1In',
+					duration:	2400,
+					offset	:	h,
+					tween	: 	TweenMax.from('#site .bg-pattern-1', 1, {y: h*1.5, x: -500, ease: Power2.easeOut})
 				},
 				{
+					name	:	'pattern1Out',
+					duration:	2400,
+					offset	:	10*h + h/2,
+					tween	: 	TweenMax.to('#site .bg-pattern-1', 1, {y: -h*2, x: 500, ease: Power2.easeIn})
+				},
+				// {
+				// 	name	:	'pattern1Thru',
+				// 	duration:	8000,
+				// 	offset	:	h/2,
+				// 	tween	: 	TweenMax.fromTo('#site .bg-pattern-1', 1, {y: 1.5*h}, {y: -1.75*h, ease: Linear.easeNone})
+				// },
+				{
 					name	:	'image00Thru',
-					duration:	3600,
-					offset	:	3*h,
+					duration:	2700,
+					offset	:	3.5*h,
 					tween	: 	TweenMax.fromTo('#site .image-00', 1, {y: 2*h}, {y: -0.25*h, ease: Linear.easeNone})
 				},
 				{
 					name	:	'image01Thru',
-					duration:	3600,
-					offset	:	4*h,
-					tween	: 	TweenMax.fromTo('#site .image-01', 1, {y: 2*h}, {y: -0.25*h, ease: Linear.easeNone})
+					duration:	4000,
+					offset	:	4.5*h,
+					tween	: 	TweenMax.fromTo('#site .image-01', 1, {y: 2.5*h}, {y: -0.25*h, ease: Linear.easeNone})
 				},
 				{
 					name	:	'image02Thru',
 					duration:	4200,
-					offset	:	4.75*h,
+					offset	:	5.5*h,
 					tween	: 	TweenMax.fromTo('#site .image-02', 1, {y: 2*h}, {y: 0, ease: Linear.easeNone})
 				},
 				{
 					name	:	'image03Thru',
 					duration:	4200,
-					offset	:	5.25*h,
+					offset	:	6.25*h,
 					tween	: 	TweenMax.fromTo('#site .image-03', 1, {y: 2*h}, {y: 0, ease: Linear.easeNone})
+				},
+				{
+					name	:	'image04Thru',
+					duration:	6000,
+					offset	:	6.5*h,
+					tween	: 	TweenMax.fromTo('#site .image-04', 1, {y: 2*h}, {y: 0, ease: Linear.easeNone})
+				},
+				{
+					name	:	'image05Thru',
+					duration:	3000,
+					offset	:	6.75*h,
+					tween	: 	TweenMax.fromTo('#site .image-05', 1, {y: 2*h}, {y: 0, ease: Linear.easeNone})
+				},
+				{
+					name	:	'mapIn',
+					duration:	1800,
+					offset	:	11*h,
+					tween	: 	TweenMax.from('#site .map', 1, {y: h*1.5, x: -800, ease: Power2.easeOut})
+				},
+				{
+					name	:	'mapOut',
+					duration:	1800,
+					offset	:	14*h,
+					tween	: 	TweenMax.to('#site .map', 1, {y: -h*2, x: 800, ease: Power2.easeIn})
 				},
 			]
 		}
