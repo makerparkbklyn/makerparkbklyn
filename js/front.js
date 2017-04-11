@@ -401,6 +401,18 @@ $(function() {
 					offset	:	10*h,
 					tween	: 	TweenMax.to('#vision .bg-pattern-2', 1, {y: -h*2, x: 500, ease: Power2.easeIn})
 				},
+				{
+					name	:	'stackIn',
+					duration:	1800,
+					offset	:	5.5*h,
+					tween	: 	TweenMax.from('#vision .image-stack', 1, {y: h*1.5, ease: Power2.easeOut})
+				},
+				{
+					name	:	'stackOut',
+					duration:	1800,
+					offset	:	13.5*h,
+					tween	: 	TweenMax.to('#vision .image-stack', 1, {y: -h*2, ease: Power2.easeIn})
+				},
 			]
 		},
 	];
