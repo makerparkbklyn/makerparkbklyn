@@ -112,6 +112,10 @@ figure {
 figcaption {
 	@extend .type--small;
 }
+.has-border {
+	box-sizing: border-box;
+	border: solid 12px $indigo;
+}
 @include media-query(1280px) {
 	// section p {
 	// 	font-size: .875rem;
