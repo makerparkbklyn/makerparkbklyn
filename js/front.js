@@ -231,7 +231,7 @@ $(function() {
 					name	:	'titleIn',
 					duration:	1800,
 					offset	:	h/2,
-					tween	:	TweenMax.from('#site .section__title', 1, {y: h, ease: Power2.easeOut})
+					tween	:	TweenMax.from('#site .section__title', 1, {y: h*1.2, ease: Power2.easeOut})
 				},
 				{
 					name	:	'titleOut',
@@ -451,24 +451,168 @@ $(function() {
 				},
 				{
 					name	:	'pattern2OutIsh',
-					duration:	1800,
+					duration:	2200,
 					offset	:	10.5*h,
-					tween	: 	TweenMax.to('#vision .bg-pattern-2', 1, {y: -h*0.975, x: 400, ease: Power2.easeInOut})
+					tween	: 	TweenMax.to('#vision .bg-pattern-2', 1, {y: -h*1.04, x: 300, ease: Power2.easeInOut})
 				},
 				{
 					name	:	'videoIn',
 					duration:	1800,
-					offset	:	10.5*h,
+					offset	:	11*h,
 					tween	: 	TweenMax.from('#vision .video', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'p3In',
+					duration:	1800,
+					offset	:	11*h,
+					tween	: 	TweenMax.from('#vision .p3', 1, {y: h/2, ease: Power2.easeOut})
 				},
 				{
 					name	:	'pattern2Out',
 					duration:	1800,
-					offset	:	12*h,
+					offset	:	13*h,
 					tween	: 	TweenMax.to('#vision .bg-pattern-2', 1, {y: -h*2, x: 500, ease: Power2.easeIn})
+				},
+				{
+					name	:	'videoOut',
+					duration:	1800,
+					offset	:	13*h,
+					tween	: 	TweenMax.to('#vision .video', 1, {y: -h*2, ease: Power2.easeIn})
+				},
+				{
+					name	:	'p3Out',
+					duration:	1400,
+					offset	:	13*h,
+					tween	: 	TweenMax.to('#vision .p3', 1, {y: -h*2, ease: Power2.easeIn})
 				}
 			]
 		},
+		{
+			section			:	'#timeline',
+			hook			:	'onEnter',
+			scenes: [
+				{
+					name	:	'titleIn',
+					duration:	1800,
+					offset	:	h/2,
+					tween	:	TweenMax.from('#timeline .section__title', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'carouselIn',
+					duration:	1800,
+					offset	:	h*2/3,
+					tween	: 	TweenMax.from('#timeline .carousel', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'titleOut',
+					duration:	1800,
+					offset	:	3.5*h,
+					tween	: 	TweenMax.to('#timeline .section__title', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'carouselOut',
+					duration:	1800,
+					offset	:	3.65*h,
+					tween	: 	TweenMax.to('#timeline .carousel', 1, {y: -h, ease: Power2.easeIn})
+				}
+			]
+		},
+		{
+			section			:	'#principles',
+			hook			:	'onEnter',
+			scenes: [
+				{
+					name	:	'titleIn',
+					duration:	1800,
+					offset	:	h/2,
+					tween	:	TweenMax.from('#principles .section__title', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'titleOut',
+					duration:	1800,
+					offset	:	2.5*h,
+					tween	: 	TweenMax.to('#principles .section__title', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'listIn',
+					duration:	1800,
+					offset	:	0.75*h,
+					tween	:	TweenMax.from('#principles .principles__list', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'listOut',
+					duration:	2000,
+					offset	:	2.5*h,
+					tween	:	TweenMax.to('#principles .principles__list', 1, {y: -2.25*h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'pattern1In',
+					duration:	2400,
+					offset	:	0.6*h,
+					tween	: 	TweenMax.from('#principles .bg-pattern-1', 1, {y: h*2, x: 200, ease: Power2.easeOut})
+				},
+				{
+					name	:	'pattern1Out',
+					duration:	2800,
+					offset	:	2.5*h,
+					tween	: 	TweenMax.to('#principles .bg-pattern-1', 1, {y: -h*2, x: 400, ease: Power2.easeIn})
+				},
+				{
+					name	:	'pattern2In',
+					duration:	2000,
+					offset	:	0.5*h,
+					tween	: 	TweenMax.from('#principles .bg-pattern-2', 1, {y: h*2, x: -800, ease: Power2.easeOut})
+				},
+				{
+					name	:	'pattern2Out',
+					duration:	3000,
+					offset	:	2.5*h,
+					tween	: 	TweenMax.to('#principles .bg-pattern-2', 1, {y: -h*2, ease: Power2.easeIn})
+				},
+			]
+		},
+		{
+			section			:	'#join',
+			hook			:	'onEnter',
+			scenes: [
+				{
+					name	:	'titleIn',
+					duration:	1800,
+					offset	:	0,
+					tween	:	TweenMax.from('#join .section__title', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'titleOut',
+					duration:	1800,
+					offset	:	2.2*h,
+					tween	: 	TweenMax.to('#join .section__title', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'p1In',
+					duration:	1800,
+					offset	:	0.25*h,
+					tween	:	TweenMax.from('#join .p1', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'p1Out',
+					duration:	1800,
+					offset	:	2*h,
+					tween	: 	TweenMax.to('#join .p1', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'formIn',
+					duration:	1800,
+					offset	:	0.5*h,
+					tween	:	TweenMax.from('#join .join-form', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'formOut',
+					duration:	1800,
+					offset	:	2.25*h,
+					tween	: 	TweenMax.to('#join .join-form', 1, {y: -h, ease: Power2.easeIn})
+				},
+			]
+		}
 	];
 	function setupScrollScenes() {
 		for (var i = 0; i < keyframes.length; i++) {
@@ -513,16 +657,16 @@ $(function() {
 
 	// Init Slick Timeline Carousel
 	// -------------------------------------------------------------------------
-	$('.timeline-carousel').slick({
+	$('#timeline .carousel').slick({
 		infinite: true,
 		speed: 500,
 		arrows: true,
 		dots: true,
 		pauseOnHover: false,
-		responsive: [{
-			breakpoint: 1023,
-			settings: { dots: false }
-		}]
+		// responsive: [{
+		// 	breakpoint: 1023,
+		// 	settings: { dots: false }
+		// }]
 	});
 
 
