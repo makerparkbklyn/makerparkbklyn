@@ -4,7 +4,7 @@
 
 .vision-section {
 	background-color: $lightturquoise;
-	min-height: 800vh;
+	min-height: 1200vh;
 
 	.section__title {
 		position: fixed;
@@ -20,7 +20,7 @@
 		position: fixed;
 		width: 37.5%;
 		left: 50%;
-		top: 44.8%;
+		top: 42%;
 	}
 	.bg-pattern-1 {
 		position: fixed;
@@ -78,9 +78,10 @@
 				z-index: 3;
 			}
 			&:nth-child(6) {
-				width: 100%;
+				top: 288px;
+				left: 8.334%;
+				width: 83.334%;
 				z-index: 2;
-				display: none;
 			}
 			&:nth-child(7) {
 				top: 96px;
@@ -89,5 +90,18 @@
 			}
 		}
 
+	}
+	.embed-container {
+		position: fixed;
+		width: 62.5%;
+		height: 0;
+		padding-bottom: 56.25%;
+		overflow: hidden;
+		border: 12px solid #000056;
+	}
+	.p3 {
+		position: fixed;
+		width: 37.5%;
+		top: 75%;
 	}
 }

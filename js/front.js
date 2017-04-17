@@ -88,7 +88,7 @@ $(function() {
 
 	// Hide Logo in Hero Section
 	// -------------------------------------------------------------------------
-	$('.logo').addClass('out');
+	// $('.logo').addClass('out');
 
 	// On Scroll Events
 	// -------------------------------------------------------------------------
@@ -98,12 +98,12 @@ $(function() {
 
 		// Show/Hide Logo in Hero
 		// ---------------------------------------------------------------------
-		if ( $scroll > ($(window).height()) * .6 ) {
-			$('.logo').removeClass('out');
-		}
-		else if ( $scroll < ($(window).height() * .6 ) ) {
-			$('.logo').addClass('out');
-		}
+		// if ( $scroll > ($(window).height()) * .6 ) {
+		// 	$('.logo').removeClass('out');
+		// }
+		// else if ( $scroll < ($(window).height() * .6 ) ) {
+		// 	$('.logo').addClass('out');
+		// }
 
 		// Show/Hide Next Section Arrow
 		// ---------------------------------------------------------------------
@@ -396,12 +396,6 @@ $(function() {
 					tween	: 	TweenMax.from('#vision .bg-pattern-2', 1, {y: h*1.5, x: -500, ease: Power2.easeOut})
 				},
 				{
-					name	:	'pattern2Out',
-					duration:	1800,
-					offset	:	10*h,
-					tween	: 	TweenMax.to('#vision .bg-pattern-2', 1, {y: -h*2, x: 500, ease: Power2.easeIn})
-				},
-				{
 					name	:	'stackIn',
 					duration:	1800,
 					offset	:	5.5*h,
@@ -413,6 +407,66 @@ $(function() {
 					offset	:	13.5*h,
 					tween	: 	TweenMax.to('#vision .image-stack', 1, {y: -h*2, ease: Power2.easeIn})
 				},
+				{
+					name	:	'img1Out',
+					duration:	1600,
+					offset	:	6.5*h,
+					tween	: 	TweenMax.to('#vision .image-stack__item:nth-child(1)', 1, {y: -h*2, ease: Power2.easeIn})
+				},
+				{
+					name	:	'img2Out',
+					duration:	1600,
+					offset	:	6.5*h+(800),
+					tween	: 	TweenMax.to('#vision .image-stack__item:nth-child(2)', 1, {y: -h*2, ease: Power2.easeIn})
+				},
+				{
+					name	:	'img3Out',
+					duration:	1600,
+					offset	:	6.5*h+(800*2),
+					tween	: 	TweenMax.to('#vision .image-stack__item:nth-child(3)', 1, {y: -h*2, ease: Power2.easeIn})
+				},
+				{
+					name	:	'img4Out',
+					duration:	1600,
+					offset	:	6.5*h+(800*3),
+					tween	: 	TweenMax.to('#vision .image-stack__item:nth-child(4)', 1, {y: -h*2, ease: Power2.easeIn})
+				},
+				{
+					name	:	'img5Out',
+					duration:	1600,
+					offset	:	6.5*h+(800*4),
+					tween	: 	TweenMax.to('#vision .image-stack__item:nth-child(5)', 1, {y: -h*2, ease: Power2.easeIn})
+				},
+				{
+					name	:	'img6Out',
+					duration:	1600,
+					offset	:	6.5*h+(800*5),
+					tween	: 	TweenMax.to('#vision .image-stack__item:nth-child(6)', 1, {y: -h*2, ease: Power2.easeIn})
+				},
+				{
+					name	:	'img7Out',
+					duration:	1600,
+					offset	:	6.5*h+(800*6),
+					tween	: 	TweenMax.to('#vision .image-stack__item:nth-child(7)', 1, {y: -h*2, ease: Power2.easeIn})
+				},
+				{
+					name	:	'pattern2OutIsh',
+					duration:	1800,
+					offset	:	10.5*h,
+					tween	: 	TweenMax.to('#vision .bg-pattern-2', 1, {y: -h*0.975, x: 400, ease: Power2.easeInOut})
+				},
+				{
+					name	:	'videoIn',
+					duration:	1800,
+					offset	:	10.5*h,
+					tween	: 	TweenMax.from('#vision .video', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'pattern2Out',
+					duration:	1800,
+					offset	:	12*h,
+					tween	: 	TweenMax.to('#vision .bg-pattern-2', 1, {y: -h*2, x: 500, ease: Power2.easeIn})
+				}
 			]
 		},
 	];
@@ -440,22 +494,22 @@ $(function() {
 
 	// Init Slick Photo Carousel
 	// -------------------------------------------------------------------------
-	var $status = $('.carousel__count p');
-	var $photoCarousel = $('.carousel.site-photos');
-
-	$photoCarousel.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
-	    //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-	    var i = (currentSlide ? currentSlide : 0) + 1;
-	    $status.text(i + '/' + slick.slideCount);
-	});
-	$photoCarousel.slick({
-		slide: '.carousel__image',
-		infinite: true,
-		speed: 500,
-		arrows: true,
-		pauseOnHover: false,
-		adaptiveHeight: true
-	});
+	// var $status = $('.carousel__count p');
+	// var $photoCarousel = $('.carousel.site-photos');
+	//
+	// $photoCarousel.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+	//     //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+	//     var i = (currentSlide ? currentSlide : 0) + 1;
+	//     $status.text(i + '/' + slick.slideCount);
+	// });
+	// $photoCarousel.slick({
+	// 	slide: '.carousel__image',
+	// 	infinite: true,
+	// 	speed: 500,
+	// 	arrows: true,
+	// 	pauseOnHover: false,
+	// 	adaptiveHeight: true
+	// });
 
 	// Init Slick Timeline Carousel
 	// -------------------------------------------------------------------------
