@@ -2,7 +2,7 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .join-section {
 	background-color: $lightpink;
-	min-height: 300vh;
+	min-height: 320vh;
 
 	.section__title {
 		position: fixed;
@@ -14,8 +14,23 @@
 	.p1 {
 		position: fixed;
 		width: 37.5%;
-		top: 36%;
-		left: 50%;
+		top: 18%;
+		left: 12.5%;
+	}
+	.bg-pattern-1 {
+		position: fixed;
+		left: 12.5%;
+		top: 25%;
+	}
+	.bg-pattern-2 {
+		position: fixed;
+		left: 55%;
+		top: 75%;
+	}
+	.bg-pattern-3 {
+		position: fixed;
+		left: 90%;
+		top: 10%;
 	}
 	/* Form */
 	fieldset {
@@ -24,7 +39,7 @@
 	.join-form {
 		position: fixed;
 		left: 12.5%;
-		top: 50%;
+		top: 45%;
 		// width: 50%;
 
 		input[type="text"],
@@ -119,6 +134,16 @@
 		font-size: 1rem;
 		margin-bottom: 0;
 	}
+	textarea {
+		border: solid 6px $indigo;
+		outline: none;
+		padding: 1rem;
+		border-radius: 0;
+		background: transparent;
+		font-size: 3.375rem;
+		min-height: 12rem;
+		margin-top: 4rem;
+	}
 }
 @include media-query(546px) {
 	.checkbox__label {
@@ -128,10 +153,10 @@
 .join-form__submit {
 	margin-top: 1.5rem;
 	input[type="submit"] {
-		height: 8rem;
+		height: 7rem;
 		width: 100%;
 		margin: 0;
-		padding: 0.65rem 0 0.5rem;
+		padding: 0.25rem 1rem 0.5rem;
 		font-size: 3.375rem;
 		line-height: 2;
 		letter-spacing: 0;
@@ -139,6 +164,7 @@
 		border: 6px solid $indigo;
 		border-radius: 0;
 		background: none;
+		// text-align: left;
 		text-transform: none;
 		&:hover {
 			background-color: $indigo;
@@ -157,30 +183,28 @@
 }
 @include media-query(1280px) {
 	.join-section {
-		.join-form__first-name,
-		.join-form__email {
+		.join-form__first-name {
 			padding-right: 1rem;
 		}
-		.join-form__last-name,
-		.join-form__volunteer {
+		.join-form__last-name {
 			padding-left: 1rem;
 		}
 		.checkbox {
-			width: 3.375rem;
-			height: 3.375rem;
+			width: 3rem;
+			height: 3rem;
 			margin-right: 1rem;
 			margin-top: -0.75rem;
 		}
 		.checkbox__label {
-			margin-top: -12px;
+			margin-top: 3px;
 			font-size: 3.375rem;
 			// line-height: calc(1.75rem + 12px);
 		}
 		.checkbox__x {
-			width: 1rem;
+			width: 2rem;
 			&:after,
 			&:before {
-				width: 1rem;
+				width: 2rem;
 			}
 		}
 	}

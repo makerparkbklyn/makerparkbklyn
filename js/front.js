@@ -595,8 +595,8 @@ $(function() {
 				},
 				{
 					name	:	'p1Out',
-					duration:	1800,
-					offset	:	2*h,
+					duration:	1400,
+					offset	:	2.3*h,
 					tween	: 	TweenMax.to('#join .p1', 1, {y: -h, ease: Power2.easeIn})
 				},
 				{
@@ -607,9 +607,63 @@ $(function() {
 				},
 				{
 					name	:	'formOut',
-					duration:	1800,
-					offset	:	2.25*h,
+					duration:	1200,
+					offset	:	2.5*h,
 					tween	: 	TweenMax.to('#join .join-form', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'pattern1In',
+					duration:	1800,
+					offset	:	0.25*h,
+					tween	: 	TweenMax.from('#join .bg-pattern-1', 1, {y: h*2, ease: Power2.easeOut})
+				},
+				{
+					name	:	'pattern1Out',
+					duration:	2000,
+					offset	:	2.5*h,
+					tween	: 	TweenMax.to('#join .bg-pattern-1', 1, {y: -h*2, ease: Power2.easeIn})
+				},
+				{
+					name	:	'pattern2In',
+					duration:	1800,
+					offset	:	0.5*h,
+					tween	: 	TweenMax.from('#join .bg-pattern-2', 1, {y: h*2, ease: Power2.easeOut})
+				},
+				{
+					name	:	'pattern2Out',
+					duration:	2200,
+					offset	:	2.25*h,
+					tween	: 	TweenMax.to('#join .bg-pattern-2', 1, {y: -h*2, ease: Power2.easeIn})
+				},
+				{
+					name	:	'pattern3In',
+					duration:	1800,
+					offset	:	0.5*h,
+					tween	: 	TweenMax.from('#join .bg-pattern-3', 1, {y: h*2, ease: Power2.easeOut})
+				},
+				{
+					name	:	'pattern3Out',
+					duration:	2000,
+					offset	:	2.5*h,
+					tween	: 	TweenMax.to('#join .bg-pattern-3', 1, {y: -h*2, ease: Power2.easeIn})
+				},
+			]
+		},
+		{
+			section			:	'#news',
+			hook			:	'onEnter',
+			scenes: [
+				{
+					name	:	'titleIn',
+					duration:	1800,
+					offset	:	0,
+					tween	:	TweenMax.from('#news .section__title', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
+					name	:	'titleOut',
+					duration:	1800,
+					offset	:	2.2*h,
+					tween	: 	TweenMax.to('#news .section__title', 1, {y: -h, ease: Power2.easeIn})
 				},
 			]
 		}
