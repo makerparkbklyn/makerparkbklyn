@@ -1,7 +1,15 @@
 /* Team Section
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .team-section {
-	background-color: transparent;
+	background-color: $lightorange;
+	min-height: 300vh;
+
+	.section__title {
+		position: fixed;
+		left: 12.5%;
+		top: 21.5%;
+		line-height: 0.75;
+	}
 }
 .team-block {
 	margin-bottom: 2rem;
