@@ -70,6 +70,7 @@
 }
 @import	"rail-left";
 @import	"rail-right";
+@import	"nav";
 
 /* Front Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -79,6 +80,9 @@ section {
 
 }
 .section__title {
+	position: fixed;
+	left: 12.5%;
+	top: 14%;
 	@extend .type--xlarge;
 	color: #fff;
 	font-weight: inherit;

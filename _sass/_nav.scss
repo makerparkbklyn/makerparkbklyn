@@ -1,0 +1,44 @@
+
+/* Nav
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.nav {
+	display: block;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: $lightturquoise;
+	z-index: 99999;
+
+	&.hidden {
+		display: none;
+	}
+}
+
+.nav__list {
+	width: 75%;
+	margin: 10% auto;
+	list-style: none;
+	height: auto;
+	text-align: center;
+}
+
+.nav__item {
+	position: relative;
+	border-radius: 50%;
+	border: 6px solid $indigo;
+	width: 300px;
+	height: 300px;
+	margin: 1rem;
+	display: inline-block;
+
+	a {
+		font-size: 3.375rem;
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		left: 0;
+		transform: translateY(-48%);
+	}
+}
