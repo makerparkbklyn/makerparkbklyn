@@ -2,43 +2,68 @@
 	background-color: $lightblue;
 	min-height: 420vh;
 
-	.carousel {
+	.bg-pattern-1 {
 		position: fixed;
-		top: 50%;
-		left: 12.5%;
-		width: 75%;
-		background: rgba(0,0,0,0.1);
+		right: -10%;
+		top: 0;
 	}
 
-	.carousel-item {
-		h2 {}
-		p {}
+	.timeline-arrow {
+		position: fixed;
+		top: 45%;
+	}
+	.timeline-arrow--prev {
+		left: 12.5%;
+	}
+	.timeline-arrow--next {
+		left: 25%;
+	}
+
+	.timeline-carousel {
+		position: fixed;
+		top: calc(28.75% + 36px);
+		left: 37.5%;
+		width: 37.5%;
+	}
+
+	.timeline-carousel__item {
+		// background: red;
+		h2 {
+			font-size: 10rem;
+			font-weight: inherit;
+		}
+		p {
+			// position: absolute;
+			// width: 50%;
+			// top: 28.25%;
+			// left: 33.334%;
+			// display: block;
+		}
 	}
 
 	// Dots
 	.slick-dots {
 	    position: absolute;
-		top: .55rem;
-		right: 5rem;
-		line-height: .15rem;
+		top: 45%;
+		left: -68.5%;
+		width: 55%;
 		padding: 0;
 		margin: 0;
 	    list-style: none;
-	    text-align: right;
-		width: 3rem;
+	    text-align: left;
 	}
 	.slick-dots li {
 	    position: relative;
 	    display: inline-block;
-	    margin: 0 .125rem;
+	    margin: 1rem;
 	    padding: 0;
 	}
 	.slick-dots li button {
 	    font-size: 0;
 	    line-height: 0;
 	    display: block;
-		width: 0.25rem;
-		height: 0.25rem;
+		width: 2.5rem;
+		height: 2.5rem;
 		padding: 0;
 		margin: 0;
 	    cursor: pointer;
@@ -58,8 +83,8 @@
 	    position: absolute;
 	    top: 0;
 	    left: 0;
-	    width: 0.25rem;
-	    height: 0.25rem;
+	    width: 2.5rem;
+	    height: 2.5rem;
 		border-radius: 50%;
 		background: $indigo;
 	    content: '';

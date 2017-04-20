@@ -1,20 +1,13 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.84 52.07">
-	<defs>
-		<style>
-			.cls-1{
-				fill:none;
-				stroke:#000056;
-				stroke-width:6px;
-			}
-		</style>
-	</defs>
-	<title>arrow-left</title>
-	<g id="Page-3">
-		<g id="Desktop-HD-Copy-31">
-			<g id="Arrow">
-				<path id="Stroke-1" class="cls-1" d="M66,27.3H6" transform="translate(-1.16 -0.96)"/>
-				<polyline id="Stroke-4" class="cls-1" points="34.84 49.72 4.84 26.04 34.84 2.35"/>
-			</g>
-		</g>
-	</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="55px" height="46px" viewBox="0 0 55 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-down copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="arrow-down-copy-2" transform="translate(30.000000, 23.000000) rotate(90.000000) translate(-30.000000, -23.000000) translate(10.000000, -2.000000)" stroke="#000056" stroke-width="6">
+            <path d="M20,0 L20,50" id="Stroke-1"></path>
+            <polyline id="Stroke-4" points="40 30 20 50 0 30"></polyline>
+        </g>
+    </g>
 </svg>

@@ -32,7 +32,15 @@
 	}
 	.bg-pattern-1 {
 		position: fixed;
-		top: -50%;
+		top: 50%;
+		transform: translateY(-50%);
+		right: -0.25%;
+	}
+	.bg-pattern-2 {
+		position: fixed;
+		top: 50%;
+		transform: translateY(-50%);
+		left: -45%;
 	}
 	[class*='image-'] {
 		position: fixed;

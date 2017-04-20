@@ -4,10 +4,10 @@ $(function() {
 	// -------------------------------------------------------------------------
 	function SectionManager() {
 		var self = this;
-		this.current = {};
+		this.current = '';
 		var sections = this.sections = $('section');
 		var ctrl = this.scrollCtrl = new ScrollMagic.Controller();
-		var titles = $('.title');
+		var titles = $('section .title');
 
 		for (var i = 0; i < sections.length; i++) {
 
@@ -22,9 +22,10 @@ $(function() {
 			.on("enter leave", function (e) {
 				if (e.type === 'enter') {
 					var $el = $(this.triggerElement());
-					self.current.id = $el.attr('id');
+					self.current = $el.attr('id');
 					$('.current').removeClass('current');
 					$el.addClass('current');
+					console.log('CURRENT: ' + self.current);
 				}
 			})
 
@@ -67,23 +68,22 @@ $(function() {
 	// Instantiate New Section Manager
 	// -------------------------------------------------------------------------
 	var s = window.s = new SectionManager();
-	$(window).scroll(function(){
-		console.log('CURRENT: ' + s.current.id);
-	})
+
 
 	// Next Section Arrow
 	// -------------------------------------------------------------------------
-	// change this to check if up or down and switch (no arrow in footer)
+	// use ScrollMagic for this? need to scroll to locking point
 	$('body').on('click', '.arrow-down', function(e) {
 		e.preventDefault();
-		var nextIndex = s.current.index + 1;
-		if (nextIndex >= s.sections.length) {
-			$nextSection = $('footer');
+		var $current = $('#' + s.current);
+		var $next = null;
+		if (s.current === 'team') {
+			$next = $('#hero');
 		}
 		else {
-			var $nextSection = $(s.sections[nextIndex]);
+			$next = $current.next();
 		}
-		$nextSection.ScrollTo({ duration: 1000 });
+		$next.ScrollTo({ duration: 3000 });
 	});
 
 	// Hide Logo in Hero Section
@@ -92,9 +92,9 @@ $(function() {
 
 	// On Scroll Events
 	// -------------------------------------------------------------------------
-	$(window).scroll(function() {
-
-		var $scroll = $(window).scrollTop();
+	// $(window).scroll(function() {
+	//
+	// 	var $scroll = $(window).scrollTop();
 
 		// Show/Hide Logo in Hero
 		// ---------------------------------------------------------------------
@@ -118,7 +118,7 @@ $(function() {
 		// 	$('.mission-section.current .p2').css('transform', 'translate3d(0, ' + t/12 + 'px, 0)');
 		// }
 
-	});
+	// });
 
 	// Scroll Effects
 	// -------------------------------------------------------------------------
@@ -126,7 +126,7 @@ $(function() {
 	var h = $(window).height();
 	console.log('h: ' + h);
 	var debug = false;
-	var keyframes = [
+	var combinedKeyframes = [
 		{
 			section			:	'#hero',
 			hook			:	'onLeave',
@@ -141,7 +141,7 @@ $(function() {
 					name	:	'logoTransform',
 					duration:	h,
 					offset	:	0,
-					tween	:	TweenMax.to('#hero .hero-logo', 1, {y: 540, x: 816, scale: .3, rotation: 360, ease:Power2.easeInOut})
+					tween	:	TweenMax.to('#hero .hero-logo', 1, {y: 534, x: 816, scale: .3, rotation: 360, ease:Power2.easeInOut})
 				}
 			]
 		},
@@ -279,13 +279,31 @@ $(function() {
 					name	:	'pattern1In',
 					duration:	2400,
 					offset	:	.75*h,
-					tween	: 	TweenMax.from('#site .bg-pattern-1', 1, {y: h*1.5, x: -1200, ease: Power2.easeOut})
+					tween	: 	TweenMax.from('#site .bg-pattern-1', 1, {y: h*1.5, ease: Power2.easeOut})
 				},
 				{
 					name	:	'pattern1Out',
 					duration:	2400,
 					offset	:	10.25*h,
-					tween	: 	TweenMax.to('#site .bg-pattern-1', 1, {y: -h*2, x: 500, ease: Power2.easeIn})
+					tween	: 	TweenMax.to('#site .bg-pattern-1', 1, {y: -h*2, ease: Power2.easeIn})
+				},
+				{
+					name	:	'pattern2In',
+					duration:	2400,
+					offset	:	h,
+					tween	: 	TweenMax.from('#site .bg-pattern-2', 1, {y: h*1.5, ease: Power2.easeOut})
+				},
+				// {
+				// 	name	:	'pattern2Move',
+				// 	duration:	2400,
+				// 	offset	:	10.25*h,
+				// 	tween	: 	TweenMax.to('#site .bg-pattern-2', 1, {y: -h, ease: Power2.easeIn})
+				// },
+				{
+					name	:	'pattern2Out',
+					duration:	2400,
+					offset	:	10.5*h,
+					tween	: 	TweenMax.to('#site .bg-pattern-2', 1, {y: -h*2, ease: Power2.easeIn})
 				},
 				{
 					name	:	'image00Thru',
@@ -384,28 +402,82 @@ $(function() {
 					tween	: 	TweenMax.from('#vision .bg-pattern-1', 1, {y: h*1.5, x: -500, ease: Power2.easeOut})
 				},
 				{
-					name	:	'pattern1Out',
-					duration:	1800,
+					name	:	'pattern1Move',
+					duration:	2400,
 					offset	:	4.25*h,
-					tween	: 	TweenMax.to('#vision .bg-pattern-1', 1, {y: -h*2, x: 500, ease: Power2.easeIn})
+					tween	: 	TweenMax.to('#vision .bg-pattern-1', 1, {y: -1.2*h, x: 725, ease: Power2.easeInOut})
 				},
 				{
-					name	:	'pattern2In',
+					name	:	'pattern1Move2',
 					duration:	2400,
-					offset	:	5*h,
-					tween	: 	TweenMax.from('#vision .bg-pattern-2', 1, {y: h*1.5, x: -500, ease: Power2.easeOut})
+					offset	:	10.5*h,
+					tween	: 	TweenMax.to('#vision .bg-pattern-1', 1, {y: -h*2.05, x: 1400, ease: Power2.easeInOut})
 				},
+				{
+					name	:	'pattern1Out',
+					duration:	2400,
+					offset	:	12*h,
+					tween	: 	TweenMax.to('#vision .bg-pattern-1', 1, {y: -h*2.25, x: 1500, ease: Power2.easeIn})
+				},
+				// {
+				// 	name	:	'pattern2In',
+				// 	duration:	1800,
+				// 	offset	:	4.5*h,
+				// 	tween	: 	TweenMax.from('#vision .bg-pattern-2', 1, {y: h*1.5, x: -500, ease: Power2.easeOut})
+				// },
 				{
 					name	:	'stackIn',
 					duration:	1800,
-					offset	:	5.5*h,
+					offset	:	4.75*h,
 					tween	: 	TweenMax.from('#vision .image-stack', 1, {y: h*1.5, ease: Power2.easeOut})
 				},
 				{
 					name	:	'stackOut',
 					duration:	1800,
-					offset	:	13.5*h,
+					offset	:	12.5*h,
 					tween	: 	TweenMax.to('#vision .image-stack', 1, {y: -h*2, ease: Power2.easeIn})
+				},
+				{
+					name	:	'img1In',
+					duration:	1600,
+					offset	:	4.75*h,
+					tween	: 	TweenMax.from('#vision .image-stack__item:nth-child(1)', 1, {y: 800, ease: Power2.easeOut})
+				},
+				{
+					name	:	'img2In',
+					duration:	1650,
+					offset	:	4.75*h,
+					tween	: 	TweenMax.from('#vision .image-stack__item:nth-child(2)', 1, {y: 500, ease: Power2.easeOut})
+				},
+				{
+					name	:	'img3In',
+					duration:	1700,
+					offset	:	4.75*h,
+					tween	: 	TweenMax.from('#vision .image-stack__item:nth-child(3)', 1, {y: 600, ease: Power2.easeOut})
+				},
+				{
+					name	:	'img4In',
+					duration:	1750,
+					offset	:	4.75*h,
+					tween	: 	TweenMax.from('#vision .image-stack__item:nth-child(4)', 1, {y: 700, ease: Power2.easeOut})
+				},
+				{
+					name	:	'img5In',
+					duration:	1800,
+					offset	:	4.75*h,
+					tween	: 	TweenMax.from('#vision .image-stack__item:nth-child(5)', 1, {y: 800, ease: Power2.easeOut})
+				},
+				{
+					name	:	'img6In',
+					duration:	1850,
+					offset	:	4.75*h,
+					tween	: 	TweenMax.from('#vision .image-stack__item:nth-child(6)', 1, {y: 900, ease: Power2.easeOut})
+				},
+				{
+					name	:	'img7In',
+					duration:	1900,
+					offset	:	4.75*h,
+					tween	: 	TweenMax.from('#vision .image-stack__item:nth-child(7)', 1, {y: 1400, ease: Power2.easeOut})
 				},
 				{
 					name	:	'img1Out',
@@ -449,12 +521,12 @@ $(function() {
 					offset	:	6.5*h+(800*6),
 					tween	: 	TweenMax.to('#vision .image-stack__item:nth-child(7)', 1, {y: -h*2, ease: Power2.easeIn})
 				},
-				{
-					name	:	'pattern2OutIsh',
-					duration:	2200,
-					offset	:	10.5*h,
-					tween	: 	TweenMax.to('#vision .bg-pattern-2', 1, {y: -h*1.04, x: 300, ease: Power2.easeInOut})
-				},
+				// {
+				// 	name	:	'pattern2Move',
+				// 	duration:	2200,
+				// 	offset	:	10.5*h,
+				// 	tween	: 	TweenMax.to('#vision .bg-pattern-2', 1, {y: -h*1.55, x: 384, ease: Power2.easeInOut})
+				// },
 				{
 					name	:	'videoIn',
 					duration:	1800,
@@ -467,12 +539,12 @@ $(function() {
 					offset	:	11*h,
 					tween	: 	TweenMax.from('#vision .p3', 1, {y: h/2, ease: Power2.easeOut})
 				},
-				{
-					name	:	'pattern2Out',
-					duration:	1800,
-					offset	:	13*h,
-					tween	: 	TweenMax.to('#vision .bg-pattern-2', 1, {y: -h*2, x: 500, ease: Power2.easeIn})
-				},
+				// {
+				// 	name	:	'pattern2Out',
+				// 	duration:	1800,
+				// 	offset	:	13*h,
+				// 	tween	: 	TweenMax.to('#vision .bg-pattern-2', 1, {y: -h*2, x: 500, ease: Power2.easeIn})
+				// },
 				{
 					name	:	'videoOut',
 					duration:	1800,
@@ -498,23 +570,59 @@ $(function() {
 					tween	:	TweenMax.from('#timeline .section__title', 1, {y: h, ease: Power2.easeOut})
 				},
 				{
-					name	:	'carouselIn',
-					duration:	1800,
-					offset	:	h*2/3,
-					tween	: 	TweenMax.from('#timeline .carousel', 1, {y: h, ease: Power2.easeOut})
-				},
-				{
 					name	:	'titleOut',
 					duration:	1800,
 					offset	:	3.5*h,
 					tween	: 	TweenMax.to('#timeline .section__title', 1, {y: -h, ease: Power2.easeIn})
 				},
 				{
+					name	:	'carouselIn',
+					duration:	1800,
+					offset	:	h*2/3,
+					tween	: 	TweenMax.from('#timeline .timeline-carousel', 1, {y: h, ease: Power2.easeOut})
+				},
+				{
 					name	:	'carouselOut',
 					duration:	1800,
 					offset	:	3.65*h,
-					tween	: 	TweenMax.to('#timeline .carousel', 1, {y: -h, ease: Power2.easeIn})
-				}
+					tween	: 	TweenMax.to('#timeline .timeline-carousel', 1, {y: -h, x: 100, ease: Power2.easeIn})
+				},
+				{
+					name	:	'carouselDotsIn',
+					duration:	2400,
+					offset	:	h,
+					tween	: 	TweenMax.from('#timeline .slick-dots', 1, {y: 1200, ease: Power2.easeOut})
+				},
+				{
+					name	:	'arrowPrevIn',
+					duration:	1800,
+					offset	:	h,
+					tween	: 	TweenMax.from('#timeline .timeline-arrow--prev', 1, {y: 800, ease: Power2.easeOut})
+				},
+				{
+					name	:	'arrowNextIn',
+					duration:	1800,
+					offset	:	h,
+					tween	: 	TweenMax.from('#timeline .timeline-arrow--next', 1, {y: 1200, ease: Power2.easeOut})
+				},
+				{
+					name	:	'arrowPrevOut',
+					duration:	1400,
+					offset	:	3.75*h,
+					tween	: 	TweenMax.to('#timeline .timeline-arrow--prev', 1, {y: -0.5*h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'arrowNextOut',
+					duration:	1400,
+					offset	:	3.75*h,
+					tween	: 	TweenMax.to('#timeline .timeline-arrow--next', 1, {y: -0.6*h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'pattern1Thru',
+					duration:	6*h,
+					offset	:	0,
+					tween	: 	TweenMax.fromTo('#timeline .bg-pattern-1', 1, {y: h}, {y: -4*h, ease: Power2.easeInOut})
+				},
 			]
 		},
 		{
@@ -771,7 +879,7 @@ $(function() {
 			]
 		}
 	];
-	function setupScrollScenes() {
+	function setupScrollScenes(keyframes) {
 		for (var i = 0; i < keyframes.length; i++) {
 			var p = keyframes[i];
 			var trigger = p.section;
@@ -790,34 +898,17 @@ $(function() {
 			}
 		}
 	}
-	setupScrollScenes();
+	setupScrollScenes(combinedKeyframes);
 
-
-	// Init Slick Photo Carousel
-	// -------------------------------------------------------------------------
-	// var $status = $('.carousel__count p');
-	// var $photoCarousel = $('.carousel.site-photos');
-	//
-	// $photoCarousel.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
-	//     //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-	//     var i = (currentSlide ? currentSlide : 0) + 1;
-	//     $status.text(i + '/' + slick.slideCount);
-	// });
-	// $photoCarousel.slick({
-	// 	slide: '.carousel__image',
-	// 	infinite: true,
-	// 	speed: 500,
-	// 	arrows: true,
-	// 	pauseOnHover: false,
-	// 	adaptiveHeight: true
-	// });
 
 	// Init Slick Timeline Carousel
 	// -------------------------------------------------------------------------
-	$('#timeline .carousel').slick({
+	$('#timeline .timeline-carousel').slick({
 		infinite: true,
 		speed: 500,
 		arrows: true,
+		prevArrow: $('.timeline-arrow--prev'),
+		nextArrow: $('.timeline-arrow--next'),
 		dots: true,
 		pauseOnHover: false,
 		// responsive: [{
