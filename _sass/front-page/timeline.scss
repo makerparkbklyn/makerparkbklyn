@@ -1,6 +1,6 @@
 .timeline-section {
 	background-color: $lightblue;
-	min-height: 420vh;
+	min-height: 350vh;
 
 	.bg-pattern-1 {
 		position: fixed;
@@ -16,7 +16,7 @@
 		left: 12.5%;
 	}
 	.timeline-arrow--next {
-		left: 25%;
+		left: 19.5%;
 	}
 
 	.timeline-carousel {
@@ -44,7 +44,7 @@
 	// Dots
 	.slick-dots {
 	    position: absolute;
-		top: 45%;
+		top: 46%;
 		left: -68.5%;
 		width: 55%;
 		padding: 0;

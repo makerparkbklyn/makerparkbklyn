@@ -146,9 +146,9 @@ figcaption {
 	// }
 }
 
-.hidden {
-	display: none;
-}
+// .hidden {
+// 	display: none;
+// }
 
 /* Color BG
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -188,12 +188,13 @@ figcaption {
 
 .footer {
 	position: relative;
-	height: 12rem;
+	// height: 12rem;
 	box-sizing: border-box;
 	padding: 1rem 0;
-	background: url(../images/patterns/pattern_1.gif);
+	// background: url(../images/patterns/pattern_1.gif);
 	background-repeat: no-repeat;
 	background-size: 300%;
+	min-height: 300vh;
 }
 .footer__arrow {
 	position: absolute;

@@ -6,6 +6,7 @@ $(function() {
 		var self = this;
 		this.current = '';
 		var sections = this.sections = $('section');
+		sections.push($('#footer')[0]);
 		var ctrl = this.scrollCtrl = new ScrollMagic.Controller();
 		var titles = $('section .title');
 
@@ -18,7 +19,7 @@ $(function() {
 				duration: $(sections[i]).outerHeight()
 			})
 			.addTo(ctrl)
-			// .addIndicators()
+			// .addIndicators({name: $(sections[i]).attr('id')})
 			.on("enter leave", function (e) {
 				if (e.type === 'enter') {
 					var $el = $(this.triggerElement());
@@ -37,12 +38,14 @@ $(function() {
 					duration: '50%'
 				})
 				.addTo(ctrl)
-				// .addIndicators()
+				// .addIndicators({name: $(sections[i]).attr('id')})
 				.on('progress', function(e) {
 					if (e.progress > 0) {
 						var el = $(this.triggerElement());
 						var c = $.Color(el.prev().attr('data-bg-color')).transition(el.attr('data-bg-color'), e.progress.toFixed(3));
 						$('section').css('background-color', c);
+						// color nav overlay
+						$('nav').css('background-color', c);
 					}
 				});
 			}
@@ -77,13 +80,65 @@ $(function() {
 		e.preventDefault();
 		var $current = $('#' + s.current);
 		var $next = null;
-		if (s.current === 'team') {
+		if (s.current === 'footer') {
 			$next = $('#hero');
 		}
 		else {
 			$next = $current.next();
 		}
 		$next.ScrollTo({ duration: 3000 });
+	});
+
+	function getRandomInt(min, max) {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		return Math.floor(Math.random() * (max - min)) + min;
+	}
+	var $nav = $('nav');
+	var navTL = new TimelineMax();
+	navTL.to($nav, 0.1, {
+		opacity: 1,
+		ease: Linear.easeNone
+	});
+
+	$('.nav__item').each(function(index, element){
+		var t, x, y, r;
+
+		t = 0.1 * getRandomInt(1,9) + 0.75;
+
+		r = getRandomInt(180, 360);
+
+		if (index <= 3) { y = '-100%' }
+		else { y = '-200%' }
+
+		if (index % 4 === 0) { x = '400%' }
+		else if (index % 4 === 1) { x = '300%' }
+		else if (index % 4 === 2) { x = '200%' }
+		else { x = '100%' }
+
+		navTL.from(element, t, {
+			opacity: 0,
+			x: x,
+			y: y,
+			rotation: r,
+			ease: Elastic.easeOut.config(1, 0.85)
+		}, 0);
+	});
+
+	$('body').on("click", '.menu-button', function (e) {
+		e.preventDefault();
+		$nav.css('z-index', '99999');
+		navTL.timeScale = 1;
+		navTL.restart();
+	});
+
+	$('body').on("click", '.close-menu-button', function (e) {
+		e.preventDefault();
+		navTL.timeScale = 0.5;
+		navTL.reverse();
+		setTimeout(function(){
+			$nav.css('z-index', '-10');
+		}, 2400);
 	});
 
 	// Hide Logo in Hero Section
@@ -566,62 +621,62 @@ $(function() {
 				{
 					name	:	'titleIn',
 					duration:	1800,
-					offset	:	h/2,
+					offset	:	.25*h,
 					tween	:	TweenMax.from('#timeline .section__title', 1, {y: h, ease: Power2.easeOut})
 				},
 				{
 					name	:	'titleOut',
 					duration:	1800,
-					offset	:	3.5*h,
+					offset	:	3*h,
 					tween	: 	TweenMax.to('#timeline .section__title', 1, {y: -h, ease: Power2.easeIn})
 				},
 				{
 					name	:	'carouselIn',
 					duration:	1800,
-					offset	:	h*2/3,
+					offset	:	.4*h,
 					tween	: 	TweenMax.from('#timeline .timeline-carousel', 1, {y: h, ease: Power2.easeOut})
 				},
 				{
 					name	:	'carouselOut',
 					duration:	1800,
-					offset	:	3.65*h,
-					tween	: 	TweenMax.to('#timeline .timeline-carousel', 1, {y: -h, x: 100, ease: Power2.easeIn})
+					offset	:	3.1*h,
+					tween	: 	TweenMax.to('#timeline .timeline-carousel', 1, {y: -h, ease: Power2.easeIn})
 				},
 				{
 					name	:	'carouselDotsIn',
 					duration:	2400,
-					offset	:	h,
+					offset	:	.75*h,
 					tween	: 	TweenMax.from('#timeline .slick-dots', 1, {y: 1200, ease: Power2.easeOut})
 				},
 				{
 					name	:	'arrowPrevIn',
 					duration:	1800,
-					offset	:	h,
+					offset	:	.75*h,
 					tween	: 	TweenMax.from('#timeline .timeline-arrow--prev', 1, {y: 800, ease: Power2.easeOut})
 				},
 				{
 					name	:	'arrowNextIn',
 					duration:	1800,
-					offset	:	h,
-					tween	: 	TweenMax.from('#timeline .timeline-arrow--next', 1, {y: 1200, ease: Power2.easeOut})
+					offset	:	.75*h,
+					tween	: 	TweenMax.from('#timeline .timeline-arrow--next', 1, {y: 840, ease: Power2.easeOut})
 				},
 				{
 					name	:	'arrowPrevOut',
 					duration:	1400,
-					offset	:	3.75*h,
-					tween	: 	TweenMax.to('#timeline .timeline-arrow--prev', 1, {y: -0.5*h, ease: Power2.easeIn})
+					offset	:	3.25*h,
+					tween	: 	TweenMax.to('#timeline .timeline-arrow--prev', 1, {y: -0.75*h, ease: Power2.easeIn})
 				},
 				{
 					name	:	'arrowNextOut',
 					duration:	1400,
-					offset	:	3.75*h,
-					tween	: 	TweenMax.to('#timeline .timeline-arrow--next', 1, {y: -0.6*h, ease: Power2.easeIn})
+					offset	:	3.25*h,
+					tween	: 	TweenMax.to('#timeline .timeline-arrow--next', 1, {y: -0.85*h, ease: Power2.easeIn})
 				},
 				{
 					name	:	'pattern1Thru',
-					duration:	6*h,
-					offset	:	0,
-					tween	: 	TweenMax.fromTo('#timeline .bg-pattern-1', 1, {y: h}, {y: -4*h, ease: Power2.easeInOut})
+					duration:	6.5*h,
+					offset	:	-.25*h,
+					tween	: 	TweenMax.fromTo('#timeline .bg-pattern-1', 1, {y: h}, {y: -3.2*h, ease: Power2.easeInOut})
 				},
 			]
 		},
@@ -661,7 +716,7 @@ $(function() {
 				},
 				{
 					name	:	'pattern1Out',
-					duration:	2800,
+					duration:	2400,
 					offset	:	2.5*h,
 					tween	: 	TweenMax.to('#principles .bg-pattern-1', 1, {y: -h*2, x: 400, ease: Power2.easeIn})
 				},
@@ -830,17 +885,11 @@ $(function() {
 				{
 					name	:	'expertLogosIn',
 					duration:	1800,
-					offset	:	2.65*h,
+					offset	:	2.5*h,
 					tween	:	TweenMax.from('#team .expert-team', 1, {y: h, ease: Power2.easeOut})
 				},
-				// {
-				// 	name	:	'expertLogosOut',
-				// 	duration:	1800,
-				// 	offset	:	4*h,
-				// 	tween	: 	TweenMax.to('#team .expert-team', 1, {y: -h, ease: Power2.easeIn})
-				// },
 				{
-					name	:	'expertLogo1In',
+					name	:	'expertLogo6In',
 					duration:	1800,
 					offset	:	2.2*h,
 					tween	:	TweenMax.from('#team .expert-team-block:nth-child(6)', 1, {y: h, ease: Power2.easeOut})
@@ -852,13 +901,13 @@ $(function() {
 					tween	:	TweenMax.from('#team .expert-team-block:nth-child(2)', 1, {y: h, ease: Power2.easeOut})
 				},
 				{
-					name	:	'expertLogo3In',
+					name	:	'expertLogo4In',
 					duration:	1800,
 					offset	:	2.4*h,
 					tween	:	TweenMax.from('#team .expert-team-block:nth-child(4)', 1, {y: h, ease: Power2.easeOut})
 				},
 				{
-					name	:	'expertLogo4In',
+					name	:	'expertLogo3In',
 					duration:	1800,
 					offset	:	2.5*h,
 					tween	:	TweenMax.from('#team .expert-team-block:nth-child(3)', 1, {y: h, ease: Power2.easeOut})
@@ -870,14 +919,74 @@ $(function() {
 					tween	:	TweenMax.from('#team .expert-team-block:nth-child(5)', 1, {y: h, ease: Power2.easeOut})
 				},
 				{
-					name	:	'expertLogo5In',
+					name	:	'expertLogo1In',
 					duration:	1800,
 					offset	:	2.7*h,
 					tween	:	TweenMax.from('#team .expert-team-block:nth-child(1)', 1, {y: h, ease: Power2.easeOut})
 				},
+				{
+					name	:	'expertLogosOut',
+					duration:	1800,
+					offset	:	4.1*h,
+					tween	: 	TweenMax.to('#team .expert-team', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'expertLogo6In',
+					duration:	1800,
+					offset	:	3.9*h,
+					tween	:	TweenMax.to('#team .expert-team-block:nth-child(6)', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'expertLogo2In',
+					duration:	1800,
+					offset	:	4*h,
+					tween	:	TweenMax.to('#team .expert-team-block:nth-child(2)', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'expertLogo4In',
+					duration:	1800,
+					offset	:	4.1*h,
+					tween	:	TweenMax.to('#team .expert-team-block:nth-child(4)', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'expertLogo3In',
+					duration:	1800,
+					offset	:	4.2*h,
+					tween	:	TweenMax.to('#team .expert-team-block:nth-child(3)', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'expertLogo5In',
+					duration:	1800,
+					offset	:	4.3*h,
+					tween	:	TweenMax.to('#team .expert-team-block:nth-child(5)', 1, {y: -h, ease: Power2.easeIn})
+				},
+				{
+					name	:	'expertLogo1In',
+					duration:	1800,
+					offset	:	4.4*h,
+					tween	:	TweenMax.to('#team .expert-team-block:nth-child(1)', 1, {y: -h, ease: Power2.easeIn})
+				},
 
 			]
-		}
+		},
+		// {
+		// 	section			:	'#footer',
+		// 	hook			:	'onEnter',
+		// 	scenes: [
+		// 		{
+		// 			name	:	'logoTransformBack',
+		// 			duration:	h,
+		// 			offset	:	0,
+		// 			tween	:	TweenMax.from('#hero .hero-logo', 1, {y: 534, x: 816, scale: .3, rotation: 360, ease:Power2.easeInOut})
+		// 		},
+		// 		{
+		// 			name	:	'heroBGOut',
+		// 			duration:	0,
+		// 			offset	:	-h,
+		// 			tween	:	TweenMax.from('#hero .hero-bg', 1, {y: -500, ease: Linear.easeNone}) //prev: y:-735
+		// 		},
+		// 	]
+		// },
 	];
 	function setupScrollScenes(keyframes) {
 		for (var i = 0; i < keyframes.length; i++) {

@@ -6,6 +6,10 @@
 	background-color: $lightyellow;
 	min-height: 800vh;
 
+	.section__title {
+		// z-index: 9;
+		top: 50.5%;
+	}
 	.p1 {
 		position: fixed;
 		width: 37.5%;

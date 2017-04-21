@@ -10,10 +10,24 @@
 	left: 0;
 	background: $lightturquoise;
 	z-index: 99999;
+	opacity: 1;
+	transition: opacity .4s;
 
 	&.hidden {
-		display: none;
+		// display: none;
+		z-index: -10;
+		opacity: 0;
 	}
+}
+
+.close-menu-button {
+	display: block;
+	width: 12.5%;
+	position: absolute;
+	top: 4.8rem;
+	right: 0;
+	text-align: center;
+	cursor: pointer;
 }
 
 .nav__list {
