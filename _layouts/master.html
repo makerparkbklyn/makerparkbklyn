@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body id="top">
+
+	{% include grid.html %}
+
+	{% include left-rail.html %}
+	{% include right-rail.html %}
+	{% include nav-menu.html %}
+
+	<main class="main-content">
+		{{ content }}
+	</main>
+
+	{% include footer.html %}
+	{% include js.html %}
+
+</body>
+</html>

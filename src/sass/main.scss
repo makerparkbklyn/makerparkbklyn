@@ -1,7 +1,9 @@
----
----
-
 @charset "utf-8";
+
+@import
+	"normalize-css",
+	"susy",
+	"breakpoint-sass";
 
 
 // Grid Variables
@@ -19,6 +21,9 @@ $rem:				12px;
 
 // Colors Variables
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
+$yellow:			rgb(224, 245, 0);
+$lightyellow:		rgb(242, 237, 130);
+
 $green:				rgb(0, 255, 146);
 $lightgreen:		rgb(152, 240, 200);
 
@@ -39,10 +44,6 @@ $lightred:			rgb(255, 125, 129);
 
 $orange:			rgb(255, 84, 0);
 $lightorange:		rgb(255, 128, 83);
-
-$yellow:			rgb(224, 245, 0);
-$lightyellow:		rgb(242, 237, 130);
-// $lightyellow:		rgb(216, 242, 130);
 
 $indigo:			rgb(0,0,86);
 $darkblue:			$indigo;
