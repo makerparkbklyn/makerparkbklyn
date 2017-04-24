@@ -96,7 +96,7 @@ $(function() {
 	}
 	var $nav = $('nav');
 	var navTL = new TimelineMax();
-	navTL.to($nav, 0.1, {
+	navTL.to($nav, 0.25, {
 		opacity: 1,
 		ease: Linear.easeNone
 	});
@@ -117,7 +117,7 @@ $(function() {
 		else { x = '100%' }
 
 		navTL.from(element, t, {
-			opacity: 0,
+			// opacity: 0,
 			x: x,
 			y: y,
 			rotation: r,
@@ -134,7 +134,7 @@ $(function() {
 
 	$('body').on("click", '.close-menu-button', function (e) {
 		e.preventDefault();
-		navTL.timeScale = 0.5;
+		navTL.timeScale = 8;
 		navTL.reverse();
 		setTimeout(function(){
 			$nav.css('z-index', '-10');
