@@ -1,4 +1,9 @@
-export default const siteKeyframes = {
+import { TweenMax } from 'gsap'
+import Viewport from '../utils/Viewport'
+
+let h = Viewport.wh
+
+const siteKeyframes = {
 	section			:	'#site',
 	hook			:	'onEnter',
 	scenes: [
@@ -129,4 +134,6 @@ export default const siteKeyframes = {
 			tween	: 	TweenMax.to('#site .map', 1, {y: -h*2, x: 800, ease: Power2.easeIn})
 		},
 	]
-};
+}
+
+export default siteKeyframes

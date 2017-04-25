@@ -20,14 +20,14 @@
     "prefix": "postcss --use autoprefixer -b 'last 3 versions' --output assets/main.css assets/main.css",
     "browserify": "browserify 'src/js/main.js' -d -t babelify -o assets/main.js",
     "build:jekyll": "jekyll build --config _config.yml,_config-dev.yml",
-    "build:js": "npm run lint:js && npm run browserify",
-    "build:css": "npm run lint:css && npm run sass && npm run prefix",
+    "build:js": "npm run browserify",
+    "build:css": "npm run sass && npm run prefix",
     "build:font": "npm run font",
     "build:images": "npm run imagemin",
     "build": "npm run build:js && npm run build:css && npm run build:jekyll",
     "watch:jekyll": "chokidar '_config.yml' '_config-dev.yml' '*.md' '*.html' 'pages/*' '_includes/*' '_layouts/*' '_posts/*' '_projects/**/*' '_team-members/*'  -c 'npm run build:jekyll && browser-sync reload'",
     "watch:css": "chokidar 'src/sass/**/*' -c 'npm run build:css && npm run copy:assets && browser-sync reload'",
-    "watch:js": "chokidar 'src/js/*' -c 'npm run build:js && npm run copy:assets && browser-sync reload'",
+    "watch:js": "chokidar 'src/js/**/*' -c 'npm run build:js && npm run copy:assets && browser-sync reload'",
     "server": "browser-sync start --server _site",
     "server:reload": "browser-sync reload",
     "start": "npm run build && parallelshell 'npm run server -s' 'npm run watch:jekyll -s' 'npm run watch:css -s' 'npm run watch:js -s'"
@@ -45,10 +45,10 @@
   "dependencies": {
     "gsap": "^1.19.1",
     "jquery": "^3.2.1",
-    "jquery-color": "^1.0.0",
+    "jquery-color": "github:jquery/jquery-color",
     "scrollmagic": "^2.0.5",
     "slick-carousel": "^1.6.0"
-},
+  },
   "devDependencies": {
     "a11y": "^0.5.0",
     "autoprefixer": "^6.7.7",

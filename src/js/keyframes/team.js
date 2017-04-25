@@ -1,4 +1,9 @@
-export default const teamKeyframes = {
+import { TweenMax } from 'gsap'
+import Viewport from '../utils/Viewport'
+
+let h = Viewport.wh
+
+const teamKeyframes = {
 	section			:	'#team',
 	hook			:	'onEnter',
 	scenes: [
@@ -124,4 +129,6 @@ export default const teamKeyframes = {
 		},
 
 	]
-};
+}
+
+export default teamKeyframes

@@ -1,4 +1,9 @@
-export default const newsKeyframes = {
+import { TweenMax } from 'gsap'
+import Viewport from '../utils/Viewport'
+
+let h = Viewport.wh
+
+const newsKeyframes = {
 	section			:	'#news',
 	hook			:	'onEnter',
 	scenes: [
@@ -27,4 +32,6 @@ export default const newsKeyframes = {
 			tween	: 	TweenMax.to('#news .news-list', 1, {y: -1.5*h, ease: Power2.easeIn})
 		},
 	]
-};
+}
+
+export default newsKeyframes

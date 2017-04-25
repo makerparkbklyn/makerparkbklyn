@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-<body id="top">
+<body id="top" class="{% if page.url == '/' %}front{% endif %}">
 
 	{% include grid.html %}
 

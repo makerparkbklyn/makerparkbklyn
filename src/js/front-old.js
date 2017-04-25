@@ -134,7 +134,7 @@ $(function() {
 
 	$('body').on("click", '.close-menu-button', function (e) {
 		e.preventDefault();
-		navTL.timeScale = 8;
+		navTL.timeScale = 0.25;
 		navTL.reverse();
 		setTimeout(function(){
 			$nav.css('z-index', '-10');

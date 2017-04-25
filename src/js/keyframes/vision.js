@@ -1,4 +1,9 @@
-export default const visionKeyframes = {
+import { TweenMax } from 'gsap'
+import Viewport from '../utils/Viewport'
+
+let h = Viewport.wh
+
+const visionKeyframes = {
 	section			:	'#vision',
 	hook			:	'onEnter',
 	scenes: [
@@ -201,4 +206,6 @@ export default const visionKeyframes = {
 			tween	: 	TweenMax.to('#vision .p3', 1, {y: -h*2, ease: Power2.easeIn})
 		}
 	]
-};
+}
+
+export default visionKeyframes

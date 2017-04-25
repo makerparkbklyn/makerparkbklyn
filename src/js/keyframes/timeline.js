@@ -1,4 +1,9 @@
-export default const timelineKeyframes = {
+import { TweenMax } from 'gsap'
+import Viewport from '../utils/Viewport'
+
+let h = Viewport.wh
+
+const timelineKeyframes = {
 	section			:	'#timeline',
 	hook			:	'onEnter',
 	scenes: [
@@ -63,4 +68,6 @@ export default const timelineKeyframes = {
 			tween	: 	TweenMax.fromTo('#timeline .bg-pattern-1', 1, {y: h}, {y: -3.2*h, ease: Power2.easeInOut})
 		},
 	]
-};
+}
+
+export default timelineKeyframes

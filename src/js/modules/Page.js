@@ -1,13 +1,11 @@
 import $ from 'jquery'
 import { TimelineMax } from 'gsap'
-import getRandomInt from 'utils'
+import getRandomInt from '../utils/getRandomInt'
 
 
-class Page = {
+class Page {
 
 	constructor() {
-		super()
-
 		this._initElements()
 		this._initNavTransition()
 		this._initEvents()
@@ -24,9 +22,10 @@ class Page = {
 	}
 
 	_initNavTransition() {
+		let _self = this
 		this.navTimeline = new TimelineMax()
 
-		navTimeline.to(::this.$nav, 0.25, {
+		this.navTimeline.to(this.$nav, 0.25, {
 			opacity: 1,
 			ease: Linear.easeNone
 		})
@@ -46,7 +45,7 @@ class Page = {
 			else if (index % 4 === 2) { x = '200%' }
 			else { x = '100%' }
 
-			navTimeline.from(element, t, {
+			_self.navTimeline.from(element, t, {
 				x: x,
 				y: y,
 				rotation: r,
@@ -56,9 +55,8 @@ class Page = {
 	}
 
 	_initEvents() {
-		$navToggle.on('click', _onNavToggleClick(e))
-		$navClose.on('click', _onNavCloseClick(e))
-		$(window).on()
+		$navToggle.on('click', this._onNavToggleClick)
+		$navClose.on('click', this._onNavCloseClick)
 	}
 
 	// Handlers
@@ -76,15 +74,9 @@ class Page = {
 		this.navTimeline.timeScale = 8
 		this.navTimeline.reverse()
 		setTimeout(function(){
-			::this.$nav.css('z-index', '-10')
+			this.$nav.css('z-index', '-10')
 		}, 2000)
 	}
-
-	// DEV: Show / Hide Grid
-	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
-	$(window).on('keydown', function (e) {
-		if (e.which === 71) { $('.grid').toggleClass('show'); }
-	});
 
 	// Public
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––

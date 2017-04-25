@@ -1,4 +1,9 @@
-export default const signupKeyframes = {
+import { TweenMax } from 'gsap'
+import Viewport from '../utils/Viewport'
+
+let h = Viewport.wh
+
+const signupKeyframes = {
 	section			:	'#join',
 	hook			:	'onEnter',
 	scenes: [
@@ -75,4 +80,6 @@ export default const signupKeyframes = {
 			tween	: 	TweenMax.to('#join .bg-pattern-3', 1, {y: -h*2, ease: Power2.easeIn})
 		},
 	]
-};
+}
+
+export default signupKeyframes
