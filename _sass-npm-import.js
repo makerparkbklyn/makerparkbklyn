@@ -10,6 +10,8 @@ function removeExtension(filename) {
 function SASSNPMImporter(url, prev, done) {
 	// Fall back to old URL
 	var newUrl = url;
+	var explicitNPM = false;
+	var splitUrl = [];
 
 	try {
 		if (cache[url]) {
@@ -17,14 +19,32 @@ function SASSNPMImporter(url, prev, done) {
 			return;
 		}
 
-		if (url[0] === '.' || url.indexOf('/') !== -1) {
+		if (url[0] === '.' || url.indexOf('/') !== -1 && url.substr(0,4) !== 'npm:') {
 			return;
+		}
+
+		if (url.substr(0,4) === 'npm:') {
+			url = url.substr(4,url.length);
+			splitUrl = url.split('/');
+			url = splitUrl[0];
+			explicitNPM = true;
 		}
 
 		var modulePath = findup(path.join('node_modules', url), {
 			cwd: path.dirname(prev),
 			nocase: true
 		});
+
+		if (explicitNPM) {
+			newUrl = modulePath;
+			if (splitUrl.length) {
+				for (i = 1; i < splitUrl.length; i++) {
+					newUrl = newUrl + '/' + splitUrl[i];
+				}
+			}
+			console.log('SASS NPM Import: ' + newUrl + "\n");
+			return;
+		}
 
 		var moduleJson = require(path.join(modulePath, 'package.json'));
 
@@ -45,7 +65,7 @@ function SASSNPMImporter(url, prev, done) {
 
 		newUrl = path.join(modulePath, removeExtension(filename));
 
-		// console.log('SASS NPM Import: ' + newUrl + "\n");
+		console.log('SASS NPM Import: ' + newUrl + "\n");
 
 	}
 	catch (e) {

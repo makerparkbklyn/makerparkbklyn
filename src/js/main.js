@@ -5,14 +5,14 @@ import News from './pages/News'
 class App {
 	constructor() {
 		this.page = null;
-		this._initPages()
+		this._initPage()
 		this._initEvents()
 	}
 
 	// Private
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
 
-	_initPages() {
+	_initPage() {
 		if ( $('body').hasClass('front') ) {
 			this.page = new Front()
 		}
@@ -32,19 +32,9 @@ class App {
 		if (e.ctrlKey && e.which === 71)
 			$('.grid').toggleClass('show')
 	}
-
-
 }
 
 // on document ready
 $( () => {
 	let MP = new App()
-
-	$('.timeline-carousel').slick({
-		infinite: true,
-		dots: true,
-		focusOnSelect: false,
-		prevArrow: $('.timeline-arrow--prev'),
-		nextArrow: $('.timeline-arrow--next'),
-	})
 })

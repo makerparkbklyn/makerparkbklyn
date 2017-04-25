@@ -3,7 +3,10 @@
 @import
 	"normalize-css",
 	"susy",
-	"breakpoint-sass";
+	"breakpoint-sass",
+	"npm:slick-carousel/slick/slick.scss";
+
+	// TODO: fix weird npm import ^^
 
 
 // Grid Variables

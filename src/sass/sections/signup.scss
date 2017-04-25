@@ -1,6 +1,6 @@
-/* Join Section
+/* Sign up Section
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.join-section {
+.signup-section {
 	background-color: $lightpink;
 	min-height: 320vh;
 
@@ -30,7 +30,7 @@
 	fieldset {
 		margin: 0;
 	}
-	.join-form {
+	.signup-form {
 		position: fixed;
 		left: 12.5%;
 		top: 45%;
@@ -49,7 +49,7 @@
 			border-bottom: solid 6px $indigo;
 			border-radius: 0;
 			font-size: 3.375rem;
-			// font-weight: bold;
+			font-weight: inherit;
 			color: #fff;
 			box-shadow: none;
 		}
@@ -64,7 +64,7 @@
 			display: none;
 		}
 	}
-	.join-form__volunteer {
+	.signup-form__volunteer {
 		margin-top: 0.5rem;
 	}
 	.checkbox {
@@ -135,6 +135,7 @@
 		border-radius: 0;
 		background: transparent;
 		font-size: 3.375rem;
+		font-weight: inherit;
 		min-height: 12rem;
 		margin-top: 5rem;
 	}
@@ -144,7 +145,7 @@
 		line-height: calc(2rem + 12px);
 	}
 }
-.join-form__submit {
+.signup-form__submit {
 	margin-top: 1.5rem;
 	input[type="submit"] {
 		height: 7rem;
@@ -167,7 +168,7 @@
 	}
 }
 // notify
-.join-form__notification {
+.signup-form__notification {
 	p {
 		text-align: right;
 	}
@@ -176,11 +177,11 @@
 	}
 }
 @include media-query(1280px) {
-	.join-section {
-		.join-form__first-name {
+	.signup-section {
+		.signup-form__first-name {
 			padding-right: 1rem;
 		}
-		.join-form__last-name {
+		.signup-form__last-name {
 			padding-left: 1rem;
 		}
 		.checkbox {

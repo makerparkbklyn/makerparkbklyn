@@ -46,6 +46,7 @@ class Page {
 			else { x = '100%' }
 
 			_self.navTimeline.from(element, t, {
+				opacity: 0,
 				x: x,
 				y: y,
 				rotation: r,
@@ -55,27 +56,28 @@ class Page {
 	}
 
 	_initEvents() {
-		$navToggle.on('click', this._onNavToggleClick)
-		$navClose.on('click', this._onNavCloseClick)
+		this.$navToggle.on('click', this._onNavToggleClick.bind(this))
+		this.$navClose.on('click', this._onNavCloseClick.bind(this))
 	}
 
 	// Handlers
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
 
 	_onNavToggleClick(e) {
-		e.preventDefault()
+		console.log(this);
 		this.$nav.css('z-index', '99999')
 		this.navTimeline.timeScale = 1
 		this.navTimeline.restart()
+		e.preventDefault()
 	}
 
 	_onNavCloseClick(e) {
-		e.preventDefault()
 		this.navTimeline.timeScale = 8
 		this.navTimeline.reverse()
 		setTimeout(function(){
 			this.$nav.css('z-index', '-10')
-		}, 2000)
+		}.bind(this), 2000)
+		e.preventDefault()
 	}
 
 	// Public
