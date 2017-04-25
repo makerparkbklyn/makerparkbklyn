@@ -1,4 +1,12 @@
-/* Grid
+// Base Styles
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
+html { font-size: $rem; }
+
+body {
+	@include body-type;
+}
+
+/* Preview Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .grid { position: fixed; width: 100%; z-index: 9999; display: none;}
 .grid__column-fill { background: rgba(255,0,0,0); width: 100%; height: 2000px; box-sizing: border-box; border-right: 1px solid red; }
@@ -6,54 +14,48 @@
 
 .grid.show { display: block; }
 
-/* Scrolljack
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.content-wrap {
-	width: 100%;
-	background: green;
-}
 
-/* Slick (default)
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-// Arrows
-.slick-arrow {
-    font-size: 0;
-    line-height: 0;
-    position: absolute;
-    display: block;
-	width: 50px;
-    height: 53px;
-    padding: 0;
-    cursor: pointer;
-    color: transparent;
-    border: none;
-    outline: none;
-    background: transparent;
-	z-index: 99;
-}
-.slick-prev {
-	background: url(../images/arrows/arrow-left.svg);
-	background-repeat: no-repeat;
-}
-.slick-next {
-	background: url(../images/arrows/arrow-right.svg);
-	background-repeat: no-repeat;
-}
-@include media-query(768px) {
-	.slick-arrow {
-		width: 65px;
-	}
-}
-@include media-query(1024px) {
-	.slick-arrow {
-		width: 44px;
-	}
-}
-@include media-query(1280px) {
-	.slick-arrow {
-		width: 65px;
-	}
-}
+// /* Slick (default)
+// –––––––––––––––––––––––––––––––––––––––––––––––––– */
+// // Arrows
+// .slick-arrow {
+//     font-size: 0;
+//     line-height: 0;
+//     position: absolute;
+//     display: block;
+// 	width: 50px;
+//     height: 53px;
+//     padding: 0;
+//     cursor: pointer;
+//     color: transparent;
+//     border: none;
+//     outline: none;
+//     background: transparent;
+// 	z-index: 99;
+// }
+// .slick-prev {
+// 	background: url(../images/arrows/arrow-left.svg);
+// 	background-repeat: no-repeat;
+// }
+// .slick-next {
+// 	background: url(../images/arrows/arrow-right.svg);
+// 	background-repeat: no-repeat;
+// }
+// @include media-query(768px) {
+// 	.slick-arrow {
+// 		width: 65px;
+// 	}
+// }
+// @include media-query(1024px) {
+// 	.slick-arrow {
+// 		width: 44px;
+// 	}
+// }
+// @include media-query(1280px) {
+// 	.slick-arrow {
+// 		width: 65px;
+// 	}
+// }
 
 /* Rails
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -63,10 +65,6 @@
 	position: fixed;
 	top: 0;
 	z-index: 999;
-	.hidden {
-		display: none;
-	}
-	// background: lightblue;
 }
 @import	"rail-left";
 @import	"rail-right";
@@ -79,30 +77,18 @@ section {
 	padding: 3rem 0;
 
 }
+
 .section__title {
 	position: fixed;
 	left: 12.5%;
 	top: 14%;
-	@extend .type--xlarge;
+	font-size: 15.75rem;
+	font-weight: 600;
+	font-family: $base-font-family;
+	letter-spacing: -10px;
 	color: #fff;
-	font-weight: inherit;
 }
-// section:before {
-// 	content: '';
-// 	position: absolute;
-// 	display: block;
-// 	width: 240px;
-// 	height: 96px;
-// 	background: #fff;
-// 	left: 12.5%;
-// 	top: -48px;
-// 	background: $darkblue;
-// }
-section p {
-	// font-size: 1rem;
-	// line-height: 1.3;
-	color: $indigo;
-}
+
 figure {
 	margin: 0 0 1.5rem;
 	img {
@@ -113,58 +99,17 @@ figure {
 		}
 	}
 }
+
 figcaption {
-	@extend .type--small;
+	@include body-type;
+	font-size: 1.25rem;
 }
+
 .has-border {
 	box-sizing: border-box;
 	border: solid 12px $indigo;
 }
-@include media-query(1280px) {
-	// section p {
-	// 	font-size: .875rem;
-	// }
-	// figcaption {
-	// 	font-size: 0.5rem;
-	// }
-}
-@include media-query(1600px) {
-	section {
-		padding: 4rem 0;
 
-	}
-	section .headline--xl {
-		font-size: 8rem;
-		line-height: .8;
-		color: #fff;
-		text-transform: uppercase;
-		letter-spacing: -20px;
-	}
-	// section p {
-	// 	font-size: .675rem;
-	// 	line-height: 1.3;
-	// }
-}
-
-// .hidden {
-// 	display: none;
-// }
-
-/* Color BG
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.bg {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	// background: pink;
-
-}
-
-.transparent-bg {
-	background-color: transparent !important;
-}
 
 /* Front Page Sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -188,22 +133,15 @@ figcaption {
 
 .footer {
 	position: relative;
-	// height: 12rem;
-	box-sizing: border-box;
-	padding: 1rem 0;
-	// background: url(../images/patterns/pattern_1.gif);
-	background-repeat: no-repeat;
-	background-size: 300%;
 	min-height: 300vh;
 }
 .footer__hashtag {
+	@include body-type;
 	position: fixed;
-	text-align: center;
 	top: 86%;
 	left: 50%;
+	text-align: center;
 	transform: translateX(-50%);
-	font-size: 3.375rem;
-	font-weight: inherit;
 }
 .footer__social-button {
 	position: fixed;

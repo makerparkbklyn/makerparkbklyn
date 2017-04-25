@@ -77,41 +77,22 @@
 }
 
 
-// Base Styles
-//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-html { font-size: $rem; }
 
-body {
-	font-family: $base-font-family;
-	font-size: 1rem;
-	line-height: 1.2;
-	font-weight: 600;
-	color: $darkblue;
-}
 
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.type--small {
-	font-size: 2.25rem;
+@mixin body-type() {
+	font-family: $base-font-family;
+	font-size: 1.6667rem;
+	line-height: 1.2;
+	font-weight: 600;
+	color: $indigo;
 }
-.type--medium {
-	font-size: 3.375rem;
-	// font-size: 3.157rem;
-}
-.type--large {
-	font-size: 7.594rem;
-}
-.type--xlarge {
-	// font-size: 38.443rem;
-	// font-size: 25.629rem;
-	font-size: 31.475rem;
-	letter-spacing: -10px;
-}
+
 h1, h2, h3, h4, h5, h6 {
 	margin-top: 1rem;
 	margin-bottom: 2rem;
-	// font-weight: bold;
 }
 
 h1 { font-size: 5.0rem; line-height: 1.2;  letter-spacing: 1rem;}
@@ -138,7 +119,7 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 // }
 
 p {
-	@extend .type--medium;
+	@include body-type;
 	margin-top: 0;
 	margin-bottom: 1.5rem;
 }
@@ -382,26 +363,3 @@ hr {
   content: "";
   display: table;
   clear: both; }
-
-
-/* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/*
-Note: The best way to structure the use of media queries is to create the queries near the relevant code. For example, if you wanted to change the styles for buttons on small devices, paste the mobile query code up in the buttons section and style it there.
-*/
-
-
-/* Larger than mobile */
-@media (min-width: 400px) {}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
-
-/* Larger than tablet */
-@media (min-width: 750px) {}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {}

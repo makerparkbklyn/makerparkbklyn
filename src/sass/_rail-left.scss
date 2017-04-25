@@ -3,7 +3,7 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .rail--left { display: none; }
 .join-sticker {
-	@extend .type--medium;
+	// @extend .type--medium;
 	line-height: .9;
 }
 @include media-query(1024px) {
