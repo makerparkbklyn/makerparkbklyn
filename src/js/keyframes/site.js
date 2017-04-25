@@ -1,7 +1,7 @@
 import { TweenMax } from 'gsap'
 import Viewport from '../utils/Viewport'
 
-let h = Viewport.wh
+let wh = Viewport.wh
 
 const siteKeyframes = {
 	section			:	'#site',
@@ -10,68 +10,79 @@ const siteKeyframes = {
 		{
 			name	:	'titleIn',
 			duration:	1800,
-			offset	:	.25*h,
-			tween	:	TweenMax.from('#site .section__title', 1, {y: h*1.2, ease: Power2.easeOut})
+			offset	:	0.25 * wh,
+			element	:	'.section__title',
+			tween	:	{y: wh * 1.2, ease: Power2.easeOut}
 		},
 		{
 			name	:	'titleOut',
 			duration:	1800,
-			offset	:	9.75*h,
-			tween	: 	TweenMax.to('#site .section__title', 1, {y: -h, ease: Power2.easeIn})
+			offset	:	9.75 * wh,
+			element	:	'.section__title',
+			tween	: 	{y: -wh, ease: Power2.easeIn}
 		},
 		{
 			name	:	'p1In',
 			duration:	1800,
-			offset	:	.65*h,
-			tween	: 	TweenMax.from('#site .p1', 1, {y: h, ease: Power2.easeOut})
+			offset	:	0.65 * wh,
+			element	:	'.p1',
+			tween	: 	{y: wh, ease: Power2.easeOut}
 		},
 		{
 			name	:	'p1Out',
 			duration:	1800,
-			offset	:	10*h,
-			tween	: 	TweenMax.to('#site .p1', 1, {y: -h, ease: Power2.easeIn})
+			offset	:	10 * wh,
+			element	:	'.p1',
+			tween	: 	{y: -wh, ease: Power2.easeIn}
 		},
 		{
 			name	:	'p2In',
 			duration:	1800,
-			offset	:	.85*h,
-			tween	: 	TweenMax.from('#site .p2', 1, {y: h, ease: Power2.easeOut})
+			offset	:	0.85 * wh,
+			element	:	'.p2',
+			tween	: 	{y: wh, ease: Power2.easeOut}
 		},
 		{
 			name	:	'p2Out',
 			duration:	1800,
-			offset	:	10.25*h,
-			tween	: 	TweenMax.to('#site .p2', 1, {y: -h, ease: Power2.easeIn})
+			offset	:	10.25 * wh,
+			element	:	'.p2',
+			tween	: 	{y: -wh, ease: Power2.easeIn}
 		},
 		{
 			name	:	'p3In',
 			duration:	1800,
-			offset	:	h,
-			tween	: 	TweenMax.from('#site .p3', 1, {y: h, ease: Power2.easeOut})
+			offset	:	wh,
+			element	:	'.p3',
+			tween	: 	{y: wh, ease: Power2.easeOut}
 		},
 		{
 			name	:	'p3Out',
 			duration:	1800,
-			offset	:	10.25*h,
-			tween	: 	TweenMax.to('#site .p3', 1, {y: -h*2, ease: Power2.easeIn})
+			offset	:	10.25 * wh,
+			element	:	'.p3',
+			tween	: 	{y: -2 * wh, ease: Power2.easeIn}
 		},
 		{
 			name	:	'pattern1In',
 			duration:	2400,
-			offset	:	.75*h,
-			tween	: 	TweenMax.from('#site .bg-pattern-1', 1, {y: h*1.5, ease: Power2.easeOut})
+			offset	:	0.75 * wh,
+			element	:	'.bg-pattern-1',
+			tween	: 	{y: 1.5 * wh, ease: Power2.easeOut}
 		},
 		{
 			name	:	'pattern1Out',
 			duration:	2400,
-			offset	:	10.25*h,
-			tween	: 	TweenMax.to('#site .bg-pattern-1', 1, {y: -h*2, ease: Power2.easeIn})
+			offset	:	10.25 * wh,
+			element	:	'.bg-pattern-1',
+			tween	: 	{y: -2 * wh, ease: Power2.easeIn}
 		},
 		{
 			name	:	'pattern2In',
 			duration:	2400,
-			offset	:	h,
-			tween	: 	TweenMax.from('#site .bg-pattern-2', 1, {y: h*1.5, ease: Power2.easeOut})
+			offset	:	wh,
+			element	:	'.bg-pattern-2',
+			tween	: 	{y: 1.5 * wh, ease: Power2.easeOut}
 		},
 		// {
 		// 	name	:	'pattern2Move',
@@ -82,56 +93,83 @@ const siteKeyframes = {
 		{
 			name	:	'pattern2Out',
 			duration:	2400,
-			offset	:	10.5*h,
-			tween	: 	TweenMax.to('#site .bg-pattern-2', 1, {y: -h*2, ease: Power2.easeIn})
+			offset	:	10.5 * wh,
+			element	:	'.bg-pattern-2',
+			tween	: 	{y: -2 * wh, ease: Power2.easeIn}
 		},
 		{
 			name	:	'image00Thru',
 			duration:	2700,
-			offset	:	3.25*h,
-			tween	: 	TweenMax.fromTo('#site .image-00', 1, {y: 2*h}, {y: -0.25*h, ease: Linear.easeNone})
+			offset	:	3.25 * wh,
+			element	:	'.image-00',
+			tween	: 	[
+							{y: 2 * wh},
+							{y: -0.25 * wh,ease: Linear.easeNone}
+						]
 		},
 		{
 			name	:	'image01Thru',
 			duration:	4000,
-			offset	:	4*h,
-			tween	: 	TweenMax.fromTo('#site .image-01', 1, {y: 2.5*h}, {y: -0.25*h, ease: Linear.easeNone})
+			offset	:	4 * wh,
+			element	:	'.image-01',
+			tween	: 	[
+							{y: 2.5 * wh},
+							{y: -0.25 * wh, ease: Linear.easeNone}
+						]
 		},
 		{
 			name	:	'image02Thru',
 			duration:	4200,
-			offset	:	5.25*h,
-			tween	: 	TweenMax.fromTo('#site .image-02', 1, {y: 2*h}, {y: 0, ease: Linear.easeNone})
+			offset	:	5.25 * wh,
+			element	:	'.image-02',
+			tween	: 	[
+							{y: 2 * wh},
+							{y: 0, ease: Linear.easeNone}
+						]
 		},
 		{
 			name	:	'image03Thru',
 			duration:	4200,
-			offset	:	6*h,
-			tween	: 	TweenMax.fromTo('#site .image-03', 1, {y: 2*h}, {y: 0, ease: Linear.easeNone})
+			offset	:	6 * wh,
+			element	:	'.image-03',
+			tween	: 	[
+							{y: 2 * wh},
+							{y: 0, ease: Linear.easeNone}
+						]
 		},
 		{
 			name	:	'image04Thru',
 			duration:	6000,
-			offset	:	6.25*h,
-			tween	: 	TweenMax.fromTo('#site .image-04', 1, {y: 2*h}, {y: 0, ease: Linear.easeNone})
+			offset	:	6.25 * wh,
+			element	:	'.image-04',
+			tween	: 	[
+							{y: 2 * wh},
+							{y: 0, ease: Linear.easeNone}
+						]
 		},
 		{
 			name	:	'image05Thru',
 			duration:	3000,
-			offset	:	6.5*h,
-			tween	: 	TweenMax.fromTo('#site .image-05', 1, {y: 2*h}, {y: 0, ease: Linear.easeNone})
+			offset	:	6.5 * wh,
+			element	:	'.image-05',
+			tween	: 	[
+							{y: 2 * wh},
+							{y: 0, ease: Linear.easeNone}
+						]
 		},
 		{
 			name	:	'mapIn',
 			duration:	1800,
-			offset	:	10.75*h,
-			tween	: 	TweenMax.from('#site .map', 1, {y: h*1.5, x: -800, ease: Power2.easeOut})
+			offset	:	10.75 * wh,
+			element	:	'.map',
+			tween	: 	{y: 1.5 * wh, x: -800, ease: Power2.easeOut}
 		},
 		{
 			name	:	'mapOut',
 			duration:	1800,
-			offset	:	13.25*h,
-			tween	: 	TweenMax.to('#site .map', 1, {y: -h*2, x: 800, ease: Power2.easeIn})
+			offset	:	13.25 * wh,
+			element	:	'.map',
+			tween	: 	{y: -2 * wh, x: 800, ease: Power2.easeIn}
 		},
 	]
 }

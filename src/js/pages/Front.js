@@ -1,19 +1,22 @@
 import $ from 'jquery'
 import 'jquery-color'
-import Page from '../modules/Page'
+import 'slick-carousel'
 import ScrollMagic from 'scrollmagic'
 import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap'
 import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
-import 'slick-carousel'
+
+import Page from '../modules/Page'
+
 import heroKeyframes from '../keyframes/hero'
 import missionKeyframes from '../keyframes/mission'
 import siteKeyframes from '../keyframes/site'
 import visionKeyframes from '../keyframes/vision'
 import timelineKeyframes from '../keyframes/timeline'
-import principlesKeyframes from '../keyframes/principles'
-import signupKeyframes from '../keyframes/signup'
-import newsKeyframes from '../keyframes/news'
-import teamKeyframes from '../keyframes/team'
+// import principlesKeyframes from '../keyframes/principles'
+// import signupKeyframes from '../keyframes/signup'
+// import newsKeyframes from '../keyframes/news'
+// import teamKeyframes from '../keyframes/team'
+
 import Viewport from '../utils/Viewport'
 
 export default class Front extends Page {
@@ -21,11 +24,12 @@ export default class Front extends Page {
 		super()
 
 		this.current = 'hero'
+		this.sectionCtrl = new ScrollMagic.Controller()
 		this.scrollCtrl = new ScrollMagic.Controller()
 
 		this._initSections()
 		this._initScrollScenes()
-		this._initTimelineCarousel()
+		// this._initTimelineCarousel()
 
 	}
 	// Private
@@ -43,7 +47,7 @@ export default class Front extends Page {
 				triggerElement: section,
 				duration: $el.outerHeight()
 			})
-			.addTo(_self.scrollCtrl)
+			.addTo(_self.sectionCtrl)
 			.on('enter leave', (e) => {
 				if (e.type === 'enter') {
 					_self.current = $el.attr('id')
@@ -59,7 +63,7 @@ export default class Front extends Page {
 					triggerElement: section,
 					duration: '50%'
 				})
-				.addTo(_self.scrollCtrl)
+				.addTo(_self.sectionCtrl)
 				.on('progress', (e) => {
 					if (e.progress > 0) {
 						let prevColor = $el.prev().attr('data-bg-color')
@@ -83,68 +87,74 @@ export default class Front extends Page {
 				duration,
 				offset
 			})
-			.addTo(_self.scrollCtrl)
+			.addTo(_self.sectionCtrl)
 			.setPin(item)
 		})
 	}
 
 	_initScrollScenes() {
-		let _self = this
+		let _self	= this,
+			rIn		= /In$/,
+			rOut	= /Out$/,
+			rThru	= /Thru$/,
+			rMove 	= /Move$/
 		const combinedKeyframes = [
 			heroKeyframes,
 			missionKeyframes,
-			// siteKeyframes,
-			// visionKeyframes,
-			// timelineKeyframes,
+			siteKeyframes,
+			visionKeyframes,
+			timelineKeyframes,
 			// principlesKeyframes,
 			// signupKeyframes,
 			// newsKeyframes,
 			// teamKeyframes
 		]
-		console.log(combinedKeyframes);
 		combinedKeyframes.map( (section, i) => {
 			section.scenes.map( (scene, j) => {
+				let tween = null
+
+				if ( rIn.test(scene.name) ) {
+					tween = TweenMax.from(`${section.section} ${scene.element}`, 1, scene.tween)
+				}
+				else if ( rOut.test(scene.name) || rMove.test(scene.name) ) {
+					tween = TweenMax.to(`${section.section} ${scene.element}`, 1, scene.tween)
+				}
+				else if ( rThru.test(scene.name) ) {
+					tween = TweenMax.fromTo(`${section.section} ${scene.element}`, 1, scene.tween[0], scene.tween[1])
+				}
+				else {
+					console.error(`Invalid tween type from scene ${scene.name} in ${section.section} section`);
+				}
+
 				new ScrollMagic.Scene({
 					triggerElement: section.section,
 					triggerHook: section.hook,
 					duration: scene.duration,
 					offset: scene.offset
 				})
-				.setTween(scene.tween)
+				.setTween(tween)
 				.addTo(this.scrollCtrl)
-				.addIndicators({name: scene.name})
+				// .addIndicators({name: scene.name})
 			})
 		})
-		// for (var i = 0; i < combinedKeyframes.length; i++) {
-		// 	var p = combinedKeyframes[i];
-		// 	var trigger = p.section;
-		// 	var hook = p.hook;
-		// 	for (var j = 0; j < p.scenes.length; j++) {
-		// 		var scene = p.scenes[j];
-		// 		var s = new ScrollMagic.Scene({
-		// 			triggerElement: trigger,
-		// 			triggerHook: hook,
-		// 			duration: scene.duration,
-		// 			offset: scene.offset
-		// 		});
-		// 		s.setTween(scene.tween);
-		// 		s.addIndicators({name: scene.name});
-		// 		s.addTo(_self.scrollCtrl);
-		// 	}
-		// }
 	}
 
-	_initTimelineCarousel() {
-		$('#timeline .timeline-carousel').slick({
-			infinite: true,
-			speed: 500,
-			arrows: true,
-			dots: true,
-			pauseOnHover: false,
-			prevArrow: $('.timeline-arrow--prev'),
-			nextArrow: $('.timeline-arrow--next'),
-		})
-	}
+	// _initTimelineCarousel() {
+	// 	if ( $('.timeline-carousel').length ) {
+	// 		$('.timeline-carousel').slick({
+	// 			infinite: true,
+	// 			speed: 500,
+	// 			arrows: true,
+	// 			dots: true,
+	// 			pauseOnHover: false,
+	// 			prevArrow: $('.timeline-arrow--prev'),
+	// 			nextArrow: $('.timeline-arrow--next'),
+	// 		})
+	// 	}
+	// 	else {
+	// 		console.warn('no timeline carousel to initiate')
+	// 	}
+	// }
 
 	_initEvents() {
 		$('body').on('click', '.arrow-down', this._onArrowDownClick)
@@ -155,6 +165,7 @@ export default class Front extends Page {
 
 	_onArrowDownClick(e) {
 		e.preventDefault()
+		console.log('arrow down clicked')
 		// scroll to target
 	}
 }

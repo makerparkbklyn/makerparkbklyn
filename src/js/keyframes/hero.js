@@ -1,4 +1,4 @@
-import { TweenMax, Power2, Linear } from 'gsap'
+import { Power2, Linear } from 'gsap'
 import Viewport from '../utils/Viewport'
 
 let wh = Viewport.wh;
@@ -11,13 +11,15 @@ const heroKeyframes = {
 			name	:	'heroBGOut',
 			duration:	wh,
 			offset	:	0,
-			tween	:	TweenMax.to('#hero .hero-bg', 1, {y: -500, ease: Linear.easeNone}) //prev: y:-735
+			element	:	'.hero-bg',
+			tween	:	{y: -500, ease: Linear.easeNone}
 		},
 		{
-			name	:	'logoTransform',
+			name	:	'logoMove',
 			duration:	wh,
 			offset	:	0,
-			tween	:	TweenMax.to('#hero .hero-logo', 1, {y: 534, x: 816, scale: .3, rotation: 360, ease: Power2.easeInOut})
+			element	:	'.hero-logo',
+			tween	:	{y: 534, x: 816, scale: .3, rotation: 360, ease: Power2.easeInOut}
 		}
 	]
 }

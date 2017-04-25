@@ -39,4 +39,12 @@ class App {
 // on document ready
 $( () => {
 	let MP = new App()
+
+	$('.timeline-carousel').slick({
+		infinite: true,
+		dots: true,
+		focusOnSelect: false,
+		prevArrow: $('.timeline-arrow--prev'),
+		nextArrow: $('.timeline-arrow--next'),
+	})
 })
