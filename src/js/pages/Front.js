@@ -16,6 +16,7 @@ import principlesKeyframes from '../keyframes/principles'
 import signupKeyframes from '../keyframes/signup'
 import newsKeyframes from '../keyframes/news'
 import teamKeyframes from '../keyframes/team'
+import footerKeyframes from '../keyframes/footer'
 
 import Viewport from '../utils/Viewport'
 
@@ -110,7 +111,8 @@ export default class Front extends Page {
 			principlesKeyframes,
 			signupKeyframes,
 			newsKeyframes,
-			teamKeyframes
+			teamKeyframes,
+			footerKeyframes
 		]
 		combinedKeyframes.map( (section, i) => {
 			section.scenes.map( (scene, j) => {
@@ -137,7 +139,7 @@ export default class Front extends Page {
 				})
 				.setTween(tween)
 				.addTo(this.scrollCtrl)
-				.addIndicators({name: scene.name})
+				// .addIndicators({name: scene.name})
 			})
 		})
 	}

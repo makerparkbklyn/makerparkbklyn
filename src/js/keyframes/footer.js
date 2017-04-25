@@ -7,20 +7,27 @@ const footerKeyframes = {
 	section			:	'#footer',
 	hook			:	'onEnter',
 	scenes: [
-		// {
-		// 	name	:	'heroBGOut',
-		// 	duration:	wh,
-		// 	offset	:	0,
-		// 	element	:	'.hero-bg',
-		// 	tween	:	{y: -500, ease: Linear.easeNone}
-		// },
-		// {
-		// 	name	:	'logoMove',
-		// 	duration:	wh,
-		// 	offset	:	0,
-		// 	element	:	'.hero-logo',
-		// 	tween	:	{y: 534, x: 816, scale: .3, rotation: 360, ease: Power2.easeInOut}
-		// }
+		{
+			name	:	'hashtagIn',
+			duration:	wh,
+			offset	:	0.25 * wh,
+			element	:	'.footer__hashtag',
+			tween	:	{y: wh, ease: Power2.easeOut}
+		},
+		{
+			name	:	'instagramIn',
+			duration:	0.5 * wh,
+			offset	:	0.5 * wh,
+			element	:	'.footer__social-button--instagram',
+			tween	:	{y: 10, scale: 0, rotation: 180, opacity: 0, ease: Power2.easeOut}
+		},
+		{
+			name	:	'facebookIn',
+			duration:	0.5 * wh,
+			offset	:	0.55 * wh,
+			element	:	'.footer__social-button--facebook',
+			tween	:	{y: 10, scale: 0, rotation: 180, opacity: 0, ease: Power2.easeOut}
+		},
 	]
 }
 
