@@ -29,7 +29,9 @@ export default class Front extends Page {
 		this.scrollCtrl = new ScrollMagic.Controller()
 
 		this._initSections()
-		this._initScrollScenes()
+		if ( Viewport.ww >= 768 ) {
+			this._initScrollScenes()
+		}
 		this._initTimelineCarousel()
 		this._initEvents()
 
@@ -82,18 +84,20 @@ export default class Front extends Page {
 			}
 		})
 
-		this.$titles.map( (index, item) => {
-			let $title = $(item)
-			let offset = $title.width() / 2
-			let duration = $title.parent().outerHeight() - ($title.width() + 192)
-			new ScrollMagic.Scene({
-				triggerElement: item,
-				duration,
-				offset
+		if ( Viewport.ww >= 768 ) {
+			this.$titles.map( (index, item) => {
+				let $title = $(item)
+				let offset = $title.width() / 2
+				let duration = $title.parent().outerHeight() - ($title.width() + 192)
+				new ScrollMagic.Scene({
+					triggerElement: item,
+					duration,
+					offset
+				})
+				.addTo(_self.sectionCtrl)
+				.setPin(item)
 			})
-			.addTo(_self.sectionCtrl)
-			.setPin(item)
-		})
+		}
 	}
 
 	_initScrollScenes() {

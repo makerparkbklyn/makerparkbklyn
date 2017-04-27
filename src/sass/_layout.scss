@@ -1,63 +1,128 @@
 // Base Styles
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-html { font-size: $rem; }
+html {
+	box-sizing: border-box;
+	font-size: $rem;
+	// font-size: 40px;
 
-body {
-	@include body-type;
+	* {
+		box-sizing: inherit;
+	}
 }
 
-/* Preview Grid
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.grid { position: fixed; width: 100%; z-index: 9999; display: none;}
-.grid__column-fill { background: rgba(255,0,0,0); width: 100%; height: 2000px; box-sizing: border-box; border-right: 1px solid red; }
-.grid .row > div:first-child > .grid__column-fill {border-left: 1px solid red;}
+body {
+	@include body-font;
+}
 
-.grid.show { display: block; }
+.container {
+	@include container($mobile-grid);
+
+	@include breakpoint(768px) {
+		@include container(75%);
+	}
+}
+
+@mixin border {
+	box-sizing: border-box;
+	border: solid 6px $indigo;
+
+	@include breakpoint(768px) {
+		box-sizing: border-box;
+		border: solid 12px $indigo;
+	}
+}
 
 
-// /* Slick (default)
-// –––––––––––––––––––––––––––––––––––––––––––––––––– */
-// // Arrows
-// .slick-arrow {
-//     font-size: 0;
-//     line-height: 0;
-//     position: absolute;
-//     display: block;
-// 	width: 50px;
-//     height: 53px;
-//     padding: 0;
-//     cursor: pointer;
-//     color: transparent;
-//     border: none;
-//     outline: none;
-//     background: transparent;
-// 	z-index: 99;
+
+// Section
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
+section {
+	position: relative;
+	padding-top: 4%;
+}
+
+.section__title-xl {
+	position: fixed;
+	left: 12.5%;
+	top: 14%;
+	font-size: 24rem;
+	font-weight: 600;
+	font-family: $calibre;
+	letter-spacing: -10px;
+	color: #fff;
+
+	display: none;
+}
+
+figure {
+	@include span(full);
+
+	img {
+		width: 100%;
+		@include border;
+	}
+}
+
+figcaption {
+	@include body-font;
+	font-size: 1rem;
+}
+
+
+// section {
+// 	position: relative;
+// 	// padding: 3rem 0;
+//
 // }
-// .slick-prev {
-// 	background: url(../images/arrows/arrow-left.svg);
-// 	background-repeat: no-repeat;
+//
+// .section__title {
+// 	position: fixed;
+// 	left: 12.5%;
+// 	top: 14%;
+// 	font-size: 24rem;
+// 	font-weight: 600;
+// 	font-family: $calibre;
+// 	letter-spacing: -10px;
+// 	color: #fff;
 // }
-// .slick-next {
-// 	background: url(../images/arrows/arrow-right.svg);
-// 	background-repeat: no-repeat;
-// }
-// @include media-query(768px) {
-// 	.slick-arrow {
-// 		width: 65px;
+//
+// figure {
+// 	margin: 0 0 1.5rem;
+// 	img {
+// 		width: 100%;
+// 		&.has-border {
+// 			box-sizing: border-box;
+// 			border: solid 12px $indigo;
+// 		}
 // 	}
 // }
-// @include media-query(1024px) {
-// 	.slick-arrow {
-// 		width: 44px;
-// 	}
+//
+// figcaption {
+// 	@include body-font;
+// 	font-size: 2rem;
 // }
-// @include media-query(1280px) {
-// 	.slick-arrow {
-// 		width: 65px;
-// 	}
+//
+// .has-border {
+// 	box-sizing: border-box;
+// 	border: solid 12px $indigo;
 // }
 
-/* Rails
+
+// Sections
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
+@import	"sections/title";
+@import "sections/hero";
+@import	"sections/mission";
+// @import "sections/site";
+// @import "sections/vision";
+// @import "sections/timeline";
+// @import "sections/principles";
+// @import "sections/signup";
+// @import "sections/news";
+// @import "sections/team";
+
+
+/* Rails & Nav
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .rail {
 	width: 12.5%;
@@ -66,77 +131,19 @@ body {
 	top: 0;
 	z-index: 999;
 }
-@import	"rail-left";
-@import	"rail-right";
-@import	"nav";
-
-/* Front Page
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-section {
-	position: relative;
-	padding: 3rem 0;
-
-}
-
-.section__title {
-	position: fixed;
-	left: 12.5%;
-	top: 14%;
-	font-size: 15.75rem;
-	font-weight: 600;
-	font-family: $base-font-family;
-	letter-spacing: -10px;
-	color: #fff;
-}
-
-figure {
-	margin: 0 0 1.5rem;
-	img {
-		width: 100%;
-		&.has-border {
-			box-sizing: border-box;
-			border: solid 12px $indigo;
-		}
-	}
-}
-
-figcaption {
-	@include body-type;
-	font-size: 1.25rem;
-}
-
-.has-border {
-	box-sizing: border-box;
-	border: solid 12px $indigo;
-}
+// @import	"rail-left";
+// @import	"rail-right";
+// @import	"nav";
 
 
-/* Front Page Sections
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-@import	"sections/title";
-@import "sections/hero";
-@import	"sections/mission";
-@import "sections/site";
-@import "sections/vision";
-@import "sections/timeline";
-@import "sections/principles";
-@import "sections/signup";
-@import "sections/news";
-@import "sections/team";
-
-/* News Page
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-@import "news";
-
-/* Footer
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
+// Footer
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 .footer {
 	position: relative;
 	min-height: 300vh;
 }
 .footer__hashtag {
-	@include body-type;
+	@include body-font;
 	position: fixed;
 	top: 86%;
 	left: 50%;
@@ -155,171 +162,7 @@ figcaption {
 	right: 46%;
 }
 
-// @include media-query(768px) {
-// 	.footer {
-// 		height: 8rem;
-// 	}
-// 	.footer__arrow {
-// 		left: 4%;
-// 		bottom: 24px;
-// 	}
-// }
-// @include media-query(1024px) {
-// 	.footer {
-// 		height: 5.6rem;
-// 		background: transparent;
-// 	}
-// 	.footer__arrow {
-// 		left: 4%;
-// 		bottom: 52px;
-// 	}
-// 	.footer__instagram-button {
-// 		margin-top: .25rem;
-// 	}
-// }
-// @include media-query(1280px) {
-// 	.footer {
-// 		height: 218px;
-// 		overflow: hidden;
-// 	}
-// 	.footer__arrow {
-// 		left: 4%;
-// 		bottom: 60px;
-// 	}
-// 	.footer__hashtag {
-// 		font-size: 1.25rem;
-// 	}
-// 	.footer__instagram-button {
-// 		margin-top: 0rem;
-// 	}
-// }
-// @include media-query(1440px) {
-// 	.footer {
-// 		height: 250px;
-// 		overflow: hidden;
-// 	}
-// 	.footer__arrow {
-// 		left: 4%;
-// 		bottom: 72px;
-// 	}
-// 	.footer__hashtag {
-// 		margin-top: 30px;
-// 		font-size: 1.25rem;
-// 	}
-// 	.footer__instagram-button {
-// 		margin-top: 0rem;
-// 	}
-// }
-// @include media-query(1600px) {
-// 	.footer {
-// 		height: 260px;
-// 	}
-// 	.footer__arrow {
-// 		bottom: 74px;
-// 	}
-// 	.footer__hashtag {
-// 		margin-top: 18px;
-// 	}
-// 	.footer__instagram-button {
-// 		margin-top: -12px;
-// 	}
-// }
-// @include media-query(2000px) {
-// 	.footer__arrow {
-// 		bottom: 80px;
-// 	}
-// 	.footer__hashtag {
-// 		margin-top: -6px;
-// 	}
-// 	.footer__instagram-button {
-// 		margin-top: -24px;
-// 	}
-// }
 
-// @include media-query(768px) {
-// 	.footer {
-// 		height: 8rem;
-// 	}
-// 	.footer__arrow {
-// 		position: absolute;
-// 		width: 12.5%;
-// 		left: 0;
-// 		top: 50%;
-// 		transform: translateY(-5%);
-// 	}
-// 	.footer__hashtag {
-// 		line-height: 1;
-// 		margin: 0;
-// 		margin-top: 1.25rem;
-// 	}
-// 	.footer__instagram-button {
-// 		margin-top: .75rem;
-// 		svg {
-// 			width: 1rem;
-// 			height: 1rem;
-// 		}
-// 	}
-// }
-// @include media-query(1024px) {
-// 	.footer {
-// 		height: 201px;
-// 		overflow: hidden;
-// 		padding: 0;
-// 	}
-// 	.footer__arrow {
-// 		// background: yellow;
-// 		transform: translateY(-40%);
-// 	}
-// 	.footer__hashtag {
-// 		position: absolute;
-// 		line-height: 201px;
-// 		height: 201;
-// 		margin: 0;
-// 		text-align: center;
-// 		width: 100%;
-// 	}
-// 	.footer__instagram-button {
-// 		position: absolute;
-// 		width: .75rem;
-// 		height: .75rem;
-// 		margin: 0 auto;
-// 		left: 0;
-// 		right: 0;
-// 		top: 144px;
-// 		svg {
-// 			width: .75rem;
-// 			height: .75rem;
-// 		}
-// 	}
-// }
-// @include media-query(1280px) {
-// 	.footer {
-// 		height: 240px;
-// 		overflow: hidden;
-// 		padding: 0;
-// 	}
-// 	.footer__arrow {
-// 		transform: translateY(-40%);
-// 	}
-// 	.footer__hashtag {
-// 		position: absolute;
-// 		line-height: 201px;
-// 		height: 201;
-// 		margin: 0;
-// 		text-align: center;
-// 		width: 100%;
-// 	}
-// 	.footer__instagram-button {
-// 		position: absolute;
-// 		width: .75rem;
-// 		height: .75rem;
-// 		margin: 0 auto;
-// 		left: 0;
-// 		right: 0;
-// 		top: 144px;
-// 		svg {
-// 			width: .75rem;
-// 			height: .75rem;
-// 		}
-// 	}
-// }
+// News Page
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
+// @import "news";

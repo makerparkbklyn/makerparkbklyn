@@ -3,17 +3,20 @@
 {% include head.html %}
 <body id="top" class="{% if page.url == '/' %}front{% endif %}">
 
-	{% include grid.html %}
-
+	{% comment %}
 	{% include left-rail.html %}
 	{% include right-rail.html %}
 	{% include nav-menu.html %}
+	{% endcomment %}
 
 	<main class="main-content">
 		{{ content }}
 	</main>
 
+	{% comment %}
 	{% include footer.html %}
+	{% endcomment %}
+	
 	{% include js.html %}
 
 </body>

@@ -9,17 +9,48 @@
 	// TODO: fix weird npm import ^^
 
 
-// Grid Variables
+// Susy Grid Variables
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-$columns:			6;
-$gutter:			0; //48px;
-$mobile-max:        900px;
+// $columns:			6;
+// $gutter:			0; //48px;
+// $mobile-max:        900px;
+$base-line-height:		24px;
+
+$susy: (
+	columns: 			12,
+	gutters: 			0.25,
+	gutter-position: 	split,
+	global-box-sizing:	border-box,
+	debug: (
+		image: 			show,
+		// image: 			show-baseline,
+		color: 			turquoise,
+		output: 		overlay,
+		toggle: 		bottom right,
+	),
+);
+$mobile-grid: (
+	container:			94%,
+	columns: 			4,
+	gutters: 			0.25,
+	gutter-position: 	split,
+	global-box-sizing:	border-box,
+	debug: (
+		image: 			show,
+		// image: 			show-baseline,
+		color: 			turquoise,
+		output: 		overlay,
+		toggle: 		bottom right,
+	),
+);
+
 
 
 // Typography Variables
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-$base-font-family:	"Calibre", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$rem:				24px;
+$calibre:			"CalibreRegular", "Calibre", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$rem:				16px;
+$baseline:			24px;
 
 
 // Colors Variables
