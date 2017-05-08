@@ -65,7 +65,7 @@ function SASSNPMImporter(url, prev, done) {
 
 		newUrl = path.join(modulePath, removeExtension(filename));
 
-		console.log('SASS NPM Import: ' + newUrl + "\n");
+		// console.log('SASS NPM Import: ' + newUrl + "\n");
 
 	}
 	catch (e) {

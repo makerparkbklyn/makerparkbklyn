@@ -1,117 +1,123 @@
 @charset "utf-8";
 
-@import
-	"normalize-css",
-	"susy",
-	"breakpoint-sass",
-	"npm:slick-carousel/slick/slick.scss";
 
-	// TODO: fix weird npm import ^^
-
-
-// Susy Grid Variables
+// Import Libs
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-// $columns:			6;
-// $gutter:			0; //48px;
-// $mobile-max:        900px;
-$base-line-height:		24px;
+@import				"normalize-css",
+					"modularscale-sass",
+					"responsive-baseline",
+					"susy",
+					"breakpoint-sass",
+					"npm:slick-carousel/slick/slick.scss";
 
+					// TODO: fix weird npm import
+
+
+// Breakpoints
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
+$phone				:	375px;
+$phone-large		:	580px;
+$tablet-portrait	:	768px;
+$tablet-landscape	:	1024px;
+$desktop			:	1280px;
+$desktop-large		:	1600px;
+$hd					:	1920px;
+
+
+// Colors
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
+$yellow				:	rgb(224, 245, 0);
+$lightyellow		:	rgb(242, 237, 130);
+
+$green				:	rgb(0, 255, 146);
+$lightgreen			:	rgb(152, 240, 200);
+
+$turquoise			:	rgb(0, 222, 209);
+$lightturquoise		:	rgb(145, 230, 223);
+
+$blue				:	rgb(64, 0, 255);
+$lightblue			:	rgb(165, 204, 246);
+
+$purple				:	rgb(111, 46, 255);
+$lightpurple		:	rgb(200, 176, 255);
+
+$pink				:	rgb(255, 0, 97);
+$lightpink			:	rgb(255, 148, 189);
+
+$red				:	rgb(255, 21, 30);
+$lightred			:	rgb(255, 125, 129);
+
+$orange				:	rgb(255, 84, 0);
+$lightorange		:	rgb(255, 128, 83);
+
+$indigo				:	rgb(0,0,86);
+$darkblue			:	$indigo;
+
+$gray				:	rgb(87, 85, 86);
+$lightgray			:	lighten($gray, 50%);
+
+$text-color			:	$indigo;
+$link-color			:	$indigo;
+
+
+// Typography
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
+$calibre			:	"CalibreSemibold", "Calibre", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$baseline			:   0.6rem;
+// $baseline			:   0.592592592rem;
+$base-line-height	:   $baseline * 2;
+
+// Type Scale
+$modularscale: (
+	base			:	1rem,
+	ratio			:	$fourth,
+);
+
+// Fluid `rem`
+$fluid-rem: (
+	$phone: (
+		base		:	27px,
+		ratio		:	$fourth,
+	),
+	$tablet-portrait: (
+		base		:	40px,
+		ratio		:	$fourth,
+	),
+);
+
+
+// Grid
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 $susy: (
-	columns: 			12,
-	gutters: 			0.25,
-	gutter-position: 	split,
+	columns			:	12,
+	gutters			:	0.25,
+	gutter-position	:	split,
 	global-box-sizing:	border-box,
 	debug: (
-		image: 			show,
-		// image: 			show-baseline,
-		color: 			turquoise,
-		output: 		overlay,
-		toggle: 		bottom right,
+		image		:	show,
+		color		:	turquoise,
+		output		:	overlay,
+		toggle		:	bottom right,
 	),
 );
+
 $mobile-grid: (
-	container:			94%,
-	columns: 			4,
-	gutters: 			0.25,
-	gutter-position: 	split,
+	container		:	94%,
+	columns			:	4,
+	gutters			:	0.25,
+	gutter-position	: 	split,
 	global-box-sizing:	border-box,
 	debug: (
-		image: 			show,
-		// image: 			show-baseline,
-		color: 			turquoise,
-		output: 		overlay,
-		toggle: 		bottom right,
+		image		:	show-columns,
+		color		:	turquoise,
+		output		:	overlay,
+		toggle		:	bottom right,
 	),
 );
-
-
-
-// Typography Variables
-//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-$calibre:			"CalibreRegular", "Calibre", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-$rem:				16px;
-$baseline:			24px;
-
-
-// Colors Variables
-//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-$yellow:			rgb(224, 245, 0);
-$lightyellow:		rgb(242, 237, 130);
-
-$green:				rgb(0, 255, 146);
-$lightgreen:		rgb(152, 240, 200);
-
-$turquoise:			rgb(0, 222, 209);
-$lightturquoise:	rgb(145, 230, 223);
-
-$blue:				rgb(64, 0, 255);
-$lightblue:			rgb(165, 204, 246);
-
-$purple:			rgb(111, 46, 255);
-$lightpurple:		rgb(200, 176, 255);
-
-$pink:				rgb(255, 0, 97);
-$lightpink:			rgb(255, 148, 189);
-
-$red:				rgb(255, 21, 30);
-$lightred:			rgb(255, 125, 129);
-
-$orange:			rgb(255, 84, 0);
-$lightorange:		rgb(255, 128, 83);
-
-$indigo:			rgb(0,0,86);
-$darkblue:			$indigo;
-
-$gray:				rgb(87, 85, 86);
-$lightgray:			lighten($gray, 50%);
-
-$text-color:		$indigo;
-$link-color:		$indigo;
-
-
-
-// Media Query Mixins
-//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-@mixin media-query($width) {
-    @media screen and (min-width: $width) {
-        @content;
-    }
-}
-@mixin media-query-max($width) {
-    @media screen and (max-width: $width) {
-        @content;
-    }
-}
-@mixin media-query-range($min, $max) {
-    @media screen and (min-width: $min) and (max-width: $max) {
-        @content;
-    }
-}
 
 
 // Import Partials
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-@import
-        "base",
-        "layout"
-;
+@import 				"fonts",
+						"base",
+        				"layout";

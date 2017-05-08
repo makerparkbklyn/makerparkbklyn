@@ -1,98 +1,208 @@
+
+// Timeline Section
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 .timeline-section {
 	background-color: $lightblue;
-	min-height: 350vh;
-
-	.bg-pattern-1 {
-		position: fixed;
-		right: -10%;
-		top: 0;
-	}
 
 	.timeline-arrow {
-		position: fixed;
-		top: 45%;
+		display: inline-block;
+		margin-left: gutter(4);
+		margin-top: $baseline;
+		height: calc(#{$baseline} * 3 - 1px);
+		font-size: 0;
+		line-height: 0;
+
+		svg {
+			width: 1.5rem;
+		}
 	}
-	.timeline-arrow--prev {
-		left: 12.5%;
-	}
-	.timeline-arrow--next {
-		left: 19.5%;
-	}
+
+	// TODO: fix carousel to be full screen width
+	// also: height should adjust
 
 	.timeline-carousel {
-		position: fixed;
-		top: calc(28.75% + 36px);
-		left: 37.5%;
-		width: 37.5%;
+		margin-top: $baseline * 2;
+		@include span(4 of 4);
+
+		// Dots
+		.slick-dots {
+		    position: absolute;
+			top: calc(-#{$baseline} * 5 + 1px);
+			left: span(2 of 4);
+			width: 50%;
+			padding: 0;
+			margin: 0;
+		    list-style: none;
+		    text-align: left;
+			font-size: 0;
+			line-height: 0;
+
+			li {
+				position: relative;
+				float: left;
+				margin: 0;
+				margin-right: $baseline;
+				margin-bottom: $baseline;
+				padding: 0;
+				font-size: 0;
+				line-height: 0;
+
+				&:nth-child(7),
+				&:nth-child(14) {
+					margin-right: 0;
+				}
+				&:nth-child(8) {
+					clear: both;
+				}
+			}
+
+			li button {
+				font-size: 0;
+				line-height: 0;
+				display: block;
+				width: $baseline / 2;
+				height: $baseline / 2;
+				padding: 0;
+				margin: 0;
+				cursor: pointer;
+				border: 0;
+				outline: none;
+				border-radius: 50%;
+				background: $indigo;
+			}
+
+			li button:hover,
+			li button:focus {
+				outline: none;
+			}
+
+			li.slick-active button {
+				background: #fff;
+			}
+		}
+
+		.timeline-carousel__item {
+			h3 {
+				font-size: ms(3);
+				line-height: $baseline * 3;
+				color: #fff;
+				@include align-to-baseline( ms(3), $baseline * 3 );
+				padding-bottom: $baseline;
+			}
+		}
 	}
 
-	.timeline-carousel__item {
-		// background: red;
-		h2 {
-			font-size: 10rem;
-			font-weight: inherit;
-		}
-		p {
-			// position: absolute;
-			// width: 50%;
-			// top: 28.25%;
-			// left: 33.334%;
-			// display: block;
-		}
+	.bg-pattern-1 {
+		display: none;
 	}
 
-	// Dots
-	.slick-dots {
-	    position: absolute;
-		top: 46%;
-		left: -68.5%;
-		width: 55%;
-		padding: 0;
-		margin: 0;
-	    list-style: none;
-	    text-align: left;
-	}
-	.slick-dots li {
-	    position: relative;
-	    display: inline-block;
-	    margin: 1rem;
-	    padding: 0;
-	}
-	.slick-dots li button {
-	    font-size: 0;
-	    line-height: 0;
-	    display: block;
-		width: 2.5rem;
-		height: 2.5rem;
-		padding: 0;
-		margin: 0;
-	    cursor: pointer;
-	    border: 0;
-	    outline: none;
-	}
-	.slick-dots li button:hover,
-	.slick-dots li button:focus {
-	    outline: none;
-	}
-	.slick-dots li button:hover:before,
-	.slick-dots li button:focus:before {
-		opacity: 1;
-		background-color: white;
-	}
-	.slick-dots li button:before {
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-	    width: 2.5rem;
-	    height: 2.5rem;
-		border-radius: 50%;
-		background: $indigo;
-	    content: '';
-	}
-	.slick-dots li.slick-active button:before {
-	    background: white;
-	}
 }
+
+
+
+// .timeline-section {
+// 	background-color: $lightblue;
+// 	min-height: 350vh;
+//
+// 	.bg-pattern-1 {
+// 		position: fixed;
+// 		right: -10%;
+// 		top: 0;
+// 	}
+//
+// 	.timeline-arrow {
+// 		position: fixed;
+// 		top: 45%;
+// 	}
+// 	.timeline-arrow--prev {
+// 		left: 12.5%;
+// 	}
+// 	.timeline-arrow--next {
+// 		left: 19.5%;
+// 	}
+//
+// 	.timeline-carousel {
+// 		position: fixed;
+// 		top: calc(28.75% + 36px);
+// 		left: 37.5%;
+// 		width: 37.5%;
+// 	}
+//
+// 	.timeline-carousel__item {
+// 		// background: red;
+// 		h2 {
+// 			font-size: 10rem;
+// 			font-weight: inherit;
+// 		}
+// 		p {
+// 			// position: absolute;
+// 			// width: 50%;
+// 			// top: 28.25%;
+// 			// left: 33.334%;
+// 			// display: block;
+// 		}
+// 	}
+//
+// 	// Dots
+// 	.slick-dots {
+// 	    position: absolute;
+// 		top: 46%;
+// 		left: -68.5%;
+// 		width: 55%;
+// 		padding: 0;
+// 		margin: 0;
+// 	    list-style: none;
+// 	    text-align: left;
+// 	}
+// 	.slick-dots li {
+// 	    position: relative;
+// 	    display: inline-block;
+// 	    margin: 1rem;
+// 	    padding: 0;
+// 	}
+// 	.slick-dots li button {
+// 	    font-size: 0;
+// 	    line-height: 0;
+// 	    display: block;
+// 		width: 2.5rem;
+// 		height: 2.5rem;
+// 		padding: 0;
+// 		margin: 0;
+// 	    cursor: pointer;
+// 	    border: 0;
+// 	    outline: none;
+// 	}
+// 	.slick-dots li button:hover,
+// 	.slick-dots li button:focus {
+// 	    outline: none;
+// 	}
+// 	.slick-dots li button:hover:before,
+// 	.slick-dots li button:focus:before {
+// 		opacity: 1;
+// 		background-color: white;
+// 	}
+// 	.slick-dots li button:before {
+// 	    position: absolute;
+// 	    top: 0;
+// 	    left: 0;
+// 	    width: 2.5rem;
+// 	    height: 2.5rem;
+// 		border-radius: 50%;
+// 		background: $indigo;
+// 	    content: '';
+// 	}
+// 	.slick-dots li.slick-active button:before {
+// 	    background: white;
+// 	}
+// }
+
+
+
+
+
+
+
+
 //
 // /* Timeline Carousel
 // –––––––––––––––––––––––––––––––––––––––––––––––––– */

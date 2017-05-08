@@ -13,7 +13,7 @@
 	}
 
 	.rendering {
-		@include span(4 of 4);
+		// can I calculate margins to align to baseline?
 	}
 
 	.bg-pattern-1 {

@@ -1,0 +1,27 @@
+$cap-height: .25;
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function baseline() {
+	// rounded baseline, always aligns?
+}
+
+@function baseline-offset($font-size, $line-height) {
+	$offset: ($line-height - ($cap-height * $font-size)) / 2;
+
+	@return $offset;
+}
+
+@mixin align-to-baseline($font-size, $line-height) {
+	$baseline-offset: baseline-offset($font-size, $line-height);
+
+	// one method
+	// padding-top: $baseline-offset;
+	// margin-bottom: $line-height - $baseline-offset;
+
+	// another method
+	margin-top: $baseline-offset;
+	margin-bottom: -1 * $baseline-offset;
+}

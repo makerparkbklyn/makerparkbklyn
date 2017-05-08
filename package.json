@@ -63,6 +63,7 @@
     "eslint": "^3.17.1",
     "findup-sync": "^0.4.3",
     "image-min": "^0.3.2",
+    "modularscale-sass": "^3.0.2",
     "node-sass": "^4.5.0",
     "normalize-css": "^2.3.1",
     "parallelshell": "^2.0.0",

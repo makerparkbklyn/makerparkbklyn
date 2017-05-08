@@ -1,19 +1,5 @@
 // Base Styles
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-html {
-	box-sizing: border-box;
-	font-size: $rem;
-	// font-size: 40px;
-
-	* {
-		box-sizing: inherit;
-	}
-}
-
-body {
-	@include body-font;
-}
-
 .container {
 	@include container($mobile-grid);
 
@@ -33,90 +19,16 @@ body {
 }
 
 
-
-// Section
-//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-section {
-	position: relative;
-	padding-top: 4%;
-}
-
-.section__title-xl {
-	position: fixed;
-	left: 12.5%;
-	top: 14%;
-	font-size: 24rem;
-	font-weight: 600;
-	font-family: $calibre;
-	letter-spacing: -10px;
-	color: #fff;
-
-	display: none;
-}
-
-figure {
-	@include span(full);
-
-	img {
-		width: 100%;
-		@include border;
-	}
-}
-
-figcaption {
-	@include body-font;
-	font-size: 1rem;
-}
-
-
-// section {
-// 	position: relative;
-// 	// padding: 3rem 0;
-//
-// }
-//
-// .section__title {
-// 	position: fixed;
-// 	left: 12.5%;
-// 	top: 14%;
-// 	font-size: 24rem;
-// 	font-weight: 600;
-// 	font-family: $calibre;
-// 	letter-spacing: -10px;
-// 	color: #fff;
-// }
-//
-// figure {
-// 	margin: 0 0 1.5rem;
-// 	img {
-// 		width: 100%;
-// 		&.has-border {
-// 			box-sizing: border-box;
-// 			border: solid 12px $indigo;
-// 		}
-// 	}
-// }
-//
-// figcaption {
-// 	@include body-font;
-// 	font-size: 2rem;
-// }
-//
-// .has-border {
-// 	box-sizing: border-box;
-// 	border: solid 12px $indigo;
-// }
-
-
 // Sections
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-@import	"sections/title";
+@import "section";
+
 @import "sections/hero";
 @import	"sections/mission";
-// @import "sections/site";
-// @import "sections/vision";
-// @import "sections/timeline";
-// @import "sections/principles";
+@import "sections/site";
+@import "sections/vision";
+@import "sections/timeline";
+@import "sections/principles";
 // @import "sections/signup";
 // @import "sections/news";
 // @import "sections/team";
@@ -143,7 +55,7 @@ figcaption {
 	min-height: 300vh;
 }
 .footer__hashtag {
-	@include body-font;
+	// @include body-font;
 	position: fixed;
 	top: 86%;
 	left: 50%;
