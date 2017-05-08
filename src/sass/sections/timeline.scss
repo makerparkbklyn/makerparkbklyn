@@ -20,19 +20,27 @@
 	// TODO: fix carousel to be full screen width
 
 	.timeline-carousel {
-		@include container($mobile-grid inside);
-		margin-top: $baseline * 2;
+		@include container($mobile-grid 100%);
+		padding: 0 3%;
+		padding-top: $baseline * 2;
 		// width: 100% + 6.3829787%;
 		// margin-left: (-6.3829787% / 2);
-		overflow: visible;
+		overflow: hidden;
 		background: red;
+		position: relative;
 
 		.slick-list {
 			@include span(4 of 4 $mobile-grid inside);
+			overflow: visible;
 		}
 
 		.timeline-carousel__item {
-			// margin: 0 gutter(4 wider);
+			// margin: 0 .347222222rem;
+			// margin: 0 .75rem;
+			//
+			// &.slick-active {
+			// 	margin: 0 .347222222rem;
+			// }
 
 			h3 {
 				font-size: ms(3);
