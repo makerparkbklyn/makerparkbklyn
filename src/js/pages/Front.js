@@ -29,7 +29,7 @@ export default class Front extends Page {
 		this.scrollCtrl = new ScrollMagic.Controller()
 
 		this._initSections()
-		if ( Viewport.ww >= 768 ) {
+		if ( Viewport.ww >= 1024 ) {
 			this._initScrollScenes()
 		}
 		this._initTimelineCarousel()
@@ -155,6 +155,7 @@ export default class Front extends Page {
 				infinite: true,
 				dots: true,
 				focusOnSelect: false,
+				adaptiveHeight: true,
 				prevArrow: $('.timeline-arrow--prev'),
 				nextArrow: $('.timeline-arrow--next'),
 			})

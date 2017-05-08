@@ -4,21 +4,44 @@
 .principles-section {
 	background-color: $lightpurple;
 
-		.principles__list {
-			list-style: none;
-			margin: 0;
+	.principles__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		padding-top: $baseline;
+		counter-reset: principles;
+	}
+	.principles__item {
+		@include span(4 of 4);
+		position: relative;
+		padding-top: 0.001px;
+		padding-bottom: $baseline;
+
+		h3 {
 			padding: 0;
-			counter-reset: principles;
-		}
-		.principles__item {
-			position: relative;
-		}
-		.principles__item:before {
-			content: counter(principles, decimal-leading-zero);
-			counter-increment: principles;
+			font-size: ms(2);
+			line-height: $baseline * 2.5;
+			color: #fff;
+			@include align-to-baseline( ms(2), $baseline * 2.5 );
+			padding-bottom: $baseline * 0.5;
+
+			span {
+				color: $indigo;
+			}
 
 		}
 
+		// &:before {
+		// 	display: inline-block;
+		// 	content: counter(principles, decimal-leading-zero);
+		// 	counter-increment: principles;
+		// 	font-size: ms(2);
+		// 	line-height: $baseline * 2;
+		// 	color: $indigo;
+		// 	@include align-to-baseline( ms(2), $baseline * 2 );
+		// 	// display: none;
+		// }
+	}
 
 	.bg-pattern-1,
 	.bg-pattern-2 {

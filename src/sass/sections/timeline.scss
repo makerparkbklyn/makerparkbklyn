@@ -18,11 +18,34 @@
 	}
 
 	// TODO: fix carousel to be full screen width
-	// also: height should adjust
 
 	.timeline-carousel {
+		@include container($mobile-grid inside);
 		margin-top: $baseline * 2;
-		@include span(4 of 4);
+		// width: 100% + 6.3829787%;
+		// margin-left: (-6.3829787% / 2);
+		overflow: visible;
+		background: red;
+
+		.slick-list {
+			@include span(4 of 4 $mobile-grid inside);
+		}
+
+		.timeline-carousel__item {
+			// margin: 0 gutter(4 wider);
+
+			h3 {
+				font-size: ms(3);
+				line-height: $baseline * 3;
+				color: #fff;
+				@include align-to-baseline( ms(3), $baseline * 3 );
+				padding-bottom: $baseline;
+			}
+
+			p {
+				margin-bottom: 0;
+			}
+		}
 
 		// Dots
 		.slick-dots {
@@ -81,16 +104,84 @@
 			}
 		}
 
-		.timeline-carousel__item {
-			h3 {
-				font-size: ms(3);
-				line-height: $baseline * 3;
-				color: #fff;
-				@include align-to-baseline( ms(3), $baseline * 3 );
-				padding-bottom: $baseline;
-			}
-		}
 	}
+
+	// non full width version (remove once full width is working)
+	// .timeline-carousel {
+	// 	margin-top: $baseline * 2;
+	// 	@include span(4 of 4);
+	//
+	// 	// Dots
+	// 	.slick-dots {
+	// 	    position: absolute;
+	// 		top: calc(-#{$baseline} * 5 + 1px);
+	// 		left: span(2 of 4);
+	// 		width: 50%;
+	// 		padding: 0;
+	// 		margin: 0;
+	// 	    list-style: none;
+	// 	    text-align: left;
+	// 		font-size: 0;
+	// 		line-height: 0;
+	//
+	// 		li {
+	// 			position: relative;
+	// 			float: left;
+	// 			margin: 0;
+	// 			margin-right: $baseline;
+	// 			margin-bottom: $baseline;
+	// 			padding: 0;
+	// 			font-size: 0;
+	// 			line-height: 0;
+	//
+	// 			&:nth-child(7),
+	// 			&:nth-child(14) {
+	// 				margin-right: 0;
+	// 			}
+	// 			&:nth-child(8) {
+	// 				clear: both;
+	// 			}
+	// 		}
+	//
+	// 		li button {
+	// 			font-size: 0;
+	// 			line-height: 0;
+	// 			display: block;
+	// 			width: $baseline / 2;
+	// 			height: $baseline / 2;
+	// 			padding: 0;
+	// 			margin: 0;
+	// 			cursor: pointer;
+	// 			border: 0;
+	// 			outline: none;
+	// 			border-radius: 50%;
+	// 			background: $indigo;
+	// 		}
+	//
+	// 		li button:hover,
+	// 		li button:focus {
+	// 			outline: none;
+	// 		}
+	//
+	// 		li.slick-active button {
+	// 			background: #fff;
+	// 		}
+	// 	}
+	//
+	// 	.timeline-carousel__item {
+	// 		h3 {
+	// 			font-size: ms(3);
+	// 			line-height: $baseline * 3;
+	// 			color: #fff;
+	// 			@include align-to-baseline( ms(3), $baseline * 3 );
+	// 			padding-bottom: $baseline;
+	// 		}
+	//
+	// 		p {
+	// 			margin-bottom: 0;
+	// 		}
+	// 	}
+	// }
 
 	.bg-pattern-1 {
 		display: none;

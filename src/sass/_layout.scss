@@ -3,7 +3,7 @@
 .container {
 	@include container($mobile-grid);
 
-	@include breakpoint(768px) {
+	@include breakpoint($tablet-landscape) {
 		@include container(75%);
 	}
 }
@@ -29,9 +29,9 @@
 @import "sections/vision";
 @import "sections/timeline";
 @import "sections/principles";
-// @import "sections/signup";
-// @import "sections/news";
-// @import "sections/team";
+@import "sections/signup";
+@import "sections/news";
+@import "sections/team";
 
 
 /* Rails & Nav

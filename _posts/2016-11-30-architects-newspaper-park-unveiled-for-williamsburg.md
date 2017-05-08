@@ -1,5 +1,5 @@
 ---
-short_title: New Park for Controversial Williamsburg Waterfront
+short_title: New Park for Controversial W’burg Waterfront
 title: "New Park Unveiled for Controversial Williamsburg Waterfront Site"
 date: 2016-11-29 19:01:30 Z
 source: Architects Newspaper

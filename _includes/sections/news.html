@@ -1,104 +1,45 @@
-<!-- News (Front Section) -->
+
+<!-- News Section
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <section class="news-section" id="news" data-bg-color="rgb(255, 125, 129)">
-	<div class="title top">
+
+	<div class="section__title">
 		<h2 class="underline">07. &mdash; News</h2>
 	</div>
+
 	<div class="container">
-		<div class="row">
-			<h2 class="section__title col-4">News</h2>
-			<!-- News Items -->
-			<ul class="news-list">
 
-				{% for post in site.posts | limit: 8 %}
-					<li class="col-2">
-						<div class="news-block">
-							<a href="{{ post.url | prepend: site.baseurl }}">
-								<div class="news-block__inner">
-									<h3 class="news-block__title">{{ post.short_title }}</h3>
-									{% if post.source %}
-									<p class="news-block__source">{{ post.source }}</p>
-									{% else %}
-									<time class="news-block__timestamp">{{ post.date | date: "%b %-d, %Y" }}</time>
-									{% endif %}
-								</div>
-							</a>
-						</div>
-					</li>
-				{% endfor %}
+		<h2 class="section__title-xl">News</h2>
 
-				<li class="col-2">
-					<div class="news-block news-block--see-all">
-						<a href="{{ "/news" | prepend: site.baseurl }}">
-							<div class="news-block__inner">
-								<h3 class="news-block__title">See all news</h3>
-							</div>
-						</a>
-					</div>
-				</li>
+		<ul class="news-list">
 
-			</ul>
-		</div>
+			{% for post in site.posts | limit: 8 %}
+				<li class="news-block">
 
-		<!-- Instagram Feed -->
-		<div class="row">
+					<a href="{{ post.url | prepend: site.baseurl }}">
+						<div class="news-block__inner">
+							<h3 class="news-block__title">{{ post.short_title }}</h3>
+							{% if post.source %}
+								<p class="news-block__source">{{ post.source }}</p>
+							{% else %}
+								<time class="news-block__timestamp">{{ post.date | date: "%b %-d, %Y" }}</time>
+							{% endif %}
+						</div>
+					</a>
 
-			<ul class="col-6 insta-list">
-				<li class="col-1">
-					<div class="insta-block">
-						<div class="insta-photo">
-							<a href="https://www.instagram.com/makerpark/" target="_blank">
-								<img src="assets/images/site-gallery/01.jpg">
-							</a>
-						</div>
-					</div>
 				</li>
-				<li class="col-1">
-					<div class="insta-block">
-						<div class="insta-photo">
-							<a href="https://www.instagram.com/makerpark/" target="_blank">
-								<img src="assets/images/site-gallery/01.jpg">
-							</a>
-						</div>
-					</div>
-				</li>
-				<li class="col-1">
-					<div class="insta-block">
-						<div class="insta-photo">
-							<a href="https://www.instagram.com/makerpark/" target="_blank">
-								<img src="assets/images/site-gallery/01.jpg">
-							</a>
-						</div>
-					</div>
-				</li>
-				<li class="col-1">
-					<div class="insta-block">
-						<div class="insta-photo">
-							<a href="https://www.instagram.com/makerpark/" target="_blank">
-								<img src="assets/images/site-gallery/01.jpg">
-							</a>
-						</div>
-					</div>
-				</li>
-				<li class="col-1">
-					<div class="insta-block">
-						<div class="insta-photo">
-							<a href="https://www.instagram.com/makerpark/" target="_blank">
-								<img src="assets/images/site-gallery/01.jpg">
-							</a>
-						</div>
-					</div>
-				</li>
-				<li class="col-1">
-					<div class="insta-block">
-						<div class="insta-photo">
-							<a href="https://www.instagram.com/makerpark/" target="_blank">
-								<img src="assets/images/site-gallery/01.jpg">
-							</a>
-						</div>
-					</div>
-				</li>
-			</ul>
+			{% endfor %}
 
-		</div>
+			<li class="news-block news-block--see-all">
+				<a href="{{ "/news" | prepend: site.baseurl }}">
+					<div class="news-block__inner">
+						<h3 class="news-block__title">See more news</h3>
+					</div>
+				</a>
+			</li>
+
+		</ul>
+
 	</div>
+
 </section>
