@@ -24,6 +24,10 @@ class Viewport {
 		this.sw = screen.width
 		this.sh = screen.height
 	}
+
+	update() {
+		this._onResize()
+	}
 }
 
 export default new Viewport()

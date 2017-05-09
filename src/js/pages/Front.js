@@ -29,9 +29,9 @@ export default class Front extends Page {
 		this.scrollCtrl = new ScrollMagic.Controller()
 
 		this._initSections()
-		if ( Viewport.ww >= 1024 ) {
+		// if ( Viewport.ww >= 1024 ) {
 			this._initScrollScenes()
-		}
+		// }
 		this._initCarousels()
 		this._initEvents()
 
@@ -43,7 +43,7 @@ export default class Front extends Page {
 		let _self = this
 		_self.$sections = $('section')
 		// _self.$sections.push($('#footer')[0])
-		_self.$titles = $('section .title')
+		_self.$titles = $('.section__title')
 
 		// track current section
 		_self.$sections.map( (index, section) => {
@@ -84,11 +84,14 @@ export default class Front extends Page {
 			}
 		})
 
-		if ( Viewport.ww >= 768 ) {
+		if ( Viewport.ww >= 1024 ) {
 			this.$titles.map( (index, item) => {
 				let $title = $(item)
-				let offset = $title.width() / 2
-				let duration = $title.parent().outerHeight() - ($title.width() + 192)
+				let offset = 0
+				console.log($title.parent())
+				console.log('duration: ' + `${$title.parent().outerHeight()} - ${Viewport.wh}`)
+				let duration = ($title.parent().outerHeight()) - (Viewport.wh)
+				console.log('duration: ' + duration)
 				new ScrollMagic.Scene({
 					triggerElement: item,
 					duration,
@@ -96,6 +99,7 @@ export default class Front extends Page {
 				})
 				.addTo(_self.sectionCtrl)
 				.setPin(item)
+				.addIndicators({ name: $title.parent().attr('id') })
 			})
 		}
 	}
@@ -109,15 +113,22 @@ export default class Front extends Page {
 		const combinedKeyframes = [
 			heroKeyframes,
 			missionKeyframes,
-			siteKeyframes,
-			visionKeyframes,
-			timelineKeyframes,
-			principlesKeyframes,
-			signupKeyframes,
-			newsKeyframes,
-			teamKeyframes,
-			footerKeyframes
+			// siteKeyframes,
+			// visionKeyframes,
+			// timelineKeyframes,
+			// principlesKeyframes,
+			// signupKeyframes,
+			// newsKeyframes,
+			// teamKeyframes,
+			// footerKeyframes
 		]
+		combinedKeyframes.forEach( (section, i, keyframes) => {
+			if (section.refresh != undefined) {
+				console.log('calling refresh')
+				section.refresh(section.scenes)
+			}
+		})
+		// console.log(combinedKeyframes)
 		combinedKeyframes.map( (section, i) => {
 			section.scenes.map( (scene, j) => {
 				let tween = null
@@ -146,6 +157,16 @@ export default class Front extends Page {
 				// .addIndicators({name: scene.name})
 			})
 		})
+		console.log('about to update')
+		this.scrollCtrl.update(true)
+		console.log('updated')
+	}
+
+	_refreshScrollScenes() {
+		console.log('refreshing scroll scenes')
+		this.scrollCtrl = this.scrollCtrl.destroy(true)
+		this.scrollCtrl = new ScrollMagic.Controller()
+		this._initScrollScenes()
 	}
 
 	_initCarousels() {
@@ -194,5 +215,15 @@ export default class Front extends Page {
 		e.preventDefault()
 		console.log('arrow down clicked')
 		// scroll to target
+	}
+
+	// Public
+	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
+
+	resize() {
+		Viewport.update()
+		// refresh logo position
+		this._refreshScrollScenes()
+
 	}
 }

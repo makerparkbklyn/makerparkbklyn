@@ -45,7 +45,7 @@
 
 		textarea,
 		input[type="submit"] {
-			@include border;
+			border: solid 6px $indigo;
 		}
 
 		textarea {
@@ -67,8 +67,8 @@
 		.checkbox {
 			width: $baseline * 3;
 			height: $baseline * 3;
+			border: solid 6px $indigo;
 			border-radius: 50%;
-			@include border;
 			position: relative;
 			float: left;
 			margin-right: $baseline;

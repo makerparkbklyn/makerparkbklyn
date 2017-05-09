@@ -12,16 +12,58 @@
 		@include span(4 of 4);
 	}
 
-	.rendering {
-		// can I calculate margins to align to baseline?
-	}
-
 	.bg-pattern-1 {
 		display: none;
 	}
 
 	.bg-pattern-2 {
 		display: none;
+	}
+
+	@include breakpoint($tablet-landscape) {
+		height: 200vh;
+
+		@include with-layout(8) {
+			.section__title-xl {
+				top: $baseline * 28;
+				// top: 49.65%;
+			}
+			.p1 {
+				position: fixed;
+				@include span(3 of 8);
+				top: $baseline * 16;
+				// top: 30.6%; // old
+				left: span(1 of 8 wide);
+			}
+			.p2 {
+				position: fixed;
+				@include span(3 of 8);
+				top: $baseline * 23;
+				// top: 41.5%; // old
+				left: span(4 of 8 wide);
+			}
+		}
+
+		.bg-pattern-1 {
+			position: fixed;
+			left: 40%;
+			top: 0%;
+			width: 75%;
+			height: 117%;
+		}
+
+		.bg-pattern-2 {
+			position: fixed;
+			left: -45%;
+			top: 50%;
+			width: 1440px;
+			height: 117%;
+		}
+
+		//temp
+		figure {
+			display: none;
+		}
 	}
 
 }

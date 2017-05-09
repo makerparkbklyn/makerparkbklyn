@@ -21,7 +21,7 @@ $tablet-portrait	:	768px;
 $tablet-landscape	:	1024px;
 $desktop			:	1280px;
 $desktop-large		:	1600px;
-$hd					:	1920px;
+$desktop-hd			:	1920px;
 
 
 // Colors
@@ -83,13 +83,25 @@ $fluid-rem: (
 		base		:	32px,
 		ratio		:	$fourth,
 	),
+	$tablet-landscape: (
+		base		:	22px,
+		ratio		:	$fourth
+	),
+	$desktop-hd: (
+		base		: 	40px,
+		ratio		: 	$fourth
+	),
+	2560px: (
+		base		: 	48px,
+		ratio		: 	$fourth
+	)
 );
 
 
 // Grid
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 $susy: (
-	columns			:	12,
+	columns			:	6,
 	gutters			:	0.25,
 	gutter-position	:	split,
 	global-box-sizing:	border-box,
@@ -120,3 +132,4 @@ $mobile-grid: (
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 @import 				"base",
         				"layout";
+						// "news";

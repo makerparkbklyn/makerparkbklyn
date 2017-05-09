@@ -5,15 +5,25 @@ section {
 	padding: $baseline * 2 0 $baseline * 4;
 
 	// show baseline
-	// background-image: linear-gradient(rgba(200, 50, 50, .25) 1px, transparent 1px);
-	// background-size: 1px $baseline;
+	background-image: linear-gradient(rgba(200, 50, 50, .25) 1px, transparent 1px);
+	background-size: 1px $baseline;
+
+	@include breakpoint($tablet-landscape) {
+		padding: 0;
+	}
 
 	figure {
 		margin: $baseline 0;
 		@include span(4 of 4);
 
-		@include breakpoint($tablet-portrait) {
-			// @include span(full); // check this?
+		@include breakpoint($tablet-landscape) {
+			@include with-layout(8) {
+				position: fixed;
+				@include span(6 of 8);
+				// top: 9.1%;  // old
+				top: $baseline * 6;
+				left: span(1 of 8 wide);
+			}
 		}
 
 		img {
@@ -61,143 +71,57 @@ section {
 			top: 1em;
 		}
 	}
+
+	@include breakpoint($tablet-landscape) {
+		text-align: center;
+		padding: 0;
+		margin: 0;
+		position: absolute;
+		width: 300px;
+		height: 50px;
+		transform-origin: top left;
+		transform: rotate(-90deg) translate(-50%, -50%);
+		top: 50vh;
+		left: 6.25%;
+
+		h2 {
+			font-size: ms(0);
+			margin: 0;
+
+			&:after {
+				top: 1.2em;
+			}
+		}
+	}
+
+	@include breakpoint($desktop) {
+		top: 25vh;
+
+		h2 {
+			&:after {
+				// height: 6px;
+			}
+		}
+	}
 }
 
 .section__title-xl {
-// 	position: fixed;
-// 	left: 12.5%;
-// 	top: 14%;
-// 	font-size: 24rem;
-// 	font-weight: 600;
-// 	font-family: $calibre;
-// 	letter-spacing: -10px;
-// 	color: #fff;
-//
-	display: none;
+	@include breakpoint(max-width $tablet-landscape - 1) {
+		display: none;
+	}
+
+	@include breakpoint($tablet-landscape) {
+		@include with-layout(8) {
+			position: fixed;
+			top: $baseline * 12;
+			left: span(1 of 8 wide);
+
+			font-size: ms(8);
+			line-height: $baseline * 20;
+			@include align-to-baseline( ms(8), $baseline * 20 );
+			margin: 0;
+			letter-spacing: -8px;
+			color: #fff;
+		}
+	}
 }
-
-
-
-
-
-// section {
-// 	position: relative;
-// 	// padding: 3rem 0;
-//
-// }
-//
-// .section__title {
-// 	position: fixed;
-// 	left: 12.5%;
-// 	top: 14%;
-// 	font-size: 24rem;
-// 	font-weight: 600;
-// 	font-family: $calibre;
-// 	letter-spacing: -10px;
-// 	color: #fff;
-// }
-//
-// figure {
-// 	margin: 0 0 1.5rem;
-// 	img {
-// 		width: 100%;
-// 		&.has-border {
-// 			box-sizing: border-box;
-// 			border: solid 12px $indigo;
-// 		}
-// 	}
-// }
-//
-// figcaption {
-// 	@include body-font;
-// 	font-size: 2rem;
-// }
-//
-// .has-border {
-// 	box-sizing: border-box;
-// 	border: solid 12px $indigo;
-// }
-
-
-/* Section Titles
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-// .title {
-// 	width: 90%;
-// 	margin: 0 auto;
-// 	margin-bottom: 2rem;
-// 	z-index: 99;
-//
-// 	h2 {
-// 		@include body-font;
-// 		line-height: 1;
-// 		// font-size: 4rem;
-// 		display: inline-block;
-// 		position: relative;
-// 		// background: pink;
-// 		margin: 0;
-// 		font-weight: 600;
-//
-// 		&:after {
-// 			content: '';
-// 			display: block;
-// 			background: $darkblue;
-// 			height: 6px;
-// 			width: 100%;
-// 			position: absolute;
-// 			top: 80%;
-// 		}
-// 	}
-// }
-//
-// @include media-query(1024px) {
-// 	.title {
-// 		position: absolute;
-// 		width: 300px;
-// 		height: 50px;
-// 		transform: rotate(-90deg);
-// 		transform-origin: 50% 300%;
-// 		// left: calc(6.25% - 28px);
-// 		left: 36px;
-// 		text-align: center;
-// 		// background: pink;
-// 		top: 96px;
-// 		h2 {
-// 			// font-size: 1rem;
-// 			&:after {
-// 				height: 4px;
-// 			}
-// 		}
-//
-// 	}
-// }
-// @include media-query(1280px) {
-// 	.title {
-// 		width: 400px;
-// 		height: 66.666666667px;
-// 		// left: calc(6.25% - 40px);
-// 		left: 48px;
-// 		h2 {
-// 			// font-size: .833rem;
-// 		}
-// 		h2:after {
-// 			height: 6px;
-// 		}
-// 	}
-// }
-// @include media-query(1600px) {
-// 	.title {
-// 		width: 600px;
-// 		height: 100px;
-// 		// left: calc(6.25% - 58px);
-// 		left: 96px;
-// 		h2 {
-// 			// font-size: .8rem;
-// 		}
-// 	}
-// }
-// @include media-query(2000px) {
-// 	.title {
-// 		left: 92px;
-// 	}
-// }

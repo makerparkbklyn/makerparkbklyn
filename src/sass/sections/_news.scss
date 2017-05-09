@@ -42,6 +42,12 @@
 			color: #fff;
 			border-radius: 50%;
 		}
+
+		@include breakpoint($tablet-portrait) {
+			@include span(2 of 4);
+			padding-bottom: span(2 of 4);
+			margin-bottom: gutter($mobile-grid) * 2;
+		}
 	}
 
 	.news-block__inner {
@@ -67,6 +73,11 @@
 		&:before {
 			display: block;
 			content: "\2014";
+			line-height: 1;
+		}
+
+		@include breakpoint($tablet-portrait) {
+			font-size: ms(-2);
 		}
 	}
 

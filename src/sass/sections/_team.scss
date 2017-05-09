@@ -20,7 +20,7 @@
 
 	.expert-team-list {
 		@include susy-clearfix;
-		@include span(4 of 4);
+		@include span(4 of 4 nest);
 		list-style: none;
 		padding: 0;
 		margin: 0;
@@ -28,12 +28,32 @@
 	}
 
 	.expert-team-block {
+		@include span(4 of 4);
 		margin-bottom: $baseline * 3;
 
 		img {
 			display: block;
 			max-width: 60%;
 			margin: 0 auto;
+		}
+
+		@include breakpoint($tablet-portrait) {
+			@include span(2 of 4);
+			height: $baseline * 5;
+
+			display: flex;
+			align-items: center;
+
+			img {
+				max-width: 80%;
+			}
+
+			&:nth-child(6) {
+				img {
+					max-width: 60%;
+				}
+			}
+
 		}
 	}
 

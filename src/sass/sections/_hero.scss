@@ -3,8 +3,12 @@
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 .hero-section {
 	position: relative;
-	height: 100vh;
+	height: 110vh;
 	padding: 0;
+
+	// @include breakpoint($tablet-landscape) {
+	// 	height:
+	// }
 }
 
 .hero-bg {
@@ -24,14 +28,63 @@
 	width: 70%;
 	position: fixed;
 	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	// z-index: 999;
+	right: 50%;
+	transform: translate(50%, -50%);
+	z-index: 999;
+
+	@include breakpoint(700px) {
+		width: 60%;
+	}
+
+	@include breakpoint($tablet-landscape) {
+		width: 50%;
+	}
+
+	@include breakpoint($desktop) {
+		width: 45%;
+	}
 
 	img {
 		width: 100%;
 	}
 }
+
+// .hero-logo {
+// 	width: 70%;
+// 	position: fixed;
+// 	bottom: 20px;
+// 	right: 20px;
+// 	z-index: 999;
+// 	// left: 50%;
+// 	// transform: translate(-50%, -50%);
+//
+// 	@include breakpoint(700px) {
+// 		width: 60%;
+// 	}
+//
+// 	img {
+// 		display: block;
+// 		width: 100%;
+// 	}
+// }
+
+// old
+// .hero-logo {
+// 	width: 70%;
+// 	position: fixed;
+// 	top: 50%;
+// 	left: 50%;
+// 	transform: translate(-50%, -50%);
+// 	// z-index: 999;
+//
+// 	@include breakpoint(700px) {
+// 		width: 60%;
+// 	}
+//
+// 	img {
+// 		width: 100%;
+// 	}
+// }
 
 
 

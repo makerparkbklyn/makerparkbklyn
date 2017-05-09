@@ -11,14 +11,14 @@ const missionKeyframes = {
 			name	:	'titleIn',
 			duration:	1800,
 			offset	:	0.5 * wh,
-			element	:	'.section__title',
+			element	:	'.section__title-xl',
 			tween	:	{y: wh, ease: Power2.easeOut}
 		},
 		{
 			name	:	'titleOut',
 			duration:	1800,
 			offset	:	3 * wh,
-			element	:	'.section__title',
+			element	:	'.section__title-xl',
 			tween	: 	{y: -wh, ease: Power2.easeIn}
 		},
 		{

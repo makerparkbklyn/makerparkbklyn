@@ -23,6 +23,7 @@ class App {
 
 	_initEvents() {
 		$(window).on('keydown', this._onGridShortcut)
+		$(window).on('resize', this._onResize.bind(this))
 	}
 
 	// Handlers
@@ -31,6 +32,10 @@ class App {
 	_onGridShortcut(e) {
 		if (e.ctrlKey && e.which === 71)
 			$('.grid').toggleClass('show')
+	}
+
+	_onResize(e) {
+		this.page.resize()
 	}
 }
 

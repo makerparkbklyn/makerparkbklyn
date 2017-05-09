@@ -1,18 +1,22 @@
+
 // Base Styles
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 .container {
 	@include container($mobile-grid);
 
 	@include breakpoint($tablet-landscape) {
-		@include container(75%);
+		@include container($susy 75%);
 	}
 }
 
+
+// Mixins
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 @mixin border {
 	box-sizing: border-box;
 	border: solid 6px $indigo;
 
-	@include breakpoint(768px) {
+	@include breakpoint($tablet-portrait) {
 		box-sizing: border-box;
 		border: solid 12px $indigo;
 	}
@@ -73,8 +77,3 @@
 .footer__social-button--facebook {
 	right: 46%;
 }
-
-
-// News Page
-//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-// @import "news";
