@@ -88,8 +88,6 @@ export default class Front extends Page {
 			this.$titles.map( (index, item) => {
 				let $title = $(item)
 				let offset = 0
-				console.log($title.parent())
-				console.log('duration: ' + `${$title.parent().outerHeight()} - ${Viewport.wh}`)
 				let duration = ($title.parent().outerHeight()) - (Viewport.wh)
 				console.log('duration: ' + duration)
 				new ScrollMagic.Scene({
@@ -99,7 +97,7 @@ export default class Front extends Page {
 				})
 				.addTo(_self.sectionCtrl)
 				.setPin(item)
-				.addIndicators({ name: $title.parent().attr('id') })
+				// .addIndicators({ name: $title.parent().attr('id') })
 			})
 		}
 	}
@@ -113,7 +111,7 @@ export default class Front extends Page {
 		const combinedKeyframes = [
 			heroKeyframes,
 			missionKeyframes,
-			// siteKeyframes,
+			siteKeyframes,
 			// visionKeyframes,
 			// timelineKeyframes,
 			// principlesKeyframes,
@@ -157,13 +155,10 @@ export default class Front extends Page {
 				// .addIndicators({name: scene.name})
 			})
 		})
-		console.log('about to update')
 		this.scrollCtrl.update(true)
-		console.log('updated')
 	}
 
 	_refreshScrollScenes() {
-		console.log('refreshing scroll scenes')
 		this.scrollCtrl = this.scrollCtrl.destroy(true)
 		this.scrollCtrl = new ScrollMagic.Controller()
 		this._initScrollScenes()

@@ -26,6 +26,82 @@
 		display: none;
 	}
 
+	@include breakpoint($tablet-landscape) {
+		// TODO: calculate section height dynamically
+		height: 1350vh;
+
+		@include with-layout(8) {
+			.p1 {
+				position: fixed;
+				@include span(3 of 8);
+				left: span(3 of 8 wide);
+				top: 19.6%;
+				top: $baseline * 11;
+			}
+
+			.p2 {
+				position: fixed;
+				@include span(3 of 8);
+				left: span(1 of 8 wide);
+				top: 48.8%;
+				top: $baseline * 27;
+			}
+
+			.p3 {
+				position: fixed;
+				@include span(3 of 8);
+				left: span(4 of 8 wide);
+				top: 59.75%;
+				top: $baseline * 30;
+			}
+
+			[class*='image-'] {
+				position: fixed;
+				top: -100%;
+				z-index: 9;
+			}
+
+			.image-00 {
+				@include span(3 of 8);
+				left: span(3 of 8 wide);
+			}
+
+			.image-01 {
+				@include span(3 of 8);
+				width: span(4 of 8 wide);
+			}
+
+			.image-02 {
+				@include span(4 of 8);
+				left: span(2 of 8 wide);
+			}
+
+			.image-03 {
+				@include span(3 of 8);
+				left: span(4 of 8 wide)
+			}
+
+			.image-04 {
+				@include span(4 of 8);
+				left: span(1 of 8 wide);
+			}
+
+			.image-05 {
+				@include span(2 of 8);
+				left: span(1 of 8 wide);
+			}
+
+			.map {
+				padding-bottom: 70%;
+			}
+		}
+
+		// figure {
+		// 	display: none;
+		// }
+	}
+
+
 }
 
 

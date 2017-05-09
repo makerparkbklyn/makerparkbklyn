@@ -11,14 +11,14 @@ const siteKeyframes = {
 			name	:	'titleIn',
 			duration:	1800,
 			offset	:	0.25 * wh,
-			element	:	'.section__title',
+			element	:	'.section__title-xl',
 			tween	:	{y: wh * 1.2, ease: Power2.easeOut}
 		},
 		{
 			name	:	'titleOut',
 			duration:	1800,
 			offset	:	9.75 * wh,
-			element	:	'.section__title',
+			element	:	'.section__title-xl',
 			tween	: 	{y: -wh, ease: Power2.easeIn}
 		},
 		{
