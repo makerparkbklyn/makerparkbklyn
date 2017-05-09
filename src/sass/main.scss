@@ -62,7 +62,7 @@ $link-color			:	$indigo;
 
 // Typography
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-$calibre			:	"CalibreSemibold", "Calibre", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+@import 				"fonts";
 $baseline			:   0.6rem;
 // $baseline			:   0.592592592rem;
 $base-line-height	:   $baseline * 2;
@@ -118,6 +118,5 @@ $mobile-grid: (
 
 // Import Partials
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
-@import 				"fonts",
-						"base",
+@import 				"base",
         				"layout";
