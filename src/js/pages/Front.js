@@ -32,7 +32,7 @@ export default class Front extends Page {
 		if ( Viewport.ww >= 1024 ) {
 			this._initScrollScenes()
 		}
-		this._initTimelineCarousel()
+		this._initCarousels()
 		this._initEvents()
 
 	}
@@ -148,8 +148,10 @@ export default class Front extends Page {
 		})
 	}
 
-	_initTimelineCarousel() {
+	_initCarousels() {
 		const $timeline = $('.timeline-carousel')
+		const $renderings = $('#vision .renderings')
+
 		if ( $timeline.length ) {
 			$timeline.slick({
 				infinite: true,
@@ -162,6 +164,20 @@ export default class Front extends Page {
 		}
 		else {
 			console.warn('no timeline carousel to initiate')
+		}
+
+		if ( $renderings.length && Viewport.ww < 1024 ) {
+			$renderings.slick({
+				infinite: true,
+				dots: true,
+				focusOnSelect: false,
+				adaptiveHeight: true,
+				prevArrow: $('.renderings-arrow--prev'),
+				nextArrow: $('.renderings-arrow--next'),
+			})
+		}
+		else {
+			console.warn('no renderings carousel to initiate')
 		}
 	}
 

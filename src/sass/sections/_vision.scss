@@ -10,16 +10,38 @@
 		@include span(4 of 4);
 	}
 
-	.image-stack { // flick through stack on mobile?
-		margin: $baseline 0;
-		@include span(4 of 4);
-		height: 50vh;
-		overflow: hidden;
+	// carousel
+	.image-stack {
+		width: 100%;
+		padding-top: $baseline * 2;
+
+		.slick-list {
+			width: 100%;
+		}
+
+		.image-stack__item {
+			margin: 0;
+			padding: 0 0.5925926%;
+		}
 	}
+
+	// no carousel
+	// .image-stack {
+	// 	@include span(4 of 4 nest);
+	// 	@include susy-clearfix;
+	//
+	// 	img {
+	// 		display: block;
+	// 		margin: $baseline 0;
+	// 		@include span(4 of 4);
+	// 		@include border;
+	// 	}
+	// }
 
 	.video { // js for this?
 		margin: $baseline 0;
 		@include span(4 of 4);
+		@include border;
 		height: 0;
 		padding-bottom: calc(100% * (9/16));
 	}

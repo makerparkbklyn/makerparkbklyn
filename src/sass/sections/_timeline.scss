@@ -17,37 +17,24 @@
 		}
 	}
 
-	// TODO: fix carousel to be full screen width
-
 	.timeline-carousel {
-		@include container($mobile-grid 100%);
-		padding: 0 3%;
+		width: 100%;
 		padding-top: $baseline * 2;
-		// width: 100% + 6.3829787%;
-		// margin-left: (-6.3829787% / 2);
-		overflow: hidden;
-		background: red;
-		position: relative;
 
 		.slick-list {
-			@include span(4 of 4 $mobile-grid inside);
-			overflow: visible;
+			width: 100%;
 		}
 
 		.timeline-carousel__item {
-			// margin: 0 .347222222rem;
-			// margin: 0 .75rem;
-			//
-			// &.slick-active {
-			// 	margin: 0 .347222222rem;
-			// }
+			// padding: 0 5.35%; // relative to viewport width
+			padding: 0 0.333%; // relative to .slick-track
 
 			h3 {
-				font-size: ms(3);
-				line-height: $baseline * 3;
+				font-size: ms(2);
+				line-height: $baseline * 2.5;
 				color: #fff;
-				@include align-to-baseline( ms(3), $baseline * 3 );
-				padding-bottom: $baseline;
+				@include align-to-baseline( ms(2), $baseline * 2.5 );
+				padding-bottom: $baseline * 0.5;
 			}
 
 			p {
@@ -58,7 +45,7 @@
 		// Dots
 		.slick-dots {
 		    position: absolute;
-			top: calc(-#{$baseline} * 5 + 1px);
+			top: calc(-#{$baseline} * 3 + 1px);
 			left: span(2 of 4);
 			width: 50%;
 			padding: 0;

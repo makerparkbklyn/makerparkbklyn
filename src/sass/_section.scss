@@ -5,15 +5,15 @@ section {
 	padding: $baseline * 2 0 $baseline * 4;
 
 	// show baseline
-	background-image: linear-gradient(rgba(200, 50, 50, .25) 1px, transparent 1px);
-	background-size: 1px $baseline;
+	// background-image: linear-gradient(rgba(200, 50, 50, .25) 1px, transparent 1px);
+	// background-size: 1px $baseline;
 
 	figure {
 		margin: $baseline 0;
 		@include span(4 of 4);
 
 		@include breakpoint($tablet-portrait) {
-			@include span(full); // check this?
+			// @include span(full); // check this?
 		}
 
 		img {
