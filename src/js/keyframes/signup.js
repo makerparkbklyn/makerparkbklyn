@@ -11,14 +11,14 @@ const signupKeyframes = {
 			name	:	'titleIn',
 			duration:	1800,
 			offset	:	0,
-			element :	'.section__title',
+			element :	'.section__title-xl',
 			tween	:	{y: wh, ease: Power2.easeOut}
 		},
 		{
 			name	:	'titleOut',
 			duration:	1800,
 			offset	:	2.2 * wh,
-			element :	'.section__title',
+			element :	'.section__title-xl',
 			tween	: 	{y: -wh, ease: Power2.easeIn}
 		},
 		{
@@ -36,23 +36,93 @@ const signupKeyframes = {
 			tween	: 	{y: -wh, ease: Power2.easeIn}
 		},
 		{
-			name	:	'formIn',
+			name	:	'firstNameIn',
 			duration:	1800,
 			offset	:	0.5 * wh,
-			element :	'.signup-form',
+			element :	'.signup__first-name',
 			tween	:	{y: wh, ease: Power2.easeOut}
 		},
 		{
-			name	:	'formOut',
+			name	:	'lastNameIn',
+			duration:	1800,
+			offset	:	0.55 * wh,
+			element :	'.signup__last-name',
+			tween	:	{y: wh, ease: Power2.easeOut}
+		},
+		{
+			name	:	'emailIn',
+			duration:	1800,
+			offset	:	0.6 * wh,
+			element :	'.signup__email',
+			tween	:	{y: wh, ease: Power2.easeOut}
+		},
+		{
+			name	:	'volunteerIn',
+			duration:	1800,
+			offset	:	0.65 * wh,
+			element :	'.signup__volunteer',
+			tween	:	{y: wh, ease: Power2.easeOut}
+		},
+		{
+			name	:	'commentsIn',
+			duration:	1800,
+			offset	:	0.7 * wh,
+			element :	'.signup__comments',
+			tween	:	{y: wh, ease: Power2.easeOut}
+		},
+		{
+			name	:	'submitIn',
+			duration:	1800,
+			offset	:	0.75 * wh,
+			element :	'.signup__submit',
+			tween	:	{y: wh, ease: Power2.easeOut}
+		},
+		{
+			name	:	'firstNameOut',
 			duration:	1200,
 			offset	:	2.5 * wh,
-			element :	'.signup-form',
-			tween	: 	{y: -wh, ease: Power2.easeIn}
+			element :	'.signup__first-name',
+			tween	:	{y: -wh, ease: Power2.easeIn}
+		},
+		{
+			name	:	'lastNameOut',
+			duration:	1200,
+			offset	:	2.55 * wh,
+			element :	'.signup__last-name',
+			tween	:	{y: -wh, ease: Power2.easeIn}
+		},
+		{
+			name	:	'emailOut',
+			duration:	1200,
+			offset	:	2.575 * wh,
+			element :	'.signup__email',
+			tween	:	{y: -wh, ease: Power2.easeIn}
+		},
+		{
+			name	:	'volunteerOut',
+			duration:	1200,
+			offset	:	2.6 * wh,
+			element :	'.signup__volunteer',
+			tween	:	{y: -wh, ease: Power2.easeIn}
+		},
+		{
+			name	:	'commentsOut',
+			duration:	1200,
+			offset	:	2.625 * wh,
+			element :	'.signup__comments',
+			tween	:	{y: -wh, ease: Power2.easeIn}
+		},
+		{
+			name	:	'submitOut',
+			duration:	1200,
+			offset	:	2.65 * wh,
+			element :	'.signup__submit',
+			tween	:	{y: -wh, ease: Power2.easeIn}
 		},
 		{
 			name	:	'pattern1In',
 			duration:	1800,
-			offset	:	0.25 * wh,
+			offset	:	0.5 * wh,
 			element :	'.bg-pattern-1',
 			tween	: 	{y: 2 * wh, ease: Power2.easeOut}
 		},

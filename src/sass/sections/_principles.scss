@@ -48,91 +48,45 @@
 		display: none;
 	}
 
+	@include breakpoint($tablet-landscape) {
+		// TODO: calculate section height dynamically
+		height: 435vh;
+
+		@include with-layout(8) {
+			.principles__item {
+				position: fixed;
+				@include span(3 of 8);
+				top: 0;
+
+				&:nth-child(odd) {
+					left: span(1 of 8 wide);
+				}
+
+				&:nth-child(even) {
+					left: span(4 of 8 wide);
+				}
+			}
+		}
+
+		.bg-pattern-1,
+		.bg-pattern-2 {
+			display: block;
+		}
+
+		.bg-pattern-1 {
+			position: fixed;
+			left: 50%;
+			top: 15%;
+			// width: 75%;
+			// height: 117%;
+		}
+
+		.bg-pattern-2 {
+			position: fixed;
+			left: -109.2%;
+			top: -80%;
+			// width: 75%;
+			// height: 117%;
+		}
+	}
 }
-
-// /* Principles Section
-// –––––––––––––––––––––––––––––––––––––––––––––––––– */
-// .principles {
-// 	background-color: $lightpurple;
-// 	min-height: 390vh;
-//
-// 	.section__title {
-// 		top: 20.5%;
-// 		line-height: 0.75;
-// 	}
-// 	.principles__list {
-// 		list-style: none;
-// 		counter-reset: principles;
-// 		margin: 0;
-// 		position: fixed;
-// 		width: 75%;
-// 		top: 73.5%;
-// 	}
-// 	.principles__item {
-// 		position: relative;
-// 		margin-bottom: 4rem;
-// 		box-sizing: border-box;
-// 	}
-// 	.principles__item:before {
-// 		content: counter(principles, decimal-leading-zero);
-// 		counter-increment: principles;
-// 		font-size: 6.75rem;
-// 		line-height: 1.0;
-// 		// font-weight: bold;
-// 		color: $indigo;
-// 	}
-// 	.principles__item h3 {
-// 		color: white;
-// 		font-size: 6.75rem;
-// 		line-height: 0.85;
-// 		margin-top: 0;
-// 		margin-bottom: 0.25rem;
-// 		font-weight: inherit;
-// 	}
-// 	.principles__item p {
-// 		font-size: 3.375rem;
-// 	}
-//
-// 	.bg-pattern-1 {
-// 		position: fixed;
-// 		left: 50%;
-// 		top: 15%;
-// 		// width: 75%;
-// 		// height: 117%;
-// 	}
-// 	.bg-pattern-2 {
-// 		position: fixed;
-// 		left: -109.2%;
-// 		top: -80%;
-// 		// width: 75%;
-// 		// height: 117%;
-// 	}
-// }
-
-
-
-
-
-// @include media-query(768px) {
-// 	.principles__item {
-// 		margin-bottom: 1rem;
-// 	}
-// }
-//
-// @include media-query(1024px) {}
-// @include media-query(1280px) {
-// 	.principles__item {
-// 		padding-right: 1rem;
-// 		margin-bottom: 2rem;
-// 		h3 {
-// 			font-size: 1.5rem;
-// 		}
-// 		&:before {
-// 			font-size: 1.5rem;
-// 		}
-// 		p {
-// 			font-size: 0.5rem;
-// 			margin-bottom: 0;
-// 		}
-// 	}
-// }

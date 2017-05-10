@@ -5,8 +5,8 @@ section {
 	padding: $baseline * 2 0 $baseline * 4;
 
 	// show baseline
-	background-image: linear-gradient(rgba(200, 50, 50, .25) 1px, transparent 1px);
-	background-size: 1px $baseline;
+	// background-image: linear-gradient(rgba(200, 50, 50, .25) 1px, transparent 1px);
+	// background-size: 1px $baseline;
 
 	@include breakpoint($tablet-landscape) {
 		padding: 0;
@@ -97,11 +97,13 @@ section {
 	}
 
 	@include breakpoint($desktop) {
+		width: 500px;
+		transform: rotate(-90deg) translate(-50%, -50%);
 		top: 25vh;
 
 		h2 {
 			&:after {
-				// height: 6px;
+				height: 6px;
 			}
 		}
 	}
@@ -118,6 +120,7 @@ section {
 			position: fixed;
 			// top: $baseline * 12;
 			top: $baseline * 10;
+			@include span(6 of 8);
 			left: span(1 of 8 wide);
 
 			font-size: ms(8);

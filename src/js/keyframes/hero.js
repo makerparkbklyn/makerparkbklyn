@@ -39,6 +39,21 @@ const heroKeyframes = {
 		// 	element	:	'.hero-bg',
 		// 	tween	:	{y: -735, ease: Linear.easeNone}
 		// },
+		{
+			name	:	'logoMove',
+			duration:	wh,
+			offset	:	0,
+			element	:	'.hero-logo',
+			tween	:	{}
+		},
+
+		{
+			name	:	'heroBGOut',
+			duration:	0,
+			offset	:	wh * 3,
+			element	:	'.hero-bg',
+			tween	:	{y: -2 * wh, ease: Linear.easeNone}
+		}
 	]
 }
 
@@ -66,13 +81,7 @@ heroKeyframes.refresh = (scenes) => {
 		offsetX = ((Viewport.ww / 2) - (desiredMargin + (logoWidth * (scale/2)))) + (logoWidth / 2),
 		offsetY = ((Viewport.wh / 2) - (desiredMargin + (logoHeight * (scale/2)))) - (logoHeight / 2)
 
-	scenes[0] = {
-		name	:	'logoMove',
-		duration:	wh,
-		offset	:	0,
-		element	:	'.hero-logo',
-		tween	:	{x: offsetX, y: offsetY, scale, rotation: 360, ease: Power2.easeInOut}
-	}
+	scenes[0].tween = {x: offsetX, y: offsetY, scale, rotation: 360, ease: Power2.easeInOut}
 }
 
 export default heroKeyframes

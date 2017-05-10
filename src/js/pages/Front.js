@@ -78,6 +78,7 @@ export default class Front extends Page {
 
 						$('section').css('background-color', color)
 						_self.$nav.css('background-color', color)
+						$('body').css('background-color', color)
 					}
 				})
 				// .addIndicators({ name: item.attr('id')})
@@ -113,16 +114,15 @@ export default class Front extends Page {
 			missionKeyframes,
 			siteKeyframes,
 			visionKeyframes,
-			// timelineKeyframes,
-			// principlesKeyframes,
-			// signupKeyframes,
-			// newsKeyframes,
-			// teamKeyframes,
+			timelineKeyframes,
+			principlesKeyframes,
+			signupKeyframes,
+			newsKeyframes,
+			teamKeyframes,
 			// footerKeyframes
 		]
 		combinedKeyframes.forEach( (section, i, keyframes) => {
 			if (section.refresh != undefined) {
-				console.log('calling refresh')
 				section.refresh(section.scenes)
 			}
 		})

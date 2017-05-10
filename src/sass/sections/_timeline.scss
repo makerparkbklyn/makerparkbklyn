@@ -11,6 +11,7 @@
 		height: calc(#{$baseline} * 3 - 1px);
 		font-size: 0;
 		line-height: 0;
+		cursor: pointer;
 
 		svg {
 			width: 1.5rem;
@@ -122,8 +123,8 @@
 		@include with-layout(8) {
 			.timeline-arrow {
 				position: fixed;
-				top: 45%;
-				top: $baseline * 20;
+				// top: 45%;
+				top: $baseline * 22;
 			}
 			.timeline-arrow--prev {
 				left: span(1 of 8 wide);
@@ -136,7 +137,7 @@
 				position: fixed;
 				@include span(3 of 8);
 				left: span(3 of 8 wide);
-				top: $baseline * 18;
+				top: $baseline * 16;
 			}
 
 			.timeline-carousel__item {
@@ -154,7 +155,8 @@
 			// Dots
 			.slick-dots {
 				position: absolute;
-				top: 46%;
+				// top: 46%;
+				top: $baseline * 11;
 				left: -68.5%;
 				width: 55%;
 				padding: 0;
