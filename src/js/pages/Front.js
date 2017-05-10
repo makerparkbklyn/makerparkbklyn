@@ -105,6 +105,9 @@ export default class Front extends Page {
 
 	// TODO: abstract this process, optimize it
 	_initScrollScenes() {
+		if (Viewport.ww < 1024) {
+			return;
+		}
 		let _self	= this,
 			rIn		= /In$/,
 			rOut	= /Out$/,

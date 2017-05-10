@@ -58,30 +58,71 @@
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 .footer {
 	position: relative;
-	min-height: 300vh;
+	height: 100vh;
+	@include container($mobile-grid);
 }
+
 .footer__hashtag {
-	position: fixed;
-	@include span(4 of 8);
-	left: span(2 of 8 wide);
-	top: 80%;
+	@include span(4 of 4);
 	text-align: center;
+
+	@include breakpoint(max-width $tablet-landscape - 1) {
+		margin-top: 75vh;
+	}
 }
+
 .footer__social-button {
-	position: fixed;
-	@include span(1 of 8);
-	top: 88%;
-	text-align: center;
+	@include span(2 of 4);
+	margin-top: $baseline * 1.5;
 
 	svg {
 		width: 1rem;
 	}
 }
+
 .footer__social-button--instagram {
-	left: span(3 of 8 wide);
 	text-align: right;
 }
+
 .footer__social-button--facebook {
-	left: span(4 of 8 wide);
 	text-align: left;
+}
+
+@include breakpoint($tablet-landscape) {
+
+	@include with-layout(8) {
+
+		.footer {
+			position: relative;
+			height: auto;
+			min-height: 300vh;
+		}
+
+		.footer__hashtag {
+			margin: 0;
+			position: fixed;
+			@include span(4 of 8);
+			left: span(2 of 8 wide);
+			top: 80%;
+		}
+
+		.footer__social-button {
+			margin: 0;
+			position: fixed;
+			@include span(1 of 8);
+			top: 88%;
+
+			svg {
+				width: 1rem;
+			}
+		}
+
+		.footer__social-button--instagram {
+			left: span(3 of 8 wide);
+		}
+
+		.footer__social-button--facebook {
+			left: span(4 of 8 wide);
+		}
+	}
 }

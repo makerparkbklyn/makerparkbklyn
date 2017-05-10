@@ -61,6 +61,10 @@
 
 			label {
 				line-height: $baseline * 3;
+
+				span {
+					display: none;
+				}
 			}
 		}
 

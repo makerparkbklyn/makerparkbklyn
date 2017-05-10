@@ -18,20 +18,20 @@ const heroKeyframes = {
 		// TODO: need to reverse and adjust this transition at some point
 
 
-		{
-			name	:	'logoMove',
-			duration:	wh,
-			offset	:	0,
-			element	:	'.hero-logo',
-			tween	:	{y: 534, x: 816, scale: .3, rotation: 360, ease: Power2.easeInOut}
-		},
-		{
-			name	:	'logoIn',
-			duration:	wh,
-			offset	:	53 * wh,
-			element	:	'.hero-logo',
-			tween	:	{y: 534, x: 816, scale: .3, rotation: 360, ease: Power2.easeInOut}
-		},
+		// {
+		// 	name	:	'logoMove',
+		// 	duration:	wh,
+		// 	offset	:	0,
+		// 	element	:	'.hero-logo',
+		// 	tween	:	{y: 534, x: 816, scale: .3, rotation: 360, ease: Power2.easeInOut}
+		// },
+		// {
+		// 	name	:	'logoIn',
+		// 	duration:	wh,
+		// 	offset	:	53 * wh,
+		// 	element	:	'.hero-logo',
+		// 	tween	:	{y: 534, x: 816, scale: .3, rotation: 360, ease: Power2.easeInOut}
+		// },
 		// {
 		// 	name	:	'heroBGIn',
 		// 	duration:	0,
