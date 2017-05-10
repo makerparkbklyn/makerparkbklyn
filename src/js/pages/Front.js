@@ -112,7 +112,7 @@ export default class Front extends Page {
 			heroKeyframes,
 			missionKeyframes,
 			siteKeyframes,
-			// visionKeyframes,
+			visionKeyframes,
 			// timelineKeyframes,
 			// principlesKeyframes,
 			// signupKeyframes,

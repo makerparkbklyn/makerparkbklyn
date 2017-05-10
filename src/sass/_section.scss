@@ -5,8 +5,8 @@ section {
 	padding: $baseline * 2 0 $baseline * 4;
 
 	// show baseline
-	// background-image: linear-gradient(rgba(200, 50, 50, .25) 1px, transparent 1px);
-	// background-size: 1px $baseline;
+	background-image: linear-gradient(rgba(200, 50, 50, .25) 1px, transparent 1px);
+	background-size: 1px $baseline;
 
 	@include breakpoint($tablet-landscape) {
 		padding: 0;
@@ -116,7 +116,8 @@ section {
 	@include breakpoint($tablet-landscape) {
 		@include with-layout(8) {
 			position: fixed;
-			top: $baseline * 12;
+			// top: $baseline * 12;
+			top: $baseline * 10;
 			left: span(1 of 8 wide);
 
 			font-size: ms(8);

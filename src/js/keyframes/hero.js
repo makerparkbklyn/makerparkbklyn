@@ -45,23 +45,33 @@ const heroKeyframes = {
 heroKeyframes.refresh = (scenes) => {
 	// TODO: also adjust scale, etc
 	Viewport.update()
-	let desiredMargin = 0;
+	let desiredMargin = 0,
+		scale = 0
 	if ( Viewport.ww <= 768 ) {
-		desiredMargin = (0.055/2) * Viewport.ww;
+		desiredMargin = (0.055/2) * Viewport.ww
+		scale = 0.5
+	}
+	else if ( Viewport.ww <= 1280 ) {
+		desiredMargin = 20
+		scale = 0.4
+	}
+	else {
+		desiredMargin = 24
+		scale = 0.3
 	}
 
 	const $logo = $('#hero .hero-logo')
 	let logoWidth = $logo.width(),
 		logoHeight = $logo.height(),
-		offsetX = ((Viewport.ww / 2) - (desiredMargin + (logoWidth / 4))) + (logoWidth / 2),
-		offsetY = ((Viewport.wh / 2) - (desiredMargin + (logoHeight / 4))) - (logoHeight / 2)
+		offsetX = ((Viewport.ww / 2) - (desiredMargin + (logoWidth * (scale/2)))) + (logoWidth / 2),
+		offsetY = ((Viewport.wh / 2) - (desiredMargin + (logoHeight * (scale/2)))) - (logoHeight / 2)
 
 	scenes[0] = {
 		name	:	'logoMove',
 		duration:	wh,
 		offset	:	0,
 		element	:	'.hero-logo',
-		tween	:	{x: offsetX, y: offsetY, scale: 0.5, rotation: 360, ease: Power2.easeInOut}
+		tween	:	{x: offsetX, y: offsetY, scale, rotation: 360, ease: Power2.easeInOut}
 	}
 }
 

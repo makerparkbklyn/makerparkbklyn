@@ -36,7 +36,8 @@
 				@include span(3 of 8);
 				left: span(3 of 8 wide);
 				top: 19.6%;
-				top: $baseline * 11;
+				// top: $baseline * 11;
+				top: $baseline * 9;
 			}
 
 			.p2 {
@@ -44,7 +45,8 @@
 				@include span(3 of 8);
 				left: span(1 of 8 wide);
 				top: 48.8%;
-				top: $baseline * 27;
+				// top: $baseline * 27;
+				top: $baseline * 25;
 			}
 
 			.p3 {
@@ -52,7 +54,8 @@
 				@include span(3 of 8);
 				left: span(4 of 8 wide);
 				top: 59.75%;
-				top: $baseline * 30;
+				// top: $baseline * 30;
+				top: $baseline * 28;
 			}
 
 			[class*='image-'] {
