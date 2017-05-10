@@ -103,12 +103,16 @@ export default class Front extends Page {
 		}
 	}
 
+	// TODO: abstract this process, optimize it
 	_initScrollScenes() {
 		let _self	= this,
 			rIn		= /In$/,
 			rOut	= /Out$/,
 			rThru	= /Thru$/,
 			rMove 	= /Move$/
+
+		// TODO: create _assembleKeyframes
+		// let combinedKeyframes = this._assembleKeyframes()
 		const combinedKeyframes = [
 			heroKeyframes,
 			missionKeyframes,
@@ -119,7 +123,7 @@ export default class Front extends Page {
 			signupKeyframes,
 			newsKeyframes,
 			teamKeyframes,
-			// footerKeyframes
+			footerKeyframes
 		]
 		combinedKeyframes.forEach( (section, i, keyframes) => {
 			if (section.refresh != undefined) {

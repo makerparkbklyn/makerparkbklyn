@@ -16,17 +16,17 @@ const footerKeyframes = {
 		},
 		{
 			name	:	'instagramIn',
-			duration:	0.5 * wh,
-			offset	:	0.5 * wh,
-			element	:	'.footer__social-button--instagram',
-			tween	:	{y: 10, scale: 0, rotation: 180, opacity: 0, ease: Power2.easeOut}
+			duration:	0.75 * wh,
+			offset	:	1 * wh,
+			element	:	'.footer__social-button--instagram svg',
+			tween	:	{y: 10, scale: 0, rotation: 45, opacity: 0, ease: Power2.easeOut}
 		},
 		{
 			name	:	'facebookIn',
-			duration:	0.5 * wh,
-			offset	:	0.55 * wh,
-			element	:	'.footer__social-button--facebook',
-			tween	:	{y: 10, scale: 0, rotation: 180, opacity: 0, ease: Power2.easeOut}
+			duration:	0.75 * wh,
+			offset	:	1 * wh,
+			element	:	'.footer__social-button--facebook svg',
+			tween	:	{y: 10, scale: 0, rotation: 45, opacity: 0, ease: Power2.easeOut}
 		},
 	]
 }

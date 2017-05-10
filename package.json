@@ -25,7 +25,7 @@
     "build:font": "npm run font",
     "build:images": "npm run imagemin",
     "build": "npm run build:js && npm run build:css && npm run build:jekyll",
-    "watch:jekyll": "chokidar '_config.yml' '_config-dev.yml' '*.md' '*.html' 'pages/*' '_includes/**/*' '_layouts/*' '_posts/*' '_projects/**/*' '_team-members/*'  -c 'npm run build:jekyll && browser-sync reload'",
+    "watch:jekyll": "chokidar '_config.yml' '_config-dev.yml' '*.md' '*.html' 'pages/*' '_includes/**/*' '_layouts/*' '_posts/*'  -c 'npm run build:jekyll && browser-sync reload'",
     "watch:css": "chokidar 'src/sass/**/*' -c 'npm run build:css && npm run copy:assets && browser-sync reload'",
     "watch:js": "chokidar 'src/js/**/*' -c 'npm run build:js && npm run copy:assets && browser-sync reload'",
     "server": "browser-sync start --server _site",

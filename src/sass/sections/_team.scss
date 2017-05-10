@@ -63,7 +63,7 @@
 
 	@include breakpoint($tablet-landscape) {
 		// TODO: calculate section height dynamically
-		height: 550vh;
+		height: 500vh;
 
 		@include with-layout(8) {
 			.section__title-xl {

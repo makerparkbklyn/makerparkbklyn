@@ -61,21 +61,27 @@
 	min-height: 300vh;
 }
 .footer__hashtag {
-	// @include body-font;
 	position: fixed;
-	top: 86%;
-	left: 50%;
+	@include span(4 of 8);
+	left: span(2 of 8 wide);
+	top: 80%;
 	text-align: center;
-	transform: translateX(-50%);
 }
 .footer__social-button {
 	position: fixed;
-	width: 4rem;
-	top: 92%;
+	@include span(1 of 8);
+	top: 88%;
+	text-align: center;
+
+	svg {
+		width: 1rem;
+	}
 }
 .footer__social-button--instagram {
-	left: 46%;
+	left: span(3 of 8 wide);
+	text-align: right;
 }
 .footer__social-button--facebook {
-	right: 46%;
+	left: span(4 of 8 wide);
+	text-align: left;
 }
