@@ -1,7 +1,4 @@
-// body {
-// 	min-height: 800vh;
-// }
-// Base Styles
+
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 .container {
 	@include container($mobile-grid);
@@ -42,15 +39,15 @@
 
 /* Rails & Nav
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.rail {
-	width: 12.5%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	z-index: 999;
-}
-// @import	"rail-left";
-// @import	"rail-right";
+// .rail {
+// 	width: 12.5%;
+// 	height: 100%;
+// 	position: fixed;
+// 	top: 0;
+// 	z-index: 999;
+// }
+@import	"left-rail";
+@import	"right-rail";
 // @import	"nav";
 
 

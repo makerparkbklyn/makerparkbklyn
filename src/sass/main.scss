@@ -105,12 +105,12 @@ $susy: (
 	gutters			:	0.25,
 	gutter-position	:	split,
 	global-box-sizing:	border-box,
-	debug: (
-		image		:	show,
-		color		:	turquoise,
-		output		:	overlay,
-		toggle		:	bottom right,
-	),
+	// debug: (
+	// 	image		:	show,
+	// 	color		:	turquoise,
+	// 	output		:	overlay,
+	// 	toggle		:	bottom right,
+	// ),
 );
 
 $mobile-grid: (
@@ -119,12 +119,12 @@ $mobile-grid: (
 	gutters			:	0.25,
 	gutter-position	: 	split,
 	global-box-sizing:	border-box,
-	debug: (
-		image		:	show-columns,
-		color		:	turquoise,
-		output		:	overlay,
-		toggle		:	bottom right,
-	),
+	// debug: (
+	// 	image		:	show-columns,
+	// 	color		:	turquoise,
+	// 	output		:	overlay,
+	// 	toggle		:	bottom right,
+	// ),
 );
 
 

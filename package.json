@@ -19,7 +19,7 @@
     "sass": "node-sass --output-style expanded src/sass/main.scss assets/main.css --importer _sass-npm-import.js",
     "prefix": "postcss --use autoprefixer -b 'last 3 versions' --output assets/main.css assets/main.css",
     "browserify": "browserify 'src/js/main.js' -d -t babelify -o assets/main.js",
-    "build:jekyll": "jekyll build --config _config.yml,_config-dev.yml",
+    "build:jekyll": "jekyll build --config _config.yml,_config-dev.yml --verbose",
     "build:js": "npm run browserify",
     "build:css": "npm run sass && npm run prefix",
     "build:font": "npm run font",

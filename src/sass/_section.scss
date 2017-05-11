@@ -84,7 +84,7 @@ section {
 		transform-origin: top left;
 		transform: rotate(-90deg) translate(-50%, -50%);
 		top: 50vh;
-		left: 6.25%;
+		left: calc(6.25% - 11px);
 
 		h2 {
 			font-size: ms(0);

@@ -1,0 +1,67 @@
+
+/* Left Rail
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.rail--left {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	@include container($mobile-grid);
+	z-index: 999;
+
+	.signup-sticker {
+		// @include span(4 of 4);
+		// padding-top: $baseline;
+		display: none;
+	}
+
+	.arrow-down {
+		@include span(4 of 4);
+		text-align: center;
+		position: fixed;
+		bottom: $baseline;
+
+		@include breakpoint($tablet-portrait) {
+			bottom: $baseline * 2;
+		}
+	}
+}
+
+@include breakpoint($tablet-landscape) {
+	@include with-layout(8) {
+		.rail--left {
+			position: fixed;
+			top: 0;
+			left: 0;
+			@include span(1 of 8);
+			height: 100%;
+			// background: rgba(black, 0.1);
+
+			.signup-sticker {
+				padding: 0;
+				width: 0;
+				margin: 0;
+				display: block;
+
+				position: absolute;
+				width: 100%;
+				top: $baseline;
+				left: 0;
+				right: 0;
+				text-align: center;
+			}
+
+			.arrow-down {
+				position: absolute;
+				bottom: 48px;
+				width: 100%;
+				text-align: center;
+			}
+
+			.arrow-down svg {
+				width: 1rem;
+			}
+		}
+	}
+}

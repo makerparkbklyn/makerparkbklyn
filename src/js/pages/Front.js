@@ -7,6 +7,7 @@ import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
 
 import Page from '../modules/Page'
 
+import leftRailKeyframes from '../keyframes/rails'
 import { heroKeyframes } from '../keyframes/hero'
 import missionKeyframes from '../keyframes/mission'
 import siteKeyframes from '../keyframes/site'
@@ -121,7 +122,8 @@ export default class Front extends Page {
 		let combinedKeyframes = []
 		if (Viewport.ww < 1024) {
 			combinedKeyframes = [
-				mobileHeroKeyframes
+				mobileHeroKeyframes,
+				leftRailKeyframes
 			]
 		}
 		else {
