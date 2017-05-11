@@ -11,7 +11,7 @@ const leftRailKeyframes = {
 			name	:	'arrowMove',
 			duration:	wh * 0.25,
 			offset	:	60,
-			element	:	'.arrow-down',
+			element	:	'.rail--left .arrow-down',
 			tween	:	{y: 100, ease: Power2.easeIn}
 		},
 

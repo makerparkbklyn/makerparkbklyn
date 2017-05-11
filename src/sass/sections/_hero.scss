@@ -3,7 +3,8 @@
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 .hero-section {
 	position: relative;
-	height: calc(100vh + 60px);
+	height: 100vh;
+	// height: calc(100vh + 60px);
 	padding: 0;
 }
 
@@ -16,35 +17,69 @@
 
 	img {
 		min-width: 100%;
-		height: calc(100vh + 60px);
+		height: 100vh;
+		// height: calc(100vh + 120px);
+		// margin-top: -60px;
 	}
 }
 
 .hero-logo {
-	width: 70%;
 	position: fixed;
-	top: 50%;
-	right: 50%;
-	transform: translate(50%, -50%);
+	right: 3vw;
+	bottom: 3vw;
+	width: 35%;
+	// transform: scale3d(0.5);
 	z-index: 999;
 	filter: none;
 	-webkit-filter: blur(0px);
 	-moz-filter: blur(0px);
 	-ms-filter: blur(0px);
 
-	@include breakpoint(700px) {
-		width: 60%;
+	svg {
+		display: block;
+	}
+
+	@include breakpoint($tablet-portrait) {
+		width: 24%
 	}
 
 	@include breakpoint($tablet-landscape) {
-		width: 50%;
+		right: 2vw;
+		bottom: 2vw;
+		width: 20%
 	}
 
 	@include breakpoint($desktop) {
-		width: 45%;
-	}
+		width: 14%
 
-	img {
-		width: 100%;
 	}
 }
+
+// .hero-logo {
+// 	width: 70%;
+// 	position: fixed;
+// 	top: 50%;
+// 	right: 50%;
+// 	transform: translate(50%, -50%);
+// 	z-index: 999;
+// 	filter: none;
+// 	-webkit-filter: blur(0px);
+// 	-moz-filter: blur(0px);
+// 	-ms-filter: blur(0px);
+//
+// 	@include breakpoint(700px) {
+// 		width: 60%;
+// 	}
+//
+// 	@include breakpoint($tablet-landscape) {
+// 		width: 50%;
+// 	}
+//
+// 	@include breakpoint($desktop) {
+// 		width: 45%;
+// 	}
+//
+// 	img {
+// 		width: 100%;
+// 	}
+// }

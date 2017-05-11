@@ -64,7 +64,7 @@
 	text-align: center;
 
 	@include breakpoint(max-width $tablet-landscape - 1) {
-		margin-top: 75vh;
+		margin-top: 78vh;
 	}
 }
 
@@ -100,7 +100,7 @@
 			position: fixed;
 			@include span(4 of 8);
 			left: span(2 of 8 wide);
-			top: 80%;
+			top: 82%;
 		}
 
 		.footer__social-button {

@@ -77,11 +77,15 @@ $modularscale: (
 $fluid-rem: (
 	$phone: (
 		base		:	27px,
-		ratio		:	$fourth,
+		ratio		:	$fourth
 	),
 	$tablet-portrait: (
 		base		:	32px,
-		ratio		:	$fourth,
+		ratio		:	$fourth
+	),
+	1023px: (
+		base		:	32px,
+		ratio		: 	$fourth
 	),
 	$tablet-landscape: (
 		base		:	22px,

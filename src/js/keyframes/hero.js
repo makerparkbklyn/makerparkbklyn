@@ -4,115 +4,70 @@ import $ from 'jquery'
 
 let wh = Viewport.wh;
 
+const onLogoInEnd = (e) => {
+	if ( e.scrollDirection != 'REVERSE' ) {
+		$('.hero-logo svg').attr('style', '')
+	}
+}
+
+const setupScenes = (scenes) => {
+	Viewport.update()
+
+	const $logo = $('#hero .hero-logo')
+
+	let scale = 0,
+		$logoWidth = $logo.width(),
+		$logoHeight = $logo.height(),
+		centerX = $logo.offset().left + $logoWidth / 2,
+		centerY = $logo.offset().top + $logoHeight / 2,
+		offsetX,
+		offsetY
+
+	if ( Viewport.ww <= 768 ) {
+		scale = 2
+	}
+	else if ( Viewport.ww <= 1280 ) {
+		scale = 2.5
+	}
+	else {
+		scale = 3.214285714
+	}
+
+	offsetX = Viewport.ww / 2 - centerX,
+	offsetY = Viewport.wh / 2 - centerY
+
+	scenes[0].tween = {x: offsetX, y: offsetY, scale, rotation: -360, ease: Power2.easeInOut, force3D: false}
+	scenes[1].tween = {x: offsetX, y: offsetY, scale, rotation: -360, ease: Power2.easeInOut, force3D: false}
+}
+
+
 const heroKeyframes = {
 	section			:	'#hero',
 	hook			:	'onLeave',
 	scenes			: 	[
-		// {
-		// 	name	:	'logoIn',
-		// 	duration:	wh,
-		// 	offset	:	54.5 * wh,
-		// 	element	:	'.hero-logo',
-		// 	tween	:	{}
-		// },
 		{
-			name	:	'logoMove',
+			name	:	'logoIn',
 			duration:	wh,
 			offset	:	0,
-			element	:	'.hero-logo',
+			element	:	'#hero .hero-logo svg',
+			tween	:	{},
+			events	:	{
+				end :	onLogoInEnd
+			}
+		},
+		{
+			name	:	'logoOut',
+			trigger	:	'.footer',
+			hook	:	'onEnter',
+			duration:	wh,
+			offset	:	0,
+			element	:	'#hero .hero-logo svg',
 			tween	:	{}
 		},
 
-	]
-
+	],
+	setup			:	setupScenes,
+	refresh			:	setupScenes
 }
 
-const mobileHeroKeyframes = {
-	section			:	'#hero',
-	hook			:	'onLeave',
-	scenes			: 	[
-		// {
-		// 	name	:	'logoIn',
-		// 	duration:	wh,
-		// 	offset	:	54.5 * wh,
-		// 	element	:	'.hero-logo',
-		// 	tween	:	{}
-		// },
-		{
-			name	:	'logoMove',
-			duration:	wh,
-			offset	:	0,
-			element	:	'.hero-logo',
-			tween	:	{}
-		},
-
-	]
-
-}
-
-const refresh = (scenes) => {
-	Viewport.update()
-	let desiredMargin = 0,
-		scale = 0
-	if ( Viewport.ww <= 768 ) {
-		desiredMargin = (0.055/2) * Viewport.ww
-		scale = 0.5
-	}
-	else if ( Viewport.ww <= 1280 ) {
-		desiredMargin = 20
-		scale = 0.4
-	}
-	else {
-		desiredMargin = 24
-		scale = 0.3
-	}
-
-	const $logo = $('#hero .hero-logo')
-	let logoWidth = $logo.width(),
-		logoHeight = $logo.height(),
-		offsetX = ((Viewport.ww / 2) - (desiredMargin + (logoWidth * (scale/2)))) + (logoWidth / 2),
-		offsetY = ((Viewport.wh / 2) - (desiredMargin + (logoHeight * (scale/2)))) - (logoHeight / 2)
-
-	scenes[0].tween = {x: offsetX, y: offsetY, scale, rotation: 360, ease: Power2.easeInOut}
-	// scenes[1].tween = {x: offsetX, y: offsetY, scale, rotation: 360, ease: Power2.easeInOut}
-}
-
-heroKeyframes.refresh = refresh;
-mobileHeroKeyframes.refresh = refresh;
-
-export { heroKeyframes, mobileHeroKeyframes }
-
-
-
-
-// {
-// 	name	:	'heroBGOut',
-// 	duration:	wh,
-// 	offset	:	0,
-// 	element	:	'.hero-bg',
-// 	tween	:	{y: -735, ease: Linear.easeNone}
-// },
-// TODO: need to reverse and adjust this transition at some point
-
-
-// {
-// 	name	:	'logoMove',
-// 	duration:	wh,
-// 	offset	:	0,
-// 	element	:	'.hero-logo',
-// 	tween	:	{y: 534, x: 816, scale: .3, rotation: 360, ease: Power2.easeInOut}
-// },
-// {
-// 	name	:	'logoIn',
-// 	duration:	wh,
-// 	offset	:	53 * wh,
-// 	element	:	'.hero-logo',
-// 	tween	:	{y: 534, x: 816, scale: .3, rotation: 360, ease: Power2.easeInOut}
-// },
-// {
-// 	name	:	'heroBGIn',
-// 	duration:	0,
-// 	offset	:	50 * wh,
-// 	element	:	'.hero-bg',
-// 	tween	:	{y: -735, ease: Linear.easeNone}
-// },
+export default heroKeyframes

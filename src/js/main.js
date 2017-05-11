@@ -35,6 +35,7 @@ class App {
 	}
 
 	_onResize(e) {
+		console.log('calling onResize in App')
 		this.page.resize()
 	}
 }

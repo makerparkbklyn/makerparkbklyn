@@ -8,7 +8,7 @@ import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
 import Page from '../modules/Page'
 
 import leftRailKeyframes from '../keyframes/rails'
-import { heroKeyframes } from '../keyframes/hero'
+import heroKeyframes from '../keyframes/hero'
 import missionKeyframes from '../keyframes/mission'
 import siteKeyframes from '../keyframes/site'
 import visionKeyframes from '../keyframes/vision'
@@ -19,9 +19,8 @@ import newsKeyframes from '../keyframes/news'
 import teamKeyframes from '../keyframes/team'
 import footerKeyframes from '../keyframes/footer'
 
-import { mobileHeroKeyframes } from '../keyframes/hero'
-
 import Viewport from '../utils/Viewport'
+import setupScrollMagicScenes from '../utils/setupScrollMagicScenes'
 
 export default class Front extends Page {
 	constructor() {
@@ -41,7 +40,6 @@ export default class Front extends Page {
 	}
 	// Private
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
-
 	_initSections() {
 		let _self = this
 		_self.$sections = $('section')
@@ -106,23 +104,16 @@ export default class Front extends Page {
 		}
 	}
 
-	// TODO: abstract this process, optimize it
+	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
+	// TODO: create _assembleKeyframes function?
 	_initScrollScenes() {
-		// if (Viewport.ww < 1024) {
-		// 	return;
-		// }
-		let _self	= this,
-			rIn		= /In$/,
-			rOut	= /Out$/,
-			rThru	= /Thru$/,
-			rMove 	= /Move$/
+		this.scrollCtrl = new ScrollMagic.Controller()
 
-		// TODO: create _assembleKeyframes
-		// let combinedKeyframes = this._assembleKeyframes()
 		let combinedKeyframes = []
+
 		if (Viewport.ww < 1024) {
 			combinedKeyframes = [
-				mobileHeroKeyframes,
+				heroKeyframes,
 				leftRailKeyframes
 			]
 		}
@@ -140,49 +131,11 @@ export default class Front extends Page {
 				footerKeyframes
 			]
 		}
-		combinedKeyframes.forEach( (section, i, keyframes) => {
-			if (section != undefined && section.refresh != undefined) {
-				section.refresh(section.scenes)
-			}
-		})
-		console.log(combinedKeyframes)
-		combinedKeyframes.map( (section, i) => {
-			section.scenes.map( (scene, j) => {
-				let tween = null
 
-				if ( rIn.test(scene.name) ) {
-					tween = TweenMax.from(`${section.section} ${scene.element}`, 1, scene.tween)
-				}
-				else if ( rOut.test(scene.name) || rMove.test(scene.name) ) {
-					tween = TweenMax.to(`${section.section} ${scene.element}`, 1, scene.tween)
-				}
-				else if ( rThru.test(scene.name) ) {
-					tween = TweenMax.fromTo(`${section.section} ${scene.element}`, 1, scene.tween[0], scene.tween[1])
-				}
-				else {
-					console.error(`Invalid tween type from scene ${scene.name} in ${section.section} section`)
-				}
-
-				new ScrollMagic.Scene({
-					triggerElement: section.section,
-					triggerHook: section.hook,
-					duration: scene.duration,
-					offset: scene.offset
-				})
-				.setTween(tween)
-				.addTo(this.scrollCtrl)
-				// .addIndicators({name: scene.name})
-			})
-		})
-		this.scrollCtrl.update(true)
+		setupScrollMagicScenes(combinedKeyframes, this.scrollCtrl, false)
 	}
 
-	_refreshScrollScenes() {
-		this.scrollCtrl = this.scrollCtrl.destroy(true)
-		this.scrollCtrl = new ScrollMagic.Controller()
-		this._initScrollScenes()
-	}
-
+	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
 	_initCarousels() {
 		const $timeline = $('.timeline-carousel')
 		const $renderings = $('#vision .renderings')
@@ -216,15 +169,22 @@ export default class Front extends Page {
 		}
 	}
 
+	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
 	_initEvents() {
 		super._initEvents()
 
 		$('body').on('click', '.arrow-down', this._onArrowDownClick)
 	}
 
+	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
+	_refreshScrollScenes() {
+		// this.scrollCtrl = this.scrollCtrl.destroy(true)
+		// this.scrollCtrl = new ScrollMagic.Controller()
+		this._initScrollScenes()
+	}
+
 	// Handlers
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
-
 	_onArrowDownClick(e) {
 		e.preventDefault()
 		console.log('arrow down clicked')
@@ -233,11 +193,13 @@ export default class Front extends Page {
 
 	// Public
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
-
 	resize() {
-		Viewport.update()
-		// refresh logo position
-		this._refreshScrollScenes()
+		let oldWidth = Viewport.ww;
 
+		Viewport.update()
+
+		if (oldWidth != Viewport.ww) {
+			this._refreshScrollScenes()
+		}
 	}
 }
