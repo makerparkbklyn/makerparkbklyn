@@ -9,44 +9,12 @@ const heroKeyframes = {
 	hook			:	'onLeave',
 	scenes			: 	[
 		// {
-		// 	name	:	'heroBGOut',
-		// 	duration:	wh,
-		// 	offset	:	0,
-		// 	element	:	'.hero-bg',
-		// 	tween	:	{y: -735, ease: Linear.easeNone}
-		// },
-		// TODO: need to reverse and adjust this transition at some point
-
-
-		// {
-		// 	name	:	'logoMove',
-		// 	duration:	wh,
-		// 	offset	:	0,
-		// 	element	:	'.hero-logo',
-		// 	tween	:	{y: 534, x: 816, scale: .3, rotation: 360, ease: Power2.easeInOut}
-		// },
-		// {
 		// 	name	:	'logoIn',
 		// 	duration:	wh,
-		// 	offset	:	53 * wh,
+		// 	offset	:	54.5 * wh,
 		// 	element	:	'.hero-logo',
-		// 	tween	:	{y: 534, x: 816, scale: .3, rotation: 360, ease: Power2.easeInOut}
+		// 	tween	:	{}
 		// },
-		// {
-		// 	name	:	'heroBGIn',
-		// 	duration:	0,
-		// 	offset	:	50 * wh,
-		// 	element	:	'.hero-bg',
-		// 	tween	:	{y: -735, ease: Linear.easeNone}
-		// },
-
-		{
-			name	:	'logoIn',
-			duration:	wh,
-			offset	:	54.5 * wh,
-			element	:	'.hero-logo',
-			tween	:	{}
-		},
 		{
 			name	:	'logoMove',
 			duration:	wh,
@@ -56,9 +24,33 @@ const heroKeyframes = {
 		},
 
 	]
+
 }
 
-heroKeyframes.refresh = (scenes) => {
+const mobileHeroKeyframes = {
+	section			:	'#hero',
+	hook			:	'onLeave',
+	scenes			: 	[
+		// {
+		// 	name	:	'logoIn',
+		// 	duration:	wh,
+		// 	offset	:	54.5 * wh,
+		// 	element	:	'.hero-logo',
+		// 	tween	:	{}
+		// },
+		{
+			name	:	'logoMove',
+			duration:	wh,
+			offset	:	0,
+			element	:	'.hero-logo',
+			tween	:	{}
+		},
+
+	]
+
+}
+
+const refresh = (scenes) => {
 	Viewport.update()
 	let desiredMargin = 0,
 		scale = 0
@@ -82,7 +74,45 @@ heroKeyframes.refresh = (scenes) => {
 		offsetY = ((Viewport.wh / 2) - (desiredMargin + (logoHeight * (scale/2)))) - (logoHeight / 2)
 
 	scenes[0].tween = {x: offsetX, y: offsetY, scale, rotation: 360, ease: Power2.easeInOut}
-	scenes[1].tween = {x: offsetX, y: offsetY, scale, rotation: 360, ease: Power2.easeInOut}
+	// scenes[1].tween = {x: offsetX, y: offsetY, scale, rotation: 360, ease: Power2.easeInOut}
 }
 
-export default heroKeyframes
+heroKeyframes.refresh = refresh;
+mobileHeroKeyframes.refresh = refresh;
+
+export { heroKeyframes, mobileHeroKeyframes }
+
+
+
+
+// {
+// 	name	:	'heroBGOut',
+// 	duration:	wh,
+// 	offset	:	0,
+// 	element	:	'.hero-bg',
+// 	tween	:	{y: -735, ease: Linear.easeNone}
+// },
+// TODO: need to reverse and adjust this transition at some point
+
+
+// {
+// 	name	:	'logoMove',
+// 	duration:	wh,
+// 	offset	:	0,
+// 	element	:	'.hero-logo',
+// 	tween	:	{y: 534, x: 816, scale: .3, rotation: 360, ease: Power2.easeInOut}
+// },
+// {
+// 	name	:	'logoIn',
+// 	duration:	wh,
+// 	offset	:	53 * wh,
+// 	element	:	'.hero-logo',
+// 	tween	:	{y: 534, x: 816, scale: .3, rotation: 360, ease: Power2.easeInOut}
+// },
+// {
+// 	name	:	'heroBGIn',
+// 	duration:	0,
+// 	offset	:	50 * wh,
+// 	element	:	'.hero-bg',
+// 	tween	:	{y: -735, ease: Linear.easeNone}
+// },

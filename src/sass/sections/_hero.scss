@@ -31,6 +31,10 @@
 	right: 50%;
 	transform: translate(50%, -50%);
 	z-index: 999;
+	filter: none;
+	-webkit-filter: blur(0px);
+	-moz-filter: blur(0px);
+	-ms-filter: blur(0px);
 
 	@include breakpoint(700px) {
 		width: 60%;

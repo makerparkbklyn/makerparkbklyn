@@ -7,7 +7,7 @@ import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
 
 import Page from '../modules/Page'
 
-import heroKeyframes from '../keyframes/hero'
+import { heroKeyframes } from '../keyframes/hero'
 import missionKeyframes from '../keyframes/mission'
 import siteKeyframes from '../keyframes/site'
 import visionKeyframes from '../keyframes/vision'
@@ -17,6 +17,8 @@ import signupKeyframes from '../keyframes/signup'
 import newsKeyframes from '../keyframes/news'
 import teamKeyframes from '../keyframes/team'
 import footerKeyframes from '../keyframes/footer'
+
+import { mobileHeroKeyframes } from '../keyframes/hero'
 
 import Viewport from '../utils/Viewport'
 
@@ -105,9 +107,9 @@ export default class Front extends Page {
 
 	// TODO: abstract this process, optimize it
 	_initScrollScenes() {
-		if (Viewport.ww < 1024) {
-			return;
-		}
+		// if (Viewport.ww < 1024) {
+		// 	return;
+		// }
 		let _self	= this,
 			rIn		= /In$/,
 			rOut	= /Out$/,
@@ -116,24 +118,32 @@ export default class Front extends Page {
 
 		// TODO: create _assembleKeyframes
 		// let combinedKeyframes = this._assembleKeyframes()
-		const combinedKeyframes = [
-			heroKeyframes,
-			missionKeyframes,
-			siteKeyframes,
-			visionKeyframes,
-			timelineKeyframes,
-			principlesKeyframes,
-			signupKeyframes,
-			newsKeyframes,
-			teamKeyframes,
-			footerKeyframes
-		]
+		let combinedKeyframes = []
+		if (Viewport.ww < 1024) {
+			combinedKeyframes = [
+				mobileHeroKeyframes
+			]
+		}
+		else {
+			combinedKeyframes = [
+				heroKeyframes,
+				missionKeyframes,
+				siteKeyframes,
+				visionKeyframes,
+				timelineKeyframes,
+				principlesKeyframes,
+				signupKeyframes,
+				newsKeyframes,
+				teamKeyframes,
+				footerKeyframes
+			]
+		}
 		combinedKeyframes.forEach( (section, i, keyframes) => {
-			if (section.refresh != undefined) {
+			if (section != undefined && section.refresh != undefined) {
 				section.refresh(section.scenes)
 			}
 		})
-		// console.log(combinedKeyframes)
+		console.log(combinedKeyframes)
 		combinedKeyframes.map( (section, i) => {
 			section.scenes.map( (scene, j) => {
 				let tween = null
