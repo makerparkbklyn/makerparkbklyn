@@ -66,6 +66,7 @@ class Page {
 	_onNavToggleClick(e) {
 		console.log(this);
 		this.$nav.css('z-index', '99999')
+		this.$nav.css('-webkit-overflow-scrolling', 'touch')
 		this.navTimeline.timeScale = 1
 		this.navTimeline.restart()
 		e.preventDefault()
@@ -76,6 +77,7 @@ class Page {
 		this.navTimeline.reverse()
 		setTimeout(function(){
 			this.$nav.css('z-index', '-10')
+			this.$nav.css('-webkit-overflow-scrolling', '')
 		}.bind(this), 2000)
 		e.preventDefault()
 	}

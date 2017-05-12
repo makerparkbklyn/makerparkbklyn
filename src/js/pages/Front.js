@@ -31,9 +31,7 @@ export default class Front extends Page {
 		this.scrollCtrl = new ScrollMagic.Controller()
 
 		this._initSections()
-		// if ( Viewport.ww >= 1024 ) {
-			this._initScrollScenes()
-		// }
+		this._initScrollScenes()
 		this._initCarousels()
 		this._initEvents()
 

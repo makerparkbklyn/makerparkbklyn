@@ -11,15 +11,18 @@
 	z-index: 999;
 
 	.nav-toggle {
-		// @include span(4 of 4);
 		position: fixed;
 		width: 94%;
 		text-align: right;
-		margin-top: 3%;
-		// margin-top: 20px;
+		margin-top: 5%;
+
+		a {
+			cursor: pointer;
+		}
 
 		svg {
 			width: 3rem;
+			margin-right: 1.5%;
 		}
 	}
 }
@@ -40,6 +43,8 @@
 				top: $baseline * 1.5;
 				width: 100%;
 				text-align: center;
+
+				svg {}
 			}
 		}
 	}
