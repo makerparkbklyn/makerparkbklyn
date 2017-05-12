@@ -74,7 +74,17 @@
 	.rail--left {
 		.arrow-down {
 			svg {
-				width: 1rem;
+				width: 32px;
+			}
+		}
+	}
+}
+
+@include breakpoint($desktop-large) {
+	.rail--left {
+		.arrow-down {
+			svg {
+				width: auto;
 			}
 		}
 	}

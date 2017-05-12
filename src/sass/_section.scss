@@ -102,7 +102,9 @@ section {
 		width: 500px;
 		transform: rotate(-90deg) translate(-50%, -50%);
 		top: 25vh;
+	}
 
+	@include breakpoint($desktop-large) {
 		h2 {
 			&:after {
 				height: 6px;
