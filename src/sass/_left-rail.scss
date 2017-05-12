@@ -55,15 +55,26 @@
 			}
 
 			.arrow-down {
+				margin: 0;
 				position: absolute;
-				bottom: 48px;
+				bottom: $baseline * 1.5;
 				width: 100%;
 				text-align: center;
 			}
 
 			.arrow-down svg {
+				width: 24px
 				// width: 1rem;
-				width: auto;
+			}
+		}
+	}
+}
+
+@include breakpoint($desktop) {
+	.rail--left {
+		.arrow-down {
+			svg {
+				width: 1rem;
 			}
 		}
 	}

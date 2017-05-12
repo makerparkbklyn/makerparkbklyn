@@ -86,7 +86,7 @@ section {
 		transform: rotate(-90deg) translate(-50%, -50%);
 		top: 50vh;
 		left: 6.25%;
-		left: calc(6.25% - 11px);
+		left: calc(6.25% - 11px) !important;
 
 		h2 {
 			font-size: ms(0);
@@ -133,4 +133,12 @@ section {
 			color: #fff;
 		}
 	}
+}
+
+section.test-before {
+	height: 100vh;
+}
+
+section.test-after {
+	height: 200vh;
 }

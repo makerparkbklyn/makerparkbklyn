@@ -111,22 +111,22 @@ export default class Front extends Page {
 
 		if (Viewport.ww < 1024) {
 			combinedKeyframes = [
-				heroKeyframes,
+				// heroKeyframes,
 				leftRailKeyframes
 			]
 		}
 		else {
 			combinedKeyframes = [
-				heroKeyframes,
+				// heroKeyframes,
 				missionKeyframes,
-				siteKeyframes,
-				visionKeyframes,
-				timelineKeyframes,
-				principlesKeyframes,
-				signupKeyframes,
-				newsKeyframes,
-				teamKeyframes,
-				footerKeyframes
+				// siteKeyframes,
+				// visionKeyframes,
+				// timelineKeyframes,
+				// principlesKeyframes,
+				// signupKeyframes,
+				// newsKeyframes,
+				// teamKeyframes,
+				// footerKeyframes
 			]
 		}
 
