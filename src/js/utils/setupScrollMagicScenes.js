@@ -8,12 +8,16 @@ const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 		rThru	= /Thru$/,
 		rMove 	= /Move$/
 
-	keyframes.map( (section, i) => {
+	keyframes.map( (s, i) => {
 
 		// setup keyframes:
+		let section = s()
+
 		if (section != undefined && section.setup != undefined) {
 			section.setup(section.scenes)
 		}
+
+		console.log(section)
 
 		section.scenes.map( (scene, j) => {
 			let tween = null

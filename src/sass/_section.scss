@@ -5,8 +5,8 @@ section {
 	padding: $baseline * 2 0 $baseline * 4;
 
 	// show baseline
-	// background-image: linear-gradient(rgba(200, 50, 50, .25) 1px, transparent 1px);
-	// background-size: 1px $baseline;
+	background-image: linear-gradient(rgba(200, 50, 50, .25) 1px, transparent 1px);
+	background-size: 1px $baseline;
 
 	@include breakpoint($tablet-landscape) {
 		padding: 0;
@@ -20,10 +20,17 @@ section {
 			@include with-layout(8) {
 				position: fixed;
 				@include span(6 of 8);
-				// top: 9.1%;  // old
-				top: $baseline * 6;
+				top: 10%;
 				left: span(1 of 8 wide);
 			}
+
+			@include breakpoint((1200px) (max-height 800px)) {
+				top: 7.5%;
+			}
+		}
+
+		@include breakpoint($desktop-hd) {
+			top: $baseline * 6;
 		}
 
 		img {
@@ -35,6 +42,14 @@ section {
 			&:last-child {
 				margin-bottom: 0;
 			}
+		}
+
+		.img-frame {
+			@include border;
+			background-size: cover;
+			background-position: center;
+			width: 100%;
+			padding-bottom: 75vh;
 		}
 
 		figcaption {
@@ -120,6 +135,22 @@ section {
 	}
 
 	@include breakpoint($tablet-landscape) {
+		@include with-layout(8) {
+			position: fixed;
+			// top: $baseline * 12;
+			top: $baseline * 10;
+			@include span(6 of 8);
+			left: span(1 of 8 wide);
+
+			font-size: ms(8);
+			line-height: $baseline * 12;
+			@include align-to-baseline( ms(8), $baseline * 12 );
+			margin: 0;
+			letter-spacing: -8px;
+			color: #fff;
+		}
+	}
+	@include breakpoint($desktop-hd) {
 		@include with-layout(8) {
 			position: fixed;
 			// top: $baseline * 12;

@@ -31,6 +31,7 @@ export default class Front extends Page {
 		this.scrollCtrl = new ScrollMagic.Controller()
 
 		this._initSections()
+		console.log('FIRST TIME KEYFRAMES')
 		this._initScrollScenes()
 		this._initCarousels()
 		this._initEvents()
@@ -178,6 +179,7 @@ export default class Front extends Page {
 	_refreshScrollScenes() {
 		// this.scrollCtrl = this.scrollCtrl.destroy(true)
 		// this.scrollCtrl = new ScrollMagic.Controller()
+		console.log('AFTER REFRESH KEYFRAMES')
 		this._initScrollScenes()
 	}
 
@@ -195,6 +197,9 @@ export default class Front extends Page {
 		let oldWidth = Viewport.ww;
 
 		Viewport.update()
+
+		let titlePos = $('.section__title-xl').offset()
+		console.log('title x: ' + titlePos.left + ' title y: ' + titlePos.top)
 
 		if (oldWidth != Viewport.ww) {
 			this._refreshScrollScenes()

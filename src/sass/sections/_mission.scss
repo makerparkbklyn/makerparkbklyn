@@ -26,6 +26,45 @@
 
 		@include with-layout(8) {
 			.section__title-xl {
+				top: 60vh;
+			}
+			.p1 {
+				position: fixed;
+				@include span(3 of 8);
+				left: span(1 of 8 wide);
+				top: 26vh;
+			}
+			.p2 {
+				position: fixed;
+				@include span(3 of 8);
+				left: span(4 of 8 wide);
+				top: 38vh;
+			}
+		}
+
+		.bg-pattern-1 {
+			display: block;
+			position: fixed;
+			left: 40vw;
+			top: -40vh;
+			width: 75vw;
+		}
+
+		.bg-pattern-2 {
+			display: block;
+			position: fixed;
+			left: -40vw;
+			top: 15vh;
+			width: 75vw;
+		}
+	}
+
+	@include breakpoint($desktop-hd) {
+		// TODO: calculate section height dynamically
+		height: 800vh;
+
+		@include with-layout(8) {
+			.section__title-xl {
 				top: $baseline * 32;
 				// top: 49.65%; // old
 			}
@@ -40,27 +79,17 @@
 				position: fixed;
 				@include span(3 of 8);
 				left: span(4 of 8 wide);
-				top: $baseline * 23;
+				top: $baseline * 21;
 				// top: 41.5%; // old
 			}
 		}
 
 		.bg-pattern-1 {
-			display: block;
-			position: fixed;
-			left: 40%;
-			top: 0%;
-			width: 75%;
-			height: 117%;
+			top: -50vh;
 		}
 
 		.bg-pattern-2 {
-			display: block;
-			position: fixed;
-			left: -45%;
-			top: 50%;
-			width: 1440px;
-			height: 117%;
+			top: 10vh;
 		}
 	}
 
