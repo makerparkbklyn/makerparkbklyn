@@ -2,25 +2,36 @@ import ScrollMagic from 'scrollmagic'
 import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap'
 import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
 
+let allScenes = []
+
 const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 	let rIn		= /In$/,
 		rOut	= /Out$/,
 		rThru	= /Thru$/,
 		rMove 	= /Move$/
 
-	keyframes.map( (s, i) => {
+	if (allScenes.length > 0) {
+		allScenes.map( (scene, i) => {
+			scene.destroy(true)
+		})
+	}
+
+	keyframes.map( (createSection, i) => {
 
 		// setup keyframes:
-		let section = s()
+		let section = createSection()
 
 		if (section != undefined && section.setup != undefined) {
 			section.setup(section.scenes)
 		}
 
-		console.log(section)
+		// console.log(section)
 
 		section.scenes.map( (scene, j) => {
 			let tween = null
+
+			// remove styles from previous scene?
+			document.querySelector(scene.element).setAttribute('style', '')
 
 			// if scene is animating 'in':
 			if ( rIn.test( scene.name ) ) {
@@ -47,7 +58,8 @@ const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 				triggerElement: scene.trigger ? scene.trigger : section.section,
 				triggerHook: scene.hook ? scene.hook : section.hook,
 				duration: scene.duration,
-				offset: scene.offset
+				offset: scene.offset,
+				loglevel: 3
 			})
 
 			s.setTween(tween)
@@ -64,6 +76,16 @@ const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 					s.on(key, scene.events[key])
 				}
 			}
+
+			// s.on('progress', (e) => {
+			// 	console.log('SCENE: ' + e.target)
+			// 	console.log('SCENE_PROGRESS: ' + e.progress)
+			// 	console.log('SCENE_STATE: ' + e.state)
+			// 	s.update()
+			// })
+
+			allScenes.push(s)
+			tween = null
 		})
 	})
 
