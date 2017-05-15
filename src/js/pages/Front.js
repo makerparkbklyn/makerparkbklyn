@@ -31,7 +31,6 @@ export default class Front extends Page {
 		this.scrollCtrl = new ScrollMagic.Controller()
 
 		this._initSections()
-		console.log('FIRST TIME KEYFRAMES')
 		this._initScrollScenes()
 		this._initCarousels()
 		this._initEvents()
@@ -90,7 +89,6 @@ export default class Front extends Page {
 				let $title = $(item)
 				let offset = 0
 				let duration = ($title.parent().outerHeight()) - (Viewport.wh)
-				console.log('duration: ' + duration)
 				new ScrollMagic.Scene({
 					triggerElement: item,
 					duration,
@@ -107,6 +105,8 @@ export default class Front extends Page {
 	// TODO: create _assembleKeyframes function?
 	_initScrollScenes() {
 		this.scrollCtrl = new ScrollMagic.Controller()
+		console.log('CONTROLLER:')
+		console.log(this.scrollCtrl)
 
 		let combinedKeyframes = []
 
@@ -131,7 +131,7 @@ export default class Front extends Page {
 			]
 		}
 
-		setupScrollMagicScenes(combinedKeyframes, this.scrollCtrl, false)
+		setupScrollMagicScenes(combinedKeyframes, this.scrollCtrl, true)
 	}
 
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
@@ -177,9 +177,10 @@ export default class Front extends Page {
 
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
 	_refreshScrollScenes() {
-		// this.scrollCtrl = this.scrollCtrl.destroy(true)
+		// this is resetting scenes back to 'from' value
+		this.scrollCtrl = this.scrollCtrl.destroy(true)
 		// this.scrollCtrl = new ScrollMagic.Controller()
-		console.log('AFTER REFRESH KEYFRAMES')
+		// console.log('AFTER REFRESH KEYFRAMES')
 		this._initScrollScenes()
 	}
 
@@ -198,11 +199,15 @@ export default class Front extends Page {
 
 		Viewport.update()
 
-		let titlePos = $('.section__title-xl').offset()
-		console.log('title x: ' + titlePos.left + ' title y: ' + titlePos.top)
-
 		if (oldWidth != Viewport.ww) {
+			// this is causing the repositioning problems
 			this._refreshScrollScenes()
 		}
+
+		// let titlePos = $('.section__title-xl').offset()
+		// console.log('title x: ' + titlePos.left + ' title y: ' + titlePos.top)
+
+		let scrollPosition = Viewport.$window.scrollTop()
+		console.log('scroll position: ' + scrollPosition)
 	}
 }
