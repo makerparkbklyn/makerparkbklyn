@@ -59,6 +59,7 @@
 				position: fixed;
 				top: -100%;
 				z-index: 9;
+				display: none;
 			}
 
 			.image-00 {
@@ -93,6 +94,7 @@
 
 			.map {
 				padding-bottom: 70%;
+				display: none;
 			}
 		}
 

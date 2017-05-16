@@ -27,8 +27,8 @@ export default class Front extends Page {
 		super()
 
 		// this.current = 'hero'
-		this.sectionCtrl = new ScrollMagic.Controller()
-		this.scrollCtrl = new ScrollMagic.Controller()
+		this.sectionCtrl = null
+		this.scrollCtrl = null
 
 		this._initSections()
 		this._initScrollScenes()
@@ -39,6 +39,7 @@ export default class Front extends Page {
 	// Private
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
 	_initSections() {
+		this.sectionCtrl = new ScrollMagic.Controller()
 		let _self = this
 		_self.$sections = $('section')
 		// _self.$sections.push($('#footer')[0])
@@ -105,20 +106,18 @@ export default class Front extends Page {
 	// TODO: create _assembleKeyframes function?
 	_initScrollScenes() {
 		this.scrollCtrl = new ScrollMagic.Controller()
-		console.log('CONTROLLER:')
-		console.log(this.scrollCtrl)
 
 		let combinedKeyframes = []
 
 		if (Viewport.ww < 1024) {
 			combinedKeyframes = [
-				// heroKeyframes,
+				heroKeyframes,
 				leftRailKeyframes
 			]
 		}
 		else {
 			combinedKeyframes = [
-				// heroKeyframes,
+				heroKeyframes,
 				missionKeyframes,
 				// siteKeyframes,
 				// visionKeyframes,
@@ -199,15 +198,9 @@ export default class Front extends Page {
 
 		Viewport.update()
 
-		if (oldWidth != Viewport.ww) {
-			// this is causing the repositioning problems
-			this._refreshScrollScenes()
-		}
-
-		// let titlePos = $('.section__title-xl').offset()
-		// console.log('title x: ' + titlePos.left + ' title y: ' + titlePos.top)
-
-		let scrollPosition = Viewport.$window.scrollTop()
-		console.log('scroll position: ' + scrollPosition)
+		// if (oldWidth != Viewport.ww) {
+		// 	this is causing the repositioning problems
+		// 	this._refreshScrollScenes()
+		// }
 	}
 }

@@ -4,16 +4,16 @@ import $ from 'jquery'
 
 let wh = Viewport.wh;
 
-const onLogoInEnd = (e) => {
-	if ( e.scrollDirection != 'REVERSE' ) {
-		$('.hero-logo svg').attr('style', '')
-	}
-}
+// const onLogoInEnd = (e) => {
+// 	if ( e.scrollDirection !== 'REVERSE' ) {
+// 		$('.hero-logo svg').attr('style', '')
+// 	}
+// }
 
-const setupScenes = (scenes) => {
+const heroKeyframes = () => {
 	Viewport.update()
 
-	const $logo = $('#hero .hero-logo')
+	const $logo = $('#hero .hero-logo svg')
 
 	let scale = 0,
 		$logoWidth = $logo.width(),
@@ -36,38 +36,75 @@ const setupScenes = (scenes) => {
 	offsetX = Viewport.ww / 2 - centerX,
 	offsetY = Viewport.wh / 2 - centerY
 
-	scenes[0].tween = {x: offsetX, y: offsetY, scale, rotation: -360, ease: Power2.easeInOut, force3D: false}
-	scenes[1].tween = {x: offsetX, y: offsetY, scale, rotation: -360, ease: Power2.easeInOut, force3D: false}
+	return {
+		section			:	'#hero',
+		hook			:	'onLeave',
+		scenes			: 	[
+			{
+				name	:	'logoIn',
+				duration:	wh,
+				offset	:	0,
+				element	:	'#hero .hero-logo svg',
+				tween	:	{
+								x: offsetX,
+								y: offsetY,
+								scale,
+								rotation: -360,
+								ease: Power2.easeInOut,
+								force3D: false,
+								overwrite: none
+							},
+			},
+			{
+				name	:	'logoOut',
+				trigger	:	'.footer',
+				hook	:	'onEnter',
+				duration:	wh,
+				offset	:	0,
+				element	:	'#hero .hero-logo svg',
+				tween	:	{
+								x: offsetX,
+								y: offsetY,
+								scale,
+								rotation: -360,
+								ease: Power2.easeInOut,
+								force3D: false
+								overwrite: none
+							},
+			},
+
+		],
+	}
 }
 
 
-const heroKeyframes = {
-	section			:	'#hero',
-	hook			:	'onLeave',
-	scenes			: 	[
-		{
-			name	:	'logoIn',
-			duration:	wh,
-			offset	:	0,
-			element	:	'#hero .hero-logo svg',
-			tween	:	{},
-			events	:	{
-				end :	onLogoInEnd
-			}
-		},
-		{
-			name	:	'logoOut',
-			trigger	:	'.footer',
-			hook	:	'onEnter',
-			duration:	wh,
-			offset	:	0,
-			element	:	'#hero .hero-logo svg',
-			tween	:	{}
-		},
-
-	],
-	setup			:	setupScenes,
-	refresh			:	setupScenes
-}
+// const heroKeyframes = {
+// 	section			:	'#hero',
+// 	hook			:	'onLeave',
+// 	scenes			: 	[
+// 		{
+// 			name	:	'logoIn',
+// 			duration:	wh,
+// 			offset	:	0,
+// 			element	:	'#hero .hero-logo svg',
+// 			tween	:	{},
+// 			events	:	{
+// 				end :	onLogoInEnd
+// 			}
+// 		},
+// 		{
+// 			name	:	'logoOut',
+// 			trigger	:	'.footer',
+// 			hook	:	'onEnter',
+// 			duration:	wh,
+// 			offset	:	0,
+// 			element	:	'#hero .hero-logo svg',
+// 			tween	:	{}
+// 		},
+//
+// 	],
+// 	setup			:	setupScenes,
+// 	refresh			:	setupScenes
+// }
 
 export default heroKeyframes

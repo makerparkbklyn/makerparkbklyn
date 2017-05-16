@@ -2,7 +2,7 @@ import ScrollMagic from 'scrollmagic'
 import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap'
 import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
 
-let allScenes = []
+// let allScenes = []
 
 const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 	let rIn		= /In$/,
@@ -10,28 +10,29 @@ const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 		rThru	= /Thru$/,
 		rMove 	= /Move$/
 
-	if (allScenes.length > 0) {
-		allScenes.map( (scene, i) => {
-			scene.destroy(true)
-		})
-	}
+	// if (allScenes.length > 0) {
+	// 	allScenes.map( (scene, i) => {
+	// 		scene.destroy(true)
+	// 	})
+	// }
 
 	keyframes.map( (createSection, i) => {
 
 		// setup keyframes:
 		let section = createSection()
 
-		if (section != undefined && section.setup != undefined) {
-			section.setup(section.scenes)
-		}
+		// running setup no longer necessary since creatSection is a function
+		// if (section != undefined && section.setup != undefined) {
+		// 	section.setup(section.scenes)
+		// }
 
 		// console.log(section)
 
 		section.scenes.map( (scene, j) => {
 			let tween = null
 
-			// remove styles from previous scene?
-			document.querySelector(scene.element).setAttribute('style', '')
+			// remove styles from previous scene? <= this screws things up
+			// document.querySelector(scene.element).setAttribute('style', '')
 
 			// if scene is animating 'in':
 			if ( rIn.test( scene.name ) ) {
@@ -59,7 +60,7 @@ const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 				triggerHook: scene.hook ? scene.hook : section.hook,
 				duration: scene.duration,
 				offset: scene.offset,
-				loglevel: 3
+				// loglevel: 3
 			})
 
 			s.setTween(tween)
@@ -84,14 +85,14 @@ const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 			// 	s.update()
 			// })
 
-			allScenes.push(s)
-			tween = null
+			// allScenes.push(s)
+			// tween = null
 		})
 	})
 
 	controller.update(true)
 }
 
-const refreshScrollMagicScenes = () => {}
+// const refreshScrollMagicScenes = () => {}
 
 export default setupScrollMagicScenes
