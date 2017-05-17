@@ -1,22 +1,14 @@
-const initMap = (container) => {
+import GoogleMapsLoader from 'google-maps'
 
-	const coordinates = new google.maps.LatLng(40.725139, -73.961377)
+GoogleMapsLoader.KEY = 'AIzaSyCx0KQ47A7OQ_yL31SSo66lC-wRoCpWqGo'
 
-	const options = {
-		mapTypeControlOptions: {
-			mapTypeIds: ['Maker Park']
-		},
-		center: coordinates,
-		zoom: 15,
-		mapTypeId: 'Maker Park',
-		scrollwheel: false,
-	}
+const initMap = (google) => {
 
 	const styles = [
 		{
-              featureType: 'poi',
-              elementType: 'all',
-              stylers: [{color: '#fd007d'}]
+			featureType: 'poi',
+			elementType: 'all',
+			stylers: [{color: '#fd007d'}]
         },
 		{
 			featureType: 'landscape',
@@ -87,23 +79,24 @@ const initMap = (container) => {
 		}
 	]
 
-	let map = new google.maps.Map(container, options)
+	const makerpark = { lat: 40.725139, lng: -73.961377 }
 
-	let styledMapType = new google.maps.StyledMapType(styles, { name: 'Maker Park' })
-
-	map.mapTypes.set('Maker Park', styledMapType)
-
-	const icon = {
-		url: "images/mp-logo.png",
-		scaledSize: new google.maps.Size(57, 49),
-		origin: new google.maps.Point(0,0),
-		anchor: new google.maps.Point(0, 0)
-	}
+	let map = new google.maps.Map(document.getElementById('map'), {
+		center: makerpark,
+		zoom: 15,
+		scrollwheel: false,
+		styles
+	})
 
 	const marker = new google.maps.Marker({
-		position: coordinates,
+		position: makerpark,
 		map,
-		icon,
+		icon: {
+			url: "assets/images/mp-logo.png",
+			scaledSize: new google.maps.Size(57, 49),
+			origin: new google.maps.Point(0,0),
+			anchor: new google.maps.Point(0, 0)
+		},
 		title: 'Maker Park',
 	})
 
@@ -116,8 +109,12 @@ const initMap = (container) => {
         }
 	};
 
-	// TODO - Do we want this?
 	marker.addListener('click', toggleBounce);
+	marker.setAnimation(google.maps.Animation.BOUNCE)
 }
 
-export default initMap
+const GoogleMap = () => {
+	GoogleMapsLoader.load(initMap)
+}
+
+export default GoogleMap

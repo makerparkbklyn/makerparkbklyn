@@ -105,7 +105,7 @@ section {
 		transform-origin: top left;
 		transform: rotate(-90deg) translate(-50%, -50%);
 		top: 50vh;
-		margin-left: calc(6.25% - 10px);
+		margin-left: calc(6.25% - 0.25rem);
 
 		h2 {
 			font-size: ms(0);

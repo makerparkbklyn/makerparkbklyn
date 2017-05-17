@@ -1,136 +1,122 @@
 /* News Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.news-page {
-	background: url(../images/pattern-1.jpg);
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	.main-content {
-		background: $lightred;
-		padding-top: 1.4rem;
-	}
-	.rail .arrow-down {
-		display: none;
-	}
-	.title > h2 > a {
-		text-decoration: none;
-	}
-	.rail--right .nav {
-		background-color: $lightred;
-	}
+.news {
+	background: $lightturquoise
 }
 
 /* List of Posts
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .news-posts {
-	margin-bottom: 0;
-	padding-bottom: 2rem;
 	list-style: none;
 	li {
-		margin-bottom: 0;
+		border-top: solid 6px $indigo;
+		@include span(6 of 6 nest);
 	}
-}
-.news-post {
-	border-top: solid 6px $indigo;
-	padding: .5rem 0 4rem;
-	.icon--arrow-right {
-		width: 65px;
-		height: 53px;
-		margin-top: 1rem;
 
-	}
-	&:hover {
-		h2 > a {
-			color: #fff;
-		}
-		.icon--arrow-right .cls-1 {
-			stroke: #fff;
-		}
-	}
-}
-.news-post.news-post--open {
-	padding-bottom: 3rem;
-}
-.news-post__header {
-	padding-right: 1rem;
-	margin-bottom: 2rem;
-	h2 {
-		font-size: 2rem;
-		line-height: 1;
-		margin: 0;
-	}
-	time, p {
-		font-size: .75rem;
-		font-weight: bold;
-		display: block;
-		margin-top: .5rem;
-	}
-}
-.news-post__body {
-	p {
-		font-size: 1rem;
-		line-height: 1.3;
-		font-weight: bold;
-		margin-bottom: .5rem;
-		a {
-			// text-decoration: none;
-			text-decoration: underline;
-			&:hover {
-				color: #fff;
-			}
-		}
-	}
-	blockquote {
-		margin: 0;
-		padding-left: .5rem;
-		border-left: 4px solid rgba(0,0,86,1);
-		box-sizing: border-box;
-	}
-}
-.post__image {
-	width: 100%;
-	border: solid 12px $indigo;
-	box-sizing: border-box;
-}
-.see-all-news a {
-	display: block;
-	font-size: .75rem;
-	font-weight: bold;
-	// text-decoration: none;
-	margin-top: 1rem;
-	&:hover {
-		text-decoration: underline;
-		color: #fff;
-	}
-}
-@include media-query(1280px) {
-	.more-news .news-post {
-		padding-bottom: 0;
-	}
 	.news-post {
-		padding-bottom: 3rem;
-		.icon--arrow-right {
-			float: right;
-			margin-top: .1rem;
-		}
+		@include span(5 of 6)
 	}
-	.news-post__header {
-		h2 {
-			font-size: 1rem;
-		}
-		time, p {
-			font-size: .5rem;
-		}
-	}
-	.news-post__body {
-		p {
-			font-size: .5rem;
-			margin-bottom: .5rem;
-		}
-	}
-	.see-all-news a {
-		font-size: .5rem;
-		float: right;
-		margin-top: 0;
+
+	.news-post-arrow {
+		@include span(1 of 6);
 	}
 }
+
+// .news-post {
+// 	border-top: solid 6px $indigo;
+//
+// 	&:hover {
+// 		h2 > a {
+// 			color: #fff;
+// 		}
+// 		.icon--arrow-right .cls-1 {
+// 			stroke: #fff;
+// 		}
+// 	}
+// }
+// .news-post.news-post--open {
+// 	padding-bottom: 3rem;
+// }
+// .news-post__header {
+// 	padding-right: 1rem;
+// 	margin-bottom: 2rem;
+// 	h2 {
+// 		font-size: 2rem;
+// 		line-height: 1;
+// 		margin: 0;
+// 	}
+// 	time, p {
+// 		font-size: .75rem;
+// 		font-weight: bold;
+// 		display: block;
+// 		margin-top: .5rem;
+// 	}
+// }
+// .news-post__body {
+// 	p {
+// 		font-size: 1rem;
+// 		line-height: 1.3;
+// 		font-weight: bold;
+// 		margin-bottom: .5rem;
+// 		a {
+// 			// text-decoration: none;
+// 			text-decoration: underline;
+// 			&:hover {
+// 				color: #fff;
+// 			}
+// 		}
+// 	}
+// 	blockquote {
+// 		margin: 0;
+// 		padding-left: .5rem;
+// 		border-left: 4px solid rgba(0,0,86,1);
+// 		box-sizing: border-box;
+// 	}
+// }
+// .post__image {
+// 	width: 100%;
+// 	border: solid 12px $indigo;
+// 	box-sizing: border-box;
+// }
+// .see-all-news a {
+// 	display: block;
+// 	font-size: .75rem;
+// 	font-weight: bold;
+// 	// text-decoration: none;
+// 	margin-top: 1rem;
+// 	&:hover {
+// 		text-decoration: underline;
+// 		color: #fff;
+// 	}
+// }
+// @include media-query(1280px) {
+// 	.more-news .news-post {
+// 		padding-bottom: 0;
+// 	}
+// 	.news-post {
+// 		padding-bottom: 3rem;
+// 		.icon--arrow-right {
+// 			float: right;
+// 			margin-top: .1rem;
+// 		}
+// 	}
+// 	.news-post__header {
+// 		h2 {
+// 			font-size: 1rem;
+// 		}
+// 		time, p {
+// 			font-size: .5rem;
+// 		}
+// 	}
+// 	.news-post__body {
+// 		p {
+// 			font-size: .5rem;
+// 			margin-bottom: .5rem;
+// 		}
+// 	}
+// 	.see-all-news a {
+// 		font-size: .5rem;
+// 		float: right;
+// 		margin-top: 0;
+// 	}
+// }

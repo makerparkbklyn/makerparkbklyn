@@ -73,7 +73,7 @@ class Page {
 	}
 
 	_onNavCloseClick(e) {
-		this.navTimeline.timeScale = 8
+		this.navTimeline.timeScale = 0.0000000000001
 		this.navTimeline.reverse()
 		setTimeout(function(){
 			this.$nav.css('z-index', '-10')

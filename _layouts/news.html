@@ -2,9 +2,11 @@
 layout: master
 ---
 
-<div class="title stuck">
-	<h2 class="underline">All News</h2>
+<div class="section__title">
+	<h2 class="underline"><a href={{ "/news" | prepend: site.baseurl }}>All News</a></h2>
 </div>
+
 <div class="container">
+	{{ content }}
 	{% include news-list.html %}
 </div>

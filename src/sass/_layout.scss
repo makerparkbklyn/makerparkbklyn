@@ -36,6 +36,37 @@
 @import "sections/news";
 @import "sections/team";
 
+// .unloaded {
+// 	display: none;
+// }
+
+.loader {
+	position: fixed;
+	z-index: 9999999999;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: $lightturquoise;
+
+	// display: none;
+
+	// svg:first-child {
+	// 	position: absolute;
+	// 	left: 50%;
+	// 	top: 50%;
+	// 	width: 25%;
+	// 	transform: translate(-50%, -50%);
+	// }
+	svg:last-child {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 5%;
+		transform: translate(-50%, -50%);
+	}
+}
+
 
 /* Rails & Nav
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

@@ -6,7 +6,7 @@ import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap'
 import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
 
 import Page from '../modules/Page'
-import { default as GoogleMap } from '../modules/Map'
+import GoogleMap from '../modules/Map'
 
 import leftRailKeyframes from '../keyframes/rails'
 import heroKeyframes from '../keyframes/hero'
@@ -36,6 +36,7 @@ export default class Front extends Page {
 		this._initCarousels()
 		this._initMap()
 		this._initEvents()
+		this._finishInit()
 
 	}
 	// Private
@@ -171,6 +172,24 @@ export default class Front extends Page {
 			let $video = $(e.target)
 			$video.html($video.attr('data-video-iframe'))
 		})
+
+		$('.nav__item a').on('click', (e) => {
+			e.preventDefault()
+			this.$navClose.click()
+			let $target = $($(e.target).attr('data-scrollto'))
+			this.scrollCtrl.scrollTo((newScrollPos) => {
+				$("html, body").animate({scrollTop: newScrollPos})
+			}, $target.offset().top)
+		})
+	}
+
+	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
+	_finishInit() {
+		// $('.unloaded').removeClass('unloaded')
+		TweenMax.to('.loader', 1, {opacity: 0})
+		setTimeout( () => {
+			$('.loader').css('z-index', '-10')
+		}, 1800)
 	}
 
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
