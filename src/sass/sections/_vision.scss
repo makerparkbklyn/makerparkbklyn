@@ -64,23 +64,29 @@
 
 	@include breakpoint($tablet-landscape) {
 		// TODO: calculate section height dynamically
-		height: 1350vh;
+		height: 1300vh;
 
 		@include with-layout(8) {
 			.p1 {
 				position: fixed;
 				@include span(3 of 8);
 				left: span(1 of 8 wide);
-				top: 30.6%;
 				top: $baseline * 15;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: 24%;
+				}
 			}
 
 			.p2 {
 				position: fixed;
 				@include span(3 of 8);
 				left: span(4 of 8 wide);
-				top: 41.5%;
 				top: $baseline * 20;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: 28%;
+				}
 			}
 
 			.image-stack {
@@ -129,6 +135,30 @@
 						top: $baseline * 7;
 						z-index: 1;
 					}
+
+					@include breakpoint("min-aspect-ratio" "3/2") {
+						&:nth-child(1) {
+							top: 8.8%;
+						}
+						&:nth-child(2) {
+							top: 4.4%;
+						}
+						&:nth-child(3) {
+							top: 10.1%;
+						}
+						&:nth-child(4) {
+							top: 16.16%;
+						}
+						&:nth-child(5) {
+							top: 8.8%;
+						}
+						&:nth-child(6) {
+							top: 22.22%;
+						}
+						&:nth-child(7) {
+							top: 7.7%;
+						}
+					}
 				}
 			}
 
@@ -136,9 +166,12 @@
 				position: fixed;
 				@include span(5 of 8);
 				left: span(2 of 8 wide);
-				// top: 18.2%;
 				top: $baseline * 8;
 				padding-bottom: ( span(5 of 8) * (9/16) );
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: 7%;
+				}
 			}
 
 			.embed-container iframe,
@@ -157,25 +190,28 @@
 				left: span(1 of 8 wide);
 				top: 75.3%;
 				top: $baseline * 39;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+
+					@include breakpoint($tablet-landscape) {
+						top: 70%;
+					}
+					@include breakpoint($desktop) {
+						top: 75%;
+					}
+					@include breakpoint(2560px) {
+						top: 80%;
+					}
+				}
 			}
 		}
 
 		.bg-pattern-1 {
 			position: fixed;
-			left: -55%;
-			top: 15%;
-			width: 135%;
-			display: block;
-		}
-
-		.bg-pattern-2 {
-			position: fixed;
-			left: 25%;
-			top: 62.5%;
-			width: 75%;
-			height: 117%;
+			left: -42%;
+			top: 8%;
+			width: 195vh;
 			display: block;
 		}
 	}
-
 }

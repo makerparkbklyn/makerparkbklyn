@@ -1,6 +1,7 @@
 import ScrollMagic from 'scrollmagic'
 import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap'
 import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
+import { TweenMax, Power2, Linear } from 'gsap'
 
 // let allScenes = []
 

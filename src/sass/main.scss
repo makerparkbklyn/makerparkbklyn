@@ -96,7 +96,7 @@ $fluid-rem: (
 		ratio		: 	$fourth
 	),
 	2560px: (
-		base		: 	48px,
+		base		: 	46px,
 		ratio		: 	$fourth
 	)
 );
@@ -136,4 +136,4 @@ $mobile-grid: (
 //–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 @import 				"base",
         				"layout";
-						// "news";
+						// "news-page";

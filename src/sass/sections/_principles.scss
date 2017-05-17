@@ -30,17 +30,6 @@
 			}
 
 		}
-
-		// &:before {
-		// 	display: inline-block;
-		// 	content: counter(principles, decimal-leading-zero);
-		// 	counter-increment: principles;
-		// 	font-size: ms(2);
-		// 	line-height: $baseline * 2;
-		// 	color: $indigo;
-		// 	@include align-to-baseline( ms(2), $baseline * 2 );
-		// 	// display: none;
-		// }
 	}
 
 	.bg-pattern-1,
@@ -50,7 +39,7 @@
 
 	@include breakpoint($tablet-landscape) {
 		// TODO: calculate section height dynamically
-		height: 435vh;
+		height: 390vh;
 
 		@include with-layout(8) {
 			.principles__item {
@@ -77,16 +66,14 @@
 			position: fixed;
 			left: 50%;
 			top: 15%;
-			// width: 75%;
-			// height: 117%;
+			width: 130vw;
 		}
 
 		.bg-pattern-2 {
 			position: fixed;
-			left: -109.2%;
+			left: -107%;
 			top: -80%;
-			// width: 75%;
-			// height: 117%;
+			width: 130vw;
 		}
 	}
 }

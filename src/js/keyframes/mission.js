@@ -1,8 +1,6 @@
-import { Power2, Linear } from 'gsap'
 import Viewport from '../utils/Viewport'
 
 const missionKeyframes = () => {
-
 	Viewport.update()
 
 	let wh = Viewport.wh
@@ -76,14 +74,14 @@ const missionKeyframes = () => {
 			{
 				name	:	'renderingIn',
 				duration:	1.4 * wh,
-				offset	:	4.25 * wh,
+				offset	:	4 * wh,
 				element	:	'#mission .rendering',
 				tween	: 	{y: wh, x: -800, ease: Power2.easeOut}
 			},
 			{
 				name	:	'renderingOut',
 				duration:	1.4 * wh,
-				offset	:	7.25 * wh,
+				offset	:	6.5 * wh,
 				element	:	'#mission .rendering',
 				tween	: 	{y: -wh, x: 800, ease: Power2.easeIn}
 			}

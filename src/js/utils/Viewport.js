@@ -9,6 +9,7 @@ class Viewport {
 		this.wh = this.$window.height()
 		this.sw = screen.width
 		this.sh = screen.height
+		this.ratio = this.ww / this.wh
 
 		this._onResize()
 		this._initEvents()
@@ -23,6 +24,7 @@ class Viewport {
 		this.wh = this.$window.height()
 		this.sw = screen.width
 		this.sh = screen.height
+		this.ratio = this.ww / this.wh
 	}
 
 	update() {

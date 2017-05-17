@@ -10,11 +10,7 @@
 		@include span(4 of 4);
 	}
 
-	.map {
-		@include border;
-		height: 0;
-		padding-bottom: 54%;
-		padding-bottom: 100%;
+	.map > div {
 		background-color: #c11565;
 	}
 
@@ -25,41 +21,46 @@
 
 	@include breakpoint($tablet-landscape) {
 		// TODO: calculate section height dynamically
-		height: 1350vh;
+		height: 1400vh;
 
 		@include with-layout(8) {
 			.p1 {
 				position: fixed;
 				@include span(3 of 8);
 				left: span(3 of 8 wide);
-				top: 19.6%;
-				// top: $baseline * 11;
 				top: $baseline * 9;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: 12vh;
+				}
 			}
 
 			.p2 {
 				position: fixed;
 				@include span(3 of 8);
 				left: span(1 of 8 wide);
-				top: 48.8%;
-				// top: $baseline * 27;
 				top: $baseline * 25;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: 42vh;
+				}
 			}
 
 			.p3 {
 				position: fixed;
 				@include span(3 of 8);
 				left: span(4 of 8 wide);
-				top: 59.75%;
-				// top: $baseline * 30;
 				top: $baseline * 28;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: 46vh;
+				}
 			}
 
 			[class*='image-'] {
 				position: fixed;
 				top: -100%;
 				z-index: 9;
-				display: none;
 			}
 
 			.image-00 {
@@ -91,11 +92,6 @@
 				@include span(2 of 8);
 				left: span(1 of 8 wide);
 			}
-
-			.map {
-				padding-bottom: 70%;
-				display: none;
-			}
 		}
 
 		.bg-pattern-1 {
@@ -104,6 +100,7 @@
 			transform: translateY(-50%);
 			right: 0%;
 			display: block;
+			height: 135vh;
 		}
 		.bg-pattern-2 {
 			position: fixed;
@@ -111,8 +108,15 @@
 			transform: translateY(-50%);
 			left: -45%;
 			display: block;
+			height: 135vh;
+
+			@include breakpoint("min-aspect-ratio" "6/5") {
+				left: -45%;
+			}
+
+			@include breakpoint("min-aspect-ratio" "3/2") {
+				left: -38%;
+			}
 		}
 	}
-
-
 }

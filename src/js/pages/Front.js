@@ -6,6 +6,7 @@ import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap'
 import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
 
 import Page from '../modules/Page'
+import { default as GoogleMap } from '../modules/Map'
 
 import leftRailKeyframes from '../keyframes/rails'
 import heroKeyframes from '../keyframes/hero'
@@ -33,6 +34,7 @@ export default class Front extends Page {
 		this._initSections()
 		this._initScrollScenes()
 		this._initCarousels()
+		this._initMap()
 		this._initEvents()
 
 	}
@@ -48,20 +50,6 @@ export default class Front extends Page {
 		// track current section
 		_self.$sections.map( (index, section) => {
 			let $el = $(section)
-			// new ScrollMagic.Scene({
-			// 	triggerElement: section,
-			// 	duration: $el.outerHeight()
-			// })
-			// .addTo(_self.sectionCtrl)
-			// .on('enter leave', (e) => {
-			// 	if (e.type === 'enter') {
-			// 		_self.current = $el.attr('id')
-			// 		$('.current').removeClass('current')
-			// 		$el.addClass('current')
-			// 		console.log('CURRENT: ' + _self.current)
-			// 	}
-			// })
-			// .addIndicators({ name: item.attr('id')})
 
 			// update background color
 			if ($el.attr('id') != 'hero') {
@@ -85,6 +73,7 @@ export default class Front extends Page {
 			}
 		})
 
+		// animate sidebar titles
 		if ( Viewport.ww >= 1024 ) {
 			this.$titles.map( (index, item) => {
 				let $title = $(item)
@@ -119,18 +108,23 @@ export default class Front extends Page {
 			combinedKeyframes = [
 				heroKeyframes,
 				missionKeyframes,
-				// siteKeyframes,
-				// visionKeyframes,
-				// timelineKeyframes,
-				// principlesKeyframes,
-				// signupKeyframes,
-				// newsKeyframes,
-				// teamKeyframes,
-				// footerKeyframes
+				siteKeyframes,
+				visionKeyframes,
+				timelineKeyframes,
+				principlesKeyframes,
+				signupKeyframes,
+				newsKeyframes,
+				teamKeyframes,
+				footerKeyframes
 			]
 		}
 
-		setupScrollMagicScenes(combinedKeyframes, this.scrollCtrl, true)
+		setupScrollMagicScenes(combinedKeyframes, this.scrollCtrl, false)
+	}
+
+	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
+	_initMap() {
+		GoogleMap( $('#map') )
 	}
 
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
@@ -172,6 +166,11 @@ export default class Front extends Page {
 		super._initEvents()
 
 		$('body').on('click', '.arrow-down', this._onArrowDownClick)
+
+		$('.embed-container').on('click', (e) => {
+			let $video = $(e.target)
+			$video.html($video.attr('data-video-iframe'))
+		})
 	}
 
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––

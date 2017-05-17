@@ -1,18 +1,18 @@
-function initMap() {
-	var makerParkLatLng = new google.maps.LatLng(40.725139, -73.961377);
-	// old
-	// var makerParkLatLng = {lat: 40.724675, lng: -73.960315}
-	var mapDiv = document.getElementById('map');
-	var options = {
+const initMap = (container) => {
+
+	const coordinates = new google.maps.LatLng(40.725139, -73.961377)
+
+	const options = {
 		mapTypeControlOptions: {
 			mapTypeIds: ['Maker Park']
 		},
-		center: makerParkLatLng,
+		center: coordinates,
 		zoom: 15,
 		mapTypeId: 'Maker Park',
 		scrollwheel: false,
-	};
-	var styles = [
+	}
+
+	const styles = [
 		{
               featureType: 'poi',
               elementType: 'all',
@@ -85,29 +85,39 @@ function initMap() {
 				{ saturation: 0 },
 			]
 		}
-	];
-	var map = new google.maps.Map(mapDiv, options);
-	var styledMapType = new google.maps.StyledMapType(styles, { name: 'Maker Park' });
-	map.mapTypes.set('Maker Park', styledMapType);
-	var icon = {
+	]
+
+	let map = new google.maps.Map(container, options)
+
+	let styledMapType = new google.maps.StyledMapType(styles, { name: 'Maker Park' })
+
+	map.mapTypes.set('Maker Park', styledMapType)
+
+	const icon = {
 		url: "images/mp-logo.png",
 		scaledSize: new google.maps.Size(57, 49),
 		origin: new google.maps.Point(0,0),
 		anchor: new google.maps.Point(0, 0)
-	};
-	var marker = new google.maps.Marker({
-		position: makerParkLatLng,
-		map:map,
-		icon: icon,
+	}
+
+	const marker = new google.maps.Marker({
+		position: coordinates,
+		map,
+		icon,
 		title: 'Maker Park',
-	});
-	// TODO - Do we want this?
-	marker.addListener('click', toggleBounce);
+	})
+
 	function toggleBounce() {
         if (marker.getAnimation() !== null) {
           marker.setAnimation(null);
-        } else {
+        }
+		else {
           marker.setAnimation(google.maps.Animation.BOUNCE);
         }
 	};
-};
+
+	// TODO - Do we want this?
+	marker.addListener('click', toggleBounce);
+}
+
+export default initMap

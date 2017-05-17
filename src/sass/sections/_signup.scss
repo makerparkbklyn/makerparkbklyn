@@ -154,7 +154,7 @@
 
 	@include breakpoint($tablet-landscape) {
 		// TODO: calculate section height dynamically
-		height: 350vh;
+		height: 325vh;
 
 		@include with-layout(8) {
 			.p1 {
@@ -163,6 +163,10 @@
 				left: span(1 of 8 wide);
 				// top: 16%;
 				top: $baseline * 5;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: 7%;
+				}
 			}
 			.signup-form {
 				& > * {
@@ -173,27 +177,43 @@
 					@include span(3 of 8);
 					left: span(1 of 8 wide);
 					top: $baseline * 20;
+
+					@include breakpoint("min-aspect-ratio" "3/2") {
+						top: 34%;
+					}
 				}
 
 				.signup__last-name {
 					@include span(3 of 8);
 					left: span(4 of 8 wide);
 					top: $baseline * 20;
+
+					@include breakpoint("min-aspect-ratio" "3/2") {
+						top: 34%;
+					}
 				}
 
 				.signup__email {
 					@include span(6 of 8);
 					left: span(1 of 8 wide);
 					top: $baseline * 25;
+
+					@include breakpoint("min-aspect-ratio" "3/2") {
+						top: 44%;
+					}
 				}
 
 				.signup__volunteer {
-					@include span(3 of 8);
+					@include span(6 of 8);
 					left: span(1 of 8 wide);
 					top: $baseline * 29.75;
 
 					label > span {
 						display: inline;
+					}
+
+					@include breakpoint("min-aspect-ratio" "3/2") {
+						top: 54%;
 					}
 				}
 
@@ -201,12 +221,20 @@
 					@include span(6 of 8);
 					left: span(1 of 8 wide);
 					top: $baseline * 36;
+
+					@include breakpoint("min-aspect-ratio" "3/2") {
+						top: 66%;
+					}
 				}
 
 				.signup__submit {
 					@include span(6 of 8);
 					left: span(1 of 8 wide);
 					top: $baseline * 46;
+
+					@include breakpoint("min-aspect-ratio" "3/2") {
+						top: 86%;
+					}
 				}
 			}
 		}
@@ -215,23 +243,21 @@
 		.bg-pattern-2,
 		.bg-pattern-3 {
 			display: block;
+			width: 27vw;
+			position: fixed;
 		}
 
 		.bg-pattern-1 {
-			position: fixed;
 			left: 8%;
-			// top: 8.5%;
 			top: 26%;
 		}
 
 		.bg-pattern-2 {
-			position: fixed;
 			left: 55%;
 			top: 75%;
 		}
 
 		.bg-pattern-3 {
-			position: fixed;
 			left: 85%;
 			top: 15%;
 		}

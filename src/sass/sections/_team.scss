@@ -63,12 +63,16 @@
 
 	@include breakpoint($tablet-landscape) {
 		// TODO: calculate section height dynamically
-		height: 500vh;
+		height: 550vh;
 
 		@include with-layout(8) {
 			.section__title-xl {
 				top: $baseline * 32;
 				z-index: 9;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: 60%;
+				}
 			}
 
 			.team-photo {
@@ -76,6 +80,10 @@
 				left: span(2 of 8 wide);
 				top: 22%;
 				top: $baseline * 10;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: 12%;
+				}
 			}
 
 			.expert-team-block {
@@ -95,23 +103,34 @@
 				&:nth-child(1),
 				&:nth-child(2) {
 					top: $baseline * 12;
+
+					@include breakpoint("min-aspect-ratio" "3/2") {
+						top: 15%;
+					}
 				}
 
 				&:nth-child(3),
 				&:nth-child(4) {
 					top: $baseline * 22;
+
+					@include breakpoint("min-aspect-ratio" "3/2") {
+						top: 40%;
+					}
 				}
 
 				&:nth-child(5),
 				&:last-child {
 					top: $baseline * 32;
+
+					@include breakpoint("min-aspect-ratio" "3/2") {
+						top: 65%;
+					}
 				}
 
 				img {
 					display: block;
 					max-width: 100%;
 					max-height: 100%;
-					// margin: auto;
 					position: relative;
 					top: 50%;
 					transform: translateY(-50%);
@@ -138,6 +157,7 @@
 			position: fixed;
 			top: -12%;
 			left: 36%;
+			width: 106vh;
 		}
 	}
 

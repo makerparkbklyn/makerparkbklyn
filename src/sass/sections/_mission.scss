@@ -22,27 +22,37 @@
 
 	@include breakpoint($tablet-landscape) {
 		// TODO: calculate section height dynamically
-		height: 800vh;
+		height: 725vh;
 
 		@include with-layout(8) {
 			.section__title-xl {
-				top: 60vh;
+				top: $baseline * 32;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: 60vh;
+				}
 			}
 			.p1 {
 				position: fixed;
 				@include span(3 of 8);
 				left: span(1 of 8 wide);
-				top: 26vh;
+				top: $baseline * 16;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: 26vh;
+				}
 			}
 			.p2 {
 				position: fixed;
 				@include span(3 of 8);
 				left: span(4 of 8 wide);
-				top: 38vh;
+				top: $baseline * 21;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: 38vh;
+				}
 			}
 		}
-
-		// figure {display: none;}
 
 		.bg-pattern-1 {
 			display: block;
@@ -62,30 +72,6 @@
 	}
 
 	@include breakpoint($desktop-hd) {
-		// TODO: calculate section height dynamically
-		height: 800vh;
-
-		@include with-layout(8) {
-			.section__title-xl {
-				top: $baseline * 32;
-				// top: 49.65%; // old
-			}
-			.p1 {
-				position: fixed;
-				@include span(3 of 8);
-				left: span(1 of 8 wide);
-				top: $baseline * 16;
-				// top: 30.6%; // old
-			}
-			.p2 {
-				position: fixed;
-				@include span(3 of 8);
-				left: span(4 of 8 wide);
-				top: $baseline * 21;
-				// top: 41.5%; // old
-			}
-		}
-
 		.bg-pattern-1 {
 			top: -50vh;
 		}
