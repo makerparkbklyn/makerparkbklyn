@@ -151,6 +151,11 @@ article.news-post {
 		}
 	}
 
+	img {
+		width: 100%;
+		@include border;
+	}
+
 	blockquote {
 		border-left: 4px solid $indigo;
 		padding: 0;

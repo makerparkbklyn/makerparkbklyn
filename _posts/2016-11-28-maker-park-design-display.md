@@ -8,4 +8,4 @@ layout: post
 excerpt_separator: "<!--more-->"
 ---
 
-![invite]({{ site.baseurl }}/images/MP_Invite_112816_3.jpg){:class="post__image"}
+![invite]({{ site.baseurl }}/assets/images/MP_Invite_112816_3.jpg){:class="post__image"}
