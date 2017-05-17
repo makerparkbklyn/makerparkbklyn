@@ -10,6 +10,13 @@ const footerKeyframes = () => {
 		hook			:	'onEnter',
 		scenes: [
 			{
+				name	:	'footerInToggle',
+				element :	'.footer',
+				class 	:	'in',
+				duration:	0,
+				offset 	:	0
+			},
+			{
 				name	:	'hashtagIn',
 				duration:	wh,
 				offset	:	0.25 * wh,

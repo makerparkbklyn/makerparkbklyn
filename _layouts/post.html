@@ -4,13 +4,11 @@ layout: news
 
 <article class="news-post news-post--open">
 	<div class="news-post__header">
-    	<h2>{{ page.title }}</h2>
-		<time>{{ page.date | date: "%b %-d, %Y" }}</time>
+    	<h1>{{ page.title }}</h1>
+		<p><time>{{ page.date | date: "%b %-d, %Y" }}</time></p>
 	</div>
 	<div class="news-post__body">
 		{{ content }}
-	</div>
-	<div class="see-all-news">
-		<a href={{ "/news" | prepend: site.baseurl }}>See All News</a>
+		<p class="back-to-news"><a href={{ "/news" | prepend: site.baseurl }}>Back to All News</a></p>
 	</div>
 </article>

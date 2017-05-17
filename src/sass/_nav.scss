@@ -52,7 +52,6 @@
 	margin-bottom: gutter() * 2;
 	border: solid 6px $indigo;
 	border-radius: 50%;
-	color: #fff;
 
 	@include breakpoint($tablet-landscape) {
 		@include with-layout(16 0.5) {
@@ -72,16 +71,31 @@
 		top: 50%;
 		left: 0;
 		transform: translateY(-48%);
+
+		p {
+			color: #fff;
+
+			span {
+				color: $indigo;
+
+				span {
+					display: none;
+
+					@include breakpoint(540px) {
+						display: inline;
+					}
+				}
+			}
+		}
 	}
 
-	a {
-		color: $indigo;
-
-		span {
-			display: none;
-
-			@include breakpoint(540px) {
-				display: inline;
+	a:hover {
+		.nav__item__inner {
+			p {
+				text-decoration: none;
+				span {
+					text-decoration: underline;
+				}
 			}
 		}
 	}

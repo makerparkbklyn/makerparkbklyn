@@ -36,10 +36,9 @@
 @import "sections/news";
 @import "sections/team";
 
-// .unloaded {
-// 	display: none;
-// }
 
+// Loader
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 .loader {
 	position: fixed;
 	z-index: 9999999999;
@@ -49,34 +48,26 @@
 	right: 0;
 	background-color: $lightturquoise;
 
-	// display: none;
-
-	// svg:first-child {
-	// 	position: absolute;
-	// 	left: 50%;
-	// 	top: 50%;
-	// 	width: 25%;
-	// 	transform: translate(-50%, -50%);
-	// }
 	svg:last-child {
 		position: absolute;
 		left: 50%;
 		top: 50%;
-		width: 5%;
+		width: 20%;
 		transform: translate(-50%, -50%);
+
+		@include breakpoint($tablet-landscape) {
+			width: 10%;
+		}
+
+		@include breakpoint($desktop-large) {
+			width: 5%;
+		}
 	}
 }
 
 
 /* Rails & Nav
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-// .rail {
-// 	width: 12.5%;
-// 	height: 100%;
-// 	position: fixed;
-// 	top: 0;
-// 	z-index: 999;
-// }
 @import	"left-rail";
 @import	"right-rail";
 @import	"nav";
@@ -131,17 +122,26 @@
 			position: fixed;
 			@include span(4 of 8);
 			left: span(2 of 8 wide);
-			top: 82%;
+			top: 120%;
 		}
 
 		.footer__social-button {
 			margin: 0;
 			position: fixed;
 			@include span(1 of 8);
-			top: 88%;
+			top: 120%;
 
 			svg {
 				width: 1rem;
+			}
+		}
+
+		.footer.in {
+			.footer__hashtag {
+				top: 82%;
+			}
+			.footer__social-button {
+				top: 88%;
 			}
 		}
 

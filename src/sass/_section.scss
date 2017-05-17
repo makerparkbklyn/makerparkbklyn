@@ -91,7 +91,7 @@ section {
 			height: 4px;
 			width: 100%;
 			position: absolute;
-			top: 1em;
+			top: 1.2em;
 		}
 	}
 
@@ -105,14 +105,14 @@ section {
 		transform-origin: top left;
 		transform: rotate(-90deg) translate(-50%, -50%);
 		top: 50vh;
-		margin-left: calc(6.25% - 0.25rem);
+		margin-left: calc(6.25% - 0.4rem);
 
 		h2 {
 			font-size: ms(0);
 			margin: 0;
 
 			&:after {
-				top: 1.2em;
+				top: 1.4em;
 			}
 		}
 	}
@@ -152,10 +152,10 @@ section {
 			color: #fff;
 
 			// top: $baseline * 12;
-			top: $baseline * 10;
+			top: $baseline * 7;
 
 			@include breakpoint("min-aspect-ratio" "3/2") {
-				top: 15%;
+				top: 8%;
 			}
 		}
 	}

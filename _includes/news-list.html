@@ -1,7 +1,7 @@
 <ul class="news-posts">
 	{% for post in site.posts %}
 		<li>
-			<article class="news-post">
+			<article class="news-item">
 				<h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
 				{% if post.source %}
 					<p>{{ post.source }}</p>
@@ -9,7 +9,7 @@
 					<p><time>{{ post.date | date: "%b %-d, %Y" }}</time></p>
 				{% endif %}
 			</article>
-			<a class="news-post-arrow" href="{{ post.url | prepend: site.baseurl }}">{% include icons/arrow-right.svg %}</a>
+			<a class="news-item-arrow" href="{{ post.url | prepend: site.baseurl }}">{% include icons/arrow-right.svg %}</a>
 		</li>
 	{% endfor %}
 </ul>

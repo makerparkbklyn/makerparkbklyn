@@ -1,122 +1,176 @@
-/* News Page
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+// News Page
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 .news {
-	background: $lightturquoise
+	background: $lightturquoise;
+
+	.section__title {
+		a:hover {
+			text-decoration: none;
+		}
+	}
+
+	@include breakpoint($tablet-landscape) {
+		.section__title {
+			position: fixed;
+			top: 50vh;
+
+			a:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	@include breakpoint(max-width $tablet-landscape - 1) {
+		.rail--left {
+			display: none;
+		}
+	}
+
+	footer {
+		display: none;
+	}
 }
 
-/* List of Posts
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+// List of Posts
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 .news-posts {
+	@include susy-clearfix;
+	@include break;
+	padding: $baseline * 3 0;
+	margin: 0;
 	list-style: none;
+
+	@include breakpoint($tablet-landscape) {
+		padding: $baseline * 7 0;
+	}
+
 	li {
+		@include span(4 of 4 $mobile-grid);
 		border-top: solid 6px $indigo;
-		@include span(6 of 6 nest);
+		margin-bottom: $baseline * 3;
+
+		@include breakpoint($tablet-landscape) {
+			@include span(6 of 6 nest);
+			margin-bottom: $baseline * 4;
+		}
+
 	}
 
-	.news-post {
-		@include span(5 of 6)
+	.news-item {
+		// @include span(4 of 4 $mobile-grid);
+
+		@include breakpoint($tablet-landscape) {
+			@include span(5 of 6);
+		}
+
+		h2 {
+			line-height: $baseline * 2.5;
+			@include align-to-baseline( ms(1), $baseline * 2.5 );
+			padding-bottom: $baseline;
+			padding-top: $baseline / 2;
+		}
 	}
 
-	.news-post-arrow {
-		@include span(1 of 6);
+	.news-item-arrow {
+		// @include span(4 of 4 $mobile-grid);
+		display: none;
+		text-align: left;
+
+		@include breakpoint($tablet-landscape) {
+			display: block;
+			@include span(1 of 6);
+			text-align: right;
+			margin-top: 0.85rem;
+		}
+
+		svg {
+			width: 36px;
+
+			@include breakpoint($tablet-landscape) {
+				width: 55px;
+			}
+		}
 	}
 }
 
-// .news-post {
-// 	border-top: solid 6px $indigo;
-//
-// 	&:hover {
-// 		h2 > a {
-// 			color: #fff;
-// 		}
-// 		.icon--arrow-right .cls-1 {
-// 			stroke: #fff;
-// 		}
-// 	}
-// }
-// .news-post.news-post--open {
-// 	padding-bottom: 3rem;
-// }
-// .news-post__header {
-// 	padding-right: 1rem;
-// 	margin-bottom: 2rem;
-// 	h2 {
-// 		font-size: 2rem;
-// 		line-height: 1;
-// 		margin: 0;
-// 	}
-// 	time, p {
-// 		font-size: .75rem;
-// 		font-weight: bold;
-// 		display: block;
-// 		margin-top: .5rem;
-// 	}
-// }
-// .news-post__body {
-// 	p {
-// 		font-size: 1rem;
-// 		line-height: 1.3;
-// 		font-weight: bold;
-// 		margin-bottom: .5rem;
-// 		a {
-// 			// text-decoration: none;
-// 			text-decoration: underline;
-// 			&:hover {
-// 				color: #fff;
-// 			}
-// 		}
-// 	}
-// 	blockquote {
-// 		margin: 0;
-// 		padding-left: .5rem;
-// 		border-left: 4px solid rgba(0,0,86,1);
-// 		box-sizing: border-box;
-// 	}
-// }
-// .post__image {
-// 	width: 100%;
-// 	border: solid 12px $indigo;
-// 	box-sizing: border-box;
-// }
-// .see-all-news a {
-// 	display: block;
-// 	font-size: .75rem;
-// 	font-weight: bold;
-// 	// text-decoration: none;
-// 	margin-top: 1rem;
-// 	&:hover {
-// 		text-decoration: underline;
-// 		color: #fff;
-// 	}
-// }
-// @include media-query(1280px) {
-// 	.more-news .news-post {
-// 		padding-bottom: 0;
-// 	}
-// 	.news-post {
-// 		padding-bottom: 3rem;
-// 		.icon--arrow-right {
-// 			float: right;
-// 			margin-top: .1rem;
-// 		}
-// 	}
-// 	.news-post__header {
-// 		h2 {
-// 			font-size: 1rem;
-// 		}
-// 		time, p {
-// 			font-size: .5rem;
-// 		}
-// 	}
-// 	.news-post__body {
-// 		p {
-// 			font-size: .5rem;
-// 			margin-bottom: .5rem;
-// 		}
-// 	}
-// 	.see-all-news a {
-// 		font-size: .5rem;
-// 		float: right;
-// 		margin-top: 0;
-// 	}
-// }
+// Post
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
+article.news-post {
+	border-top: solid 6px $indigo;
+	@include span(4 of 4 $mobile-grid);
+	@include susy-clearfix;
+	margin-top: $baseline * 3;
+	// margin-bottom: $baseline * 4;
+
+	@include breakpoint($tablet-landscape) {
+		@include span(6 of 6 nest);
+		margin-top: $baseline * 7;
+	}
+
+	& + .news-posts {
+		padding-top: 0;
+	}
+}
+
+.news-post__header {
+	padding-bottom: $baseline * 2;
+
+	@include breakpoint($tablet-landscape) {
+		@include span(2 of 6);
+	}
+
+	h1 {
+	    line-height: $baseline * 3;
+	    @include align-to-baseline( ms(2), $baseline * 3 );
+		padding-bottom: $baseline;
+
+		@include breakpoint($tablet-landscape) {
+			padding: $baseline 0 $baseline * 2;
+		}
+	}
+}
+
+.news-post__body {
+	@include breakpoint($tablet-landscape) {
+		@include span(4 of 6);
+		padding-top: $baseline * 2;
+	}
+
+	a {
+		text-decoration: underline;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+
+	blockquote {
+		border-left: 4px solid $indigo;
+		padding: 0;
+		padding-left: 0.5rem;
+		margin: 0;
+		margin-bottom: $baseline * 3;
+
+		@include breakpoint($tablet-landscape) {
+			padding-left: 1rem;
+		}
+
+		p:last-child {
+			padding-bottom: 0;
+		}
+	}
+}
+
+.back-to-news {
+	padding-top: $baseline * 3;
+	padding-bottom: $baseline * 2;
+
+	// @include breakpoint($tablet-landscape) {
+	// 	@include span(6 of 6);
+	// }
+
+	a {
+		text-decoration: underline;
+	}
+}

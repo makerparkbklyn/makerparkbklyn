@@ -2,7 +2,7 @@ import Viewport from '../utils/Viewport'
 
 const signupKeyframes = () => {
 	Viewport.update()
-	
+
 	let wh = Viewport.wh
 
 	return {
@@ -36,6 +36,13 @@ const signupKeyframes = () => {
 				offset	:	2.3 * wh,
 				element :	'#signup .p1',
 				tween	: 	{y: -wh, ease: Power2.easeIn}
+			},
+			{
+				name	:	'p2In',
+				duration:	1.4 * wh,
+				offset	:	0.5 * wh,
+				element :	'#signup .p2',
+				tween	:	{y: wh, ease: Power2.easeOut}
 			},
 			{
 				name	:	'firstNameIn',
@@ -78,6 +85,13 @@ const signupKeyframes = () => {
 				offset	:	0.75 * wh,
 				element :	'#signup .signup__submit',
 				tween	:	{y: wh, ease: Power2.easeOut}
+			},
+			{
+				name	:	'p2Out',
+				duration:	0.9 * wh,
+				offset	:	2.5 * wh,
+				element :	'#signup .p2',
+				tween	:	{y: -wh, ease: Power2.easeIn}
 			},
 			{
 				name	:	'firstNameOut',

@@ -12,9 +12,24 @@
 
 	@include breakpoint(max-width $tablet-landscape - 1) {
 		// carousel
+		.renderings-arrow {
+			display: inline-block;
+			margin-left: gutter($mobile-grid);
+			// margin-top: $baseline;
+			height: calc(#{$baseline} * 3 - 1px);
+			font-size: 0;
+			line-height: 0;
+			cursor: pointer;
+
+			svg {
+				width: 1.5rem;
+			}
+		}
+
 		.image-stack {
 			width: 100%;
-			padding-top: $baseline * 2;
+			margin-bottom: $baseline;
+			// padding-top: $baseline * 2;
 
 			.slick-list {
 				width: 100%;
@@ -23,6 +38,71 @@
 			.image-stack__item {
 				margin: 0;
 				padding: 0 0.5925926%;
+			}
+
+			// Dots
+			.slick-dots {
+				position: absolute;
+				top: $baseline * (-2);
+				right: 5.5%;
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				text-align: left;
+				font-size: 0;
+				line-height: 0;
+
+				@include breakpoint($tablet-portrait) {
+					top: $baseline * (-2.2);
+				}
+
+				li {
+					position: relative;
+					float: left;
+					margin: 0;
+					margin-right: $baseline;
+					margin-bottom: $baseline;
+					padding: 0;
+					font-size: 0;
+					line-height: 0;
+
+					&:nth-child(7),
+					&:nth-child(14) {
+						margin-right: 0;
+					}
+					&:nth-child(8) {
+						clear: both;
+					}
+				}
+
+				li button {
+					font-size: 0;
+					line-height: 0;
+					display: block;
+					width: $baseline * 0.5;
+					height: $baseline * 0.5;
+					padding: 0;
+					margin: 0;
+					cursor: pointer;
+					border: 0;
+					outline: none;
+					border-radius: 50%;
+					background: $indigo;
+
+					@include breakpoint($tablet-portrait) {
+						width: $baseline * 0.75;
+						height: $baseline * 0.75;
+					}
+				}
+
+				li button:hover,
+				li button:focus {
+					outline: none;
+				}
+
+				li.slick-active button {
+					background: #fff;
+				}
 			}
 		}
 
@@ -87,6 +167,10 @@
 				@include breakpoint("min-aspect-ratio" "3/2") {
 					top: 28%;
 				}
+			}
+
+			.renderings-arrow {
+				display: none;
 			}
 
 			.image-stack {

@@ -2,7 +2,7 @@ import Viewport from '../utils/Viewport'
 
 const visionKeyframes = () => {
 	Viewport.update()
-	
+
 	let wh = Viewport.wh
 	let ww = Viewport.ww
 
@@ -176,7 +176,7 @@ const visionKeyframes = () => {
 				duration:	1.4 * wh,
 				offset	:	10.5 * wh,
 				element :	'#vision .p3',
-				tween	: 	{y: 0.5 * wh, ease: Power2.easeOut}
+				tween	: 	{y: 0.75 * wh, ease: Power2.easeOut}
 			},
 			{
 				name	:	'pattern1SecondMove',

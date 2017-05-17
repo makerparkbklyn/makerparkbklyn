@@ -2,19 +2,15 @@
 /* Right Rail
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .rail--right {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
 	@include container($mobile-grid);
-	z-index: 999;
 
 	.nav-toggle {
 		position: fixed;
 		width: 94%;
 		text-align: right;
 		margin-top: 5%;
+		z-index: 999;
+		transition: transform 0.3s ease-in-out;
 
 		a {
 			cursor: pointer;
@@ -23,6 +19,10 @@
 		svg {
 			width: 3rem;
 			margin-right: 1.5%;
+		}
+
+		&.out {
+			transform: translateY(-125%);
 		}
 	}
 }
@@ -36,6 +36,7 @@
 			left: auto;
 			bottom: 0;
 			@include span(1 of 8);
+			z-index: 999;
 			// background: rgba(black, 0.1);
 
 			.nav-toggle {

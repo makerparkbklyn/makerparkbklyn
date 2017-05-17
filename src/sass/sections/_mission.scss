@@ -26,10 +26,10 @@
 
 		@include with-layout(8) {
 			.section__title-xl {
-				top: $baseline * 32;
+				top: $baseline * 29;
 
 				@include breakpoint("min-aspect-ratio" "3/2") {
-					top: 60vh;
+					top: 53vh;
 				}
 			}
 			.p1 {

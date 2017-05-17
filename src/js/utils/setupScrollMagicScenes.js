@@ -9,7 +9,8 @@ const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 	let rIn		= /In$/,
 		rOut	= /Out$/,
 		rThru	= /Thru$/,
-		rMove 	= /Move$/
+		rMove 	= /Move$/,
+		rToggle = /Toggle$/
 
 	// if (allScenes.length > 0) {
 	// 	allScenes.map( (scene, i) => {
@@ -30,7 +31,8 @@ const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 		// console.log(section)
 
 		section.scenes.map( (scene, j) => {
-			let tween = null
+			let tween = null,
+				toggle= false
 
 			// remove styles from previous scene? <= this screws things up
 			// document.querySelector(scene.element).setAttribute('style', '')
@@ -50,6 +52,11 @@ const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 				tween = TweenMax.fromTo(`${scene.element}`, 1, scene.tween[0], scene.tween[1])
 			}
 
+			// if scene is a class toggle:
+			else if ( rToggle.test(scene.name) ) {
+				toggle = true
+			}
+
 			// if no tween type is detected:
 			else {
 				console.error(`Invalid tween type from scene ${scene.name} in ${section.section} section`)
@@ -64,12 +71,11 @@ const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 				// loglevel: 3
 			})
 
-			s.setTween(tween)
-
-			s.addTo(controller)
-
-			if (debug) {
-				s.addIndicators({ name: scene.name })
+			if (toggle) {
+				s.setClassToggle(scene.element, scene.class)
+			}
+			else {
+				s.setTween(tween)
 			}
 
 			if (scene.events) {
@@ -77,6 +83,12 @@ const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 					if (!scene.events.hasOwnProperty(key)) continue
 					s.on(key, scene.events[key])
 				}
+			}
+
+			s.addTo(controller)
+
+			if (debug) {
+				s.addIndicators({ name: scene.name })
 			}
 
 			// s.on('progress', (e) => {

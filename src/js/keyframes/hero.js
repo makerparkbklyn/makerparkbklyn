@@ -11,7 +11,7 @@ const heroKeyframes = () => {
 		$logoWidth = $logo.width(),
 		$logoHeight = $logo.height(),
 		centerX = $logo.offset().left + $logoWidth / 2,
-		centerY = $logo.offset().top + $logoHeight / 2,
+		centerY = $logo.offset().top - $(window).scrollTop() + $logoHeight / 2,
 		offsetX,
 		offsetY
 

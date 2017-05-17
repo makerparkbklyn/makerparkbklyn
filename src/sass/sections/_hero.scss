@@ -30,9 +30,14 @@
 	-webkit-filter: blur(0px);
 	-moz-filter: blur(0px);
 	-ms-filter: blur(0px);
+	transition: transform 0.3s ease-in-out;
 
 	svg {
 		display: block;
+	}
+
+	&.out {
+		transform: translateY(150%);
 	}
 
 	@include breakpoint($tablet-portrait) {

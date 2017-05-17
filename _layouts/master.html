@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-<body id="top" class="{% if page.url == '/' %}front{% endif %}{% if page.url == '/news/' %}news{% endif %}">
+<body id="top" class="{% if page.url == '/' %}front{% endif %}{% if page.url contains '/news/' %}news{% endif %}">
 
 	{% include left-rail.html %}
 	{% include right-rail.html %}

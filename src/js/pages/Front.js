@@ -7,6 +7,7 @@ import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
 
 import Page from '../modules/Page'
 import GoogleMap from '../modules/Map'
+import submitForm from '../modules/SignupForm'
 
 import leftRailKeyframes from '../keyframes/rails'
 import heroKeyframes from '../keyframes/hero'
@@ -67,7 +68,7 @@ export default class Front extends Page {
 
 						$('section').css('background-color', color)
 						_self.$nav.css('background-color', color)
-						$('body').css('background-color', color)
+						// $('body').css('background-color', color)
 					}
 				})
 				// .addIndicators({ name: item.attr('id')})
@@ -89,6 +90,29 @@ export default class Front extends Page {
 				.setPin(item)
 				// .addIndicators({ name: $title.parent().attr('id') })
 			})
+		}
+
+		this.sectionCtrl.scrollTo((newScrollPos) => {
+			console.log('in scrollto')
+			$('body').animate({scrollTop: newScrollPos}, 1500)
+		})
+
+		if (Viewport.ww < 1024) {
+			setInterval( () => {
+				let info = _self.sectionCtrl.info(),
+					bottomBound = $('footer').offset().top - (Viewport.wh * 1.5)
+
+				console.log('scrollPos: ' + info.scrollPos + ', viewport: ' + Viewport.wh * 1.5 + ', bottom: ' + bottomBound)
+
+				if (info.scrollDirection === 'FORWARD' && info.scrollPos > (Viewport.wh * 1.5) && info.scrollPos < bottomBound) {
+					_self.$navToggle.addClass('out')
+					$('.hero-logo').addClass('out')
+				}
+				else if (info.scrollDirection === 'REVERSE' || info.scrollPos < (Viewport.wh * 1.5) || info.scrollPos > bottomBound) {
+					_self.$navToggle.removeClass('out')
+					$('.hero-logo').removeClass('out')
+				}
+			}, 100)
 		}
 	}
 
@@ -173,14 +197,11 @@ export default class Front extends Page {
 			$video.html($video.attr('data-video-iframe'))
 		})
 
-		$('.nav__item a').on('click', (e) => {
-			e.preventDefault()
-			this.$navClose.click()
-			let $target = $($(e.target).attr('data-scrollto'))
-			this.scrollCtrl.scrollTo((newScrollPos) => {
-				$("html, body").animate({scrollTop: newScrollPos})
-			}, $target.offset().top)
-		})
+		$('.nav__item').on('click', 'a', this._onNavItemClick.bind(this))
+
+		$('.signup-sticker').on('click', this._onNavItemClick.bind(this))
+
+		$('#signup').submit(submitForm)
 	}
 
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
@@ -209,16 +230,81 @@ export default class Front extends Page {
 		// scroll to target
 	}
 
-	// Public
-	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
-	resize() {
-		let oldWidth = Viewport.ww;
+	_onNavItemClick(e) {
+		e.preventDefault()
+		this.$nav.css('z-index', '-10')
+		this.$navClose.click()
 
 		Viewport.update()
 
-		// if (oldWidth != Viewport.ww) {
-		// 	this is causing the repositioning problems
-		// 	this._refreshScrollScenes()
-		// }
+		let $target = $($(e.currentTarget).attr('data-scrollto'))
+		let position = null
+
+		if (Viewport.ww < 1024) {
+			position = $target.offset().top
+		}
+		else {
+			switch ($target.attr('id')) {
+				case 'mission':
+					position = $target.offset().top + Viewport.wh * 2
+					break
+				case 'site':
+					position = $target.offset().top + Viewport.wh * 2.25
+					break
+				case 'vision':
+					position = $target.offset().top + Viewport.wh * 2.25
+					break
+				case 'timeline':
+					position = $target.offset().top + Viewport.wh * 1.5
+					break
+				case 'principles':
+					position = $target.offset().top + Viewport.wh * 1.5
+					break
+				case 'signup':
+					position = $target.offset().top + Viewport.wh * 1.25
+					break
+				case 'news':
+					position = $target.offset().top + Viewport.wh
+					break
+				case 'team':
+					position = $target.offset().top + Viewport.wh * 0.9
+					break
+				default:
+					position = $target.offset().top
+					break
+			}
+		}
+
+		this.sectionCtrl.scrollTo(position)
+	}
+
+	// Public
+	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
+	resize() {
+		let oldWidth = Viewport.ww,
+			oldHeight = Viewport.wh,
+			diff
+
+		Viewport.update()
+
+		if (oldWidth != Viewport.ww) {
+			location.reload()
+			// this is causing the repositioning problems
+			// return to this later
+			// this._refreshScrollScenes()
+		}
+		else if (Viewport.ww < 1024) {
+			diff = oldHeight - Viewport.wh
+
+			if (diff < 0) {
+				diff = diff * -1
+			}
+			if (diff > 120) {
+				location.reload()
+			}
+		}
+		else {
+			location.reload()
+		}
 	}
 }

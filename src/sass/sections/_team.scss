@@ -67,11 +67,11 @@
 
 		@include with-layout(8) {
 			.section__title-xl {
-				top: $baseline * 32;
+				top: $baseline * 29;
 				z-index: 9;
 
 				@include breakpoint("min-aspect-ratio" "3/2") {
-					top: 60%;
+					top: 53%;
 				}
 			}
 

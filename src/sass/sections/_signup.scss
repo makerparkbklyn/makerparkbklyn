@@ -8,6 +8,26 @@
 		@include span(4 of 4);
 	}
 
+	.p2 {
+		@include span(4 of 4);
+		padding-top: $baseline * 2;
+		display: none;
+
+		z-index: -10;
+		opacity: 0;
+		transition: opacity .2s easeOut;
+
+		@include breakpoint($tablet-landscape) {
+			display: block;
+		}
+	}
+
+	.p2.success {
+		z-index: 0;
+		opacity: 1;
+		display: block;
+	}
+
 	.signup-form {
 		padding-top: $baseline;
 		@include span(4 of 4 nest);
@@ -166,6 +186,17 @@
 
 				@include breakpoint("min-aspect-ratio" "3/2") {
 					top: 7%;
+				}
+			}
+			.p2 {
+				position: fixed;
+				@include span(3 of 8);
+				left: span(1 of 8 wide);
+				padding-top: 0;
+				top: $baseline * 20;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: 34%;
 				}
 			}
 			.signup-form {

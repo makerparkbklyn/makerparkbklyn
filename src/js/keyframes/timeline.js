@@ -2,7 +2,7 @@ import Viewport from '../utils/Viewport'
 
 const timelineKeyframes = () => {
 	Viewport.update()
-	
+
 	let wh = Viewport.wh
 
 	return {
@@ -49,14 +49,14 @@ const timelineKeyframes = () => {
 				duration:	1.4 * wh,
 				offset	:	0.75 * wh,
 				element :	'#timeline .timeline-arrow--prev',
-				tween	: 	{y: 0.6 * wh, ease: Power2.easeOut}
+				tween	: 	{y: wh, ease: Power2.easeOut}
 			},
 			{
 				name	:	'arrowNextIn',
 				duration:	1.4 * wh,
 				offset	:	0.75 * wh,
 				element :	'#timeline .timeline-arrow--next',
-				tween	: 	{y: 0.64 * wh, ease: Power2.easeOut}
+				tween	: 	{y: 1.04 * wh, ease: Power2.easeOut}
 			},
 			{
 				name	:	'arrowPrevOut',

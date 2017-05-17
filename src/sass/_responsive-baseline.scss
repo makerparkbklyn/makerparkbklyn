@@ -1,4 +1,4 @@
-$cap-height: .25;
+$cap-height: .65;
 
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);

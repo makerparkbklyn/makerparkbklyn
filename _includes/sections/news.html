@@ -22,7 +22,7 @@
 							{% if post.source %}
 								<p class="news-block__source">{{ post.source }}</p>
 							{% else %}
-								<p><time class="news-block__timestamp">{{ post.date | date: "%b %-d, %Y" }}</time></p>
+								<p class="news-block__timestamp"><time>{{ post.date | date: "%b %-d, %Y" }}</time></p>
 							{% endif %}
 						</div>
 					</a>

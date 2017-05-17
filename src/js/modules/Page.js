@@ -51,7 +51,7 @@ class Page {
 				y: y,
 				rotation: r,
 				ease: Elastic.easeOut.config(1, 0.85)
-			}, 0)
+			}, 0).pause(0)
 		})
 	}
 
