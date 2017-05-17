@@ -102,7 +102,7 @@ export default class Front extends Page {
 				let info = _self.sectionCtrl.info(),
 					bottomBound = $('footer').offset().top - (Viewport.wh * 1.5)
 
-				console.log('scrollPos: ' + info.scrollPos + ', viewport: ' + Viewport.wh * 1.5 + ', bottom: ' + bottomBound)
+				// console.log('scrollPos: ' + info.scrollPos + ', viewport: ' + Viewport.wh * 1.5 + ', bottom: ' + bottomBound)
 
 				if (info.scrollDirection === 'FORWARD' && info.scrollPos > (Viewport.wh * 1.5) && info.scrollPos < bottomBound) {
 					_self.$navToggle.addClass('out')

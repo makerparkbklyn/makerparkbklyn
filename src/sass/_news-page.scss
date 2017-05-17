@@ -10,6 +10,12 @@
 		}
 	}
 
+	.rail--right {
+		.logo {
+			display: block;
+		}
+	}
+
 	@include breakpoint($tablet-landscape) {
 		.section__title {
 			position: fixed;

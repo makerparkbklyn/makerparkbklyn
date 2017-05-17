@@ -25,6 +25,43 @@
 			transform: translateY(-125%);
 		}
 	}
+
+	.logo {
+		display: none;
+		position: fixed;
+		right: 3vw;
+		bottom: 3vw;
+		width: 35%;
+		z-index: 999;
+		filter: none;
+		-webkit-filter: blur(0px);
+		-moz-filter: blur(0px);
+		-ms-filter: blur(0px);
+		transition: transform 0.3s ease-in-out;
+
+		svg {
+			display: block;
+		}
+
+		&.out {
+			transform: translateY(150%);
+		}
+
+		@include breakpoint($tablet-portrait) {
+			width: 24%
+		}
+
+		@include breakpoint($tablet-landscape) {
+			right: 2vw;
+			bottom: 2vw;
+			width: 20%
+		}
+
+		@include breakpoint($desktop) {
+			width: 14%
+
+		}
+	}
 }
 
 @include breakpoint($tablet-landscape) {
