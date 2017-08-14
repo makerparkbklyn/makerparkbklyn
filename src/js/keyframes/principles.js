@@ -2,13 +2,20 @@ import Viewport from '../utils/Viewport'
 
 const principlesKeyframes = () => {
 	Viewport.update()
-	
+
 	let wh = Viewport.wh
 
 	return {
 		section			:	'#principles',
 		hook			:	'onEnter',
 		scenes: [
+			{
+				name	: 	'09Slide',
+				duration: 	0,
+				offset	: 	1 * wh,
+				index 	:	9,
+				hook	: 	'onLeave'
+			},
 			{
 				name	:	'titleIn',
 				duration:	1.4 * wh,

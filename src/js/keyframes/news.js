@@ -2,13 +2,20 @@ import Viewport from '../utils/Viewport'
 
 const newsKeyframes = () => {
 	Viewport.update()
-	
+
 	let wh = Viewport.wh
 
 	return {
 		section			:	'#news',
 		hook			:	'onEnter',
 		scenes: [
+			{
+				name	: 	'11Slide',
+				duration: 	0,
+				offset	: 	0.8 * wh,
+				index 	:	11,
+				hook	: 	'onLeave'
+			},
 			{
 				name	:	'titleIn',
 				duration:	1.4 * wh,

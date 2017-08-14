@@ -33,6 +33,12 @@ const heroKeyframes = () => {
 		hook			:	'onLeave',
 		scenes			: 	[
 			{
+				name	: 	'00Slide',
+				duration:	0,
+				offset	: 	20,
+				index 	:	0,
+			},
+			{
 				name	:	'logoIn',
 				duration:	wh,
 				offset	:	0,

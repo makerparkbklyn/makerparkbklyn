@@ -10,6 +10,13 @@ const footerKeyframes = () => {
 		hook			:	'onEnter',
 		scenes: [
 			{
+				name	: 	'14Slide',
+				duration: 	0,
+				offset	: 	1.5 * wh,
+				index 	:	14,
+				hook	: 	'onLeave'
+			},
+			{
 				name	:	'footerInToggle',
 				element :	'.footer',
 				class 	:	'in',

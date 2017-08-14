@@ -101,10 +101,32 @@
 
 .footer__social-button--instagram {
 	text-align: right;
+
+	.cls-3 {
+		fill: #000056;
+		transition: fill .2s;
+	}
+
+	&:hover {
+		.cls-3 {
+			fill: #fff;
+		}
+	}
 }
 
 .footer__social-button--facebook {
 	text-align: left;
+
+	.fb-icon-blue {
+		fill: #000056;
+		transition: fill .2s;
+	}
+
+	&:hover {
+		.fb-icon-blue {
+			fill: #fff;
+		}
+	}
 }
 
 @include breakpoint($tablet-landscape) {

@@ -10,6 +10,13 @@ const signupKeyframes = () => {
 		hook			:	'onEnter',
 		scenes: [
 			{
+				name	: 	'10Slide',
+				duration: 	0,
+				offset	: 	1.25 * wh,
+				index 	:	10,
+				hook	: 	'onLeave'
+			},
+			{
 				name	:	'titleIn',
 				duration:	1.4 * wh,
 				offset	:	0,

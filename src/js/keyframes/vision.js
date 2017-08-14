@@ -11,6 +11,27 @@ const visionKeyframes = () => {
 		hook			:	'onEnter',
 		scenes: [
 			{
+				name	: 	'05Slide',
+				duration: 	0,
+				offset	: 	1.16 * wh,
+				index 	:	5,
+				hook	: 	'onLeave'
+			},
+			{
+				name	: 	'06Slide',
+				duration: 	0,
+				offset	: 	4.65 * wh,
+				index 	:	6,
+				hook	: 	'onLeave'
+			},
+			{
+				name	: 	'07Slide',
+				duration: 	0,
+				offset	: 	11 * wh,
+				index 	:	7,
+				hook	: 	'onLeave'
+			},
+			{
 				name	:	'titleIn',
 				duration:	1.4 * wh,
 				offset	:	0 * wh,

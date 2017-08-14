@@ -2,14 +2,8 @@
 	viewBox="0 0 456.28 456.28">
 	<defs>
 		<style>
-			.cls-1{
-				fill:none;
-			}
 			.cls-2{
 				clip-path:url(#clip-path);
-			}
-			.cls-3{
-				fill:#19184f;
 			}
 		</style>
 		<clipPath id="clip-path" transform="translate(-27.86 -27.86)">

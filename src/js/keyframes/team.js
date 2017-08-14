@@ -2,13 +2,27 @@ import Viewport from '../utils/Viewport'
 
 const teamKeyframes = () => {
 	Viewport.update()
-	
+
 	let wh = Viewport.wh
 
 	return {
 		section			:	'#team',
 		hook			:	'onEnter',
 		scenes: [
+			{
+				name	: 	'12Slide',
+				duration: 	0,
+				offset	: 	0.9 * wh,
+				index 	:	12,
+				hook	: 	'onLeave'
+			},
+			{
+				name	: 	'13Slide',
+				duration:	0,
+				offset	: 	3.5 * wh,
+				index 	:	13,
+				hook	: 	'onLeave'
+			},
 			{
 				name	:	'titleIn',
 				duration:	1.4 * wh,

@@ -5,12 +5,14 @@ import { TweenMax, Power2, Linear } from 'gsap'
 
 // let allScenes = []
 
-const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
-	let rIn		= /In$/,
+const setupScrollMagicScenes = ( keyframes, controller, context = null, debug = false ) => {
+	let self 	= context,
+		rIn		= /In$/,
 		rOut	= /Out$/,
 		rThru	= /Thru$/,
 		rMove 	= /Move$/,
-		rToggle = /Toggle$/
+		rToggle = /Toggle$/,
+		rSlide 	= /Slide$/
 
 	// if (allScenes.length > 0) {
 	// 	allScenes.map( (scene, i) => {
@@ -31,8 +33,9 @@ const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 		// console.log(section)
 
 		section.scenes.map( (scene, j) => {
-			let tween = null,
-				toggle= false
+			let tween 	= null,
+				toggle	= false,
+				slide	= false
 
 			// remove styles from previous scene? <= this screws things up
 			// document.querySelector(scene.element).setAttribute('style', '')
@@ -57,6 +60,11 @@ const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 				toggle = true
 			}
 
+			// if scene is a slide marker
+			else if ( rSlide.test(scene.name) ) {
+				slide = true
+			}
+
 			// if no tween type is detected:
 			else {
 				console.error(`Invalid tween type from scene ${scene.name} in ${section.section} section`)
@@ -73,6 +81,19 @@ const setupScrollMagicScenes = ( keyframes, controller, debug = false ) => {
 
 			if (toggle) {
 				s.setClassToggle(scene.element, scene.class)
+			}
+			else if (slide) {
+				if (self !== null) {
+					s.on('progress', (e) => {
+						console.log(`Scene: ${scene.index}`)
+						if (e.scrollDirection === 'FORWARD') {
+							self.currentSlide = scene.index
+						}
+						else {
+							self.currentSlide = scene.index - 1
+						}
+					})
+				}
 			}
 			else {
 				s.setTween(tween)

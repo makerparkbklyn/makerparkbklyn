@@ -10,6 +10,13 @@ const timelineKeyframes = () => {
 		hook			:	'onEnter',
 		scenes: [
 			{
+				name	: 	'08Slide',
+				duration: 	0,
+				offset	: 	1.5 * wh,
+				index 	:	8,
+				hook	: 	'onLeave'
+			},
+			{
 				name	:	'titleIn',
 				duration:	1.4 * wh,
 				offset	:	0.25 * wh,

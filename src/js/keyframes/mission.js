@@ -10,6 +10,20 @@ const missionKeyframes = () => {
 		hook			:	'onEnter',
 		scenes: [
 			{
+				name	: 	'01Slide',
+				duration: 	0,
+				offset	: 	2 * wh,
+				index 	:	1,
+				hook	: 	'onLeave'
+			},
+			{
+				name	: 	'02Slide',
+				duration: 	0,
+				offset	: 	4.5 * wh,
+				index 	:	2,
+				hook	: 	'onLeave'
+			},
+			{
 				name	:	'titleIn',
 				duration:	1.4 * wh,
 				offset	:	0.5 * wh,

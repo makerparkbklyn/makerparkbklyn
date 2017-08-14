@@ -21,8 +21,10 @@ import newsKeyframes from '../keyframes/news'
 import teamKeyframes from '../keyframes/team'
 import footerKeyframes from '../keyframes/footer'
 
+
 import Viewport from '../utils/Viewport'
 import setupScrollMagicScenes from '../utils/setupScrollMagicScenes'
+import {slideStops, calcStop} from '../utils/slideStops'
 
 export default class Front extends Page {
 	constructor() {
@@ -31,12 +33,12 @@ export default class Front extends Page {
 		// this.current = 'hero'
 		this.sectionCtrl = null
 		this.scrollCtrl = null
+		this.currentSlide = 0
 
 		this._initSections()
 		this._initScrollScenes()
 		this._initCarousels()
 		this._initMap()
-		this._initEvents()
 		this._finishInit()
 
 	}
@@ -64,7 +66,10 @@ export default class Front extends Page {
 					if (e.progress > 0) {
 						let prevColor = $el.prev().attr('data-bg-color')
 						let nextColor = $el.attr('data-bg-color')
-						let color = $.Color(prevColor).transition(nextColor, e.progress.toFixed(3))
+						let color = $.Color(prevColor).transition(
+							nextColor,
+							e.progress.toFixed(3)
+						)
 
 						$('section').css('background-color', color)
 						_self.$nav.css('background-color', color)
@@ -93,7 +98,7 @@ export default class Front extends Page {
 		}
 
 		this.sectionCtrl.scrollTo((newScrollPos) => {
-			console.log('in scrollto')
+			// console.log('in scrollto')
 			$('body').animate({scrollTop: newScrollPos}, 1500)
 		})
 
@@ -102,13 +107,15 @@ export default class Front extends Page {
 				let info = _self.sectionCtrl.info(),
 					bottomBound = $('footer').offset().top - (Viewport.wh * 1.5)
 
-				// console.log('scrollPos: ' + info.scrollPos + ', viewport: ' + Viewport.wh * 1.5 + ', bottom: ' + bottomBound)
-
-				if (info.scrollDirection === 'FORWARD' && info.scrollPos > (Viewport.wh * 1.5) && info.scrollPos < bottomBound) {
+				if (info.scrollDirection === 'FORWARD' &&
+				info.scrollPos > (Viewport.wh * 1.5) &&
+				info.scrollPos < bottomBound) {
 					_self.$navToggle.addClass('out')
 					$('.hero-logo').addClass('out')
 				}
-				else if (info.scrollDirection === 'REVERSE' || info.scrollPos < (Viewport.wh * 1.5) || info.scrollPos > bottomBound) {
+				else if (info.scrollDirection === 'REVERSE' ||
+				info.scrollPos < (Viewport.wh * 1.5) ||
+				info.scrollPos > bottomBound) {
 					_self.$navToggle.removeClass('out')
 					$('.hero-logo').removeClass('out')
 				}
@@ -144,7 +151,7 @@ export default class Front extends Page {
 			]
 		}
 
-		setupScrollMagicScenes(combinedKeyframes, this.scrollCtrl, false)
+		setupScrollMagicScenes(combinedKeyframes, this.scrollCtrl, this)
 	}
 
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
@@ -190,7 +197,7 @@ export default class Front extends Page {
 	_initEvents() {
 		super._initEvents()
 
-		$('body').on('click', '.arrow-down', this._onArrowDownClick)
+		$('.arrow-down').on('click', 'a', this._onArrowDownClick.bind(this))
 
 		$('.embed-container').on('click', (e) => {
 			let $video = $(e.target)
@@ -226,18 +233,24 @@ export default class Front extends Page {
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
 	_onArrowDownClick(e) {
 		e.preventDefault()
-		console.log('arrow down clicked')
-		// scroll to target
+		// update current slide
+		this.currentSlide++
+		if (this.currentSlide > 14) {
+			this.currentSlide = 14
+		}
+		// scroll to new current slide
+		this.sectionCtrl.scrollTo( calcStop( slideStops[this.currentSlide] ) )
 	}
 
 	_onNavItemClick(e) {
 		e.preventDefault()
+		console.log('nav item clicked')
 		this.$nav.css('z-index', '-10')
 		this.$navClose.click()
 
 		Viewport.update()
 
-		let $target = $($(e.currentTarget).attr('data-scrollto'))
+		let $target = $( $(e.currentTarget).attr('data-scrollto') )
 		let position = null
 
 		if (Viewport.ww < 1024) {
@@ -246,28 +259,36 @@ export default class Front extends Page {
 		else {
 			switch ($target.attr('id')) {
 				case 'mission':
-					position = $target.offset().top + Viewport.wh * 2
+					position = calcStop( slideStops[1] )
+					this.currentSlide = 1
 					break
 				case 'site':
-					position = $target.offset().top + Viewport.wh * 2.25
+					position = calcStop( slideStops[3] )
+					this.currentSlide = 3
 					break
 				case 'vision':
-					position = $target.offset().top + Viewport.wh * 2.25
+					position = calcStop( slideStops[5] )
+					this.currentSlide = 5
 					break
 				case 'timeline':
-					position = $target.offset().top + Viewport.wh * 1.5
+					position = calcStop( slideStops[8] )
+					this.currentSlide = 8
 					break
 				case 'principles':
-					position = $target.offset().top + Viewport.wh * 1.5
+					position = calcStop( slideStops[9] )
+					this.currentSlide = 9
 					break
 				case 'signup':
-					position = $target.offset().top + Viewport.wh * 1.25
+					position = calcStop( slideStops[10] )
+					this.currentSlide = 10
 					break
 				case 'news':
-					position = $target.offset().top + Viewport.wh
+					position = calcStop( slideStops[11] )
+					this.currentSlide = 11
 					break
 				case 'team':
-					position = $target.offset().top + Viewport.wh * 0.9
+					position = calcStop( slideStops[12] )
+					this.currentSlide = 12
 					break
 				default:
 					position = $target.offset().top
