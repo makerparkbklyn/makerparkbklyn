@@ -229,17 +229,36 @@ export default class Front extends Page {
 		this._initScrollScenes()
 	}
 
+	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
+	_updateCurrentSlide(newSlideIndex, arrowClicked = false) {
+		if (newSlideIndex === 14 && this.currentSlide === 14 && arrowClicked) {
+			this.sectionCtrl.scrollTo( 0 )
+			this.currentSlide = 0
+			$('.arrow-down').removeClass('flipped')
+		}
+		else {
+			// update currentSlide
+			this.currentSlide = newSlideIndex
+			// if arrow clicked, scroll to slide
+			if (arrowClicked) {
+				this.sectionCtrl.scrollTo( calcStop( slideStops[this.currentSlide] ) )
+			}
+			// if entering footer
+			if (this.currentSlide === 14) {
+				$('.arrow-down').addClass('flipped')
+			}
+			else {
+				$('.arrow-down').removeClass('flipped')
+			}
+		}
+	}
+
 	// Handlers
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
 	_onArrowDownClick(e) {
 		e.preventDefault()
-		// update current slide
-		this.currentSlide++
-		if (this.currentSlide > 14) {
-			this.currentSlide = 14
-		}
-		// scroll to new current slide
-		this.sectionCtrl.scrollTo( calcStop( slideStops[this.currentSlide] ) )
+		let newSlideIndex = this.currentSlide + 1 <= 14 ? this.currentSlide + 1 : 14
+		this._updateCurrentSlide(newSlideIndex, true)
 	}
 
 	_onNavItemClick(e) {

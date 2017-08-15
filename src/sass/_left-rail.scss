@@ -22,9 +22,14 @@
 		position: fixed;
 		bottom: $baseline;
 		left: 0;
+		transition: transform .4s;
 
 		@include breakpoint($tablet-portrait) {
 			bottom: $baseline * 2;
+		}
+
+		&.flipped {
+			transform: rotate(180deg);
 		}
 	}
 }

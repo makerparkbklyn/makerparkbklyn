@@ -4,6 +4,10 @@
 .site-section {
 	background-color: $lightgreen;
 
+	.spinning-tank {
+		width: 180px;
+	}
+
 	.p1,
 	.p2,
 	.p3 {
@@ -19,9 +23,25 @@
 		display: none;
 	}
 
+	.image-04 > figcaption {
+		display: none;
+	}
+
+	.image-05 > figcaption {
+		display: block;
+	}
+
 	@include breakpoint($tablet-landscape) {
 		// TODO: calculate section height dynamically
 		height: 1460vh;
+
+		.image-04 > figcaption {
+			display: block;
+		}
+
+		.image-05 > figcaption {
+			display: none;
+		}
 
 		@include with-layout(8) {
 			.p1 {

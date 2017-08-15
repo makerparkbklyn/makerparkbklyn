@@ -3,7 +3,8 @@ import Viewport from '../utils/Viewport'
 const siteKeyframes = () => {
 	Viewport.update()
 
-	let wh = Viewport.wh
+	let wh = Viewport.wh,
+		ww = Viewport.ww
 
 	return {
 		section			:	'#site',
@@ -21,6 +22,16 @@ const siteKeyframes = () => {
 				duration: 	0,
 				offset	: 	12 * wh,
 				index 	:	4
+			},
+			{
+				name	:	'spinningTankThru',
+				duration:	1.5 * wh,
+				offset	:	0,
+				element	:	'#site .spinning-tank',
+				tween	: 	[
+								{y: 0.25 * wh, x: ww * 1.25, rotation: -360,},
+								{y: -0.25 * wh, x: -0.25 * ww, rotation: 180, ease: Linear.easeNone}
+							]
 			},
 			{
 				name	:	'titleIn',
