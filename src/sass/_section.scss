@@ -18,7 +18,22 @@ section {
 
 	.spinning-tank {
 		width: 180px;
+
+		@keyframes tankSlideP1 {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(40px);
+			}
+		}
+
+		#pattern-1-bg {
+			animation: tankSlideP1 1s infinite;
+		}
 	}
+
+
 
 	figure {
 		margin: $baseline 0;

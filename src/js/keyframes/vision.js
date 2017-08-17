@@ -34,7 +34,7 @@ const visionKeyframes = () => {
 			{
 				name	:	'spinningTankThru',
 				duration:	2.5 * wh,
-				offset	:	-0.75 * wh,
+				offset	:	-0.5 * wh,
 				element	:	'#vision .spinning-tank',
 				tween	: 	[
 								{y: 0.5 * wh, x: -0.25 * ww, rotation: -360,},

@@ -4,6 +4,7 @@ const timelineKeyframes = () => {
 	Viewport.update()
 
 	let wh = Viewport.wh
+	let ww = Viewport.ww
 
 	return {
 		section			:	'#timeline',
@@ -15,6 +16,16 @@ const timelineKeyframes = () => {
 				offset	: 	1.5 * wh,
 				index 	:	8,
 				hook	: 	'onLeave'
+			},
+			{
+				name	:	'spinningTankThru',
+				duration:	2.5 * wh,
+				offset	:	-0.5 * wh,
+				element	:	'#timeline .spinning-tank',
+				tween	: 	[
+								{x: -0.25 * ww, rotation: -360,},
+								{x: 1.25 * ww, rotation: 180, ease: Linear.easeNone}
+							]
 			},
 			{
 				name	:	'titleIn',
