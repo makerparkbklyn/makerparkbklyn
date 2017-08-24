@@ -31,16 +31,16 @@ const visionKeyframes = () => {
 				index 	:	7,
 				hook	: 	'onLeave'
 			},
-			{
-				name	:	'spinningTankThru',
-				duration:	2.5 * wh,
-				offset	:	-0.5 * wh,
-				element	:	'#vision .spinning-tank',
-				tween	: 	[
-								{y: 0.5 * wh, x: -0.25 * ww, rotation: -360,},
-								{y: -0.25 * wh, x: ww * 1.25, rotation: 180, ease: Linear.easeNone}
-							]
-			},
+			// {
+			// 	name	:	'spinningTankThru',
+			// 	duration:	2.5 * wh,
+			// 	offset	:	-0.5 * wh,
+			// 	element	:	'#vision .spinning-tank',
+			// 	tween	: 	[
+			// 					{y: 0.5 * wh, x: -0.25 * ww, rotation: -360,},
+			// 					{y: -0.25 * wh, x: ww * 1.25, rotation: 180, ease: Linear.easeNone}
+			// 				]
+			// },
 			{
 				name	:	'titleIn',
 				duration:	1.4 * wh,

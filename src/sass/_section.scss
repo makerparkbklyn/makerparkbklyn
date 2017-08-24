@@ -16,45 +16,8 @@ section {
 		padding: 0;
 	}
 
-	@keyframes tankTop {
-	  0% {
-	    transform: translateX(0);
-	  }
-	  100% {
-	    transform: translateX(48.5%);
-	  }
-	}
-
-	@keyframes tankMiddle {
-	  0% {
-	    transform: translateX(0);
-	  }
-	  100% {
-	    transform: translateX(-48.5%);
-	  }
-	}
-
-	@keyframes tankBottom {
-	  0% {
-	    transform: translateX(0);
-	  }
-	  100% {
-	    transform: translateX(48.5%);
-	  }
-	}
-
-	#top-pattern-inside {
-	  animation: tankTop 2s infinite linear;
-	}
-
-	#middle-pattern-inside {
-	  animation: tankMiddle 2s infinite linear;
-	}
-
-	#bottom-pattern-inside {
-	  animation: tankBottom 2s infinite linear;
-	}
 	
+
 	.spinning-tank {
 		width: 180px;
 	}

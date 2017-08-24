@@ -17,16 +17,16 @@ const timelineKeyframes = () => {
 				index 	:	8,
 				hook	: 	'onLeave'
 			},
-			{
-				name	:	'spinningTankThru',
-				duration:	2.5 * wh,
-				offset	:	-0.5 * wh,
-				element	:	'#timeline .spinning-tank',
-				tween	: 	[
-								{x: -0.25 * ww, rotation: -360,},
-								{x: 1.25 * ww, rotation: 180, ease: Linear.easeNone}
-							]
-			},
+			// {
+			// 	name	:	'spinningTankThru',
+			// 	duration:	2.5 * wh,
+			// 	offset	:	-0.5 * wh,
+			// 	element	:	'#timeline .spinning-tank',
+			// 	tween	: 	[
+			// 					{x: -0.25 * ww, rotation: -360,},
+			// 					{x: 1.25 * ww, rotation: 180, ease: Linear.easeNone}
+			// 				]
+			// },
 			{
 				name	:	'titleIn',
 				duration:	1.4 * wh,
