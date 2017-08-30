@@ -120,7 +120,7 @@ const siteKeyframes = () => {
 			{
 				name	:	'image00Thru',
 				duration:	2 * wh,
-				offset	:	3.25 * wh,
+				offset	:	3 * wh,
 				element	:	'#site .image-00',
 				tween	: 	[
 								{y: 2 * wh},
@@ -130,7 +130,7 @@ const siteKeyframes = () => {
 			{
 				name	:	'image01Thru',
 				duration:	3 * wh,
-				offset	:	4 * wh,
+				offset	:	3.75 * wh,
 				element	:	'#site .image-01',
 				tween	: 	[
 								{y: 2.5 * wh},
@@ -140,7 +140,7 @@ const siteKeyframes = () => {
 			{
 				name	:	'image02Thru',
 				duration:	3.12 * wh,
-				offset	:	5.25 * wh,
+				offset	:	5 * wh,
 				element	:	'#site .image-02',
 				tween	: 	[
 								{y: 2 * wh},
@@ -150,7 +150,7 @@ const siteKeyframes = () => {
 			{
 				name	:	'image03Thru',
 				duration:	3.27 * wh,
-				offset	:	6 * wh,
+				offset	:	5.75 * wh,
 				element	:	'#site .image-03',
 				tween	: 	[
 								{y: 2 * wh},
@@ -160,7 +160,7 @@ const siteKeyframes = () => {
 			{
 				name	:	'image04Thru',
 				duration:	4.4 * wh,
-				offset	:	6.25 * wh,
+				offset	:	6 * wh,
 				element	:	'#site .image-04',
 				tween	: 	[
 								{y: 2 * wh},
@@ -170,7 +170,7 @@ const siteKeyframes = () => {
 			{
 				name	:	'image05Thru',
 				duration:	2.3 * wh,
-				offset	:	6.5 * wh,
+				offset	:	6.25 * wh,
 				element	:	'#site .image-05',
 				tween	: 	[
 								{y: 2 * wh},
@@ -180,7 +180,7 @@ const siteKeyframes = () => {
 			{
 				name	:	'droneVideoThru',
 				duration:	4.8 * wh,
-				offset	:	7.5 * wh,
+				offset	:	7.25 * wh,
 				element	:	'#site .video',
 				tween	: 	[
 								{y: 2 * wh},

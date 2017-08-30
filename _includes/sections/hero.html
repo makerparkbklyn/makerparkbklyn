@@ -1,22 +1,28 @@
 
 <!-- Hero Section
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<section class="hero-section current" id="hero" rgba="(0,0,0,0)">
+<section class="hero-section current" id="hero" data-bg-color="rgb(145, 230, 223)" rgba="(0, 0, 0, 0)">
 
-	<!-- <div class="hero-bg">
+	<div class="hero-bg">
 		<img src="assets/images/patterns/patterns_1_20170512.svg" />
-	</div> -->
-
-	<!-- TODO: set up bg as background-image with size: cover -->
-	<div class="tank">
-		{% include spinning-tanks/tank-2.svg %}
 	</div>
-	<div class="tank hero-logo">
+
+	<<div class="hero-logo">
 		{% include icons/mp-logo.svg %}
 	</div>
-	<div class="tank">
-		{% include spinning-tanks/tank-3.svg %}
+
+	{% comment %}
+	<!-- NEW -->
+	<!-- <div class="tank left">
+		{% include spinning-tanks/tank-2.svg %}
 	</div>
+	<div class="hero-logo">
+		{% include icons/mp-logo.svg %}
+	</div>
+	<div class="tank right">
+		{% include spinning-tanks/tank-3.svg %}
+	</div> -->
+	{% endcomment %}
 
 	<!-- <div class="tagline">
 		<p>As creative as the neighborhood around it.</p>

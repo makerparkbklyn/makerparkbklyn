@@ -8,7 +8,7 @@ const slideStops = [
 	},
 	{
 		section			: "mission",
-		offsetMultiplier: 2
+		offsetMultiplier: 1.5
 	},
 	{
 		section			: "mission",

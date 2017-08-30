@@ -39,21 +39,21 @@
 
 		@include breakpoint($tablet-portrait) {
 			@include span(2 of 4);
-			height: $baseline * 5;
+			height: $baseline * 6;
 
 			display: flex;
-			align-items: center;
+			align-items: flex-end;
+		}
 
-			img {
-				max-width: 80%;
+		@include breakpoint($tablet-portrait $tablet-landscape - 1) {
+			&:nth-child(7),
+			&:nth-child(8) {
+				height: $baseline * 4;
 			}
 
-			&:nth-child(6) {
-				img {
-					max-width: 60%;
-				}
+			&:nth-child(9) {
+				height: $baseline * 5;
 			}
-
 		}
 	}
 
@@ -63,7 +63,7 @@
 
 	@include breakpoint($tablet-landscape) {
 		// TODO: calculate section height dynamically
-		height: 550vh;
+		height: 600vh;
 
 		@include with-layout(8) {
 			.section__title-xl {
@@ -102,52 +102,68 @@
 
 				&:nth-child(1),
 				&:nth-child(2) {
-					top: $baseline * 12;
+					top: $baseline * 6;
 
 					@include breakpoint("min-aspect-ratio" "3/2") {
-						top: 15%;
+						top: 8%;
 					}
 				}
 
 				&:nth-child(3),
 				&:nth-child(4) {
-					top: $baseline * 22;
+					top: $baseline * 16;
 
 					@include breakpoint("min-aspect-ratio" "3/2") {
-						top: 40%;
+						top: 28%;
 					}
 				}
 
 				&:nth-child(5),
-				&:last-child {
-					top: $baseline * 32;
+				&:nth-child(6) {
+					top: $baseline * 26;
 
 					@include breakpoint("min-aspect-ratio" "3/2") {
-						top: 65%;
+						top: 48%;
+					}
+				}
+
+				&:nth-child(7),
+				&:nth-child(8) {
+					top: $baseline * 35;
+
+					@include breakpoint("min-aspect-ratio" "3/2") {
+						top: 66%;
+					}
+				}
+
+				&:nth-child(9) {
+					top: $baseline * 42;
+
+					@include breakpoint("min-aspect-ratio" "3/2") {
+						top: 80%;
 					}
 				}
 
 				img {
 					display: block;
-					max-width: 100%;
-					max-height: 100%;
+					max-width: 50%;
 					position: relative;
 					top: 50%;
 					transform: translateY(-50%);
 				}
 
-				&:nth-child(1) {
-					img {
-						width: 30%;
-					}
-				}
-
-				&:nth-child(2),
-				&:nth-child(5) {
-					img {
-						width: 50%;
-					}
-				}
+				// &:nth-child(1) {
+				// 	img {
+				// 		width: 30%;
+				// 	}
+				// }
+				//
+				// &:nth-child(2),
+				// &:nth-child(5) {
+				// 	img {
+				// 		width: 50%;
+				// 	}
+				// }
 
 			}
 		}
@@ -158,6 +174,14 @@
 			top: -12%;
 			left: 36%;
 			width: 106vh;
+		}
+	}
+
+	@include breakpoint($desktop) {
+		.expert-team-block {
+			img {
+				max-width: 40%;
+			}
 		}
 	}
 

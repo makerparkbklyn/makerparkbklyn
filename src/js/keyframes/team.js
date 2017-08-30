@@ -108,6 +108,27 @@ const teamKeyframes = () => {
 				tween	:	{y: wh, ease: Power2.easeOut}
 			},
 			{
+				name	:	'expertLogo7In',
+				duration:	1.4 * wh,
+				offset	:	2.9 * wh,
+				element :	'#team .expert-team-block:nth-child(7)',
+				tween	:	{y: wh, ease: Power2.easeOut}
+			},
+			{
+				name	:	'expertLogo8In',
+				duration:	1.4 * wh,
+				offset	:	2.95 * wh,
+				element :	'#team .expert-team-block:nth-child(8)',
+				tween	:	{y: wh, ease: Power2.easeOut}
+			},
+			{
+				name	:	'expertLogo9In',
+				duration:	1.4 * wh,
+				offset	:	3 * wh,
+				element :	'#team .expert-team-block:nth-child(9)',
+				tween	:	{y: wh, ease: Power2.easeOut}
+			},
+			{
 				name	:	'expertLogo1Out',
 				duration:	1.4 * wh,
 				offset	:	4.5 * wh,
@@ -147,6 +168,27 @@ const teamKeyframes = () => {
 				duration:	1.4 * wh,
 				offset	:	5 * wh,
 				element :	'#team .expert-team-block:nth-child(6)',
+				tween	:	{y: -wh, ease: Power2.easeIn}
+			},
+			{
+				name	:	'expertLogo7Out',
+				duration:	1.4 * wh,
+				offset	:	5.1 * wh,
+				element :	'#team .expert-team-block:nth-child(7)',
+				tween	:	{y: -wh, ease: Power2.easeIn}
+			},
+			{
+				name	:	'expertLogo8Out',
+				duration:	1.4 * wh,
+				offset	:	5.2 * wh,
+				element :	'#team .expert-team-block:nth-child(8)',
+				tween	:	{y: -wh, ease: Power2.easeIn}
+			},
+			{
+				name	:	'expertLogo9Out',
+				duration:	1.4 * wh,
+				offset	:	5.3 * wh,
+				element :	'#team .expert-team-block:nth-child(9)',
 				tween	:	{y: -wh, ease: Power2.easeIn}
 			},
 		]

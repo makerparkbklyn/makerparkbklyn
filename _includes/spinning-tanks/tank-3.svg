@@ -43,15 +43,15 @@
 	}
 
 	.st3-top-pattern-inside {
-	  animation: st3TankTop 2s infinite linear;
+	  animation: st3TankTop 3s infinite linear;
 	}
 
 	.st3-middle-pattern-inside {
-	  animation: st3TankMiddle 2s infinite linear;
+	  animation: st3TankMiddle 3s infinite linear;
 	}
 
 	.st3-bottom-pattern-inside {
-	  animation: st3TankBottom 2s infinite linear;
+	  animation: st3TankBottom 3s infinite linear;
 	}
 </style>
 

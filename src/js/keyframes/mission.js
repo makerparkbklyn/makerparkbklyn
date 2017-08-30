@@ -12,7 +12,7 @@ const missionKeyframes = () => {
 			{
 				name	: 	'01Slide',
 				duration: 	0,
-				offset	: 	2 * wh,
+				offset	: 	1.5 * wh,
 				index 	:	1,
 				hook	: 	'onLeave'
 			},
@@ -67,12 +67,12 @@ const missionKeyframes = () => {
 			},
 			{
 				name	:	'pattern1Thru',
-				duration:	6 * wh,
+				duration:	7 * wh,
 				offset	:	0.5 * wh,
 				element	:	'#mission .bg-pattern-1',
 				tween	: 	[
 					{y: 1.5 * wh},
-					{y: -1.75 * wh, ease: Linear.easeNone}
+					{y: -2.5 * wh, ease: Linear.easeNone}
 				]
 			},
 			{

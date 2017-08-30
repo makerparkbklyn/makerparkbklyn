@@ -66,8 +66,8 @@
 }
 
 
-/* Rails & Nav
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+// Rails & Nav
+//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––––––
 @import	"left-rail";
 @import	"right-rail";
 @import	"nav";
@@ -93,6 +93,7 @@
 .footer__social-button {
 	@include span(2 of 4);
 	margin-top: $baseline * 1.5;
+	cursor: pointer;
 
 	svg {
 		width: 1rem;
@@ -134,9 +135,12 @@
 	@include with-layout(8) {
 
 		.footer {
+			max-width: initial;
+			width: 100%;
 			position: relative;
 			height: auto;
 			min-height: 300vh;
+			background-color: rgb(145, 230, 223);
 		}
 
 		.footer__hashtag {
@@ -173,6 +177,22 @@
 
 		.footer__social-button--facebook {
 			left: span(4 of 8 wide);
+		}
+	}
+
+	.tank {
+		position: fixed;
+		width: 45.5%;
+		top: 50%;
+
+		&.left {
+			left: 0;
+			transform: translate(-50%, -50%);
+		}
+
+		&.right {
+			right: 0;
+			transform: translate(50%, -50%);
 		}
 	}
 }

@@ -24,6 +24,20 @@ const footerKeyframes = () => {
 				offset 	:	0
 			},
 			{
+				name	:	'tankLeftIn',
+				duration:	wh,
+				offset	:	0.5 * wh,
+				element	:	'#footer .tank.left',
+				tween	:	{x: -1000, scale: 0.5, ease: Power2.easeOut}
+			},
+			{
+				name	:	'tankRightIn',
+				duration:	wh,
+				offset	:	0.5 * wh,
+				element	:	'#footer .tank.right',
+				tween	:	{x: 1000, scale: 0.5, ease: Power2.easeOut}
+			},
+			{
 				name	:	'hashtagIn',
 				duration:	wh,
 				offset	:	0.25 * wh,

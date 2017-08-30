@@ -75,3 +75,80 @@ const heroKeyframes = () => {
 }
 
 export default heroKeyframes
+
+
+
+// const heroKeyframes = () => {
+// 	Viewport.update()
+//
+// 	const $logo = $('#hero .hero-logo svg')
+//
+// 	let wh = Viewport.wh,
+// 		scale = 0,
+// 		$logoWidth = $logo.width(),
+// 		$logoHeight = $logo.height(),
+// 		centerX = $logo.offset().left + $logoWidth / 2,
+// 		centerY = $logo.offset().top - $(window).scrollTop() + $logoHeight / 2,
+// 		offsetX,
+// 		offsetY
+//
+// 	if ( Viewport.ww <= 768 ) {
+// 		scale = 2
+// 	}
+// 	else if ( Viewport.ww <= 1280 ) {
+// 		scale = 1.4
+// 		// scale = 2.5
+// 	}
+// 	else {
+// 		scale = 2
+// 		// scale = 1.785714286 // for 25%
+// 	}
+//
+// 	offsetX = Viewport.ww / 2 - centerX,
+// 	offsetY = Viewport.wh / 2 - centerY
+//
+// 	return {
+// 		section			:	'#hero',
+// 		hook			:	'onLeave',
+// 		scenes			: 	[
+// 			{
+// 				name	: 	'00Slide',
+// 				duration:	0,
+// 				offset	: 	20,
+// 				index 	:	0,
+// 			},
+// 			{
+// 				name	:	'logoIn',
+// 				duration:	wh,
+// 				offset	:	0,
+// 				element	:	'#hero .hero-logo svg',
+// 				tween	:	{
+// 								x: offsetX,
+// 								y: offsetY,
+// 								scale,
+// 								rotation: -360,
+// 								ease: Power2.easeInOut,
+// 								force3D: false,
+// 								overwrite: 'none'
+// 							},
+// 			},
+// 			{
+// 				name	:	'logoOut',
+// 				trigger	:	'.footer',
+// 				hook	:	'onEnter',
+// 				duration:	wh,
+// 				offset	:	0,
+// 				element	:	'#hero .hero-logo svg',
+// 				tween	:	{
+// 								x: offsetX,
+// 								y: offsetY,
+// 								scale,
+// 								rotation: -360,
+// 								ease: Power2.easeInOut,
+// 								force3D: false,
+// 								overwrite: 'none'
+// 							},
+// 			},
+// 		],
+// 	}
+// }

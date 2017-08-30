@@ -49,7 +49,7 @@
 			height: $baseline * 3;
 			margin-bottom: $baseline * 1;
 			padding: 0;
-			padding-top: $baseline;
+			// padding-top: $baseline;
 
 			border-bottom: solid 6px $indigo;
 			color: #fff;
@@ -157,7 +157,7 @@
 			background: transparent;
 			border-radius: 0;
 			padding: 0;
-			padding-top: $baseline * 0.5;
+			// padding-top: $baseline * 0.5;
 
 			&:hover {
 				color: #fff;
