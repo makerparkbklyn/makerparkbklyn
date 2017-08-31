@@ -8,19 +8,19 @@ const slideStops = [
 	},
 	{
 		section			: "mission",
-		offsetMultiplier: 1.5
+		offsetMultiplier: 1.25
 	},
 	{
 		section			: "mission",
-		offsetMultiplier: 4.5
+		offsetMultiplier: 4.25
 	},
 	{
 		section			: "site",
-		offsetMultiplier: 2
+		offsetMultiplier: 1.25
 	},
 	{
 		section			: "site",
-		offsetMultiplier: 12
+		offsetMultiplier: 11
 	},
 	{
 		section			: "vision",
@@ -28,11 +28,11 @@ const slideStops = [
 	},
 	{
 		section			: "vision",
-		offsetMultiplier: 4.65
+		offsetMultiplier: 4.25
 	},
 	{
 		section			: "vision",
-		offsetMultiplier: 11
+		offsetMultiplier: 10.5
 	},
 	{
 		section			: "timeline",
@@ -52,7 +52,7 @@ const slideStops = [
 	},
 	{
 		section			: "team",
-		offsetMultiplier: 0.9
+		offsetMultiplier: 0.8
 	},
 	{
 		section			: "team",
@@ -60,7 +60,7 @@ const slideStops = [
 	},
 	{
 		section			: "footer",
-		offsetMultiplier: 1.5
+		offsetMultiplier: 1
 	},
 ]
 

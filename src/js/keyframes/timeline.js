@@ -92,8 +92,8 @@ const timelineKeyframes = () => {
 			},
 			{
 				name	:	'pattern1Thru',
-				duration:	6.5 * wh,
-				offset	:	-0.25 * wh,
+				duration:	6 * wh,
+				offset	:	0 * wh,
 				element :	'#timeline .bg-pattern-1',
 				tween	: 	[
 								{y: wh},

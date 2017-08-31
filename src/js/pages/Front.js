@@ -206,7 +206,7 @@ export default class Front extends Page {
 
 		$('.nav__item').on('click', 'a', this._onNavItemClick.bind(this))
 
-		$('.signup-sticker').on('click', this._onNavItemClick.bind(this))
+		$('.signup-sticker').on('click', 'a', this._onNavItemClick.bind(this))
 
 		$('#signup').submit(submitForm)
 	}

@@ -23,16 +23,6 @@ const siteKeyframes = () => {
 				offset	: 	12 * wh,
 				index 	:	4
 			},
-			// {
-			// 	name	:	'spinningTankThru',
-			// 	duration:	1.5 * wh,
-			// 	offset	:	0,
-			// 	element	:	'#site .spinning-tank',
-			// 	tween	: 	[
-			// 					{y: 0.25 * wh, x: ww * 1.25, rotation: -360,},
-			// 					{y: -0.25 * wh, x: -0.25 * ww, rotation: 180, ease: Linear.easeNone}
-			// 				]
-			// },
 			{
 				name	:	'titleIn',
 				duration:	1.4 * wh,
@@ -43,7 +33,7 @@ const siteKeyframes = () => {
 			{
 				name	:	'titleOut',
 				duration:	1.4 * wh,
-				offset	:	10.5 * wh,
+				offset	:	9.75 * wh,
 				element	:	'#site .section__title-xl',
 				tween	: 	{y: -wh, ease: Power2.easeIn}
 			},
@@ -57,7 +47,7 @@ const siteKeyframes = () => {
 			{
 				name	:	'p1Out',
 				duration:	1.4 * wh,
-				offset	:	10.75 * wh,
+				offset	:	9.85 * wh,
 				element	:	'#site .p1',
 				tween	: 	{y: -wh, ease: Power2.easeIn}
 			},
@@ -71,9 +61,9 @@ const siteKeyframes = () => {
 			{
 				name	:	'p2Out',
 				duration:	1.4 * wh,
-				offset	:	11 * wh,
+				offset	:	9.85 * wh,
 				element	:	'#site .p2',
-				tween	: 	{y: -wh, ease: Power2.easeIn}
+				tween	: 	{y: -1.4 * wh, ease: Power2.easeIn}
 			},
 			{
 				name	:	'p3In',
@@ -85,37 +75,29 @@ const siteKeyframes = () => {
 			{
 				name	:	'p3Out',
 				duration:	1.4 * wh,
-				offset	:	11 * wh,
+				offset	:	9.9 * wh,
 				element	:	'#site .p3',
-				tween	: 	{y: -2 * wh, ease: Power2.easeIn}
+				tween	: 	{y: -1.2 * wh, ease: Power2.easeIn}
 			},
 			{
-				name	:	'pattern1In',
-				duration:	1.8 * wh,
-				offset	:	0.75 * wh,
+				name	:	'pattern1Thru',
+				duration:	8 * wh,
+				offset	:	-1 * wh,
 				element	:	'#site .bg-pattern-1',
-				tween	: 	{y: 1.5 * wh, ease: Power2.easeOut}
+				tween	: 	[
+								{y: 0.5 * wh, x: 0},
+								{y: -2.4 * wh, x: -300, ease: Linear.easeNone}
+							]
 			},
 			{
-				name	:	'pattern1Out',
-				duration:	1.8 * wh,
-				offset	:	11 * wh,
-				element	:	'#site .bg-pattern-1',
-				tween	: 	{y: -2 * wh, ease: Power2.easeIn}
-			},
-			{
-				name	:	'pattern2In',
-				duration:	1.8 * wh,
-				offset	:	wh,
+				name	:	'pattern2Thru',
+				duration:	5.75 * wh,
+				offset	:	9 * wh,
 				element	:	'#site .bg-pattern-2',
-				tween	: 	{y: 1.5 * wh, ease: Power2.easeOut}
-			},
-			{
-				name	:	'pattern2Out',
-				duration:	1.8 * wh,
-				offset	:	11.25 * wh,
-				element	:	'#site .bg-pattern-2',
-				tween	: 	{y: -2 * wh, ease: Power2.easeIn}
+				tween	: 	[
+								{y: 0.5 * wh, x: -1000},
+								{y: -3 * wh, x: 1200, ease: Linear.easeNone}
+							]
 			},
 			{
 				name	:	'image00Thru',
@@ -190,14 +172,14 @@ const siteKeyframes = () => {
 			{
 				name	:	'mapIn',
 				duration:	1.4 * wh,
-				offset	:	11.5 * wh,
+				offset	:	10.5 * wh,
 				element	:	'#site .map',
 				tween	: 	{y: 1.5 * wh, x: -800, ease: Power2.easeOut}
 			},
 			{
 				name	:	'mapOut',
 				duration:	1.4 * wh,
-				offset	:	14 * wh,
+				offset	:	12.5 * wh,
 				element	:	'#site .map',
 				tween	: 	{y: -2 * wh, x: 800, ease: Power2.easeIn}
 			},

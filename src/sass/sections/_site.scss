@@ -29,7 +29,7 @@
 
 	@include breakpoint($tablet-landscape) {
 		// TODO: calculate section height dynamically
-		height: 1460vh;
+		height: 1310vh;
 
 		.image-04 > figcaption {
 			display: block;
@@ -111,10 +111,19 @@
 		}
 
 		.bg-pattern-1 {
-			// position: fixed;
-			// top: 50%;
+			position: fixed;
+			top: 50%;
 			transform: translate(-18%, 50%);
-			right: 0%;
+			left: 0%;
+			display: block;
+			// height: 135vh;
+		}
+
+		.bg-pattern-2 {
+			position: fixed;
+			top: 50%;
+			transform: translate(-30%, 50%);
+			left: 0%;
 			display: block;
 			// height: 135vh;
 		}
