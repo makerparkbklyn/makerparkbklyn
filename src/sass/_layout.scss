@@ -130,7 +130,47 @@
 	}
 }
 
+.tank {
+	display: none;
+}
+
+// @include breakpoint($tablet-portrait) {
+// 	.tank {
+// 		position: absolute;
+// 		display: block;
+// 		width: 45.5%;
+// 		top: 50%;
+//
+// 		&.left {
+// 			left: 0;
+// 			transform: translate(-50%, -50%);
+// 		}
+//
+// 		&.right {
+// 			right: 0;
+// 			transform: translate(50%, -50%);
+// 		}
+// 	}
+// }
+
 @include breakpoint($tablet-landscape) {
+
+	.tank {
+		position: fixed;
+		display: block;
+		width: 50%;
+		top: 50%;
+
+		&.left {
+			left: 0;
+			transform: translate(-60%, -50%);
+		}
+
+		&.right {
+			right: 0;
+			transform: translate(60%, -50%);
+		}
+	}
 
 	@include with-layout(8) {
 
@@ -179,11 +219,11 @@
 			left: span(4 of 8 wide);
 		}
 	}
+}
 
+@include breakpoint($desktop) {
 	.tank {
-		position: fixed;
 		width: 45.5%;
-		top: 50%;
 
 		&.left {
 			left: 0;
