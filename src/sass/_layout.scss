@@ -170,6 +170,18 @@
 			right: 0;
 			transform: translate(60%, -50%);
 		}
+
+		@include breakpoint("min-aspect-ratio" "3/2") {
+			width: 40.5%;
+
+			&.left {
+				transform: translate(-40%, -50%);
+			}
+
+			&.right {
+				transform: translate(40%, -50%);
+			}
+		}
 	}
 
 	@include with-layout(8) {
@@ -188,26 +200,18 @@
 			position: fixed;
 			@include span(4 of 8);
 			left: span(2 of 8 wide);
-			top: 120%;
+			bottom: $baseline * 4;
 		}
 
 		.footer__social-button {
 			margin: 0;
 			position: fixed;
 			@include span(1 of 8);
-			top: 120%;
+			top: initial;
+			bottom: $baseline * 2;
 
 			svg {
 				width: 1rem;
-			}
-		}
-
-		.footer.in {
-			.footer__hashtag {
-				top: 82%;
-			}
-			.footer__social-button {
-				top: 88%;
 			}
 		}
 
@@ -233,6 +237,18 @@
 		&.right {
 			right: 0;
 			transform: translate(50%, -50%);
+		}
+
+		@include breakpoint("min-aspect-ratio" "3/2") {
+			width: 39%;
+
+			&.left {
+				transform: translate(-40%, -50%);
+			}
+
+			&.right {
+				transform: translate(40%, -50%);
+			}
 		}
 	}
 }
