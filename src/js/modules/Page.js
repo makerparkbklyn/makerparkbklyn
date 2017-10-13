@@ -64,7 +64,7 @@ class Page {
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
 
 	_onNavToggleClick(e) {
-		console.log(this);
+		// console.log('nav opened')
 		this.$nav.css('z-index', '99999')
 		this.$nav.css('-webkit-overflow-scrolling', 'touch')
 		this.navTimeline.timeScale = 1
@@ -73,6 +73,7 @@ class Page {
 	}
 
 	_onNavCloseClick(e) {
+		// console.log('nav closed')
 		this.navTimeline.timeScale = 0.0000000000001
 		this.navTimeline.reverse()
 		setTimeout(function(){

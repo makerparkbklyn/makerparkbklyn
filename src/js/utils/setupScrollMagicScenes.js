@@ -85,11 +85,13 @@ const setupScrollMagicScenes = ( keyframes, controller, context = null, debug = 
 			else if (slide) {
 				if (self !== null) {
 					s.on('progress', (e) => {
-						console.log(`Scene: ${scene.index}`)
-						if (e.scrollDirection === 'FORWARD') {
+						// console.log(`Scene Name: ${scene.name}`)
+						// console.log(`Scene Index: ${scene.index}`)
+						// console.log('scrollDirection: ' + e.scrollDirection)
+						if (e.scrollDirection === 'FORWARD' && !self.scrolling) {
 							self._updateCurrentSlide(scene.index)
 						}
-						else {
+						else if (e.scrollDirection === 'REVERSE' && !self.scrolling) {
 							self._updateCurrentSlide(scene.index - 1)
 						}
 					})

@@ -4,6 +4,7 @@ import 'slick-carousel'
 import ScrollMagic from 'scrollmagic'
 import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap'
 import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
+import ScrollToPlugin from 'gsap/ScrollToPlugin'
 
 import Page from '../modules/Page'
 import GoogleMap from '../modules/Map'
@@ -34,6 +35,7 @@ export default class Front extends Page {
 		this.sectionCtrl = null
 		this.scrollCtrl = null
 		this.currentSlide = 0
+		this.scrolling = false
 
 		this._initSections()
 		this._initScrollScenes()
@@ -98,8 +100,13 @@ export default class Front extends Page {
 		}
 
 		this.sectionCtrl.scrollTo((newScrollPos) => {
-			// console.log('in scrollto')
-			$('body').animate({scrollTop: newScrollPos}, 1500)
+			// console.log('in scrollTo this: ' + this.scrolling)
+			this.scrolling = true
+			// console.log('in scrollTo this: ' + this.scrolling)
+			TweenMax.to($(window), 1.5, { scrollTo: { y: newScrollPos }, onComplete: () => {
+				// console.log('finished animating!!!!')
+				this.scrolling = false
+			} } )
 		})
 
 		if (Viewport.ww < 1024) {
@@ -231,6 +238,9 @@ export default class Front extends Page {
 
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
 	_updateCurrentSlide(newSlideIndex, arrowClicked = false) {
+		console.log('in _updateCurrentSlide')
+		if (newSlideIndex < 0) { newSlideIndex = 0 }
+		console.log('newSlideIndex:' + newSlideIndex)
 		if (newSlideIndex === 14 && this.currentSlide === 14 && arrowClicked) {
 			this.sectionCtrl.scrollTo( 0 )
 			this.currentSlide = 0
@@ -257,6 +267,7 @@ export default class Front extends Page {
 	//–––––––––––––––––––––––––––————————————————————————————–––––––––––––––––––
 	_onArrowDownClick(e) {
 		e.preventDefault()
+		console.log('arrow down clicked')
 		let newSlideIndex = this.currentSlide + 1 <= 14 ? this.currentSlide + 1 : 14
 		this._updateCurrentSlide(newSlideIndex, true)
 	}
