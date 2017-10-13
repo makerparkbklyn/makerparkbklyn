@@ -28,3 +28,4 @@ exclude:
 - tooling.md
 - src
 - ".nojekyll"
+- temp.package.json
