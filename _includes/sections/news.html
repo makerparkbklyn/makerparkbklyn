@@ -16,7 +16,7 @@
 			{% for post in site.posts | limit: 8 %}
 				<li class="news-block">
 
-					<a href="{{ post.url | prepend: site.baseurl }}">
+					<a href="{{ post.url }}">
 						<div class="news-block__inner">
 							<h3 class="news-block__title">{{ post.short_title }}</h3>
 							{% if post.source %}
@@ -31,7 +31,7 @@
 			{% endfor %}
 
 			<li class="news-block news-block--see-all">
-				<a href="{{ "/news" | prepend: site.baseurl }}">
+				<a href="{{ "/news" }}">
 					<div class="news-block__inner">
 						<h3 class="news-block__title">More news</h3>
 					</div>
