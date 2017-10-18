@@ -6,7 +6,8 @@
 
 	.nav-toggle {
 		position: fixed;
-		width: 94%;
+		// width: 94%;
+		right: 4.5%;
 		text-align: right;
 		margin-top: 5%;
 		z-index: 999;
@@ -18,7 +19,7 @@
 
 		svg {
 			width: 3rem;
-			margin-right: 1.5%;
+			// margin-right: 1.5%;
 		}
 
 		&.out {
