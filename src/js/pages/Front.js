@@ -103,7 +103,7 @@ export default class Front extends Page {
 			// console.log('in scrollTo this: ' + this.scrolling)
 			this.scrolling = true
 			// console.log('in scrollTo this: ' + this.scrolling)
-			TweenMax.to($(window), 1.5, { scrollTo: { y: newScrollPos }, onComplete: () => {
+			TweenMax.to($(window), 1.5, { scrollTo: { y: newScrollPos, autoKill: false }, onComplete: () => {
 				// console.log('finished animating!!!!')
 				this.scrolling = false
 			} } )
@@ -284,6 +284,7 @@ export default class Front extends Page {
 		let position = null
 
 		if (Viewport.ww < 1024) {
+			console.log('in mobile + tablet portrait')
 			position = $target.offset().top
 		}
 		else {
