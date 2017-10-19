@@ -123,7 +123,7 @@
 	.video { // js for this?
 		margin: $baseline 0;
 		@include span(4 of 4);
-		@include border;
+		// @include border;
 		height: 0;
 		padding-bottom: ( span(4 of 4) * (9/16) );
 	}
