@@ -63,17 +63,17 @@
 
 	@include breakpoint($tablet-landscape) {
 		// TODO: calculate section height dynamically
-		height: 600vh;
+		height: 410vh;
 
 		@include with-layout(8) {
-			.section__title-xl {
-				top: $baseline * 29;
-				z-index: 9;
-
-				@include breakpoint("min-aspect-ratio" "3/2") {
-					top: 53%;
-				}
-			}
+			// .section__title-xl {
+			// 	top: $baseline * 4;
+			// 	// z-index: 9;
+			//
+			// 	@include breakpoint("min-aspect-ratio" "3/2") {
+			// 		top: 8%;
+			// 	}
+			// }
 
 			.team-photo {
 				@include span(5 of 8);
