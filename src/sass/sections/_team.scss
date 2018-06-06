@@ -4,8 +4,13 @@
 .team-section {
 	background-color: $lightorange;
 
-	.p1 {
+	p {
 		@include span(4 of 4);
+		padding-bottom: $baseline * 2;
+
+		span {
+			color: #fff;
+		}
 	}
 
 	figure {
@@ -24,7 +29,7 @@
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		padding-top: $baseline * 6;
+		padding-top: $baseline * 4;
 	}
 
 	.expert-team-block {
@@ -63,7 +68,7 @@
 
 	@include breakpoint($tablet-landscape) {
 		// TODO: calculate section height dynamically
-		height: 410vh;
+		height: 600vh;
 
 		@include with-layout(8) {
 			// .section__title-xl {
@@ -83,6 +88,50 @@
 
 				@include breakpoint("min-aspect-ratio" "3/2") {
 					top: 12%;
+				}
+			}
+
+			.p1 {
+				position: fixed;
+				@include span(3 of 8);
+				left: span(2 of 8 wide);
+				top: $baseline * 20;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: $baseline * 18;
+				}
+			}
+
+			.p2 {
+				position: fixed;
+				@include span(3 of 8);
+				left: span(2 of 8 wide);
+				top: $baseline * 26;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: $baseline * 24;
+				}
+			}
+
+			.p3 {
+				position: fixed;
+				@include span(3 of 8);
+				left: span(5 of 8 wide);
+				top: $baseline * 26;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: $baseline * 24;
+				}
+			}
+
+			.p4 {
+				position: fixed;
+				@include span(3 of 8);
+				left: span(5 of 8 wide);
+				top: $baseline * 32;
+
+				@include breakpoint("min-aspect-ratio" "3/2") {
+					top: $baseline * 30;
 				}
 			}
 

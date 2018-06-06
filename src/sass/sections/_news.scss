@@ -101,7 +101,7 @@
 
 	@include breakpoint($tablet-landscape) {
 		// TODO: calculate section height dynamically
-		height: 265vh;
+		height: 275vh;
 
 		@include with-layout(8) {
 			.news-block {
