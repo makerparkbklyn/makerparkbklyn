@@ -93,6 +93,7 @@ const teamKeyframes = () => {
 				element :	'#team .p4',
 				tween	: 	{y: -wh, ease: Power2.easeIn}
 			},
+
 			// {
 			// 	name	:	'teamPhotoIn',
 			// 	duration:	1.4 * wh,
@@ -107,6 +108,7 @@ const teamKeyframes = () => {
 			// 	element :	'#team .team-photo',
 			// 	tween	: 	{y: -wh, x: 800, ease: Power2.easeIn}
 			// },
+
 			{
 				name	:	'pattern1In',
 				duration:	1.4 * wh,
