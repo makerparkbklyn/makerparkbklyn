@@ -20,6 +20,7 @@ exclude:
 - node_modules
 - Gruntfile.js
 - package.json
+- package-lock.json
 - README.md
 - ref.txt
 - tooling.md
