@@ -46,8 +46,8 @@
   "homepage": "https://github.com/makerparkbklyn/makerparkbklyn/",
   "dependencies": {
     "gsap": "^1.19.1",
-    "jquery": "^3.2.1",
-    "jquery-color": "github:jquery/jquery-color",
+    "jquery": "^3.3.1",
+    "jquery-color": "^1.0.0",
     "scrollmagic": "^2.0.5",
     "slick-carousel": "^1.6.0"
   },
@@ -69,7 +69,7 @@
     "modularscale-sass": "^3.0.2",
     "node-sass": "^4.9.0",
     "normalize-css": "^2.3.1",
-	"parallelshell": "^3.0.2",
+    "parallelshell": "^3.0.2",
     "path": "^0.12.7",
     "postcss": "^5.2.16",
     "postcss-cli": "^3.0.0",
