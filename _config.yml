@@ -1,16 +1,14 @@
 ---
-title: Maker Park - Waterfront park and maker space in Williamsburg, Brooklyn
+title: The Tanks at Bushwick Inlet Park - Waterfront Park in Williamsburg, Brooklyn
 timezone: UTC
 collections:
   posts:
     title: Posts
     output: true
-email: info@maker-park.org
-description: 'Maker Park - Waterfront park and maker space in Williamsburg, Brooklyn
-
-'
+email: makerparkbk@gmail.com
+description: The Tanks at Bushwick Inlet Park - Waterfront Park in Williamsburg, Brooklyn
 permalink: pretty
-url: http://maker-park.org
+url: http://thetanksbk.com
 exclude:
 - Gemfile
 - Gemfile.lock
